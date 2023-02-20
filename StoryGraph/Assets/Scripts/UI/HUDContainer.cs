@@ -9,6 +9,13 @@ namespace UI
         
         private CanvasGroup canvasGroup;
         
+        private void Awake()
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
+            HideUI();
+            DontDestroyOnLoad(this);
+        }
+        
         public void ShowUI()
         {
             canvasGroup.alpha = 1;

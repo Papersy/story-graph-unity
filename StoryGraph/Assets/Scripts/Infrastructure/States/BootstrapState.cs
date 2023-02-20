@@ -1,14 +1,15 @@
-﻿using CodeBase.Infrastructure.AssetManagement;
-using CodeBase.Infrastructure.Factory;
+﻿using CodeBase.Infrastructure;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services;
+using CodeBase.Infrastructure.States;
 using CodeBase.StaticData;
-using Infrastructure;
+using Infrastructure.AssetManagement;
 using Infrastructure.Factory;
 using Infrastructure.Services;
 using UI;
 using UnityEngine;
 
-namespace CodeBase.Infrastructure.States
+namespace Infrastructure.States
 {
     public class BootstrapState : IState
     {

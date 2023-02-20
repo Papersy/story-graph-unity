@@ -1,5 +1,4 @@
 ﻿using CodeBase.Infrastructure.AssetManagement;
-using CodeBase.Infrastructure.Factory;
 using UnityEngine;
 
 namespace Infrastructure.Factory

@@ -10,7 +10,5 @@ namespace UI
         {
             HudContainer = hudContainer;
         }
-
-        
     }
 }
