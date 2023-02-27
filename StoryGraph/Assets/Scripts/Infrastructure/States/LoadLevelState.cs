@@ -1,7 +1,9 @@
 ﻿using CodeBase.Infrastructure;
+using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.States;
 using CodeBase.StaticData;
 using Infrastructure.Factory;
+using Infrastructure.Services;
 
 namespace Infrastructure.States
 {
@@ -40,6 +42,7 @@ namespace Infrastructure.States
 
         private void InitGameWorld()
         {
+            AllServices.Container.Single<IGameService>().GenerateMap();
         }
     }
 }

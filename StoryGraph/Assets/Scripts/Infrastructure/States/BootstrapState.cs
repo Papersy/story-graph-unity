@@ -44,6 +44,7 @@ namespace Infrastructure.States
             _services.RegisterSingle<IAssetProvider>(new AssetProvider());
             _services.RegisterSingle<IGameFactory>(new GameFactory(
                 _services.Single<IAssetProvider>()));
+            _services.RegisterSingle<IGameService>(new GameService());
 
             GameObject hudContainerGO = _services.Single<IGameFactory>().Instantiate(ConstantsData.HUDAddress);
             HUDContainer hudContainer = hudContainerGO.GetComponent<HUDContainer>();
