@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using Deserialization;
 
 public class Root
 {
-    public string Title { get; set; }
-    public string TitleGeneric { get; set; }
-    public string Description { get; set; }
-    public int Override { get; set; }
-    public LSide LSide  { get; set; }
-    public RSide RSide { get; set; }
-    public List<object> Instructions { get; set; }
+    // public List<AvailableProduction> available_productions { get; set; }
+    public List<World> world { get; set; }//
+    public string changed_nodes { get; set; }//
+    public string message { get; set; }//
+    public string game_status { get; set; }//
+    // public LocationInfo location_info { get; set; }
+    public string main_character { get; set; }
 }

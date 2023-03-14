@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ApiController;
 using CodeBase.Infrastructure.Services;
+using Deserialization;
 using LocationDir;
 using Newtonsoft.Json;
 using Player;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -19,10 +22,14 @@ namespace Infrastructure.Services
         private string _currentId = "";
 
         public event Action<string> OnLocationChanged;
-        
-        public void GenerateMap()
+
+        public async void GenerateMap()
         {
-            var lSide = DeserializeFile();
+            HttpClientController httpClientController = new HttpClientController();
+            List<World> lSide;
+                
+            string json = await httpClientController.GetNewWorld();
+            lSide = DeserializeFile(json);
 
             _locations = new List<LocationController>();
 
@@ -30,30 +37,33 @@ namespace Infrastructure.Services
             InitPlayer();
         }
         
-        private static LSide DeserializeFile()
+        private static List<World> DeserializeFile(string json)
         {
-            TextAsset text = Resources.Load("JsonFiles/dragons") as TextAsset;
-            var json = text.ToString();
-            List<Root> roots = JsonConvert.DeserializeObject<List<Root>>(json);
+            TextAsset text = Resources.Load("JsonFiles/dragons2") as TextAsset;
+            var json2 = text.ToString();
+            Root roots = JsonConvert.DeserializeObject<Root>(json2);
+            
+            Debug.Log(json2);
 
-            Root root = roots[0];
-            LSide lSide = root.LSide;
-            return lSide;
+            Root root = roots;
+            List<World> worlds = root.world;
+            
+            return worlds;
         }
         
-        private void GenerateLocations(LSide lSide)
+        private void GenerateLocations(List<World> worlds)
         {
             var xOffset = 0f;
-            foreach (var loc in lSide.Locations)
+            foreach (var world in worlds)
             {
-                var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + loc.Name);
+                var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world.Name);
                 var locationController = Object.Instantiate(prefab,new Vector3(xOffset, 0, 0), Quaternion.identity);
 
-                locationController.Location = loc;
+                locationController.World = world;
                 _locations.Add(locationController);
             
-                if (loc.Name == "Road") 
-                    _currentId = loc.Id;
+                if (world.Name == "Road") 
+                    _currentId = world.Id;
                 else
                     locationController.gameObject.SetActive(false);
             
@@ -63,7 +73,7 @@ namespace Infrastructure.Services
         
         private void InitPlayer()
         {
-            foreach (var loc in _locations.Where(loc => loc.Location.Name == "Road"))
+            foreach (var loc in _locations.Where(loc => loc.World.Name == "Road"))
             {
                 var prefab = Resources.Load<PlayerController>("Player/Player");
                 _player = Object.Instantiate(prefab, loc.GetSpawnPoint().position, Quaternion.identity);
@@ -76,7 +86,7 @@ namespace Infrastructure.Services
         {
             foreach (var loc in _locations)
             {
-                if (loc.Location.Id == id)
+                if (loc.World.Id == id)
                 {
                     loc.gameObject.SetActive(true);
                     _player.EnableCharacterController(false);
@@ -96,8 +106,8 @@ namespace Infrastructure.Services
         {
             foreach (var location in _locations)
             {
-                if (location.Location.Id.Equals(id))
-                    return location.Location.Name;
+                if (location.World.Id.Equals(id))
+                    return location.World.Name;
             }
 
             return "unknown_location";

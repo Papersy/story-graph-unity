@@ -1,7 +1,5 @@
-﻿using CodeBase.Infrastructure;
-using CodeBase.Infrastructure.AssetManagement;
+﻿using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Services;
-using CodeBase.Infrastructure.States;
 using CodeBase.StaticData;
 using Infrastructure.AssetManagement;
 using Infrastructure.Factory;

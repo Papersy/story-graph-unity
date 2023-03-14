@@ -1,5 +1,4 @@
-﻿using CodeBase.Infrastructure;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Infrastructure
 {

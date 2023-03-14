@@ -1,6 +1,6 @@
 ﻿using CodeBase.Infrastructure.Services;
 
-namespace CodeBase.Infrastructure.States
+namespace Infrastructure.States
 {
   public interface IGameStateMachine : IService
   {

@@ -1,6 +1,4 @@
-﻿using CodeBase.Infrastructure;
-using CodeBase.Infrastructure.Services;
-using CodeBase.Infrastructure.States;
+﻿using CodeBase.Infrastructure.Services;
 using CodeBase.StaticData;
 using Infrastructure.Factory;
 using Infrastructure.Services;
