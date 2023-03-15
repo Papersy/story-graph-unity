@@ -41,7 +41,7 @@ namespace Infrastructure.Services
         {
             TextAsset text = Resources.Load("JsonFiles/dragons2") as TextAsset;
             var json2 = text.ToString();
-            Root roots = JsonConvert.DeserializeObject<Root>(json2);
+            Root roots = JsonConvert.DeserializeObject<Root>(json);
             
             Debug.Log(json2);
 
@@ -96,6 +96,8 @@ namespace Infrastructure.Services
                     AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
                     OnLocationChanged?.Invoke(GetLocationNameById(_currentId));
                     _player.EnableCharacterController(true);
+                    
+                    loc.ShowCharacters(loc.World);
                 }
                 else
                     loc.gameObject.SetActive(false);
