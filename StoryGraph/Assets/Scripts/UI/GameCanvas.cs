@@ -45,10 +45,10 @@ namespace UI
         {
             foreach (var connection in connections)
             {
-                var btn = Instantiate(btnPrefab, Vector3.one, Quaternion.identity);
-                btn.transform.SetParent(buttonsContainer.transform);
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = _gameService.GetLocationNameById(connection.Destination);
-                btn.GetComponent<Button>().onClick.AddListener(() => _gameService.ChangeLocation(connection.Destination));
+                // var btn = Instantiate(btnPrefab, Vector3.one, Quaternion.identity);
+                // btn.transform.SetParent(buttonsContainer.transform);
+                // btn.GetComponentInChildren<TextMeshProUGUI>().text = _gameService.GetLocationNameById(connection.Destination);
+                // btn.GetComponent<Button>().onClick.AddListener(() => _gameService.ChangeLocation(connection.Destination));
             }
         }
 
