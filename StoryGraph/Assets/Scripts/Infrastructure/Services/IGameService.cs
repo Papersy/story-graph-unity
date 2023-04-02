@@ -5,10 +5,9 @@ namespace Infrastructure.Services
 {
     public interface IGameService : IService
     {
-        event Action<string> OnLocationChanged;
-        
+        // event Action<string> OnLocationChanged;
+        //
         void GenerateMap();
-        void ChangeLocation(string id);
-        string GetLocationNameById(string id);
+        GameController GetGameController();
     }
 }
