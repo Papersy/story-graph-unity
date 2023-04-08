@@ -20,6 +20,7 @@ public class GameController
     private string _currentLocationId = "";
 
     private JToken _currentLocation;
+    private LocationController _currentLocationController;
     
     public event Action<string> OnLocationChanged;
 
@@ -28,12 +29,6 @@ public class GameController
 
     public void DeletePlayerItem(JToken item)
     {
-        Debug.Log("Items before");
-        foreach (var playerItem in _playerItems)
-        {
-            Debug.Log(playerItem["Name"]);
-        }
-        
         foreach (var playerItem in _playerItems)
         {
             if (playerItem["Id"] == item["Id"])
@@ -42,9 +37,6 @@ public class GameController
                 break;
             }
         }
-        
-        
-        Debug.Log("Items after");
     }
     
     public void DeserializeFile()
@@ -58,9 +50,9 @@ public class GameController
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        _currentLocation = GetFirstLocationOrNull(worlds);
-
         GenerateLocations(worlds);
+        
+        _currentLocation = GetFirstLocationOrNull(worlds);
     }
 
     private JToken GetFirstLocationOrNull(JToken worlds)
@@ -78,6 +70,10 @@ public class GameController
                         {
                             _mainPlayerName = character["Name"].ToString();
                             _playerItems = character["Items"];
+                        }
+                        else
+                        {
+                            _currentLocationController.SpawnNpc(character["Name"].ToString());
                         }
                     }
                 }
@@ -104,7 +100,10 @@ public class GameController
             if (world["Id"].ToString() != _mainLocationId)
                 locationController.gameObject.SetActive(false);
             else
+            {
+                _currentLocationController = locationController;
                 InitPlayer(locationController);
+            }
 
             xOffset += 100f;
         }

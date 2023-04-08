@@ -80,9 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096cafbea7d64bb5afe03c7f5aaf5bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcPositions: []
   spawnPoint: {fileID: 7401099321728670901}
-  charactersInfo:
-  - {fileID: 0}
 --- !u!33 &8102775325764431626
 MeshFilter:
   m_ObjectHideFlags: 0

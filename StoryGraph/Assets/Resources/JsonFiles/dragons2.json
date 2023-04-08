@@ -564,6 +564,15 @@
                             }
                         }
                     ]
+                },
+                {
+                    "Id": "5fc62585-f437-4cc1-972f-f2fc3ce37908",
+                    "Name": "Wizard",
+                    "Attributes": {
+                        "HP": 200,
+                        "Money": 100,
+                        "IsAuthority": true
+                    }
                 }
             ],
             "Connections": [
