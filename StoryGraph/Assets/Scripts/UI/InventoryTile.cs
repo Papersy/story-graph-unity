@@ -1,5 +1,6 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
+using LocationDir;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,8 +26,8 @@ namespace UI
             if(item == null)
                 return;
             
-            var dropItem = Resources.Load<DropItem>($"JsonFiles/Items3D/default");
-            dropItem.Item = item;
+            var dropItem = Resources.Load<Item>($"JsonFiles/Items3D/default");
+            dropItem.ItemInfo = item;
 
             var spawnPos = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition();
             Instantiate(dropItem, spawnPos + Vector3.forward, Quaternion.identity);

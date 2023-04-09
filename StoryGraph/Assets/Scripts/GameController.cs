@@ -53,6 +53,7 @@ public class GameController
         GenerateLocations(worlds);
         
         _currentLocation = GetFirstLocationOrNull(worlds);
+        GenerateItemsForLocation(_currentLocation);
     }
 
     private JToken GetFirstLocationOrNull(JToken worlds)
@@ -72,9 +73,7 @@ public class GameController
                             _playerItems = character["Items"];
                         }
                         else
-                        {
-                            _currentLocationController.SpawnNpc(character["Name"].ToString());
-                        }
+                            _currentLocationController.SpawnNpc(character);
                     }
                 }
 
@@ -83,6 +82,15 @@ public class GameController
         }
 
         return null;
+    }
+
+    private void GenerateItemsForLocation(JToken world)
+    {
+        var items = world["Items"];
+        foreach (var item in items)
+        {
+            _currentLocationController.SpawnItem(item);
+        }
     }
 
     private void GenerateLocations(JToken worlds)

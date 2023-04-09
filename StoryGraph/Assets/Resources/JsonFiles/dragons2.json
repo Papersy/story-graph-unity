@@ -575,6 +575,16 @@
                     }
                 }
             ],
+            "Items": [
+                {
+                    "Id": "09aea9dc-fb91-4e47-beb1-b796901d67a6",
+                    "Name": "Elixir",
+                    "Attributes": {
+                        "Value": 10,
+                        "NutritionalValue": 1000
+                    }
+                }
+            ],
             "Connections": [
                 {
                     "Destination": "140686910711488"
