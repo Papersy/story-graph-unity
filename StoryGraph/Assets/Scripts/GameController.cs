@@ -20,6 +20,7 @@ public class GameController
     private string _currentLocationId = "";
 
     private JToken _currentLocation;
+    private JToken _availableProductions;
     private LocationController _currentLocationController;
     
     public event Action<string> OnLocationChanged;
@@ -45,8 +46,8 @@ public class GameController
         var json = text.ToString();
 
         var dict = JToken.Parse(json);
-        var availableProductions = dict["available_productions"];
         var worlds = dict["world"];
+        _availableProductions = dict["available_productions"];
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
@@ -91,6 +92,11 @@ public class GameController
         {
             _currentLocationController.SpawnItem(item);
         }
+    }
+
+    private void GenerateItemsForNpc(JToken items)
+    {
+        
     }
 
     private void GenerateLocations(JToken worlds)
@@ -139,7 +145,19 @@ public class GameController
 
     public void ShowLocationToGo()
     {
-        AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.GenerateLocationButtons(_currentLocation["Connections"]);
+        char[] delimiter = { '/' };
+        JToken teleportationVariants = null;
+        foreach (var availableProduction in _availableProductions)
+        {
+            var title = availableProduction["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Location change")
+                teleportationVariants = availableProduction["variants"];
+
+        }
+        AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.GenerateLocationButtons(teleportationVariants);
     }
 
     public void ChangeLocation(string id)

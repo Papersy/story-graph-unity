@@ -54,14 +54,14 @@ namespace UI
             _gameService.GetGameController().OnLocationChanged -= StartNewLocationAnimation;
         }
 
-        public void GenerateLocationButtons(JToken connections)
+        public void GenerateLocationButtons(JToken variants)
         {
-            foreach (var connection in connections)
+            foreach (var variant in variants)
             {
                 var btn = Instantiate(btnPrefab, Vector3.one, Quaternion.identity);
                 btn.transform.SetParent(buttonsContainer.transform);
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = _gameService.GetGameController().GetLocationNameById(connection["Destination"].ToString());
-                btn.GetComponent<Button>().onClick.AddListener(() => _gameService.GetGameController().ChangeLocation(connection["Destination"].ToString()));
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = _gameService.GetGameController().GetLocationNameById(variant[2]["WorldNodeId"].ToString());
+                btn.GetComponent<Button>().onClick.AddListener(() => _gameService.GetGameController().ChangeLocation(variant[2]["WorldNodeId"].ToString()));
             }
         }
 
