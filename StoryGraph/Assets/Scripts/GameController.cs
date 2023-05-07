@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using ApiController;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using LocationDir;
@@ -19,6 +23,7 @@ public class GameController
     private string _mainPlayerName = "";
     private string _currentLocationId = "";
 
+    private JToken _worlds;
     private JToken _currentLocation;
     private JToken _availableProductions;
     private LocationController _currentLocationController;
@@ -46,14 +51,14 @@ public class GameController
         var json = text.ToString();
 
         var dict = JToken.Parse(json);
-        var worlds = dict["world"];
+        _worlds = dict["world"];
         _availableProductions = dict["available_productions"];
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        GenerateLocations(worlds);
+        GenerateLocations(_worlds);
         
-        _currentLocation = GetFirstLocationOrNull(worlds);
+        _currentLocation = GetFirstLocationOrNull(_worlds);
         GenerateItemsForLocation(_currentLocation);
     }
 
@@ -162,6 +167,7 @@ public class GameController
 
     public void ChangeLocation(string id)
     {
+        PostNewWorld();
         foreach (var loc in _locations)
         {
             if (loc.Id == id)
@@ -178,6 +184,20 @@ public class GameController
             else
                 loc.gameObject.SetActive(false);
         }
+    }
+
+    public async Task PostNewWorld()
+    {
+        TextAsset text = Resources.Load("JsonFiles/test") as TextAsset;
+        var json = text.ToString();
+
+        HttpClientController httpClientController = new HttpClientController();
+        var map = httpClientController.GenerateMap();
+        Debug.Log(map);
+
+        // HttpClientController httpClientController = new HttpClientController();
+        var newWorld = httpClientController.PostNewWorld(_worlds, _availableProductions[0]["prod"], _availableProductions[0]["variants"][0], _mainPlayerName);
+        Debug.Log(newWorld);
     }
 
     public string GetLocationNameById(string id)
