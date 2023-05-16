@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using ApiController;
 using CodeBase.Infrastructure.Services;
+using Infrastructure;
 using Infrastructure.Services;
 using LocationDir;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Player;
 using UnityEngine;
@@ -45,11 +45,23 @@ public class GameController
         }
     }
     
-    public void DeserializeFile()
+    public async void DeserializeFile()
     {
-        TextAsset text = Resources.Load("JsonFiles/dragons2") as TextAsset;
-        var json = text.ToString();
+        var json = await HttpClientController.GetNewWorld();
+        var dict = JToken.Parse(json.ToString());
+        _worlds = dict["world"];
+        _availableProductions = dict["available_productions"];
 
+        GetMainLocationId(dict);
+        GetMainPlayerId(dict);
+        GenerateLocations(_worlds);
+        
+        _currentLocation = GetFirstLocationOrNull(_worlds);
+        GenerateItemsForLocation(_currentLocation);
+    }
+
+    public void DeserializeFile(string json)
+    {
         var dict = JToken.Parse(json);
         _worlds = dict["world"];
         _availableProductions = dict["available_productions"];
@@ -93,10 +105,14 @@ public class GameController
     private void GenerateItemsForLocation(JToken world)
     {
         var items = world["Items"];
-        foreach (var item in items)
+        if (items != null)
         {
-            _currentLocationController.SpawnItem(item);
+            foreach (var item in items)
+            {
+                _currentLocationController.SpawnItem(item);
+            }
         }
+        
     }
 
     private void GenerateItemsForNpc(JToken items)
@@ -142,7 +158,7 @@ public class GameController
 
     private void InitPlayer(LocationController loc)
     {
-        var prefab = Resources.Load<PlayerController>("Player/Player");
+        var prefab = Resources.Load<PlayerController>(ConstantsData.PlayerAddress);
         _player = Object.Instantiate(prefab, loc.GetSpawnPoint().position, Quaternion.identity);
 
         _player.transform.position = loc.GetSpawnPoint().position;
@@ -159,15 +175,26 @@ public class GameController
             string firstWord = words[0].Trim();
 
             if (firstWord == "Location change")
+            {
                 teleportationVariants = availableProduction["variants"];
+            }
 
         }
         AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.GenerateLocationButtons(teleportationVariants);
     }
 
-    public void ChangeLocation(string id)
+    public async void ChangeLocation(string id, JToken variant)
     {
-        PostNewWorld();
+        var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Location change", _availableProductions), variant, _mainPlayerName);
+        
+        string filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";
+
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            string jsonFormatted = JValue.Parse(json.ToString()).ToString(Formatting.Indented);
+            writer.Write(jsonFormatted);
+        }
+        
         foreach (var loc in _locations)
         {
             if (loc.Id == id)
@@ -184,20 +211,8 @@ public class GameController
             else
                 loc.gameObject.SetActive(false);
         }
-    }
-
-    public async Task PostNewWorld()
-    {
-        TextAsset text = Resources.Load("JsonFiles/test") as TextAsset;
-        var json = text.ToString();
-
-        HttpClientController httpClientController = new HttpClientController();
-        var map = httpClientController.GenerateMap();
-        Debug.Log(map);
-
-        // HttpClientController httpClientController = new HttpClientController();
-        var newWorld = httpClientController.PostNewWorld(_worlds, _availableProductions[0]["prod"], _availableProductions[0]["variants"][0], _mainPlayerName);
-        Debug.Log(newWorld);
+        
+        DeserializeFile(json);
     }
 
     public string GetLocationNameById(string id)
@@ -209,5 +224,24 @@ public class GameController
         }
 
         return "unknown_location";
+    }
+
+    private JToken FindProd(string name, JToken tokenForSearch)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in tokenForSearch)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == name)
+            {
+                return entity["prod"];
+            }
+        }
+
+        return null;
     }
 }

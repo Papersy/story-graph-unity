@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901424897950276491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.04, z: 0}
+  m_LocalPosition: {x: 0, y: 25, z: 0}
   m_LocalScale: {x: 0.013333333, y: 2, z: 0.013333333}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92,6 +92,7 @@ MonoBehaviour:
   - {fileID: 8504562912580335564}
   - {fileID: 1991974087668037359}
   - {fileID: 7554479312969022716}
+  itemsPositions: []
   spawnPoint: {fileID: 7401099321728670901}
 --- !u!33 &8102775325764431626
 MeshFilter:

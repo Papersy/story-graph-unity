@@ -6,6 +6,7 @@ using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace UI
@@ -35,7 +36,7 @@ namespace UI
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (Keyboard.current.tabKey.wasPressedThisFrame)
             {
                 if(!inventoryUI.isActiveAndEnabled)
                     inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
@@ -61,7 +62,7 @@ namespace UI
                 var btn = Instantiate(btnPrefab, Vector3.one, Quaternion.identity);
                 btn.transform.SetParent(buttonsContainer.transform);
                 btn.GetComponentInChildren<TextMeshProUGUI>().text = _gameService.GetGameController().GetLocationNameById(variant[2]["WorldNodeId"].ToString());
-                btn.GetComponent<Button>().onClick.AddListener(() => _gameService.GetGameController().ChangeLocation(variant[2]["WorldNodeId"].ToString()));
+                btn.GetComponent<Button>().onClick.AddListener(() => _gameService.GetGameController().ChangeLocation(variant[2]["WorldNodeId"].ToString(), variant));
             }
         }
 

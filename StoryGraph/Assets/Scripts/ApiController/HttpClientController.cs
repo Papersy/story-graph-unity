@@ -11,7 +11,7 @@ namespace ApiController
 {
     public class HttpClientController : MonoBehaviour
     {
-        public async Task<string> GetNewWorld()
+        public static async Task<string> GetNewWorld()
         {
             var client = new HttpClient();
             var response = await client.GetAsync("http://127.0.0.1:8000/getWorld");
@@ -21,7 +21,6 @@ namespace ApiController
                 string json = await response.Content.ReadAsStringAsync();
                 string jsonFormatted = JValue.Parse(json).ToString(Formatting.Indented);
                 // Parse the JSON response here
-                Debug.Log(json);
 
                 return jsonFormatted;
             }
@@ -55,19 +54,10 @@ namespace ApiController
             return null;
         }
 
-        public async Task<string> PostNewWorld(JToken world, JToken production, JToken variant, string obj)
+        public static async Task<string> PostNewWorld(JToken world, JToken production, JToken variant, string obj)
         {
             var json = $"{"{"}\n\"world\":{world},\n\"production\":{production},\n\"variant\":{variant},\n\"object\":\"{obj}\"{"}"}";
-            
-            string filePath = "Assets/Resources/testWrite.txt";
 
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                writer.Write(json);
-            }
-            
-            Debug.Log(json);
-            
             var httpClient = new HttpClient();
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync("http://127.0.0.1:8000/postNewWorld", content);
