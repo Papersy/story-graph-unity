@@ -28,7 +28,7 @@ namespace LocationDir
 
             var npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/" + character["Name"]);
             if (npc == null)
-                npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/default");
+                npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/default_npc");
             npc.NpcInfo = character;
             
             Instantiate(npc, position, Quaternion.identity);
@@ -42,7 +42,6 @@ namespace LocationDir
             var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
             if (itemMesh == null)
                 itemMesh = Resources.Load<Item>("JsonFiles/Items3D/default");
-            
             itemMesh.ItemInfo = item;
 
             Instantiate(itemMesh, position, Quaternion.identity);

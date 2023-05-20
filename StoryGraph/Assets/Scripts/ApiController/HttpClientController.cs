@@ -24,11 +24,8 @@ namespace ApiController
 
                 return jsonFormatted;
             }
-            else
-            {
-                Console.WriteLine($"Error: {response.StatusCode}");
-            }
-
+            
+            Console.WriteLine($"Error: {response.StatusCode}");
             return null;
         }
         
@@ -54,26 +51,36 @@ namespace ApiController
             return null;
         }
 
+
+        private static HttpClient httpClient = null;
         public static async Task<string> PostNewWorld(JToken world, JToken production, JToken variant, string obj)
         {
             var json = $"{"{"}\n\"world\":{world},\n\"production\":{production},\n\"variant\":{variant},\n\"object\":\"{obj}\"{"}"}";
 
-            var httpClient = new HttpClient();
+            Debug.Log(json);
+            
+            if(httpClient == null)
+                httpClient = new HttpClient();
+            
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync("http://127.0.0.1:8000/postNewWorld", content);
 
+            string filePath = "Assets/Resources/JsonFiles/PostToHttp.json";
+
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                string jsonFormatted = JValue.Parse(json.ToString()).ToString(Formatting.Indented);
+                writer.Write(jsonFormatted);
+            }
+            
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                Debug.Log(responseContent);
 
                 return responseContent;
             }
-            else
-            {
-                Debug.Log($"SMTH WRONG {response.StatusCode}");
-            }
-
+            
+            Debug.Log($"SMTH WRONG {response.StatusCode}");
             return null;
         }
     }

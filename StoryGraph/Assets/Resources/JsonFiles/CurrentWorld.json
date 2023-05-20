@@ -41,15 +41,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -58,23 +56,23 @@
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910713664",
-            "WorldNodeName": "Road",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
             "WorldNodeId": "140686910710080",
             "WorldNodeName": "Wizards_hut",
             "WorldNodeAttr": {
               "IsPrivate": true
             }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -91,15 +89,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -116,15 +112,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -141,15 +135,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -166,15 +158,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -191,15 +181,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -208,7 +196,7 @@
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "fc33e9b5-4217-417d-9cc4-0a152c00425a",
+            "WorldNodeId": "84817173-04a9-4ba4-886c-52167ded3a4f",
             "WorldNodeName": "Prison",
             "WorldNodeAttr": null
           }
@@ -262,15 +250,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -279,93 +265,23 @@
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910713664",
-            "WorldNodeName": "Road",
-            "WorldNodeAttr": null
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Fight ending with character’s escape / Walka zakończona ucieczką uczestnika",
-        "TitleGeneric": "Location change / Zmiana lokacji",
-        "Description": "Jeden bohater («BohaterA») atakuje drugiego («BohaterB»), który ucieka do sąsiedniej lokacji («LokacjaB»), gubiąc wszystkie swoje przedmioty w panicznej ucieczce.",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "LokacjaA",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "BohaterA",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                },
-                {
-                  "Id": "BohaterB",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                }
-              ],
-              "Items": [],
-              "Connections": [
-                {
-                  "Destination": {
-                    "Id": "LokacjaB",
-                    "Connections": []
-                  }
-                }
-              ]
-            },
-            {
-              "Id": "LokacjaB",
-              "Connections": []
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "BohaterB/Items/*",
-            "To": "LokacjaA/Items"
-          },
-          {
-            "Op": "move",
-            "Nodes": "BohaterB",
-            "To": "LokacjaB/Characters"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "LokacjaA",
             "WorldNodeId": "140686910710080",
             "WorldNodeName": "Wizards_hut",
             "WorldNodeAttr": {
               "IsPrivate": true
             }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "BohaterA",
-            "WorldNodeId": "dbd06bca-6381-4ef8-bde5-bde1c1b5e4de",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterB",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -373,102 +289,22 @@
             }
           },
           {
-            "LSNodeRef": "LokacjaB",
-            "WorldNodeId": "140686910713664",
-            "WorldNodeName": "Road",
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "140686910711488",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ],
         [
           {
-            "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterA",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "BohaterB",
-            "WorldNodeId": "dbd06bca-6381-4ef8-bde5-bde1c1b5e4de",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
-          },
-          {
-            "LSNodeRef": "LokacjaB",
+            "LSNodeRef": "Lokacja_A",
             "WorldNodeId": "140686910713664",
             "WorldNodeName": "Road",
             "WorldNodeAttr": null
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Picking item up / Podniesienie przedmiotu",
-        "TitleGeneric": "",
-        "Description": "«Bohater» podnosi przedmiot («Something») leżący w lokacji.",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "LokacjaA",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "Bohater",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                }
-              ],
-              "Items": [
-                {
-                  "Id": "Something",
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                }
-              ]
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Something",
-            "To": "Bohater/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -476,13 +312,56 @@
             }
           },
           {
-            "LSNodeRef": "Something",
-            "WorldNodeId": "298e1edb-a47a-4c63-b45f-ea2b86539f64",
-            "WorldNodeName": "Elixir",
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "140686910277632",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
+            "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
-              "Value": 10,
-              "NutritionalValue": 1000
+              "HP": 100,
+              "Money": 10
             }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "140686911964288",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 10
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "140686910678976",
+            "WorldNodeName": "Inn",
+            "WorldNodeAttr": null
           }
         ]
       ]
@@ -531,15 +410,13 @@
         [
           {
             "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -548,159 +425,10 @@
           },
           {
             "LSNodeRef": "Something",
-            "WorldNodeId": "feb99669-ddaa-4911-b288-32fac05dcc69",
+            "WorldNodeId": "55e78c39-364d-4ea2-8bdd-baabfe161793",
             "WorldNodeName": "Sword",
             "WorldNodeAttr": {
               "Value": 1000
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Putting item in / Włożenie przedmiotu",
-        "TitleGeneric": "",
-        "Description": "«Bohater» wkłada przedmiot («Something») do innego przedmiotu («Opakowanie»).",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "LokacjaA",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "Bohater",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": [
-                    {
-                      "Id": "Something",
-                      "Attributes": {},
-                      "Characters": [],
-                      "Items": []
-                    }
-                  ]
-                }
-              ],
-              "Items": [
-                {
-                  "Id": "Opakowanie",
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                }
-              ]
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Something",
-            "To": "Opakowanie/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "Something",
-            "WorldNodeId": "feb99669-ddaa-4911-b288-32fac05dcc69",
-            "WorldNodeName": "Sword",
-            "WorldNodeAttr": {
-              "Value": 1000
-            }
-          },
-          {
-            "LSNodeRef": "Opakowanie",
-            "WorldNodeId": "298e1edb-a47a-4c63-b45f-ea2b86539f64",
-            "WorldNodeName": "Elixir",
-            "WorldNodeAttr": {
-              "Value": 10,
-              "NutritionalValue": 1000
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Overwhelming character / Przejęcie kontroli nad postacią",
-        "TitleGeneric": "",
-        "Description": "Stworzenie grupy z dwóch bohaterów: «Any1» przejmuje kontrolę nad inną postacią («Any2»).",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "Anywhere",
-              "Characters": [
-                {
-                  "Id": "Any1",
-                  "IsObject": true
-                },
-                {
-                  "Id": "Any2"
-                }
-              ]
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Any2",
-            "To": "Any1/Characters"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "Any1",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "Any2",
-            "WorldNodeId": "dbd06bca-6381-4ef8-bde5-bde1c1b5e4de",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
             }
           }
         ]
@@ -738,104 +466,17 @@
         [
           {
             "LSNodeRef": "Anywhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Group",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
               "Money": 10
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Item acquisition from another character / Przejęcie przedmiotu od innej postaci",
-        "TitleGeneric": "",
-        "Description": "«BohaterB» oddaje drugiemu bohaterowi («BohaterA») przedmiot («Something»).",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "Somehere",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "BohaterA",
-                  "IsObject": true,
-                  "Attributes": {}
-                },
-                {
-                  "Id": "BohaterB",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": [
-                    {
-                      "Id": "Something",
-                      "Attributes": {}
-                    }
-                  ]
-                }
-              ],
-              "Items": [],
-              "Connections": []
-            }
-          ]
-        },
-        "RSide": {},
-        "Preconditions": [],
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Something",
-            "To": "BohaterA/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "Somehere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterA",
-            "WorldNodeId": "dbd06bca-6381-4ef8-bde5-bde1c1b5e4de",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterB",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "Something",
-            "WorldNodeId": "feb99669-ddaa-4911-b288-32fac05dcc69",
-            "WorldNodeName": "Sword",
-            "WorldNodeAttr": {
-              "Value": 1000
             }
           }
         ]
@@ -885,106 +526,13 @@
         [
           {
             "LSNodeRef": "Somewhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "140686910713664",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Hero",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Fight ending with character’s death / Walka zakończona śmiercią uczestnika",
-        "TitleGeneric": "Character’s death / Śmierć bohatera",
-        "Description": "«CharacterA» i «CharacterB» podejmują walkę, w której «CharacterB» ginie.",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "Somewhere",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "CharacterA",
-                  "IsObject": true,
-                  "Attributes": {
-                    "HP": null
-                  },
-                  "Items": []
-                },
-                {
-                  "Id": "CharacterB",
-                  "IsObject": true,
-                  "Attributes": {
-                    "HP": null
-                  },
-                  "Characters": [],
-                  "Items": []
-                }
-              ],
-              "Items": [],
-              "Connections": []
-            }
-          ]
-        },
-        "RSide": {},
-        "Preconditions": [
-          {
-            "Cond": "CharacterA.HP >= CharacterB.HP"
-          }
-        ],
-        "Instructions": [
-          {
-            "Op": "set",
-            "Attribute": "CharacterB.IsDead",
-            "Value": true
-          },
-          {
-            "Op": "set",
-            "Attribute": "CharacterA.HP",
-            "Expr": "CharacterA.HP - CharacterB.HP / 2"
-          },
-          {
-            "Op": "move",
-            "Nodes": "CharacterB/Items/*",
-            "To": "Somewhere/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "Somewhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "CharacterA",
-            "WorldNodeId": "dbd06bca-6381-4ef8-bde5-bde1c1b5e4de",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
-          },
-          {
-            "LSNodeRef": "CharacterB",
-            "WorldNodeId": "76252547-4bbe-4230-8974-be45b90ce453",
+            "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -999,6 +547,25 @@
     {
       "Id": "140686910713664",
       "Name": "Road",
+      "Characters": [
+        {
+          "Id": "b127bf92-687d-4801-8c1b-bd5fc6200855",
+          "Name": "Main_hero",
+          "Attributes": {
+            "HP": 100,
+            "Money": 10
+          },
+          "Items": [
+            {
+              "Id": "55e78c39-364d-4ea2-8bdd-baabfe161793",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 1000
+              }
+            }
+          ]
+        }
+      ],
       "Connections": [
         {
           "Destination": "140686910711488"
@@ -1025,35 +592,18 @@
       },
       "Characters": [
         {
-          "Id": "dbd06bca-6381-4ef8-bde5-bde1c1b5e4de",
+          "Id": "fc55439d-063f-4386-b69c-4c08eb373a90",
           "Name": "Wizard",
           "Attributes": {
             "HP": 200,
             "Money": 100,
             "IsAuthority": true
           }
-        },
-        {
-          "Id": "76252547-4bbe-4230-8974-be45b90ce453",
-          "Name": "Main_hero",
-          "Attributes": {
-            "HP": 100,
-            "Money": 10
-          },
-          "Items": [
-            {
-              "Id": "feb99669-ddaa-4911-b288-32fac05dcc69",
-              "Name": "Sword",
-              "Attributes": {
-                "Value": 1000
-              }
-            }
-          ]
         }
       ],
       "Items": [
         {
-          "Id": "298e1edb-a47a-4c63-b45f-ea2b86539f64",
+          "Id": "ab16ed0a-cc21-42a6-a14d-eddc923673f9",
           "Name": "Elixir",
           "Attributes": {
             "Value": 10,
@@ -1072,7 +622,7 @@
       "Name": "Dragons_lair",
       "Characters": [
         {
-          "Id": "27c3d398-3955-48d0-a6d1-2985614ed040",
+          "Id": "2376e98d-c3a3-45ec-8bef-8bc6b5c243ed",
           "Name": "Dragon",
           "Attributes": {
             "HP": 1000
@@ -1081,7 +631,7 @@
       ],
       "Items": [
         {
-          "Id": "699e495a-19c6-475b-a4d2-0b77bb764966",
+          "Id": "0a0e4b73-57fb-4dc8-b904-ee84eff17a12",
           "Name": "Dragon_egg",
           "Attributes": {
             "Value": 4000
@@ -1099,7 +649,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "8671374b-fb7c-477c-8cce-ac6013b77600",
+          "Id": "6f2586e0-6f16-411c-99a8-b2a6fb7b6f90",
           "Name": "Herbs",
           "Attributes": {
             "Value": 30,
@@ -1121,7 +671,7 @@
       "Name": "Pasture",
       "Characters": [
         {
-          "Id": "a575d067-cd81-4314-8892-0af61ba6391d",
+          "Id": "65802a4c-e8fa-4c09-a710-668272b30c07",
           "Name": "Sheep",
           "Attributes": {
             "HP": 10,
@@ -1143,7 +693,7 @@
       "Name": "Village",
       "Items": [
         {
-          "Id": "286b477b-1b4c-46aa-a06c-b8cb9fa5bff5",
+          "Id": "58d01366-1fca-4766-9c4d-39a5fbf02b4e",
           "Name": "Well"
         }
       ],
@@ -1161,7 +711,7 @@
       "Name": "Inn",
       "Characters": [
         {
-          "Id": "a9a49509-3f59-4591-a063-efc197e4240e",
+          "Id": "7601846a-0231-43df-9a9e-cbfa3cdda398",
           "Name": "Innkeeper",
           "Attributes": {
             "HP": 100,
@@ -1169,7 +719,7 @@
           },
           "Items": [
             {
-              "Id": "6017050e-3f30-4c97-b3e5-84a417ad8c80",
+              "Id": "f8d2b71f-671f-42b4-9264-b8ab1095446c",
               "Name": "Poison",
               "Attributes": {
                 "Value": 1000,
@@ -1179,7 +729,7 @@
           ]
         },
         {
-          "Id": "3372222e-c3cd-4ac5-9bfd-b1b3704de7b9",
+          "Id": "31e73b1e-2b58-4481-a38e-852a18849818",
           "Name": "Drunkard",
           "Attributes": {
             "HP": 100,
@@ -1188,7 +738,7 @@
           },
           "Items": [
             {
-              "Id": "00c41641-4a63-45c5-b874-06d261b74ba9",
+              "Id": "6888476a-e854-4780-912f-ff34b72c37a6",
               "Name": "Alcohol",
               "Attributes": {
                 "Value": 3,
@@ -1209,7 +759,7 @@
       ]
     },
     {
-      "Id": "fc33e9b5-4217-417d-9cc4-0a152c00425a",
+      "Id": "84817173-04a9-4ba4-886c-52167ded3a4f",
       "Name": "Prison",
       "Connections": [
         {
@@ -1219,34 +769,14 @@
     }
   ],
   "changed_nodes": {
-    "76252547-4bbe-4230-8974-be45b90ce453": ""
+    "b127bf92-687d-4801-8c1b-bd5fc6200855": ""
   },
   "message": null,
   "game_status": "in_progress",
   "location_info": {
-    "desc": "Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.",
-    "items": [
-      {
-        "name": "Elixir",
-        "attributes": {
-          "Value": 10,
-          "NutritionalValue": 1000
-        }
-      }
-    ],
+    "desc": "Lokacja Road nie ma żadnych własności.",
+    "items": [],
     "characters": [
-      {
-        "name": "Wizard",
-        "attributes": {
-          "HP": 200,
-          "Money": 100,
-          "IsAuthority": true
-        },
-        "items": [],
-        "characters": [],
-        "knowledge": null,
-        "sound": null
-      },
       {
         "name": "Main_hero",
         "attributes": {
@@ -1266,7 +796,7 @@
         "sound": null
       }
     ],
-    "main_location_id": "140686910710080"
+    "main_location_id": "140686910713664"
   },
-  "main_character": "76252547-4bbe-4230-8974-be45b90ce453"
+  "main_character": "b127bf92-687d-4801-8c1b-bd5fc6200855"
 }

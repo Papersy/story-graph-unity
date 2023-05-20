@@ -5,8 +5,11 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private CharacterController _characterController;
+        [SerializeField] private GameObject _playerMesh;
 
+        public Transform Transform => _playerMesh.transform;
         private Vector3 velocity;
+        
     
         private void Start()
         {
@@ -15,7 +18,10 @@ namespace Player
         }
         
 
-        public void EnableCharacterController(bool status) =>
+        public void EnableCharacterController(bool status)
+        {
             _characterController.enabled = status;
+            _playerMesh.SetActive(status);
+        }
     }
 }

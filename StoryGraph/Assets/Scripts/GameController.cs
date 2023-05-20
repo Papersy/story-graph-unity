@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 using ApiController;
 using CodeBase.Infrastructure.Services;
 using Infrastructure;
@@ -14,11 +15,12 @@ using Object = UnityEngine.Object;
 
 public class GameController
 {
-    private PlayerController _player;
+    private PlayerController _player = null;
     private List<LocationController> _locations = new List<LocationController>();
     private JToken _playerItems;
 
-    private string _mainLocationId = "";
+    private float _xOffset = 0f;
+    
     private string _mainPlayerId = "";
     private string _mainPlayerName = "";
     private string _currentLocationId = "";
@@ -54,9 +56,9 @@ public class GameController
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        GenerateLocations(_worlds);
+        GenerateLocation(_worlds);
         
-        _currentLocation = GetFirstLocationOrNull(_worlds);
+        _currentLocation = GetCurrentLocation(_worlds);
         GenerateItemsForLocation(_currentLocation);
     }
 
@@ -68,38 +70,41 @@ public class GameController
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        GenerateLocations(_worlds);
+        GenerateLocation(_worlds);
         
-        _currentLocation = GetFirstLocationOrNull(_worlds);
+        _currentLocation = GetCurrentLocation(_worlds);
         GenerateItemsForLocation(_currentLocation);
     }
 
-    private JToken GetFirstLocationOrNull(JToken worlds)
+    private JToken GetCurrentLocation(JToken worlds)
     {
         foreach (var location in worlds)
         {
-            if (location["Id"]?.ToString() == _mainLocationId)
+            if (location["Id"]?.ToString() == _currentLocationId)
             {
                 if (location["Characters"] != null)
-                {
-                    var characters = location["Characters"];
-                    foreach (var character in characters)
-                    {
-                        if (character["Id"].ToString() == _mainPlayerId)
-                        {
-                            _mainPlayerName = character["Name"].ToString();
-                            _playerItems = character["Items"];
-                        }
-                        else
-                            _currentLocationController.SpawnNpc(character);
-                    }
-                }
+                    GenerateCharactersFromLocation(location);
 
                 return location;
             }
         }
 
         return null;
+    }
+
+    private void GenerateCharactersFromLocation(JToken location)
+    {
+        var characters = location["Characters"];
+        foreach (var character in characters)
+        {
+            if (character["Id"].ToString() == _mainPlayerId)
+            {
+                _mainPlayerName = character["Name"].ToString();
+                _playerItems = character["Items"];
+            }
+            else
+                _currentLocationController.SpawnNpc(character);
+        }
     }
 
     private void GenerateItemsForLocation(JToken world)
@@ -120,35 +125,32 @@ public class GameController
         
     }
 
-    private void GenerateLocations(JToken worlds)
+    private void GenerateLocation(JToken worlds)
     {
-        var xOffset = 0f;
         foreach (var world in worlds)
         {
-            var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
-            var locationController = Object.Instantiate(prefab, new Vector3(xOffset, 0, 0), Quaternion.identity);
-
-            locationController.Id = world["Id"].ToString();
-            locationController.Name = world["Name"].ToString();
-            _locations.Add(locationController);
-
-            if (world["Id"].ToString() != _mainLocationId)
-                locationController.gameObject.SetActive(false);
-            else
+            if (world["Id"].ToString() == _currentLocationId)
             {
+                var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
+                var locationController = Object.Instantiate(prefab, new Vector3(_xOffset, 0, 0), Quaternion.identity);
+                
+                locationController.Id = world["Id"].ToString();
+                locationController.Name = world["Name"].ToString();
+                
+                if(_currentLocationController != null)
+                    GameObject.Destroy(_currentLocationController.gameObject);
                 _currentLocationController = locationController;
+                
                 InitPlayer(locationController);
             }
-
-            xOffset += 100f;
+            _xOffset += 100f;
         }
     }
 
     private void GetMainLocationId(JToken dict)
     {
         var locationInfo = dict["location_info"];
-        _mainLocationId = locationInfo["main_location_id"].ToString();
-        _currentLocationId = _mainLocationId;
+        _currentLocationId = locationInfo["main_location_id"].ToString();
     }
 
     private void GetMainPlayerId(JToken dict)
@@ -158,16 +160,22 @@ public class GameController
 
     private void InitPlayer(LocationController loc)
     {
-        var prefab = Resources.Load<PlayerController>(ConstantsData.PlayerAddress);
-        _player = Object.Instantiate(prefab, loc.GetSpawnPoint().position, Quaternion.identity);
-
-        _player.transform.position = loc.GetSpawnPoint().position;
+        if (_player == null)
+        {
+            var prefab = Resources.Load<PlayerController>(ConstantsData.PlayerAddress);
+            _player = Object.Instantiate(prefab, loc.GetSpawnPoint().position, Quaternion.identity);
+        }
+        
+        
+        _player.Transform.position = loc.GetSpawnPoint().position;
+        _player.EnableCharacterController(true);
     }
 
     public void ShowLocationToGo()
     {
         char[] delimiter = { '/' };
         JToken teleportationVariants = null;
+
         foreach (var availableProduction in _availableProductions)
         {
             var title = availableProduction["prod"]["Title"].ToString();
@@ -180,13 +188,14 @@ public class GameController
             }
 
         }
+        
         AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.GenerateLocationButtons(teleportationVariants);
     }
 
     public async void ChangeLocation(string id, JToken variant)
     {
         var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Location change", _availableProductions), variant, _mainPlayerName);
-        
+
         string filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";
 
         using (StreamWriter writer = new StreamWriter(filePath))
@@ -194,23 +203,13 @@ public class GameController
             string jsonFormatted = JValue.Parse(json.ToString()).ToString(Formatting.Indented);
             writer.Write(jsonFormatted);
         }
-        
-        foreach (var loc in _locations)
-        {
-            if (loc.Id == id)
-            {
-                loc.gameObject.SetActive(true);
-                _player.EnableCharacterController(false);
-                _player.transform.position = loc.GetSpawnPoint().position;
-                _currentLocationId = id;
 
-                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
-                OnLocationChanged?.Invoke(GetLocationNameById(_currentLocationId));
-                _player.EnableCharacterController(true);
-            }
-            else
-                loc.gameObject.SetActive(false);
-        }
+        _player.EnableCharacterController(false);
+        _currentLocationId = id;
+        
+        AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
+        OnLocationChanged?.Invoke(variant[2]["WorldNodeName"].ToString());
+        // _player.EnableCharacterController(true);
         
         DeserializeFile(json);
     }

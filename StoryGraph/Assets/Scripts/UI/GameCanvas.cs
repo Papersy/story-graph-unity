@@ -20,6 +20,7 @@ namespace UI
         [SerializeField] private Button btnPrefab;
         [SerializeField] private GameObject container;
         [SerializeField] private GameObject buttonsContainer;
+        [SerializeField] private List<Button> buttons;
         #endregion
 
         #region New location
@@ -57,11 +58,15 @@ namespace UI
 
         public void GenerateLocationButtons(JToken variants)
         {
+            foreach (var button in buttons)
+                button.gameObject.SetActive(false);
+
             foreach (var variant in variants)
             {
-                var btn = Instantiate(btnPrefab, Vector3.one, Quaternion.identity);
-                btn.transform.SetParent(buttonsContainer.transform);
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = _gameService.GetGameController().GetLocationNameById(variant[2]["WorldNodeId"].ToString());
+                var btn = GetFreeButton();
+                btn.gameObject.SetActive(true);
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = variant[2]["WorldNodeName"].ToString();
+                btn.GetComponent<Button>().onClick.RemoveAllListeners();
                 btn.GetComponent<Button>().onClick.AddListener(() => _gameService.GetGameController().ChangeLocation(variant[2]["WorldNodeId"].ToString(), variant));
             }
         }
@@ -107,6 +112,21 @@ namespace UI
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+
+        private Button GetFreeButton()
+        {
+            foreach (var button in buttons)
+            {
+                if (!button.IsActive())
+                    return button;
+            }
+            
+            var btn = Instantiate(btnPrefab, Vector3.one, Quaternion.identity);
+            btn.transform.SetParent(buttonsContainer.transform);
+            buttons.Add(btn);
+
+            return btn;
         }
     }
 }

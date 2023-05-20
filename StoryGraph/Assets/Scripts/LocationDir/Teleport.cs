@@ -18,10 +18,10 @@ namespace LocationDir
             }
         }
 
-        private void OnTriggerExit(Collider other)
-        {
-            if(other.CompareTag("Player"))
-                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
-        }
+        // private void OnTriggerExit(Collider other)
+        // {
+        //     if(other.CompareTag("Player"))
+        //         AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
+        // }
     }
 }
