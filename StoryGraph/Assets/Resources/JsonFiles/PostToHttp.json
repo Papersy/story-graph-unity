@@ -1,0 +1,293 @@
+{
+  "world": [
+    {
+      "Id": "140686910713664",
+      "Name": "Road",
+      "Connections": [
+        {
+          "Destination": "140686910711488"
+        },
+        {
+          "Destination": "140686910678976"
+        },
+        {
+          "Destination": "140686910277632"
+        },
+        {
+          "Destination": "140686911964288"
+        },
+        {
+          "Destination": "140686910710080"
+        }
+      ]
+    },
+    {
+      "Id": "140686910710080",
+      "Name": "Wizards_hut",
+      "Attributes": {
+        "IsPrivate": true
+      },
+      "Characters": [
+        {
+          "Id": "fc55439d-063f-4386-b69c-4c08eb373a90",
+          "Name": "Wizard",
+          "Attributes": {
+            "HP": 200,
+            "Money": 100,
+            "IsAuthority": true
+          }
+        },
+        {
+          "Id": "b127bf92-687d-4801-8c1b-bd5fc6200855",
+          "Name": "Main_hero",
+          "Attributes": {
+            "HP": 100,
+            "Money": 10
+          },
+          "Items": [
+            {
+              "Id": "55e78c39-364d-4ea2-8bdd-baabfe161793",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 1000
+              }
+            }
+          ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "ab16ed0a-cc21-42a6-a14d-eddc923673f9",
+          "Name": "Elixir",
+          "Attributes": {
+            "Value": 10,
+            "NutritionalValue": 1000
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "140686910713664"
+        }
+      ]
+    },
+    {
+      "Id": "140686910655872",
+      "Name": "Dragons_lair",
+      "Characters": [
+        {
+          "Id": "2376e98d-c3a3-45ec-8bef-8bc6b5c243ed",
+          "Name": "Dragon",
+          "Attributes": {
+            "HP": 1000
+          }
+        }
+      ],
+      "Items": [
+        {
+          "Id": "0a0e4b73-57fb-4dc8-b904-ee84eff17a12",
+          "Name": "Dragon_egg",
+          "Attributes": {
+            "Value": 4000
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "140686910711488"
+        }
+      ]
+    },
+    {
+      "Id": "140686910711488",
+      "Name": "Forest",
+      "Items": [
+        {
+          "Id": "6f2586e0-6f16-411c-99a8-b2a6fb7b6f90",
+          "Name": "Herbs",
+          "Attributes": {
+            "Value": 30,
+            "IsPoison": true
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "140686910713664"
+        },
+        {
+          "Destination": "140686910655872"
+        }
+      ]
+    },
+    {
+      "Id": "140686910277632",
+      "Name": "Pasture",
+      "Characters": [
+        {
+          "Id": "65802a4c-e8fa-4c09-a710-668272b30c07",
+          "Name": "Sheep",
+          "Attributes": {
+            "HP": 10,
+            "NutritionalValue": 20
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "140686910713664"
+        },
+        {
+          "Destination": "140686911964288"
+        }
+      ]
+    },
+    {
+      "Id": "140686911964288",
+      "Name": "Village",
+      "Items": [
+        {
+          "Id": "58d01366-1fca-4766-9c4d-39a5fbf02b4e",
+          "Name": "Well"
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "140686910713664"
+        },
+        {
+          "Destination": "140686910277632"
+        }
+      ]
+    },
+    {
+      "Id": "140686910678976",
+      "Name": "Inn",
+      "Characters": [
+        {
+          "Id": "7601846a-0231-43df-9a9e-cbfa3cdda398",
+          "Name": "Innkeeper",
+          "Attributes": {
+            "HP": 100,
+            "Money": 1200
+          },
+          "Items": [
+            {
+              "Id": "f8d2b71f-671f-42b4-9264-b8ab1095446c",
+              "Name": "Poison",
+              "Attributes": {
+                "Value": 1000,
+                "IsPoison": true
+              }
+            }
+          ]
+        },
+        {
+          "Id": "31e73b1e-2b58-4481-a38e-852a18849818",
+          "Name": "Drunkard",
+          "Attributes": {
+            "HP": 100,
+            "Money": 0,
+            "IsTroublemaker": true
+          },
+          "Items": [
+            {
+              "Id": "6888476a-e854-4780-912f-ff34b72c37a6",
+              "Name": "Alcohol",
+              "Attributes": {
+                "Value": 3,
+                "NutritionalValue": 1,
+                "IsRotten": true
+              }
+            }
+          ]
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "140686910713664"
+        },
+        {
+          "Destination": "140686910277632"
+        }
+      ]
+    },
+    {
+      "Id": "84817173-04a9-4ba4-886c-52167ded3a4f",
+      "Name": "Prison",
+      "Connections": [
+        {
+          "Destination": "140686910713664"
+        }
+      ]
+    }
+  ],
+  "production": {
+    "Title": "Location change / Zmiana lokacji",
+    "TitleGeneric": "Teleportation / Teleportacja",
+    "Description": "«Bohater» przechodzi do sąsiedniej lokacji («Lokacja_B»).",
+    "Override": 1,
+    "LSide": {
+      "Locations": [
+        {
+          "Id": "Lokacja_A",
+          "Attributes": {},
+          "Characters": [
+            {
+              "Id": "Bohater",
+              "IsObject": true,
+              "Attributes": {},
+              "Characters": [],
+              "Items": []
+            }
+          ],
+          "Items": [],
+          "Connections": [
+            {
+              "Destination": {
+                "Id": "Lokacja_B"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "Lokacja_B"
+        }
+      ]
+    },
+    "RSide": {},
+    "Instructions": [
+      {
+        "Op": "move",
+        "Nodes": "Bohater",
+        "To": "Lokacja_B/Characters"
+      }
+    ]
+  },
+  "variant": [
+    {
+      "LSNodeRef": "Lokacja_A",
+      "WorldNodeId": "140686910710080",
+      "WorldNodeName": "Wizards_hut",
+      "WorldNodeAttr": {
+        "IsPrivate": true
+      }
+    },
+    {
+      "LSNodeRef": "Bohater",
+      "WorldNodeId": "b127bf92-687d-4801-8c1b-bd5fc6200855",
+      "WorldNodeName": "Main_hero",
+      "WorldNodeAttr": {
+        "HP": 100,
+        "Money": 10
+      }
+    },
+    {
+      "LSNodeRef": "Lokacja_B",
+      "WorldNodeId": "140686910713664",
+      "WorldNodeName": "Road",
+      "WorldNodeAttr": null
+    }
+  ],
+  "object": "Main_hero"
+}
