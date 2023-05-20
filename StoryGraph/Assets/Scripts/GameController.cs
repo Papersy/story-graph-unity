@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography;
 using ApiController;
 using CodeBase.Infrastructure.Services;
 using Infrastructure;
@@ -209,8 +208,7 @@ public class GameController
         
         AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
         OnLocationChanged?.Invoke(variant[2]["WorldNodeName"].ToString());
-        // _player.EnableCharacterController(true);
-        
+
         DeserializeFile(json);
     }
 

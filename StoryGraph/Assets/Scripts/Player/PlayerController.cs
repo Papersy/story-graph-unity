@@ -8,15 +8,12 @@ namespace Player
         [SerializeField] private GameObject _playerMesh;
 
         public Transform Transform => _playerMesh.transform;
-        private Vector3 velocity;
-        
-    
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
         }
-        
 
         public void EnableCharacterController(bool status)
         {
