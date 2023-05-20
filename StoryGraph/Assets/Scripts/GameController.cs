@@ -61,7 +61,7 @@ public class GameController
         GenerateItemsForLocation(_currentLocation);
     }
 
-    public void DeserializeFile(string json)
+    private void DeserializeFileAfterLocationChange(string json)
     {
         var dict = JToken.Parse(json);
         _worlds = dict["world"];
@@ -209,7 +209,7 @@ public class GameController
         AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
         OnLocationChanged?.Invoke(variant[2]["WorldNodeName"].ToString());
 
-        DeserializeFile(json);
+        DeserializeFileAfterLocationChange(json);
     }
 
     public string GetLocationNameById(string id)

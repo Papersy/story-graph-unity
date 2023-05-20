@@ -26,18 +26,19 @@ namespace UI
         private void ShowInventoryItems(JToken items)
         {
             foreach (var tile in tiles)
-                tile.container.color = new Color32(0, 0, 0, 0);
+                tile.itemImage.color = new Color32(0, 0, 0, 0);
 
             var index = 0;
             foreach (var item in items)
             {
                 tiles[index].PutItem(item);
                 var index1 = index;
-                tiles[index].Button.onClick.AddListener(() =>
-                {
-                    tiles[index1].DropItem();
-                    AllServices.Container.Single<IGameService>().GetGameController().DeletePlayerItem(item);
-                });
+                tiles[index].Id = index;
+                // tiles[index].Button.onClick.AddListener(() =>
+                // {
+                //     tiles[index1].DropItem();
+                //     AllServices.Container.Single<IGameService>().GetGameController().DeletePlayerItem(item);
+                // });
                 index++;
             }
         }

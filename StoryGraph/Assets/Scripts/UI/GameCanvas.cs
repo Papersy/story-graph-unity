@@ -22,7 +22,7 @@ namespace UI
         [SerializeField] private List<Button> buttons;
         #endregion
 
-        #region New location
+        #region New location info
         [SerializeField] private GameObject newLocationPanel;
         [SerializeField] private TextMeshProUGUI newLocationText;
         #endregion
@@ -38,10 +38,16 @@ namespace UI
         {
             if (Keyboard.current.tabKey.wasPressedThisFrame)
             {
-                if(!inventoryUI.isActiveAndEnabled)
+                if (!inventoryUI.isActiveAndEnabled)
+                {
                     inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
-                else 
+                    ShowCursor();
+                }
+                else
+                {
                     inventoryUI.Hide();
+                    HideCursor();
+                }
             }
         }
 

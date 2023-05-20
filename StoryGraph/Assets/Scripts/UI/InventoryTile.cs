@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Services;
+﻿using System;
+using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using LocationDir;
 using Newtonsoft.Json.Linq;
@@ -9,16 +10,20 @@ namespace UI
 {
     public class InventoryTile : MonoBehaviour
     {
+        public int Id;
         public Button Button;
-        public Image container;
+        public Image itemImage;
         public JToken item;
 
+        private Ray ray;
+        private RaycastHit hit;
+        
         public void PutItem(JToken item)
         {
             this.item = item;
             
-            container.color = new Color32(255, 255, 255, 255);
-            container.sprite = Resources.Load<Sprite>($"JsonFiles/Items/{item["Name"].ToString().ToLower()}");
+            itemImage.color = new Color32(255, 255, 255, 255);
+            itemImage.sprite = Resources.Load<Sprite>($"JsonFiles/Items/{item["Name"].ToString().ToLower()}");
         }
 
         public void DropItem()
@@ -33,6 +38,21 @@ namespace UI
             Instantiate(dropItem, spawnPos + Vector3.forward, Quaternion.identity);
 
             item = null;
+        }
+
+        private void OnMouseDown()
+        {
+            Debug.Log("Mouse down");
+        }
+
+        private void OnMouseDrag()
+        {
+            Debug.Log("Mouse drag");
+        }
+
+        private void OnMouseUp()
+        {
+            Debug.Log("Mouse Up");
         }
     }
 }
