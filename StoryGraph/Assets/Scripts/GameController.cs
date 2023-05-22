@@ -31,21 +31,10 @@ public class GameController
     
     public event Action<string> OnLocationChanged;
 
-    public Vector3 GetPlayerPosition() => _player.transform.position;
+    public Vector3 GetPlayerPosition() => _player.Transform.position;
+    public Transform GetPlayerTransform() => _player.Transform;
     public JToken GetPlayerItems() => _playerItems;
 
-    public void DeletePlayerItem(JToken item)
-    {
-        foreach (var playerItem in _playerItems)
-        {
-            if (playerItem["Id"] == item["Id"])
-            {
-                playerItem.Remove();
-                break;
-            }
-        }
-    }
-    
     public async void DeserializeFile()
     {
         var json = await HttpClientController.GetNewWorld();
@@ -69,7 +58,7 @@ public class GameController
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        GenerateLocation(_worlds);
+        // GenerateLocation(_worlds);
         
         _currentLocation = GetCurrentLocation(_worlds);
         GenerateItemsForLocation(_currentLocation);
@@ -195,19 +184,22 @@ public class GameController
     {
         var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Location change", _availableProductions), variant, _mainPlayerName);
 
-        string filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";
-
-        using (StreamWriter writer = new StreamWriter(filePath))
-        {
-            string jsonFormatted = JValue.Parse(json.ToString()).ToString(Formatting.Indented);
-            writer.Write(jsonFormatted);
-        }
+        WriteLogAboutNewWorld(json);
 
         _player.EnableCharacterController(false);
         _currentLocationId = id;
         
         AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
         OnLocationChanged?.Invoke(variant[2]["WorldNodeName"].ToString());
+
+        DeserializeFileAfterLocationChange(json);
+    }
+
+    public async void DropItem(string droppingItemName)
+    {
+        var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Dropping item", _availableProductions), FindVariantOfDropping(droppingItemName), _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
 
         DeserializeFileAfterLocationChange(json);
     }
@@ -240,5 +232,40 @@ public class GameController
         }
 
         return null;
+    }
+
+    private JToken FindVariantOfDropping(string itemName)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in _availableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Dropping item")
+            {
+                Debug.Log(entity);
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[2]["WorldNodeName"].ToString() == itemName)
+                        return variant;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private void WriteLogAboutNewWorld(string json)
+    {
+        string filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";
+
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            string jsonFormatted = JValue.Parse(json.ToString()).ToString(Formatting.Indented);
+            writer.Write(jsonFormatted);
+        }
     }
 }

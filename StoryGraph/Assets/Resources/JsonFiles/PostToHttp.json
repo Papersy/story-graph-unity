@@ -5,7 +5,7 @@
       "Name": "Road",
       "Characters": [
         {
-          "Id": "bdc39f89-6595-4553-9d57-dea561d9a575",
+          "Id": "7561838e-7ea6-477f-99e1-ee6ec10b5ed9",
           "Name": "Main_hero",
           "Attributes": {
             "HP": 100,
@@ -13,7 +13,7 @@
           },
           "Items": [
             {
-              "Id": "d3d56178-5415-465b-ac6b-ba1e6b838630",
+              "Id": "0b7992b4-908c-464a-a6d3-d17b97f01205",
               "Name": "Sword",
               "Attributes": {
                 "Value": 1000
@@ -48,7 +48,7 @@
       },
       "Characters": [
         {
-          "Id": "e3288c29-ac8b-4524-9143-0503862fbfb1",
+          "Id": "fb6ec96d-9f6e-4f8e-8ac3-beec3795dd41",
           "Name": "Wizard",
           "Attributes": {
             "HP": 200,
@@ -59,7 +59,7 @@
       ],
       "Items": [
         {
-          "Id": "83da0719-5a1d-4ba5-8477-bf48211996cd",
+          "Id": "a171ef04-e9ba-4db5-864d-cbd659c8789e",
           "Name": "Elixir",
           "Attributes": {
             "Value": 10,
@@ -78,7 +78,7 @@
       "Name": "Dragons_lair",
       "Characters": [
         {
-          "Id": "c2e00f08-001d-4c67-a477-97c4ce2b4e04",
+          "Id": "83236c35-f939-4bf8-8c39-9d5bff30e0a7",
           "Name": "Dragon",
           "Attributes": {
             "HP": 1000
@@ -87,7 +87,7 @@
       ],
       "Items": [
         {
-          "Id": "2e17ab9e-bc82-4405-b28d-a16c22742400",
+          "Id": "00318ac2-6499-47b1-85b4-c4b0462d6bf4",
           "Name": "Dragon_egg",
           "Attributes": {
             "Value": 4000
@@ -105,7 +105,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "8a62bc85-9721-41f9-b43b-b945e2b13f06",
+          "Id": "9469219d-cc41-4f68-b7b2-4299305cb268",
           "Name": "Herbs",
           "Attributes": {
             "Value": 30,
@@ -127,7 +127,7 @@
       "Name": "Pasture",
       "Characters": [
         {
-          "Id": "67bc79e2-ae41-4c4f-9d79-8872a2fa5bcc",
+          "Id": "4d09efd0-deea-49bd-8685-459b75ca89c0",
           "Name": "Sheep",
           "Attributes": {
             "HP": 10,
@@ -149,7 +149,7 @@
       "Name": "Village",
       "Items": [
         {
-          "Id": "8963dfd6-f9ae-47aa-8b80-d484eb5942f9",
+          "Id": "7121e946-4650-4998-8b01-5a590f3e5dd4",
           "Name": "Well"
         }
       ],
@@ -167,7 +167,7 @@
       "Name": "Inn",
       "Characters": [
         {
-          "Id": "d2ee08ed-cf51-41b2-8aae-3a359020231e",
+          "Id": "76b7a702-d124-4cc3-83ba-3a595e0ab164",
           "Name": "Innkeeper",
           "Attributes": {
             "HP": 100,
@@ -175,7 +175,7 @@
           },
           "Items": [
             {
-              "Id": "56679add-caa1-4d54-9e8d-ce66e443ee85",
+              "Id": "4375588a-6319-4b5b-b704-631f21c06f00",
               "Name": "Poison",
               "Attributes": {
                 "Value": 1000,
@@ -185,7 +185,7 @@
           ]
         },
         {
-          "Id": "7e2ed797-cff0-4d30-ab7c-4fa4ece28937",
+          "Id": "93395ff9-2644-480c-b309-d5be0a384b73",
           "Name": "Drunkard",
           "Attributes": {
             "HP": 100,
@@ -194,7 +194,7 @@
           },
           "Items": [
             {
-              "Id": "3acafab5-7244-4d0e-bbd6-6d7d62fb5a8d",
+              "Id": "295798c5-a38c-406f-aa2d-0b7485f77617",
               "Name": "Alcohol",
               "Attributes": {
                 "Value": 3,
@@ -215,7 +215,7 @@
       ]
     },
     {
-      "Id": "9a7f334a-a050-41e2-a0ef-f427d0440416",
+      "Id": "b0ca140c-6b85-4edb-a611-596c8ae71a52",
       "Name": "Prison",
       "Connections": [
         {
@@ -225,14 +225,14 @@
     }
   ],
   "production": {
-    "Title": "Location change / Zmiana lokacji",
-    "TitleGeneric": "Teleportation / Teleportacja",
-    "Description": "«Bohater» przechodzi do sąsiedniej lokacji («Lokacja_B»).",
-    "Override": 1,
+    "Title": "Dropping item / Odłożenie przedmiotu",
+    "TitleGeneric": "",
+    "Description": "«Bohater» odkłada przedmiot («Something») do lokacji.",
+    "Override": 0,
     "LSide": {
       "Locations": [
         {
-          "Id": "Lokacja_A",
+          "Id": "LokacjaA",
           "Attributes": {},
           "Characters": [
             {
@@ -240,20 +240,17 @@
               "IsObject": true,
               "Attributes": {},
               "Characters": [],
-              "Items": []
+              "Items": [
+                {
+                  "Id": "Something",
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                }
+              ]
             }
           ],
-          "Items": [],
-          "Connections": [
-            {
-              "Destination": {
-                "Id": "Lokacja_B"
-              }
-            }
-          ]
-        },
-        {
-          "Id": "Lokacja_B"
+          "Items": []
         }
       ]
     },
@@ -261,21 +258,21 @@
     "Instructions": [
       {
         "Op": "move",
-        "Nodes": "Bohater",
-        "To": "Lokacja_B/Characters"
+        "Nodes": "Something",
+        "To": "LokacjaA/Items"
       }
     ]
   },
   "variant": [
     {
-      "LSNodeRef": "Lokacja_A",
+      "LSNodeRef": "LokacjaA",
       "WorldNodeId": "140686910713664",
       "WorldNodeName": "Road",
       "WorldNodeAttr": null
     },
     {
       "LSNodeRef": "Bohater",
-      "WorldNodeId": "bdc39f89-6595-4553-9d57-dea561d9a575",
+      "WorldNodeId": "7561838e-7ea6-477f-99e1-ee6ec10b5ed9",
       "WorldNodeName": "Main_hero",
       "WorldNodeAttr": {
         "HP": 100,
@@ -283,11 +280,11 @@
       }
     },
     {
-      "LSNodeRef": "Lokacja_B",
-      "WorldNodeId": "140686910710080",
-      "WorldNodeName": "Wizards_hut",
+      "LSNodeRef": "Something",
+      "WorldNodeId": "0b7992b4-908c-464a-a6d3-d17b97f01205",
+      "WorldNodeName": "Sword",
       "WorldNodeAttr": {
-        "IsPrivate": true
+        "Value": 1000
       }
     }
   ],

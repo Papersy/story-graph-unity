@@ -28,17 +28,16 @@ namespace UI
             foreach (var tile in tiles)
                 tile.itemImage.color = new Color32(0, 0, 0, 0);
 
+            if(items == null)
+                return;
+            
+            
             var index = 0;
             foreach (var item in items)
             {
                 tiles[index].PutItem(item);
                 var index1 = index;
                 tiles[index].Id = index;
-                // tiles[index].Button.onClick.AddListener(() =>
-                // {
-                //     tiles[index1].DropItem();
-                //     AllServices.Container.Single<IGameService>().GetGameController().DeletePlayerItem(item);
-                // });
                 index++;
             }
         }
