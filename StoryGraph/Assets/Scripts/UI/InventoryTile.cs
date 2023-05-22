@@ -40,11 +40,11 @@ namespace UI
             if(item == null)
                 return;
             
-            var dropItem = Resources.Load<Item>($"JsonFiles/Items3D/default");
-            dropItem.ItemInfo = item;
-
+            var prefab = Resources.Load<Item>($"JsonFiles/Items3D/default");
             var spawnPos = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerTransform();
-            Instantiate(dropItem, spawnPos.TransformPoint(Vector3.forward * 2 + Vector3.up), Quaternion.identity);
+            var droppedItem = Instantiate(prefab, spawnPos.TransformPoint(Vector3.forward * 2 + Vector3.up), Quaternion.identity);
+            
+            droppedItem.ItemInfo = item;
 
             itemImage.color = new Color32(0, 0, 0, 0);
             

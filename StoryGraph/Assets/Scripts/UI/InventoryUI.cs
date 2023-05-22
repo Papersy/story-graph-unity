@@ -36,7 +36,6 @@ namespace UI
             foreach (var item in items)
             {
                 tiles[index].PutItem(item);
-                var index1 = index;
                 tiles[index].Id = index;
                 index++;
             }

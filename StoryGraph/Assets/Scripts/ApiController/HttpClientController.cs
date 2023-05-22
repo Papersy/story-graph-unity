@@ -20,7 +20,6 @@ namespace ApiController
             {
                 string json = await response.Content.ReadAsStringAsync();
                 string jsonFormatted = JValue.Parse(json).ToString(Formatting.Indented);
-                // Parse the JSON response here
 
                 return jsonFormatted;
             }
@@ -57,8 +56,6 @@ namespace ApiController
         {
             var json = $"{"{"}\n\"world\":{world},\n\"production\":{production},\n\"variant\":{variant},\n\"object\":\"{obj}\"{"}"}";
 
-            Debug.Log(json);
-            
             if(httpClient == null)
                 httpClient = new HttpClient();
             

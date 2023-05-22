@@ -42,6 +42,7 @@ public class GameController
         _worlds = dict["world"];
         _availableProductions = dict["available_productions"];
 
+        WriteLogAboutNewWorld(json);
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
         GenerateLocation(_worlds);
@@ -58,12 +59,18 @@ public class GameController
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        // GenerateLocation(_worlds);
         
         _currentLocation = GetCurrentLocation(_worlds);
         GenerateItemsForLocation(_currentLocation);
     }
 
+    private void DeserializeFileAfterInventoryChange(string json)
+    {
+        var dict = JToken.Parse(json);
+        _worlds = dict["world"];
+        _availableProductions = dict["available_productions"];
+    }
+    
     private JToken GetCurrentLocation(JToken worlds)
     {
         foreach (var location in worlds)
@@ -105,7 +112,6 @@ public class GameController
                 _currentLocationController.SpawnItem(item);
             }
         }
-        
     }
 
     private void GenerateItemsForNpc(JToken items)
@@ -201,7 +207,16 @@ public class GameController
 
         WriteLogAboutNewWorld(json);
 
-        DeserializeFileAfterLocationChange(json);
+        DeserializeFileAfterInventoryChange(json);
+    }
+
+    public async void PickItem(string pickingItemName)
+    {
+        var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Picking item up", _availableProductions), FindVariantOfPicking(pickingItemName), _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+
+        DeserializeFileAfterInventoryChange(json);
     }
 
     public string GetLocationNameById(string id)
@@ -246,7 +261,29 @@ public class GameController
 
             if (firstWord == "Dropping item")
             {
-                Debug.Log(entity);
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[2]["WorldNodeName"].ToString() == itemName)
+                        return variant;
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    private JToken FindVariantOfPicking(string itemName)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in _availableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Picking item up")
+            {
                 foreach (var variant in entity["variants"])
                 {
                     if (variant[2]["WorldNodeName"].ToString() == itemName)
