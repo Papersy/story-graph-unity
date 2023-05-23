@@ -7,6 +7,8 @@ TagManager:
   - InventoryTile
   - Inventory
   - UI_Background
+  - CinemachineTarget
+  - Pickable
   layers:
   - Default
   - TransparentFX
