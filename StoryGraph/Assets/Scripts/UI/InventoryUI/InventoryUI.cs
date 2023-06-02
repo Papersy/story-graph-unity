@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
-using CodeBase.Infrastructure.Services;
-using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
-    public class InventoryUI : MonoBehaviour
+    public class InventoryUI : BaseWindow
     {
         [SerializeField] private GameObject container;
         [SerializeField] private List<InventoryTile> tiles;
@@ -30,8 +27,7 @@ namespace UI
 
             if(items == null)
                 return;
-            
-            
+
             var index = 0;
             foreach (var item in items)
             {

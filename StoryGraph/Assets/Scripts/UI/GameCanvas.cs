@@ -1,31 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using CodeBase.Infrastructure.Services;
+﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 namespace UI
 {
     public class GameCanvas : MonoBehaviour
     {
-        [SerializeField] private GameObject canvas;
-        [SerializeField] private InventoryUI inventoryUI;
+        [SerializeField] private GameObject _canvas;
+        [SerializeField] private InventoryUI _inventoryUI;
 
-        #region Switch Location
-        [SerializeField] private Button btnPrefab;
-        [SerializeField] private GameObject container;
-        [SerializeField] private GameObject buttonsContainer;
-        [SerializeField] private List<Button> buttons;
-        #endregion
-
-        #region New location info
-        [SerializeField] private GameObject newLocationPanel;
-        [SerializeField] private TextMeshProUGUI newLocationText;
-        #endregion
+        public TeleportUI.TeleportUI TeleportUI;
+        public LocationInfoUI LocationInfoUI;
 
         private IGameService _gameService;
 
@@ -38,14 +25,14 @@ namespace UI
         {
             if (Keyboard.current.tabKey.wasPressedThisFrame)
             {
-                if (!inventoryUI.isActiveAndEnabled)
+                if (!_inventoryUI.isActiveAndEnabled)
                 {
-                    inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
+                    _inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
                     ShowCursor();
                 }
                 else
                 {
-                    inventoryUI.Hide();
+                    _inventoryUI.Hide();
                     HideCursor();
                 }
             }
@@ -61,51 +48,30 @@ namespace UI
             _gameService.GetGameController().OnLocationChanged -= StartNewLocationAnimation;
         }
 
-        public void GenerateLocationButtons(JToken variants)
-        {
-            foreach (var button in buttons)
-                button.gameObject.SetActive(false);
-
-            foreach (var variant in variants)
-            {
-                var btn = GetFreeButton();
-                btn.gameObject.SetActive(true);
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = variant[2]["WorldNodeName"].ToString();
-                btn.GetComponent<Button>().onClick.RemoveAllListeners();
-                btn.GetComponent<Button>().onClick.AddListener(() => _gameService.GetGameController().ChangeLocation(variant[2]["WorldNodeId"].ToString(), variant));
-            }
-        }
+        public void GenerateLocationButtons(JToken variants) => TeleportUI.GenerateLocationButtons(variants);
 
         public void ShowLocationContainer()
         {
             ShowCursor();
-            container.SetActive(true);
+            TeleportUI.ShowLocationContainer();
         }
 
         public void HideLocationsContainer()
         {
             HideCursor();
-            container.SetActive(false);
+            TeleportUI.HideLocationsContainer();
         }
 
         public void Show() =>
-            canvas.SetActive(true);
+            _canvas.SetActive(true);
 
         public void Hide() =>
-            canvas.SetActive(false);
+            _canvas.SetActive(false);
 
         private void StartNewLocationAnimation(string locationName) =>
-            StartCoroutine(NewLocationAnimation(locationName));
+            StartCoroutine(LocationInfoUI.NewLocationAnimation(locationName));
         
-        private IEnumerator NewLocationAnimation(string locationName)
-        {
-            newLocationPanel.SetActive(true);
-            newLocationText.text = locationName;
-
-            yield return new WaitForSeconds(2f);
-            
-            newLocationPanel.SetActive(false);
-        }
+        
 
         private void ShowCursor()
         {
@@ -117,21 +83,6 @@ namespace UI
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-        }
-
-        private Button GetFreeButton()
-        {
-            foreach (var button in buttons)
-            {
-                if (!button.IsActive())
-                    return button;
-            }
-            
-            var btn = Instantiate(btnPrefab, Vector3.one, Quaternion.identity);
-            btn.transform.SetParent(buttonsContainer.transform);
-            buttons.Add(btn);
-
-            return btn;
         }
     }
 }
