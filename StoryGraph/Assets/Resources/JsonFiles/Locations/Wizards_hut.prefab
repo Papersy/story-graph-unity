@@ -98,6 +98,7 @@ Transform:
   - {fileID: 4863504316903206205}
   - {fileID: 472434803306989454}
   - {fileID: 2892031317078521426}
+  - {fileID: 4464802699379058464}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096cafbea7d64bb5afe03c7f5aaf5bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderForItems: {fileID: 6100643709495841195}
   npcPositions:
   - {fileID: 8735381401441333604}
   - {fileID: 4170604276537753920}
@@ -418,6 +420,51 @@ Transform:
   m_Father: {fileID: 472434803306989454}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7309110655245911171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4464802699379058464}
+  - component: {fileID: 6100643709495841195}
+  m_Layer: 0
+  m_Name: ItemsSpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4464802699379058464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309110655245911171}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.013333333, y: 2, z: 0.013333333}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9174908617997887300}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6100643709495841195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309110655245911171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 75, y: 0.1, z: 75}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &7531426809155226533
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +628,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 9174908617997887300}
     m_Modifications:
     - target: {fileID: 1551507857743937030, guid: f3509c1fe7c72074382e560461da948e, type: 3}
+      propertyPath: locationController
+      value: 
+      objectReference: {fileID: 4820911955605302213}
+    - target: {fileID: 5687795566585141854, guid: f3509c1fe7c72074382e560461da948e, type: 3}
       propertyPath: locationController
       value: 
       objectReference: {fileID: 4820911955605302213}

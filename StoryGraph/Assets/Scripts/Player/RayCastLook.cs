@@ -31,7 +31,8 @@ class RayCastLook : MonoBehaviour
             
             if (Physics.Raycast(startPoint.position, rayDirection, out _hit, distance))
             {
-                StartCoroutine(PickUp());
+                if(_hit.transform.gameObject.CompareTag("Pickable"))
+                    StartCoroutine(PickUp());
             }
         }
     }

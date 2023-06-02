@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: locationController
       value: 
       objectReference: {fileID: 4174872431907844705}
+    - target: {fileID: 5687795566585141854, guid: f3509c1fe7c72074382e560461da948e, type: 3}
+      propertyPath: locationController
+      value: 
+      objectReference: {fileID: 4174872431907844705}
     - target: {fileID: 6218333176616814330, guid: f3509c1fe7c72074382e560461da948e, type: 3}
       propertyPath: m_Name
       value: Teleport

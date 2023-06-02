@@ -263,6 +263,7 @@ Transform:
   - {fileID: 1662203049227257518}
   - {fileID: 362417388969499030}
   - {fileID: 3458691609987801475}
+  - {fileID: 7564910705816847681}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -278,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096cafbea7d64bb5afe03c7f5aaf5bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderForItems: {fileID: 4713334256978228290}
   npcPositions:
   - {fileID: 1040373351063359596}
   - {fileID: 159201407810163995}
@@ -511,6 +513,51 @@ Transform:
   m_Father: {fileID: 362417388969499030}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7175841670195986337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7564910705816847681}
+  - component: {fileID: 4713334256978228290}
+  m_Layer: 0
+  m_Name: ItemsSpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7564910705816847681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175841670195986337}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 2, z: 0.013333333}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9174908617997887300}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4713334256978228290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7175841670195986337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 0.1, z: 75}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!1 &7453185333223815981
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +631,14 @@ PrefabInstance:
       propertyPath: locationController
       value: 
       objectReference: {fileID: 8794689146620034900}
+    - target: {fileID: 5687795566585141854, guid: f3509c1fe7c72074382e560461da948e, type: 3}
+      propertyPath: locationController
+      value: 
+      objectReference: {fileID: 8794689146620034900}
+    - target: {fileID: 6030741314216179421, guid: f3509c1fe7c72074382e560461da948e, type: 3}
+      propertyPath: locationController
+      value: 
+      objectReference: {fileID: 8794689146620034900}
     - target: {fileID: 6218333176616814330, guid: f3509c1fe7c72074382e560461da948e, type: 3}
       propertyPath: m_Name
       value: Teleport
@@ -610,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814933940501925234, guid: f3509c1fe7c72074382e560461da948e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5000038
+      value: 2.62
       objectReference: {fileID: 0}
     - target: {fileID: 6814933940501925234, guid: f3509c1fe7c72074382e560461da948e, type: 3}
       propertyPath: m_LocalPosition.z

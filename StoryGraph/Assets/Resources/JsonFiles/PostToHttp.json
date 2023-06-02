@@ -5,7 +5,7 @@
       "Name": "Road",
       "Characters": [
         {
-          "Id": "cd10ad4d-bd65-431d-bdf0-9d44b46118e2",
+          "Id": "b91fb521-f62e-493e-9740-e522acd8981e",
           "Name": "Main_hero",
           "Attributes": {
             "HP": 100,
@@ -15,7 +15,7 @@
       ],
       "Items": [
         {
-          "Id": "05f2ff65-d2cd-42f0-a762-ef80d97e1ab9",
+          "Id": "39a53dfc-dd6c-4307-bf7b-73fb19fac18c",
           "Name": "Sword",
           "Attributes": {
             "Value": 1000
@@ -48,7 +48,7 @@
       },
       "Characters": [
         {
-          "Id": "ea307438-e3f8-4a38-b7bb-c70d71232c77",
+          "Id": "85d3acb4-e857-42ea-bbe0-ee2f6faeb0e6",
           "Name": "Wizard",
           "Attributes": {
             "HP": 200,
@@ -59,7 +59,7 @@
       ],
       "Items": [
         {
-          "Id": "50062a5e-8726-4439-a125-21dda296b567",
+          "Id": "d96e500f-c5ab-4cfb-ac72-1c547783c91d",
           "Name": "Elixir",
           "Attributes": {
             "Value": 10,
@@ -78,7 +78,7 @@
       "Name": "Dragons_lair",
       "Characters": [
         {
-          "Id": "ca5c82a7-5d72-4dd2-a27a-e954d7dfa050",
+          "Id": "3e2b9b62-23c5-418e-9c53-7e2d420a8f63",
           "Name": "Dragon",
           "Attributes": {
             "HP": 1000
@@ -87,7 +87,7 @@
       ],
       "Items": [
         {
-          "Id": "cc4b0b9c-93b0-4bb7-82d5-605340f93b7c",
+          "Id": "fe85a491-cc4c-4688-890f-9f1248de3c85",
           "Name": "Dragon_egg",
           "Attributes": {
             "Value": 4000
@@ -105,7 +105,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "0c245f29-e264-4744-a062-257cc6cdf9c8",
+          "Id": "c679e9d4-ea40-4381-8e7a-713cc7a6be7a",
           "Name": "Herbs",
           "Attributes": {
             "Value": 30,
@@ -127,7 +127,7 @@
       "Name": "Pasture",
       "Characters": [
         {
-          "Id": "bc9fb658-76e7-4825-a8ba-084ccd60c152",
+          "Id": "32260f15-e9c9-4e95-86fb-7ede30732bee",
           "Name": "Sheep",
           "Attributes": {
             "HP": 10,
@@ -149,7 +149,7 @@
       "Name": "Village",
       "Items": [
         {
-          "Id": "747dade4-0fd1-4376-9890-1a4436a3f750",
+          "Id": "c3058414-b6a4-4143-afb4-abcd77227849",
           "Name": "Well"
         }
       ],
@@ -167,7 +167,7 @@
       "Name": "Inn",
       "Characters": [
         {
-          "Id": "fe59ac94-ed81-40e1-8dd6-4c32ad2d7913",
+          "Id": "5fcb533b-6815-4c3c-99ad-5e3dbcbe70b2",
           "Name": "Innkeeper",
           "Attributes": {
             "HP": 100,
@@ -175,7 +175,7 @@
           },
           "Items": [
             {
-              "Id": "7cb40406-c781-4e6d-8191-6941f3cd054c",
+              "Id": "91fddfc1-9118-4059-ae58-a192e2a98887",
               "Name": "Poison",
               "Attributes": {
                 "Value": 1000,
@@ -185,7 +185,7 @@
           ]
         },
         {
-          "Id": "8226e8d3-d338-4065-9317-eb174357bc7b",
+          "Id": "27832f09-0257-4692-bcac-e858860154e3",
           "Name": "Drunkard",
           "Attributes": {
             "HP": 100,
@@ -194,7 +194,7 @@
           },
           "Items": [
             {
-              "Id": "f08342aa-f7dd-4b0c-a6f4-2d9c9474ae41",
+              "Id": "1e1c411c-ae82-48ea-8f20-4ff1be7322e0",
               "Name": "Alcohol",
               "Attributes": {
                 "Value": 3,
@@ -215,7 +215,7 @@
       ]
     },
     {
-      "Id": "f7aac780-add9-405d-855e-ec4e8b54fc1e",
+      "Id": "145b55a8-1a88-4b2d-bf3c-b5a03d7fff7e",
       "Name": "Prison",
       "Connections": [
         {
@@ -272,7 +272,7 @@
     },
     {
       "LSNodeRef": "Bohater",
-      "WorldNodeId": "cd10ad4d-bd65-431d-bdf0-9d44b46118e2",
+      "WorldNodeId": "b91fb521-f62e-493e-9740-e522acd8981e",
       "WorldNodeName": "Main_hero",
       "WorldNodeAttr": {
         "HP": 100,
@@ -281,7 +281,7 @@
     },
     {
       "LSNodeRef": "Something",
-      "WorldNodeId": "05f2ff65-d2cd-42f0-a762-ef80d97e1ab9",
+      "WorldNodeId": "39a53dfc-dd6c-4307-bf7b-73fb19fac18c",
       "WorldNodeName": "Sword",
       "WorldNodeAttr": {
         "Value": 1000

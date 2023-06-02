@@ -24,9 +24,9 @@ public class GameController
     private string _mainPlayerName = "";
     private string _currentLocationId = "";
 
-    private JToken _worlds;
-    private JToken _currentLocation;
-    private JToken _availableProductions;
+    private JToken _jWorlds;
+    private JToken _jCurrentLocation;
+    private JToken _jAvailableProductions;
     private LocationController _currentLocationController;
     
     public event Action<string> OnLocationChanged;
@@ -39,36 +39,53 @@ public class GameController
     {
         var json = await HttpClientController.GetNewWorld();
         var dict = JToken.Parse(json.ToString());
-        _worlds = dict["world"];
-        _availableProductions = dict["available_productions"];
+        _jWorlds = dict["world"];
+        _jAvailableProductions = dict["available_productions"];
 
         WriteLogAboutNewWorld(json);
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        GenerateLocation(_worlds);
+        GenerateLocation(_jWorlds);
         
-        _currentLocation = GetCurrentLocation(_worlds);
-        GenerateItemsForLocation(_currentLocation);
+        _jCurrentLocation = GetCurrentLocation(_jWorlds);
+        GenerateItemsForLocation(_jCurrentLocation);
     }
 
     private void DeserializeFileAfterLocationChange(string json)
     {
         var dict = JToken.Parse(json);
-        _worlds = dict["world"];
-        _availableProductions = dict["available_productions"];
+        _jWorlds = dict["world"];
+        _jAvailableProductions = dict["available_productions"];
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
         
-        _currentLocation = GetCurrentLocation(_worlds);
-        GenerateItemsForLocation(_currentLocation);
+        _jCurrentLocation = GetCurrentLocation(_jWorlds);
+        GenerateItemsForLocation(_jCurrentLocation);
+        
+        InitPlayer(_currentLocationController);
     }
 
     private void DeserializeFileAfterInventoryChange(string json)
     {
         var dict = JToken.Parse(json);
-        _worlds = dict["world"];
-        _availableProductions = dict["available_productions"];
+        _jWorlds = dict["world"];
+        _jAvailableProductions = dict["available_productions"];
+        
+        foreach (var location in _jWorlds)
+        {
+            if (location["Id"]?.ToString() == _currentLocationId)
+            {
+                _jCurrentLocation = location;
+                var characters = location["Characters"];
+                
+                foreach (var character in characters)
+                {
+                    if (character["Id"].ToString() == _mainPlayerId)
+                        _playerItems = character["Items"];
+                }
+            }
+        }
     }
     
     private JToken GetCurrentLocation(JToken worlds)
@@ -133,7 +150,9 @@ public class GameController
                 
                 if(_currentLocationController != null)
                     GameObject.Destroy(_currentLocationController.gameObject);
+                
                 _currentLocationController = locationController;
+                _currentLocationController.InitLocation(_jCurrentLocation);
                 
                 InitPlayer(locationController);
             }
@@ -170,7 +189,7 @@ public class GameController
         char[] delimiter = { '/' };
         JToken teleportationVariants = null;
 
-        foreach (var availableProduction in _availableProductions)
+        foreach (var availableProduction in _jAvailableProductions)
         {
             var title = availableProduction["prod"]["Title"].ToString();
             string[] words = title.Split(delimiter);
@@ -188,7 +207,7 @@ public class GameController
 
     public async void ChangeLocation(string id, JToken variant)
     {
-        var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Location change", _availableProductions), variant, _mainPlayerName);
+        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Location change", _jAvailableProductions), variant, _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
@@ -203,7 +222,7 @@ public class GameController
 
     public async void DropItem(string droppingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Dropping item", _availableProductions), FindVariantOfDropping(droppingItemName), _mainPlayerName);
+        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Dropping item", _jAvailableProductions), FindVariantOfDropping(droppingItemName), _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
@@ -212,11 +231,18 @@ public class GameController
 
     public async void PickItem(string pickingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_worlds, FindProd("Picking item up", _availableProductions), FindVariantOfPicking(pickingItemName), _mainPlayerName);
+        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Picking item up", _jAvailableProductions), FindVariantOfPicking(pickingItemName), _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
         DeserializeFileAfterInventoryChange(json);
+    }
+
+    public async void GetItemFromNpc(string npcName, string pickingItemName)
+    {
+        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Item acquisition from another character", _jAvailableProductions), FindVariantOfGettingFromNpc(npcName, pickingItemName), _mainPlayerName);
+        
+        WriteLogAboutNewWorld(json);
     }
 
     public string GetLocationNameById(string id)
@@ -253,7 +279,7 @@ public class GameController
     {
         char[] delimiter = { '/' };
         
-        foreach (var entity in _availableProductions)
+        foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
             string[] words = title.Split(delimiter);
@@ -276,7 +302,7 @@ public class GameController
     {
         char[] delimiter = { '/' };
         
-        foreach (var entity in _availableProductions)
+        foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
             string[] words = title.Split(delimiter);
@@ -287,6 +313,30 @@ public class GameController
                 foreach (var variant in entity["variants"])
                 {
                     if (variant[2]["WorldNodeName"].ToString() == itemName)
+                        return variant;
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    private JToken FindVariantOfGettingFromNpc(string npcName, string itemName)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Item acquisition from another character")
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[3]["WorldNodeName"].ToString() == itemName &&
+                        variant[0]["WorldNodeName"].ToString() == npcName)
                         return variant;
                 }
             }
