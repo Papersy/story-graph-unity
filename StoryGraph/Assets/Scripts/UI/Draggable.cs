@@ -1,15 +1,32 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Action OnDropItem;
-    
-    private Ray _ray;
-    private RaycastHit _hit;
+    [HideInInspector] public Transform ParentAfterDrag;
+    public Image ItemImage;
+    public Transform Root;
 
+    public JToken Item;
+
+    private RaycastHit[] _hits;
     private bool _canDrop = false;
+
+    public void Init(Transform root, JToken item)
+    {
+        Root = root;
+        Item = item;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        ParentAfterDrag = transform.parent;
+        transform.SetParent(Root);
+        transform.SetAsLastSibling();
+        ItemImage.raycastTarget = false;
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -18,21 +35,7 @@ public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.localPosition = Vector3.zero;
-        
-        if(_canDrop)
-            OnDropItem?.Invoke();
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.CompareTag("Inventory"))
-            _canDrop = true;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Inventory"))
-            _canDrop = false;
+        transform.SetParent(ParentAfterDrag);
+        ItemImage.raycastTarget = true;
     }
 }

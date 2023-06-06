@@ -10,7 +10,7 @@ namespace UI
 
         public IGameService GameService;
         
-        public void Awake()
+        public virtual void Awake()
         {
             GameService = AllServices.Container.Single<IGameService>();
             

@@ -1,57 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using CodeBase.Infrastructure.Services;
+﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using LocationDir;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace UI
 {
-    public class InventoryTile : MonoBehaviour
+    public class InventoryTile : MonoBehaviour, IDropHandler
     {
-        [SerializeField] private Draggable container;
-        
         public int Id;
-        public Button Button;
-        public Image itemImage;
-        public JToken item;
+        private Draggable _itemDraggable;
 
-        private void OnEnable()
+        public void PutItem(Draggable item)
         {
-            container.OnDropItem += DropItem;
-        }
-
-        private void OnDisable()
-        {
-            container.OnDropItem -= DropItem;
-        }
-
-        public void PutItem(JToken item)
-        {
-            this.item = item;
-            
-            itemImage.color = new Color32(255, 255, 255, 255);
-            itemImage.sprite = Resources.Load<Sprite>($"JsonFiles/Items/{item["Name"].ToString().ToLower()}");
+            _itemDraggable = item;
         }
 
         private void DropItem()
         {
-            if(item == null)
+            if (_itemDraggable == null)
                 return;
-            
+
             var prefab = Resources.Load<Item>($"JsonFiles/Items3D/default");
             var spawnPos = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerTransform();
-            var droppedItem = Instantiate(prefab, spawnPos.TransformPoint(Vector3.forward * 2 + Vector3.up), Quaternion.identity);
-            
-            droppedItem.ItemInfo = item;
+            var droppedItem = Instantiate(prefab, spawnPos.TransformPoint(Vector3.forward * 2 + Vector3.up),
+                Quaternion.identity);
 
-            itemImage.color = new Color32(0, 0, 0, 0);
+            droppedItem.ItemInfo = _itemDraggable.Item;
             
-            AllServices.Container.Single<IGameService>().GetGameController().DropItem(item["Name"].ToString());
 
-            item = null;
+            AllServices.Container.Single<IGameService>().GetGameController().DropItem(_itemDraggable.Item["Name"].ToString());
+
+            _itemDraggable = null;
+        }
+
+        public void OnDrop(PointerEventData eventData)
+        {
+            if(transform.childCount > 0)
+                return;
+            
+            GameObject obj = eventData.pointerDrag;
+            _itemDraggable = obj.GetComponent<Draggable>();
+            _itemDraggable.ParentAfterDrag = transform;
         }
     }
 }

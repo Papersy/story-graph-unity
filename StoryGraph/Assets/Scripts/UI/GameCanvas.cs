@@ -32,7 +32,7 @@ namespace UI
                 }
                 else
                 {
-                    _inventoryUI.Hide();
+                    _inventoryUI.HideInventory();
                     HideCursor();
                 }
             }
