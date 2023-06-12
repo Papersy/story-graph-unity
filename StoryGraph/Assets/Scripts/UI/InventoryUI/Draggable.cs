@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Infrastructure;
+using Newtonsoft.Json.Linq;
+using UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -6,6 +8,7 @@ using UnityEngine.UI;
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [HideInInspector] public Transform ParentAfterDrag;
+    public InventoryType Type;
     public Image ItemImage;
     public Transform Root;
 
@@ -18,6 +21,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         Root = root;
         Item = item;
+        
+        ItemImage.sprite = Resources.Load<Sprite>(ConstantsData.IconsAddress + item["Name"]);
     }
 
     public void OnBeginDrag(PointerEventData eventData)

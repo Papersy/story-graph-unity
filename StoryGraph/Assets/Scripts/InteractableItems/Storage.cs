@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace LocationDir
 {
-    public class Storage : MonoBehaviour
+    public class Storage
     {
-        public List<JToken> ListOfItems { get; set; }
+        public List<JToken> ListOfItems = new List<JToken>();
     }
 }

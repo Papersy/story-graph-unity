@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 2789140835396950861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.6215, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 0.5, z: 75}
+  m_LocalScale: {x: 50, y: 0.5, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7401099321728670901}
@@ -280,19 +280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliderForItems: {fileID: 4713334256978228290}
-  npcPositions:
-  - {fileID: 1040373351063359596}
-  - {fileID: 159201407810163995}
-  - {fileID: 4060541941288892514}
-  - {fileID: 1965988841125587924}
-  - {fileID: 3720259281129443736}
-  - {fileID: 3237297187358385387}
-  - {fileID: 7848939373301170380}
-  - {fileID: 7213481739725389702}
-  - {fileID: 1455364737415125636}
-  - {fileID: 8492850443511010733}
-  itemsPositions:
-  - {fileID: 2441759439499250819}
   spawnPoint: {fileID: 7401099321728670901}
 --- !u!33 &8102775325764431626
 MeshFilter:
@@ -539,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 7175841670195986337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 2, z: 0.013333333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9174908617997887300}
@@ -556,8 +543,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100, y: 0.1, z: 75}
-  m_Center: {x: 0, y: 0.4, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &7453185333223815981
 GameObject:
   m_ObjectHideFlags: 0

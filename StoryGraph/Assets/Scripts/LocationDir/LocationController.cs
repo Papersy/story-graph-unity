@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
@@ -37,10 +36,11 @@ namespace LocationDir
 
         private Vector3 GetPointForEntitySpawn()
         {
+            var bounds = colliderForItems.bounds;
             var point = new Vector3(
-                Random.Range(colliderForItems.bounds.min.x, colliderForItems.bounds.max.x),
-                Random.Range(colliderForItems.bounds.min.y, colliderForItems.bounds.max.y),
-                Random.Range(colliderForItems.bounds.min.z, colliderForItems.bounds.max.z)
+                Random.Range(bounds.min.x, bounds.max.x),
+                Random.Range(colliderForItems.bounds.min.y, bounds.max.y),
+                Random.Range(colliderForItems.bounds.min.z, bounds.max.z)
             );
 
             return point;
@@ -70,9 +70,9 @@ namespace LocationDir
             var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
             if (itemMesh == null)
                 itemMesh = Resources.Load<Item>("JsonFiles/Items3D/default");
-            itemMesh.ItemInfo = item;
 
             var obj = Instantiate(itemMesh, position, Quaternion.identity);
+            obj.ItemInfo = item;
             _items.Add(obj.gameObject);
         }
     }

@@ -10,10 +10,14 @@ namespace UI
     {
         [SerializeField] private GameObject _canvas;
         [SerializeField] private InventoryUI _inventoryUI;
+        [SerializeField] private ItemUI _itemUI;
 
         public TeleportUI.TeleportUI TeleportUI;
         public LocationInfoUI LocationInfoUI;
 
+        public InventoryUI InventoryUI => _inventoryUI;
+        public ItemUI ItemUI => _itemUI;
+        
         private IGameService _gameService;
 
         private void Awake()
@@ -27,28 +31,24 @@ namespace UI
             {
                 if (!_inventoryUI.isActiveAndEnabled)
                 {
-                    _inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
-                    ShowCursor();
+                    ShowMainInventory();
                 }
                 else
                 {
-                    _inventoryUI.HideInventory();
-                    HideCursor();
+                    HideMainInventory();
+                    _itemUI.Hide();
                 }
             }
         }
 
-        private void OnEnable()
-        {
+        private void OnEnable() => 
             _gameService.GetGameController().OnLocationChanged += StartNewLocationAnimation;
-        }
-        
-        private void OnDisable()
-        {
-            _gameService.GetGameController().OnLocationChanged -= StartNewLocationAnimation;
-        }
 
-        public void GenerateLocationButtons(JToken variants) => TeleportUI.GenerateLocationButtons(variants);
+        private void OnDisable() => 
+            _gameService.GetGameController().OnLocationChanged -= StartNewLocationAnimation;
+
+        public void GenerateLocationButtons(JToken variants) => 
+            TeleportUI.GenerateLocationButtons(variants);
 
         public void ShowLocationContainer()
         {
@@ -62,6 +62,18 @@ namespace UI
             TeleportUI.HideLocationsContainer();
         }
 
+        public void ShowMainInventory()
+        {
+            _inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
+            ShowCursor();
+        }
+        
+        public void HideMainInventory()
+        {
+            _inventoryUI.HideInventory();
+            HideCursor();
+        }
+
         public void Show() =>
             _canvas.SetActive(true);
 
@@ -70,8 +82,6 @@ namespace UI
 
         private void StartNewLocationAnimation(string locationName) =>
             StartCoroutine(LocationInfoUI.NewLocationAnimation(locationName));
-        
-        
 
         private void ShowCursor()
         {

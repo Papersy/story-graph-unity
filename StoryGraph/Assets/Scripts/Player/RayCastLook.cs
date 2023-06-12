@@ -3,51 +3,99 @@ using System.Collections;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using LocationDir;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-class RayCastLook : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private Transform startPoint;
-    [SerializeField] private Camera mainCamera;
-    [SerializeField] private float distance;
-
-    private RaycastHit _hit;
-    
-    private void FixedUpdate()
+    class RayCastLook : MonoBehaviour
     {
-        var rayDirection = mainCamera.transform.forward;
-        var startPosDirection = startPoint.forward;
-        Debug.DrawRay(startPoint.position, rayDirection * distance, Color.green);
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Transform _startPoint;
+        [SerializeField] private Camera _mainCamera;
 
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        private const float Distance = 2.5f;
+        private RaycastHit _hit;
+    
+        private float _ePressedTime = 0f;
+        private GameController _gameController;
+        private GameCanvas _gameCanvas;
+        
+        private void Awake()
         {
-            if (Mathf.Abs(startPosDirection.x - rayDirection.x) > 0.4f)
-            {
-                Debug.Log("Too far of my head!!!");
-                return;
-            }
+            _gameController = AllServices.Container.Single<IGameService>().GetGameController();
+            _gameCanvas = AllServices.Container.Single<IUIService>().HudContainer.GameCanvas;
+        }
+
+        private void FixedUpdate()
+        {
+            var rayDirection = _mainCamera.transform.forward;
+            var startPosDirection = _startPoint.forward;
+            Debug.DrawRay(_startPoint.position, rayDirection * Distance, Color.green);
             
-            if (Physics.Raycast(startPoint.position, rayDirection, out _hit, distance))
+            //Check if player want to get item from flour
+            if (Keyboard.current.eKey.wasPressedThisFrame)
             {
-                if(_hit.transform.gameObject.CompareTag("Pickable"))
-                    StartCoroutine(PickUp());
+                if (Mathf.Abs(startPosDirection.x - rayDirection.x) > 0.4f)
+                {
+                    Debug.Log("Too far of my head!!!");
+                    return;
+                }
+            
+                if (Physics.Raycast(_startPoint.position, rayDirection, out _hit, Distance))
+                {
+                    if(_hit.transform.gameObject.CompareTag("Pickable"))
+                        StartCoroutine(PickUp());
+                }
+            }
+            //Check if player want to open item
+            if (Keyboard.current.qKey.wasPressedThisFrame)
+            {
+                if (Mathf.Abs(startPosDirection.x - rayDirection.x) > 0.4f)
+                {
+                    Debug.Log("Too far of my head!!!");
+                    return;
+                }
+                if (Physics.Raycast(_startPoint.position, rayDirection, out _hit, Distance))
+                {
+                    if (_hit.transform.gameObject.CompareTag("Pickable"))
+                    {
+                        var boxName = _hit.transform.GetComponent<Item>().ItemInfo["Name"];
+                        
+                        if(_gameController.IsItStore(_hit.transform.GetComponent<Item>().ItemInfo["Name"]?.ToString(), "Putting item in"))
+                            StartCoroutine(Open());
+                    }
+                }
             }
         }
-    }
 
-    private IEnumerator PickUp()
-    {
-        animator.SetBool("PickUp", true);
+        private IEnumerator PickUp()
+        {
+            const string pickup = "PickUp";
+            
+            _animator.SetBool(pickup, true);
 
-        yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(0.75f);
         
-        animator.SetBool("PickUp", false);
+            _animator.SetBool(pickup, false);
         
-        var itemName = _hit.transform.GetComponent<Item>().ItemInfo["Name"].ToString();
-        AllServices.Container.Single<IGameService>().GetGameController().PickItem(itemName);
+            var itemName = _hit.transform.GetComponent<Item>().ItemInfo["Name"]?.ToString();
+            AllServices.Container.Single<IGameService>().GetGameController().PickItem(itemName);
                 
-        Destroy(_hit.transform.gameObject);
+            Destroy(_hit.transform.gameObject);
+        }
+
+        private IEnumerator Open()
+        {
+            const string open = "Open";
+            
+            yield return new WaitForSeconds(0.75f);
+
+            var item = _hit.transform.GetComponent<Item>();
+            _gameCanvas.ShowMainInventory();
+            _gameCanvas.ItemUI.Show();
+            _gameCanvas.ItemUI.ShowInventoryItems(item);
+        }
     }
 }

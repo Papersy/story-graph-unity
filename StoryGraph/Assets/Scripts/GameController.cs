@@ -245,15 +245,22 @@ public class GameController
         WriteLogAboutNewWorld(json);
     }
 
-    public string GetLocationNameById(string id)
+    public async void PuttingItem(string puttingItemName)
     {
-        foreach (var location in _locations)
-        {
-            if (location.Id.Equals(id))
-                return location.Name;
-        }
+        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Putting item in", _jAvailableProductions), FindPullIn(puttingItemName, "Putting item in"), _mainPlayerName);
+        
+        WriteLogAboutNewWorld(json);
+        
+        DeserializeFileAfterInventoryChange(json);
+    }
 
-        return "unknown_location";
+    public async void PullingItem(string pullingItemName)
+    {
+        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Pulling item out", _jAvailableProductions), FindPullOut(pullingItemName, "Pulling item out"), _mainPlayerName);
+        
+        WriteLogAboutNewWorld(json);
+        
+        DeserializeFileAfterInventoryChange(json);
     }
 
     private JToken FindProd(string name, JToken tokenForSearch)
@@ -273,6 +280,102 @@ public class GameController
         }
 
         return null;
+    }
+
+    private JToken FindVariantTest(string productionName, string lsNodeTarget, string lsNodeItem)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == productionName)
+            {
+                foreach (var variant in entity["variants"][0])
+                {
+                    if (variant["LSNodeRef"].ToString() == lsNodeTarget)
+                        return variant;
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    private JToken FindPullIn(string searchingItem, string productionName)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == productionName)
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[2]["WorldNodeName"].ToString() == searchingItem)
+                        return variant;
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    private JToken FindPullOut(string searchingItem, string productionName)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == productionName)
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[3]["WorldNodeName"].ToString() == searchingItem)
+                        return variant;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public bool IsItStore(string boxName, string productionName)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == productionName)
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    foreach (var item in variant)
+                    {
+                        if (item["LSNodeRef"].ToString() == "Opakowanie" &&
+                            item["WorldNodeName"].ToString() == boxName)
+                            return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
     private JToken FindVariantOfDropping(string itemName)
@@ -347,7 +450,7 @@ public class GameController
 
     private void WriteLogAboutNewWorld(string json)
     {
-        string filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";
+        var filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";
 
         using (StreamWriter writer = new StreamWriter(filePath))
         {
@@ -355,4 +458,6 @@ public class GameController
             writer.Write(jsonFormatted);
         }
     }
+    
+    
 }

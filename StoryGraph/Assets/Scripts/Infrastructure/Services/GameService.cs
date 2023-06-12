@@ -6,16 +6,7 @@
 
         public void GenerateMap()
         {
-            
             _gameController.DeserializeFile();
-            
-            // HttpClientController httpClientController = new HttpClientController();
-            // List<World> lSide;
-
-            // string json = await httpClientController.GetNewWorld();
-            // lSide = DeserializeFile(json);
-            // DeserializeFile();
-
         }
 
 

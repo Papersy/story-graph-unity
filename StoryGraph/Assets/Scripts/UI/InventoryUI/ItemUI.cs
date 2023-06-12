@@ -1,20 +1,19 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json.Linq;
+using LocationDir;
 using UnityEngine;
 
 namespace UI
 {
-    public class InventoryUI : BaseWindow
+    public class ItemUI : BaseWindow
     {
-        private const int InventorySize = 15;
-        
         [SerializeField] private InventoryTile _inventoryTilePrefab;
         [SerializeField] private Draggable _itemPrefab;
-        
-        [SerializeField] private GameObject _itemsInventoryContainer;
-        [SerializeField] private GameObject _tilesContainer;
         [SerializeField] private Transform _inventoryRoot;
-        [SerializeField] private List<InventoryTile> _tiles = new List<InventoryTile>();
+        [SerializeField] private GameObject _tilesContainer;
+        
+        private List<InventoryTile> _tiles = new List<InventoryTile>();
+        
+        private const int InventorySize = 6;
 
         public override void Awake()
         {
@@ -23,33 +22,22 @@ namespace UI
             GenerateTiles();
         }
 
-        public void Show(JToken items)
-        {
-            _itemsInventoryContainer.SetActive(true);
-            ShowInventoryItems(items);
-        }
-
-        public void HideInventory()
-        {
-            Hide();
-            _itemsInventoryContainer.SetActive(false);
-        }
-
-        private void ShowInventoryItems(JToken items)
+        public void ShowInventoryItems(Item item)
         {
             ClearInventory();
-
-            if(items == null)
+            
+            if(item.Storage.ListOfItems == null)
                 return;
+            if(_tiles.Count <= 0)
+                GenerateTiles();
             
             var index = 0;
-            foreach (var item in items)
+            foreach (var i in item.Storage.ListOfItems)
             {
                 var itemObj = Instantiate(_itemPrefab, _tiles[index].transform);
-                itemObj.Init(_inventoryRoot, item);
-                itemObj.Type = InventoryType.Main;
+                itemObj.Init(_inventoryRoot, i);
+                itemObj.Type = InventoryType.Item;
                 _tiles[index].PutItem(itemObj);
-
                 index++;
             }
         }
@@ -65,13 +53,12 @@ namespace UI
                 }
             }
         }
-        
         private void GenerateTiles()
         {
             for (var i = 0; i < InventorySize; i++)
             {
                 var tile = Instantiate(_inventoryTilePrefab, _tilesContainer.transform);
-                tile.CurrentType = InventoryType.Main;
+                tile.CurrentType = InventoryType.Item;
                 _tiles.Add(tile);
             }
         }

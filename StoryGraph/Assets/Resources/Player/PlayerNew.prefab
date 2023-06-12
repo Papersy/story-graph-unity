@@ -2777,10 +2777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3cc011df844767824f84369a63690d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 469307464539649649}
-  startPoint: {fileID: 7733584109329547138}
-  mainCamera: {fileID: 1892660614669291441}
-  distance: 2.5
+  _animator: {fileID: 469307464539649649}
+  _startPoint: {fileID: 7733584109329547138}
+  _mainCamera: {fileID: 1892660614669291441}
 --- !u!1001 &7378231003551374388
 PrefabInstance:
   m_ObjectHideFlags: 0
