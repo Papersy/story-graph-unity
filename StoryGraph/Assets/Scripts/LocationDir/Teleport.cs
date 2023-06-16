@@ -24,18 +24,7 @@ namespace LocationDir
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
-            {
-                // AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.ShowLocationContainer();
-                // locationController.ShowLocationsToGo();
-
                 AllServices.Container.Single<IGameService>().GetGameController().ChangeLocation(Variant);
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Player"))
-                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
         }
     }
 }

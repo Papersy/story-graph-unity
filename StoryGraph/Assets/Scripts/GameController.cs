@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using ApiController;
-using CodeBase.Infrastructure.Services;
 using Infrastructure;
-using Infrastructure.Services;
 using LocationDir;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -19,7 +17,7 @@ public class GameController
     private JToken _playerItems;
 
     private float _xOffset = 0f;
-    
+
     private string _mainPlayerId = "";
     private string _mainPlayerName = "";
     private string _currentLocationId = "";
@@ -28,10 +26,11 @@ public class GameController
     private JToken _jCurrentLocation;
     private JToken _jAvailableProductions;
     private LocationController _currentLocationController;
-    
+
     public event Action<string> OnLocationChanged;
 
     public Vector3 GetPlayerPosition() => _player.Transform.position;
+    public string GetMainPlayerId() => _mainPlayerId;
     public Transform GetPlayerTransform() => _player.Transform;
     public JToken GetPlayerItems() => _playerItems;
 
@@ -45,11 +44,9 @@ public class GameController
         WriteLogAboutNewWorld(json);
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        GenerateLocation(_jWorlds);
-        
+
         _jCurrentLocation = GetCurrentLocation(_jWorlds);
-        GenerateItemsForLocation(_jCurrentLocation);
-        GeneratePortals();
+        GenerateLocation(_jWorlds);
     }
 
     private void DeserializeFileAfterLocationChange(string json)
@@ -60,11 +57,9 @@ public class GameController
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
-        GenerateLocation(_jWorlds);
-        
+
         _jCurrentLocation = GetCurrentLocation(_jWorlds);
-        GenerateItemsForLocation(_jCurrentLocation);
-        GeneratePortals();
+        GenerateLocation(_jWorlds);
     }
 
     private void DeserializeFileAfterInventoryChange(string json)
@@ -72,14 +67,14 @@ public class GameController
         var dict = JToken.Parse(json);
         _jWorlds = dict["world"];
         _jAvailableProductions = dict["available_productions"];
-        
+
         foreach (var location in _jWorlds)
         {
             if (location["Id"]?.ToString() == _currentLocationId)
             {
                 _jCurrentLocation = location;
                 var characters = location["Characters"];
-                
+
                 foreach (var character in characters)
                 {
                     if (character["Id"].ToString() == _mainPlayerId)
@@ -88,7 +83,7 @@ public class GameController
             }
         }
     }
-    
+
     private JToken GetCurrentLocation(JToken worlds)
     {
         foreach (var location in worlds)
@@ -115,35 +110,13 @@ public class GameController
                 _mainPlayerName = character["Name"].ToString();
                 _playerItems = character["Items"];
             }
-            else
-                _currentLocationController.GenerateNpc(character);
+            // else
+            //     _currentLocationController.GenerateNpc(character);
         }
-    }
-
-    private void GenerateItemsForLocation(JToken world)
-    {
-        var items = world["Items"];
-        if (items != null)
-        {
-            foreach (var item in items)
-            {
-                _currentLocationController.GenerateItems(item);
-            }
-        }
-    }
-
-    private void GeneratePortals()
-    {
-        var teleportVariants = FindVariantsOfLocationChange("Location change", _jAvailableProductions);
-        
-        Debug.Log(teleportVariants);
-        
-        _currentLocationController.GeneratePortals(teleportVariants);
     }
 
     private void GenerateItemsForNpc(JToken items)
     {
-        
     }
 
     private void GenerateLocation(JToken worlds)
@@ -154,19 +127,18 @@ public class GameController
             {
                 var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
                 var locationController = Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
-                
-                locationController.Id = world["Id"].ToString();
-                locationController.Name = world["Name"].ToString();
-                
-                if(_currentLocationController != null)
+
+                if (_currentLocationController != null)
+                {
+                    _currentLocationController.ClearLocation();
                     Object.Destroy(_currentLocationController.gameObject);
-                
+                }
+
                 _currentLocationController = locationController;
-                _currentLocationController.InitLocation(_jCurrentLocation);
-                
+                _currentLocationController.InitLocation(_jCurrentLocation, FindVariantsOfLocationChange("Location change", _jAvailableProductions));
+
                 InitPlayer(locationController);
             }
-            _xOffset += 100f;
         }
     }
 
@@ -188,43 +160,21 @@ public class GameController
             var prefab = Resources.Load<PlayerController>(ConstantsData.PlayerAddress);
             _player = Object.Instantiate(prefab, loc.GetSpawnPoint().position, Quaternion.identity);
         }
-        
-        
+
+
         _player.Transform.position = loc.GetSpawnPoint().position;
         _player.EnableCharacterController(true);
     }
 
-    public void ShowLocationToGo()
-    {
-        char[] delimiter = { '/' };
-        JToken teleportationVariants = null;
-
-        foreach (var availableProduction in _jAvailableProductions)
-        {
-            var title = availableProduction["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
-
-            if (firstWord == "Location change")
-            {
-                teleportationVariants = availableProduction["variants"];
-            }
-
-        }
-        
-        // AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.GenerateLocationButtons(teleportationVariants);
-    }
-
     public async void ChangeLocation(JToken variant)
     {
-        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Location change", _jAvailableProductions), variant, _mainPlayerName);
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Location change", _jAvailableProductions), variant, _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
         _player.EnableCharacterController(false);
-        // _currentLocationId = id;
-        
-        // AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
+
         OnLocationChanged?.Invoke(variant[2]["WorldNodeName"].ToString());
 
         DeserializeFileAfterLocationChange(json);
@@ -232,7 +182,8 @@ public class GameController
 
     public async void DropItem(string droppingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Dropping item", _jAvailableProductions), FindVariantOfDropping(droppingItemName), _mainPlayerName);
+        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Dropping item", _jAvailableProductions),
+            FindVariantOfDropping(droppingItemName), _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
@@ -241,7 +192,9 @@ public class GameController
 
     public async void PickItem(string pickingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Picking item up", _jAvailableProductions), FindVariantOfPicking(pickingItemName), _mainPlayerName);
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Picking item up", _jAvailableProductions), FindVariantOfPicking(pickingItemName),
+            _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
@@ -250,33 +203,39 @@ public class GameController
 
     public async void GetItemFromNpc(string npcName, string pickingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Item acquisition from another character", _jAvailableProductions), FindVariantOfGettingFromNpc(npcName, pickingItemName), _mainPlayerName);
-        
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Item acquisition from another character", _jAvailableProductions),
+            FindVariantOfGettingFromNpc(npcName, pickingItemName), _mainPlayerName);
+
         WriteLogAboutNewWorld(json);
     }
 
     public async void PuttingItem(string puttingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Putting item in", _jAvailableProductions), FindPullIn(puttingItemName, "Putting item in"), _mainPlayerName);
-        
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Putting item in", _jAvailableProductions), FindPullIn(puttingItemName, "Putting item in"),
+            _mainPlayerName);
+
         WriteLogAboutNewWorld(json);
-        
+
         DeserializeFileAfterInventoryChange(json);
     }
 
     public async void PullingItem(string pullingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Pulling item out", _jAvailableProductions), FindPullOut(pullingItemName, "Pulling item out"), _mainPlayerName);
-        
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Pulling item out", _jAvailableProductions), FindPullOut(pullingItemName, "Pulling item out"),
+            _mainPlayerName);
+
         WriteLogAboutNewWorld(json);
-        
+
         DeserializeFileAfterInventoryChange(json);
     }
 
     private JToken FindProd(string name, JToken tokenForSearch)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in tokenForSearch)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -294,8 +253,8 @@ public class GameController
 
     private JToken FindVariantTest(string productionName, string lsNodeTarget, string lsNodeItem)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -314,11 +273,11 @@ public class GameController
 
         return null;
     }
-    
+
     private JToken FindPullIn(string searchingItem, string productionName)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -337,11 +296,11 @@ public class GameController
 
         return null;
     }
-    
+
     private JToken FindPullOut(string searchingItem, string productionName)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -363,8 +322,8 @@ public class GameController
 
     public bool IsItStore(string boxName, string productionName)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -390,8 +349,8 @@ public class GameController
 
     private JToken FindVariantOfDropping(string itemName)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -410,11 +369,11 @@ public class GameController
 
         return null;
     }
-    
+
     private JToken FindVariantOfPicking(string itemName)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -433,11 +392,11 @@ public class GameController
 
         return null;
     }
-    
+
     private JToken FindVariantOfGettingFromNpc(string npcName, string itemName)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -460,8 +419,8 @@ public class GameController
 
     private JToken FindVariantsOfLocationChange(string name, JToken tokenForSearch)
     {
-        char[] delimiter = { '/' };
-        
+        char[] delimiter = {'/'};
+
         foreach (var entity in tokenForSearch)
         {
             var title = entity["prod"]["Title"].ToString();
@@ -487,6 +446,4 @@ public class GameController
             writer.Write(jsonFormatted);
         }
     }
-    
-    
 }

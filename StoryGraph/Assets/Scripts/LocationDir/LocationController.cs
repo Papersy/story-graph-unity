@@ -20,19 +20,31 @@ namespace LocationDir
         public string Name { get; set; }
 
         private JToken _locationInfo;
+        private JToken _locationVariants;
 
         public Transform GetSpawnPoint() => spawnPoint;
 
-        public void InitLocation(JToken loc)
+        public void InitLocation(JToken locationInfo, JToken locationTeleportsVariants)
         {
-            _locationInfo = loc;
+            _locationInfo = locationInfo;
+            _locationVariants = locationTeleportsVariants;
 
+            Debug.Log(_locationInfo);
+            Debug.Log(_locationVariants);
+
+            GenerateNpc(_locationInfo);
+            GenerateItems(_locationInfo);
+            GeneratePortals(_locationVariants);
+        }
+
+        public void ClearLocation()
+        {
             foreach (var character in _characters)
                 Destroy(character);
             foreach (var item in _items)
                 Destroy(item);
             foreach (var teleport in _teleports)
-                Destroy(teleport);    
+                Destroy(teleport);
         }
 
         private Vector3 GetPointForEntitySpawn()
@@ -47,39 +59,55 @@ namespace LocationDir
             return point;
         }
 
-        public void ShowLocationsToGo() =>
-            AllServices.Container.Single<IGameService>().GetGameController().ShowLocationToGo();
-
-        public void GenerateNpc(JToken character)
+        private void GenerateNpc(JToken locationInfo)
         {
-            var position = GetPointForEntitySpawn();
+            var characters = locationInfo["Characters"];
 
-            var npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/" + character["Name"]);
-            if (npc == null)
-                npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/default_npc");
+            if (characters == null)
+                return;
 
-            Debug.Log(character.ToString());
+            foreach (var character in characters)
+            {
+                var position = GetPointForEntitySpawn();
+                var characterId = character["Id"].ToString();
+                
+                if(characterId == AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId())
+                    return;
 
-            var obj = Instantiate(npc, position, Quaternion.identity);
-            obj.NpcInfo = character;
-            obj.Init();
-            _characters.Add(obj.gameObject);
+                var npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/" + character["Name"]);
+                if (npc == null)
+                    npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/default_npc");
+
+                var obj = Instantiate(npc, position, Quaternion.identity);
+                obj.NpcInfo = character;
+                obj.Init();
+
+                _characters.Add(obj.gameObject);
+            }
         }
 
-        public void GenerateItems(JToken item)
+        private void GenerateItems(JToken locationInfo)
         {
-            var position = GetPointForEntitySpawn();
+            var items = locationInfo["Items"];
 
-            var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
-            if (itemMesh == null)
-                itemMesh = Resources.Load<Item>("JsonFiles/Items3D/default");
+            if (items == null)
+                return;
 
-            var obj = Instantiate(itemMesh, position, Quaternion.identity);
-            obj.ItemInfo = item;
-            _items.Add(obj.gameObject);
+            foreach (var item in items)
+            {
+                var position = GetPointForEntitySpawn();
+
+                var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
+                if (itemMesh == null)
+                    itemMesh = Resources.Load<Item>("JsonFiles/Items3D/default");
+
+                var obj = Instantiate(itemMesh, position, Quaternion.identity);
+                obj.ItemInfo = item;
+                _items.Add(obj.gameObject);
+            }
         }
 
-        public void GeneratePortals(JToken variants)
+        private void GeneratePortals(JToken variants)
         {
             var path = "Prefabs/Location/Teleport";
 
@@ -87,10 +115,10 @@ namespace LocationDir
             {
                 var position = GetPointForEntitySpawn();
                 var itemMesh = Resources.Load<Teleport>(path);
-                
+
                 var obj = Instantiate(itemMesh, position, Quaternion.identity);
                 obj.Variant = variant;
-                
+
                 _teleports.Add(obj.gameObject);
             }
         }
