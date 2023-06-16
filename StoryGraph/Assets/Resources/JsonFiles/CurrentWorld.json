@@ -49,7 +49,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -74,7 +74,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -99,7 +99,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -124,7 +124,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -149,7 +149,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -174,7 +174,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -199,7 +199,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -208,7 +208,7 @@
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "86648a63-bed6-4a4b-8093-ba4ec8b30f91",
+            "WorldNodeId": "0bfb3fee-c4a2-465a-aed2-500d5da1c7ac",
             "WorldNodeName": "Prison",
             "WorldNodeAttr": null
           }
@@ -270,7 +270,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -355,7 +355,7 @@
           },
           {
             "LSNodeRef": "BohaterA",
-            "WorldNodeId": "ba08ee7d-7eda-4515-a33c-43dd0e03b2d5",
+            "WorldNodeId": "fb726df0-d0cf-46e8-8453-37d10f302985",
             "WorldNodeName": "Wizard",
             "WorldNodeAttr": {
               "HP": 200,
@@ -365,7 +365,7 @@
           },
           {
             "LSNodeRef": "BohaterB",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -390,7 +390,7 @@
           },
           {
             "LSNodeRef": "BohaterA",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -399,7 +399,7 @@
           },
           {
             "LSNodeRef": "BohaterB",
-            "WorldNodeId": "ba08ee7d-7eda-4515-a33c-43dd0e03b2d5",
+            "WorldNodeId": "fb726df0-d0cf-46e8-8453-37d10f302985",
             "WorldNodeName": "Wizard",
             "WorldNodeAttr": {
               "HP": 200,
@@ -468,7 +468,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -477,7 +477,7 @@
           },
           {
             "LSNodeRef": "Something",
-            "WorldNodeId": "95093f33-b769-474c-a084-6429cdb24325",
+            "WorldNodeId": "2c67da59-0239-4c91-a598-6fb6c729140b",
             "WorldNodeName": "Elixir",
             "WorldNodeAttr": {
               "Value": 10,
@@ -489,9 +489,9 @@
     },
     {
       "prod": {
-        "Title": "Pulling item out / Wyciągnięcie przedmiotu",
+        "Title": "Dropping item / Odłożenie przedmiotu",
         "TitleGeneric": "",
-        "Description": "«Bohater» wyciąga przedmiot («Something») z innego przedmiotu («Opakowanie»).",
+        "Description": "«Bohater» odkłada przedmiot («Something») do lokacji.",
         "Override": 0,
         "LSide": {
           "Locations": [
@@ -504,14 +504,6 @@
                   "IsObject": true,
                   "Attributes": {},
                   "Characters": [],
-                  "Items": []
-                }
-              ],
-              "Items": [
-                {
-                  "Id": "Opakowanie",
-                  "Attributes": {},
-                  "Characters": [],
                   "Items": [
                     {
                       "Id": "Something",
@@ -521,7 +513,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "Items": []
             }
           ]
         },
@@ -530,7 +523,7 @@
           {
             "Op": "move",
             "Nodes": "Something",
-            "To": "Bohater/Items"
+            "To": "LokacjaA/Items"
           }
         ]
       },
@@ -546,7 +539,7 @@
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -554,20 +547,97 @@
             }
           },
           {
-            "LSNodeRef": "Opakowanie",
-            "WorldNodeId": "95093f33-b769-474c-a084-6429cdb24325",
-            "WorldNodeName": "Elixir",
+            "LSNodeRef": "Something",
+            "WorldNodeId": "7dd1a73a-6046-43ea-bac2-647fdc31fa2d",
+            "WorldNodeName": "Sword",
             "WorldNodeAttr": {
-              "Value": 10,
-              "NutritionalValue": 1000
+              "Value": 1000
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Putting item in / Włożenie przedmiotu",
+        "TitleGeneric": "",
+        "Description": "«Bohater» wkłada przedmiot («Something») do innego przedmiotu («Opakowanie»).",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "LokacjaA",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "Bohater",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": [
+                    {
+                      "Id": "Something",
+                      "Attributes": {},
+                      "Characters": [],
+                      "Items": []
+                    }
+                  ]
+                }
+              ],
+              "Items": [
+                {
+                  "Id": "Opakowanie",
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                }
+              ]
+            }
+          ]
+        },
+        "RSide": {},
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "Something",
+            "To": "Opakowanie/Items"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "140686910710080",
+            "WorldNodeName": "Wizards_hut",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 10
             }
           },
           {
             "LSNodeRef": "Something",
-            "WorldNodeId": "102b28c9-9606-46d5-a051-7ddf6bcf7c0a",
+            "WorldNodeId": "7dd1a73a-6046-43ea-bac2-647fdc31fa2d",
             "WorldNodeName": "Sword",
             "WorldNodeAttr": {
               "Value": 1000
+            }
+          },
+          {
+            "LSNodeRef": "Opakowanie",
+            "WorldNodeId": "2c67da59-0239-4c91-a598-6fb6c729140b",
+            "WorldNodeName": "Elixir",
+            "WorldNodeAttr": {
+              "Value": 10,
+              "NutritionalValue": 1000
             }
           }
         ]
@@ -616,7 +686,7 @@
           },
           {
             "LSNodeRef": "Any1",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -625,7 +695,7 @@
           },
           {
             "LSNodeRef": "Any2",
-            "WorldNodeId": "ba08ee7d-7eda-4515-a33c-43dd0e03b2d5",
+            "WorldNodeId": "fb726df0-d0cf-46e8-8453-37d10f302985",
             "WorldNodeName": "Wizard",
             "WorldNodeAttr": {
               "HP": 200,
@@ -676,11 +746,96 @@
           },
           {
             "LSNodeRef": "Group",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
               "Money": 10
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Item acquisition from another character / Przejęcie przedmiotu od innej postaci",
+        "TitleGeneric": "",
+        "Description": "«BohaterB» oddaje drugiemu bohaterowi («BohaterA») przedmiot («Something»).",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "Somehere",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "BohaterA",
+                  "IsObject": true,
+                  "Attributes": {}
+                },
+                {
+                  "Id": "BohaterB",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": [
+                    {
+                      "Id": "Something",
+                      "Attributes": {}
+                    }
+                  ]
+                }
+              ],
+              "Items": [],
+              "Connections": []
+            }
+          ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "Something",
+            "To": "BohaterA/Items"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "Somehere",
+            "WorldNodeId": "140686910710080",
+            "WorldNodeName": "Wizards_hut",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "fb726df0-d0cf-46e8-8453-37d10f302985",
+            "WorldNodeName": "Wizard",
+            "WorldNodeAttr": {
+              "HP": 200,
+              "Money": 100,
+              "IsAuthority": true
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 10
+            }
+          },
+          {
+            "LSNodeRef": "Something",
+            "WorldNodeId": "7dd1a73a-6046-43ea-bac2-647fdc31fa2d",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "Value": 1000
             }
           }
         ]
@@ -738,7 +893,7 @@
           },
           {
             "LSNodeRef": "Hero",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -819,7 +974,7 @@
           },
           {
             "LSNodeRef": "CharacterA",
-            "WorldNodeId": "ba08ee7d-7eda-4515-a33c-43dd0e03b2d5",
+            "WorldNodeId": "fb726df0-d0cf-46e8-8453-37d10f302985",
             "WorldNodeName": "Wizard",
             "WorldNodeAttr": {
               "HP": 200,
@@ -829,7 +984,7 @@
           },
           {
             "LSNodeRef": "CharacterB",
-            "WorldNodeId": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+            "WorldNodeId": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
             "WorldNodeName": "Main_hero",
             "WorldNodeAttr": {
               "HP": 100,
@@ -870,7 +1025,7 @@
       },
       "Characters": [
         {
-          "Id": "ba08ee7d-7eda-4515-a33c-43dd0e03b2d5",
+          "Id": "fb726df0-d0cf-46e8-8453-37d10f302985",
           "Name": "Wizard",
           "Attributes": {
             "HP": 200,
@@ -879,31 +1034,31 @@
           }
         },
         {
-          "Id": "743712af-1a5c-42e9-8dd0-cd890ea54e1c",
+          "Id": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f",
           "Name": "Main_hero",
           "Attributes": {
             "HP": 100,
             "Money": 10
-          }
-        }
-      ],
-      "Items": [
-        {
-          "Id": "95093f33-b769-474c-a084-6429cdb24325",
-          "Name": "Elixir",
-          "Attributes": {
-            "Value": 10,
-            "NutritionalValue": 1000
           },
           "Items": [
             {
-              "Id": "102b28c9-9606-46d5-a051-7ddf6bcf7c0a",
+              "Id": "7dd1a73a-6046-43ea-bac2-647fdc31fa2d",
               "Name": "Sword",
               "Attributes": {
                 "Value": 1000
               }
             }
           ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "2c67da59-0239-4c91-a598-6fb6c729140b",
+          "Name": "Elixir",
+          "Attributes": {
+            "Value": 10,
+            "NutritionalValue": 1000
+          }
         }
       ],
       "Connections": [
@@ -917,7 +1072,7 @@
       "Name": "Dragons_lair",
       "Characters": [
         {
-          "Id": "d222beff-69d4-4e3c-a4ad-4b762efe7753",
+          "Id": "4fcbd3a2-2306-42e2-b887-ad2ccf0981e3",
           "Name": "Dragon",
           "Attributes": {
             "HP": 1000
@@ -926,7 +1081,7 @@
       ],
       "Items": [
         {
-          "Id": "c661e1b5-8c5e-4725-a553-f6ce3c441395",
+          "Id": "585e2ef9-d4ee-426b-abd9-1f966036c67b",
           "Name": "Dragon_egg",
           "Attributes": {
             "Value": 4000
@@ -944,7 +1099,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "bb93b984-6d46-4a9f-a9a3-fba964821376",
+          "Id": "cb78e7e3-a5f4-4f4d-bfae-370516286f4e",
           "Name": "Herbs",
           "Attributes": {
             "Value": 30,
@@ -966,7 +1121,7 @@
       "Name": "Pasture",
       "Characters": [
         {
-          "Id": "8b6c420b-c356-4df0-a322-28fb9e6a0934",
+          "Id": "3efffef5-6ed8-4f2e-a1a3-c23f47505f11",
           "Name": "Sheep",
           "Attributes": {
             "HP": 10,
@@ -988,7 +1143,7 @@
       "Name": "Village",
       "Items": [
         {
-          "Id": "5365a96d-c0f7-4c48-99a5-4137a1b20500",
+          "Id": "411f1aec-d6e2-4b08-806f-32e20cfbbc5a",
           "Name": "Well"
         }
       ],
@@ -1006,7 +1161,7 @@
       "Name": "Inn",
       "Characters": [
         {
-          "Id": "ff33e577-191b-4a5a-b533-f34e6b878aba",
+          "Id": "fa2d4558-fffd-4cb6-b029-27dfb3a97bc2",
           "Name": "Innkeeper",
           "Attributes": {
             "HP": 100,
@@ -1014,7 +1169,7 @@
           },
           "Items": [
             {
-              "Id": "abd258f4-4842-42b6-98dc-6fcdc54b03b2",
+              "Id": "2274871e-b289-4e69-ba9f-19e08e5615e7",
               "Name": "Poison",
               "Attributes": {
                 "Value": 1000,
@@ -1024,7 +1179,7 @@
           ]
         },
         {
-          "Id": "a39b82b3-2840-4ffb-a03b-e6cd25ea11fe",
+          "Id": "f9b0687c-7680-473e-841d-8dc09548b1d2",
           "Name": "Drunkard",
           "Attributes": {
             "HP": 100,
@@ -1033,7 +1188,7 @@
           },
           "Items": [
             {
-              "Id": "de0dff23-ceb9-40aa-9ea3-9c8373b155ba",
+              "Id": "3760577d-5748-402f-b2bc-2a4391465ee8",
               "Name": "Alcohol",
               "Attributes": {
                 "Value": 3,
@@ -1054,7 +1209,7 @@
       ]
     },
     {
-      "Id": "86648a63-bed6-4a4b-8093-ba4ec8b30f91",
+      "Id": "0bfb3fee-c4a2-465a-aed2-500d5da1c7ac",
       "Name": "Prison",
       "Connections": [
         {
@@ -1064,7 +1219,7 @@
     }
   ],
   "changed_nodes": {
-    "102b28c9-9606-46d5-a051-7ddf6bcf7c0a": ""
+    "3d758cf4-acf1-40f1-b73d-acbd6bdda50f": ""
   },
   "message": null,
   "game_status": "in_progress",
@@ -1098,7 +1253,14 @@
           "HP": 100,
           "Money": 10
         },
-        "items": [],
+        "items": [
+          {
+            "name": "Sword",
+            "attributes": {
+              "Value": 1000
+            }
+          }
+        ],
         "characters": [],
         "knowledge": null,
         "sound": null
@@ -1106,5 +1268,5 @@
     ],
     "main_location_id": "140686910710080"
   },
-  "main_character": "743712af-1a5c-42e9-8dd0-cd890ea54e1c"
+  "main_character": "3d758cf4-acf1-40f1-b73d-acbd6bdda50f"
 }

@@ -58,7 +58,6 @@ MonoBehaviour:
   _canvas: {fileID: 211399475072305309}
   _inventoryUI: {fileID: 4344845894977336985}
   _itemUI: {fileID: 8546448131735679222}
-  TeleportUI: {fileID: 4450907378037966476}
   LocationInfoUI: {fileID: 2546560540168761106}
 --- !u!223 &3097960741599586622
 Canvas:
@@ -155,7 +154,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -457,9 +456,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2834147772025571816
 CanvasRenderer:
@@ -560,14 +559,13 @@ GameObject:
   - component: {fileID: 7166022525848389176}
   - component: {fileID: 3798051531943344830}
   - component: {fileID: 2668230785233003165}
-  - component: {fileID: 4450907378037966476}
   m_Layer: 0
   m_Name: TeleportUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7166022525848389176
 RectTransform:
   m_ObjectHideFlags: 0
@@ -629,23 +627,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 8.51
---- !u!114 &4450907378037966476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4626065176075838814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb622f1951244df185e08c97fcdbf316, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hideOnStart: 1
-  BtnPrefab: {fileID: 6926215060564236682, guid: c19fceebc7bc7ba48878f2a6f8cedc63, type: 3}
-  Container: {fileID: 4626065176075838814}
-  ButtonsContainer: {fileID: 8187644142711367170}
-  Buttons: []
 --- !u!1 &5268160165642921697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1462,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -1.8222961, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5974216173119719038
 MonoBehaviour:

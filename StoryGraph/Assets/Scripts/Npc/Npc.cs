@@ -1,14 +1,22 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
+using TMPro;
 using UnityEngine;
 
 namespace Npc
 {
     public class Npc : MonoBehaviour
     {
+        [SerializeField] private TextMeshProUGUI _npcName;
+    
         public JToken NpcInfo { get; set; }
 
+        public void Init()
+        {
+            _npcName.text = GetNpcName();
+        }
+        
         public void GiveItem()
         {
             var itemName = GetItemName();
@@ -28,6 +36,11 @@ namespace Npc
             }
 
             return null;
+        }
+
+        private string GetNpcName()
+        {
+            return NpcInfo["Name"].ToString();
         }
     }
 }

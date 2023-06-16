@@ -12,7 +12,7 @@ namespace UI
         [SerializeField] private InventoryUI _inventoryUI;
         [SerializeField] private ItemUI _itemUI;
 
-        public TeleportUI.TeleportUI TeleportUI;
+        // public TeleportUI.TeleportUI TeleportUI;
         public LocationInfoUI LocationInfoUI;
 
         public InventoryUI InventoryUI => _inventoryUI;
@@ -47,19 +47,19 @@ namespace UI
         private void OnDisable() => 
             _gameService.GetGameController().OnLocationChanged -= StartNewLocationAnimation;
 
-        public void GenerateLocationButtons(JToken variants) => 
-            TeleportUI.GenerateLocationButtons(variants);
+        // public void GenerateLocationButtons(JToken variants) => 
+        //     TeleportUI.GenerateLocationButtons(variants);
 
         public void ShowLocationContainer()
         {
             ShowCursor();
-            TeleportUI.ShowLocationContainer();
+            // TeleportUI.ShowLocationContainer();
         }
 
         public void HideLocationsContainer()
         {
             HideCursor();
-            TeleportUI.HideLocationsContainer();
+            // TeleportUI.HideLocationsContainer();
         }
 
         public void ShowMainInventory()

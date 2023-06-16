@@ -49,6 +49,7 @@ public class GameController
         
         _jCurrentLocation = GetCurrentLocation(_jWorlds);
         GenerateItemsForLocation(_jCurrentLocation);
+        GeneratePortals();
     }
 
     private void DeserializeFileAfterLocationChange(string json)
@@ -59,11 +60,11 @@ public class GameController
 
         GetMainLocationId(dict);
         GetMainPlayerId(dict);
+        GenerateLocation(_jWorlds);
         
         _jCurrentLocation = GetCurrentLocation(_jWorlds);
         GenerateItemsForLocation(_jCurrentLocation);
-        
-        InitPlayer(_currentLocationController);
+        GeneratePortals();
     }
 
     private void DeserializeFileAfterInventoryChange(string json)
@@ -115,7 +116,7 @@ public class GameController
                 _playerItems = character["Items"];
             }
             else
-                _currentLocationController.SpawnNpc(character);
+                _currentLocationController.GenerateNpc(character);
         }
     }
 
@@ -126,9 +127,18 @@ public class GameController
         {
             foreach (var item in items)
             {
-                _currentLocationController.SpawnItem(item);
+                _currentLocationController.GenerateItems(item);
             }
         }
+    }
+
+    private void GeneratePortals()
+    {
+        var teleportVariants = FindVariantsOfLocationChange("Location change", _jAvailableProductions);
+        
+        Debug.Log(teleportVariants);
+        
+        _currentLocationController.GeneratePortals(teleportVariants);
     }
 
     private void GenerateItemsForNpc(JToken items)
@@ -143,13 +153,13 @@ public class GameController
             if (world["Id"].ToString() == _currentLocationId)
             {
                 var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
-                var locationController = Object.Instantiate(prefab, new Vector3(_xOffset, 0, 0), Quaternion.identity);
+                var locationController = Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
                 
                 locationController.Id = world["Id"].ToString();
                 locationController.Name = world["Name"].ToString();
                 
                 if(_currentLocationController != null)
-                    GameObject.Destroy(_currentLocationController.gameObject);
+                    Object.Destroy(_currentLocationController.gameObject);
                 
                 _currentLocationController = locationController;
                 _currentLocationController.InitLocation(_jCurrentLocation);
@@ -202,19 +212,19 @@ public class GameController
 
         }
         
-        AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.GenerateLocationButtons(teleportationVariants);
+        // AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.GenerateLocationButtons(teleportationVariants);
     }
 
-    public async void ChangeLocation(string id, JToken variant)
+    public async void ChangeLocation(JToken variant)
     {
         var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Location change", _jAvailableProductions), variant, _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
         _player.EnableCharacterController(false);
-        _currentLocationId = id;
+        // _currentLocationId = id;
         
-        AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
+        // AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideLocationsContainer();
         OnLocationChanged?.Invoke(variant[2]["WorldNodeName"].ToString());
 
         DeserializeFileAfterLocationChange(json);
@@ -442,6 +452,25 @@ public class GameController
                         variant[0]["WorldNodeName"].ToString() == npcName)
                         return variant;
                 }
+            }
+        }
+
+        return null;
+    }
+
+    private JToken FindVariantsOfLocationChange(string name, JToken tokenForSearch)
+    {
+        char[] delimiter = { '/' };
+        
+        foreach (var entity in tokenForSearch)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == name)
+            {
+                return entity["variants"];
             }
         }
 
