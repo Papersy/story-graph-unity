@@ -29,9 +29,6 @@ namespace LocationDir
             _locationInfo = locationInfo;
             _locationVariants = locationTeleportsVariants;
 
-            Debug.Log(_locationInfo);
-            Debug.Log(_locationVariants);
-
             GenerateNpc(_locationInfo);
             GenerateItems(_locationInfo);
             GeneratePortals(_locationVariants);

@@ -41,74 +41,59 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910713664",
-            "WorldNodeName": "Road",
+            "WorldNodeId": "7d763578-7597-4024-8567-c5d15b3b7569",
+            "WorldNodeName": "Cave",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910655872",
-            "WorldNodeName": "Dragons_lair",
+            "WorldNodeId": "b8433f5f-5357-4521-9884-120b51ad41e7",
+            "WorldNodeName": "Jiczyn",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910711488",
+            "WorldNodeId": "M11",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
@@ -116,100 +101,280 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910277632",
-            "WorldNodeName": "Pasture",
+            "WorldNodeId": "M12",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686911964288",
-            "WorldNodeName": "Village",
+            "WorldNodeId": "M13",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910678976",
-            "WorldNodeName": "Inn",
+            "WorldNodeId": "M14",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "f1514c03-390d-40a8-bb3e-90b1eb4d0897",
-            "WorldNodeName": "Prison",
+            "WorldNodeId": "M21",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M22",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M24",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M31",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M32",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M33",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M34",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M41",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M42",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M43",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M44",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ]
@@ -262,155 +427,100 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "140686910713664",
-            "WorldNodeName": "Road",
-            "WorldNodeAttr": null
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Fight ending with character’s escape / Walka zakończona ucieczką uczestnika",
-        "TitleGeneric": "Location change / Zmiana lokacji",
-        "Description": "Jeden bohater («BohaterA») atakuje drugiego («BohaterB»), który ucieka do sąsiedniej lokacji («LokacjaB»), gubiąc wszystkie swoje przedmioty w panicznej ucieczce.",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "LokacjaA",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "BohaterA",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                },
-                {
-                  "Id": "BohaterB",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                }
-              ],
-              "Items": [],
-              "Connections": [
-                {
-                  "Destination": {
-                    "Id": "LokacjaB",
-                    "Connections": []
-                  }
-                }
-              ]
-            },
-            {
-              "Id": "LokacjaB",
-              "Connections": []
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "BohaterB/Items/*",
-            "To": "LokacjaA/Items"
-          },
-          {
-            "Op": "move",
-            "Nodes": "BohaterB",
-            "To": "LokacjaB/Characters"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterA",
-            "WorldNodeId": "1069b289-a3d0-404a-9260-377eefcf4f09",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterB",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "LokacjaB",
-            "WorldNodeId": "140686910713664",
-            "WorldNodeName": "Road",
+            "WorldNodeId": "7d763578-7597-4024-8567-c5d15b3b7569",
+            "WorldNodeName": "Cave",
             "WorldNodeAttr": null
           }
         ],
         [
           {
-            "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "BohaterA",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "BohaterB",
-            "WorldNodeId": "1069b289-a3d0-404a-9260-377eefcf4f09",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M13",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "LokacjaB",
-            "WorldNodeId": "140686910713664",
-            "WorldNodeName": "Road",
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M22",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M24",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M33",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ]
@@ -460,248 +570,21 @@
         [
           {
             "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Something",
-            "WorldNodeId": "a7ca1b77-0445-4add-909a-185ce82f7aea",
-            "WorldNodeName": "Elixir",
-            "WorldNodeAttr": {
-              "Value": 10,
-              "NutritionalValue": 1000
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Dropping item / Odłożenie przedmiotu",
-        "TitleGeneric": "",
-        "Description": "«Bohater» odkłada przedmiot («Something») do lokacji.",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "LokacjaA",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "Bohater",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": [
-                    {
-                      "Id": "Something",
-                      "Attributes": {},
-                      "Characters": [],
-                      "Items": []
-                    }
-                  ]
-                }
-              ],
-              "Items": []
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Something",
-            "To": "LokacjaA/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "Something",
-            "WorldNodeId": "cfcd908f-4617-429d-b472-5299cb49a3e4",
-            "WorldNodeName": "Sword",
-            "WorldNodeAttr": {
-              "Value": 1000
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Putting item in / Włożenie przedmiotu",
-        "TitleGeneric": "",
-        "Description": "«Bohater» wkłada przedmiot («Something») do innego przedmiotu («Opakowanie»).",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "LokacjaA",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "Bohater",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": [
-                    {
-                      "Id": "Something",
-                      "Attributes": {},
-                      "Characters": [],
-                      "Items": []
-                    }
-                  ]
-                }
-              ],
-              "Items": [
-                {
-                  "Id": "Opakowanie",
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                }
-              ]
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Something",
-            "To": "Opakowanie/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "Something",
-            "WorldNodeId": "cfcd908f-4617-429d-b472-5299cb49a3e4",
-            "WorldNodeName": "Sword",
-            "WorldNodeAttr": {
-              "Value": 1000
-            }
-          },
-          {
-            "LSNodeRef": "Opakowanie",
-            "WorldNodeId": "a7ca1b77-0445-4add-909a-185ce82f7aea",
-            "WorldNodeName": "Elixir",
-            "WorldNodeAttr": {
-              "Value": 10,
-              "NutritionalValue": 1000
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Overwhelming character / Przejęcie kontroli nad postacią",
-        "TitleGeneric": "",
-        "Description": "Stworzenie grupy z dwóch bohaterów: «Any1» przejmuje kontrolę nad inną postacią («Any2»).",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "Anywhere",
-              "Characters": [
-                {
-                  "Id": "Any1",
-                  "IsObject": true
-                },
-                {
-                  "Id": "Any2"
-                }
-              ]
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Any2",
-            "To": "Any1/Characters"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "Any1",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "Any2",
-            "WorldNodeId": "1069b289-a3d0-404a-9260-377eefcf4f09",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
+            "WorldNodeId": "f22fb134-f2ee-4bd9-890f-dd2cdc96c3a7",
+            "WorldNodeName": "Brushwood",
+            "WorldNodeAttr": null
           }
         ]
       ]
@@ -738,105 +621,15 @@
         [
           {
             "LSNodeRef": "Anywhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Group",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Item acquisition from another character / Przejęcie przedmiotu od innej postaci",
-        "TitleGeneric": "",
-        "Description": "«BohaterB» oddaje drugiemu bohaterowi («BohaterA») przedmiot («Something»).",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Id": "Somehere",
-              "Attributes": {},
-              "Characters": [
-                {
-                  "Id": "BohaterA",
-                  "IsObject": true,
-                  "Attributes": {}
-                },
-                {
-                  "Id": "BohaterB",
-                  "IsObject": true,
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": [
-                    {
-                      "Id": "Something",
-                      "Attributes": {}
-                    }
-                  ]
-                }
-              ],
-              "Items": [],
-              "Connections": []
-            }
-          ]
-        },
-        "RSide": {},
-        "Preconditions": [],
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Something",
-            "To": "BohaterA/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "Somehere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterA",
-            "WorldNodeId": "1069b289-a3d0-404a-9260-377eefcf4f09",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
-          },
-          {
-            "LSNodeRef": "BohaterB",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
-          },
-          {
-            "LSNodeRef": "Something",
-            "WorldNodeId": "cfcd908f-4617-429d-b472-5299cb49a3e4",
-            "WorldNodeName": "Sword",
-            "WorldNodeAttr": {
-              "Value": 1000
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           }
         ]
       ]
@@ -885,111 +678,212 @@
         [
           {
             "LSNodeRef": "Somewhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Hero",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
-            }
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           }
         ]
       ]
     },
     {
       "prod": {
-        "Title": "Fight ending with character’s death / Walka zakończona śmiercią uczestnika",
-        "TitleGeneric": "Character’s death / Śmierć bohatera",
-        "Description": "«CharacterA» i «CharacterB» podejmują walkę, w której «CharacterB» ginie.",
+        "Title": "Picking up brushwood / Podnoszenie chrustu",
+        "TitleGeneric": "Picking item up / Podniesienie przedmiotu",
+        "Description": "Rumcajs zbiera chrust.",
         "Override": 0,
         "LSide": {
           "Locations": [
             {
-              "Id": "Somewhere",
-              "Attributes": {},
+              "Name": "Forest",
               "Characters": [
                 {
-                  "Id": "CharacterA",
-                  "IsObject": true,
-                  "Attributes": {
-                    "HP": null
-                  },
-                  "Items": []
-                },
-                {
-                  "Id": "CharacterB",
-                  "IsObject": true,
-                  "Attributes": {
-                    "HP": null
-                  },
-                  "Characters": [],
-                  "Items": []
+                  "Name": "Rumcajs",
+                  "IsObject": true
                 }
               ],
-              "Items": [],
-              "Connections": []
+              "Items": [
+                {
+                  "Name": "Brushwood"
+                }
+              ]
             }
           ]
         },
         "RSide": {},
-        "Preconditions": [
-          {
-            "Cond": "CharacterA.HP >= CharacterB.HP"
-          }
-        ],
         "Instructions": [
           {
-            "Op": "set",
-            "Attribute": "CharacterB.IsDead",
-            "Value": true
-          },
-          {
-            "Op": "set",
-            "Attribute": "CharacterA.HP",
-            "Expr": "CharacterA.HP - CharacterB.HP / 2"
-          },
-          {
             "Op": "move",
-            "Nodes": "CharacterB/Items/*",
-            "To": "Somewhere/Items"
+            "Nodes": "Brushwood",
+            "To": "Rumcajs/Items"
           }
         ]
       },
       "variants": [
         [
           {
-            "LSNodeRef": "Somewhere",
-            "WorldNodeId": "140686910710080",
-            "WorldNodeName": "Wizards_hut",
-            "WorldNodeAttr": {
-              "IsPrivate": true
-            }
+            "LSNodeRef": "Forest",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "CharacterA",
-            "WorldNodeId": "1069b289-a3d0-404a-9260-377eefcf4f09",
-            "WorldNodeName": "Wizard",
-            "WorldNodeAttr": {
-              "HP": 200,
-              "Money": 100,
-              "IsAuthority": true
-            }
+            "LSNodeRef": "Rumcajs",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "CharacterB",
-            "WorldNodeId": "c4e5e465-1261-4755-9fae-313369966b2d",
-            "WorldNodeName": "Main_hero",
-            "WorldNodeAttr": {
-              "HP": 100,
-              "Money": 10
+            "LSNodeRef": "Brushwood",
+            "WorldNodeId": "f22fb134-f2ee-4bd9-890f-dd2cdc96c3a7",
+            "WorldNodeName": "Brushwood",
+            "WorldNodeAttr": null
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Rumcajs location change / Zmiana lokacji przez Rumcajsa",
+        "TitleGeneric": "Location change / Zmiana lokacji",
+        "Description": "Rumcajs przechodzi z lokacji «Anywhere» do lokacji «Loc2».",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "Anywhere",
+              "Connections": [
+                {
+                  "Destination": {
+                    "Id": "Loc2"
+                  }
+                }
+              ],
+              "Characters": [
+                {
+                  "Name": "Rumcajs",
+                  "IsObject": true
+                }
+              ]
+            },
+            {
+              "Id": "Loc2"
             }
+          ]
+        },
+        "RSide": {},
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "Rumcajs",
+            "To": "Loc2/Characters"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "Anywhere",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Rumcajs",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Loc2",
+            "WorldNodeId": "7d763578-7597-4024-8567-c5d15b3b7569",
+            "WorldNodeName": "Cave",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Anywhere",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Rumcajs",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Loc2",
+            "WorldNodeId": "M13",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Anywhere",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Rumcajs",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Loc2",
+            "WorldNodeId": "M22",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Anywhere",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Rumcajs",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Loc2",
+            "WorldNodeId": "M24",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Anywhere",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Rumcajs",
+            "WorldNodeId": "15914242-249d-488e-b849-b1f171fadb9b",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Loc2",
+            "WorldNodeId": "M33",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
           }
         ]
       ]
@@ -997,276 +891,344 @@
   ],
   "world": [
     {
-      "Id": "140686910713664",
-      "Name": "Road",
-      "Connections": [
-        {
-          "Destination": "140686910711488"
-        },
-        {
-          "Destination": "140686910678976"
-        },
-        {
-          "Destination": "140686910277632"
-        },
-        {
-          "Destination": "140686911964288"
-        },
-        {
-          "Destination": "140686910710080"
-        }
-      ]
-    },
-    {
-      "Id": "140686910710080",
-      "Name": "Wizards_hut",
-      "Attributes": {
-        "IsPrivate": true
-      },
+      "Id": "7d763578-7597-4024-8567-c5d15b3b7569",
+      "Name": "Cave",
       "Characters": [
         {
-          "Id": "1069b289-a3d0-404a-9260-377eefcf4f09",
-          "Name": "Wizard",
-          "Attributes": {
-            "HP": 200,
-            "Money": 100,
-            "IsAuthority": true
-          }
-        },
-        {
-          "Id": "c4e5e465-1261-4755-9fae-313369966b2d",
-          "Name": "Main_hero",
-          "Attributes": {
-            "HP": 100,
-            "Money": 10
-          },
-          "Items": [
-            {
-              "Id": "cfcd908f-4617-429d-b472-5299cb49a3e4",
-              "Name": "Sword",
-              "Attributes": {
-                "Value": 1000
-              }
-            }
-          ]
-        }
-      ],
-      "Items": [
-        {
-          "Id": "a7ca1b77-0445-4add-909a-185ce82f7aea",
-          "Name": "Elixir",
-          "Attributes": {
-            "Value": 10,
-            "NutritionalValue": 1000
-          }
+          "Id": "0bee1a98-3e69-4a38-bc67-c6a5f6e74e02",
+          "Name": "Manka"
         }
       ],
       "Connections": [
         {
-          "Destination": "140686910713664"
+          "Destination": "M23"
         }
       ]
     },
     {
-      "Id": "140686910655872",
-      "Name": "Dragons_lair",
+      "Id": "b8433f5f-5357-4521-9884-120b51ad41e7",
+      "Name": "Jiczyn",
       "Characters": [
         {
-          "Id": "808b3737-b2d2-45c6-8da4-0c5742336d23",
-          "Name": "Dragon",
-          "Attributes": {
-            "HP": 1000
-          }
-        }
-      ],
-      "Items": [
+          "Id": "50bbcb1d-c2b0-4560-9099-f972b0526a32",
+          "Name": "Merchant"
+        },
         {
-          "Id": "8ac6ef9a-d625-41cd-a418-209fb44c175f",
-          "Name": "Dragon_egg",
-          "Attributes": {
-            "Value": 4000
-          }
+          "Id": "b24b19f4-454d-4100-9c99-f8caeb00206b",
+          "Name": "Jeweler"
         }
       ],
       "Connections": [
         {
-          "Destination": "140686910711488"
+          "Destination": "M31"
         }
       ]
     },
     {
-      "Id": "140686910711488",
+      "Id": "M11",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M12"
+        },
+        {
+          "Destination": "M21"
+        }
+      ]
+    },
+    {
+      "Id": "M12",
       "Name": "Forest",
       "Items": [
         {
-          "Id": "cd549827-6e68-4f21-af6b-15ae8f5c506b",
-          "Name": "Herbs",
-          "Attributes": {
-            "Value": 30,
-            "IsPoison": true
-          }
+          "Id": "25563319-ac6c-4da6-99ca-2cf8dd5a2275",
+          "Name": "Brushwood"
         }
       ],
       "Connections": [
         {
-          "Destination": "140686910713664"
+          "Destination": "M11"
         },
         {
-          "Destination": "140686910655872"
+          "Destination": "M13"
+        },
+        {
+          "Destination": "M22"
         }
       ]
     },
     {
-      "Id": "140686910277632",
-      "Name": "Pasture",
-      "Characters": [
-        {
-          "Id": "78a50cba-96ab-4251-8afb-d5d46686c9d5",
-          "Name": "Sheep",
-          "Attributes": {
-            "HP": 10,
-            "NutritionalValue": 20
-          }
-        }
-      ],
+      "Id": "M13",
+      "Name": "Forest",
       "Connections": [
         {
-          "Destination": "140686910713664"
+          "Destination": "M12"
         },
         {
-          "Destination": "140686911964288"
+          "Destination": "M14"
+        },
+        {
+          "Destination": "M23"
         }
       ]
     },
     {
-      "Id": "140686911964288",
-      "Name": "Village",
+      "Id": "M14",
+      "Name": "Forest",
       "Items": [
         {
-          "Id": "26e33f79-f3e2-43c3-ac90-a062232cc64c",
-          "Name": "Well"
+          "Id": "61dc7a94-af6d-4ee7-9751-882d76f66856",
+          "Name": "Brushwood"
         }
       ],
       "Connections": [
         {
-          "Destination": "140686910713664"
+          "Destination": "M13"
         },
         {
-          "Destination": "140686910277632"
+          "Destination": "M24"
         }
       ]
     },
     {
-      "Id": "140686910678976",
-      "Name": "Inn",
+      "Id": "M21",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M11"
+        },
+        {
+          "Destination": "M22"
+        },
+        {
+          "Destination": "M31"
+        }
+      ]
+    },
+    {
+      "Id": "M22",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M12"
+        },
+        {
+          "Destination": "M21"
+        },
+        {
+          "Destination": "M23"
+        },
+        {
+          "Destination": "M32"
+        }
+      ]
+    },
+    {
+      "Id": "M23",
+      "Name": "Forest",
       "Characters": [
         {
-          "Id": "26ac9160-3600-4b98-8568-6dc989e7ee95",
-          "Name": "Innkeeper",
-          "Attributes": {
-            "HP": 100,
-            "Money": 1200
-          },
-          "Items": [
-            {
-              "Id": "01c9dc29-5dc8-4bd8-8f9f-faa2e6a39716",
-              "Name": "Poison",
-              "Attributes": {
-                "Value": 1000,
-                "IsPoison": true
-              }
-            }
-          ]
-        },
+          "Id": "15914242-249d-488e-b849-b1f171fadb9b",
+          "Name": "Rumcajs"
+        }
+      ],
+      "Items": [
         {
-          "Id": "66a945bc-a52a-4e7e-bbf8-10eedbf0e478",
-          "Name": "Drunkard",
-          "Attributes": {
-            "HP": 100,
-            "Money": 0,
-            "IsTroublemaker": true
-          },
-          "Items": [
-            {
-              "Id": "efe256bb-3394-46fc-9b18-9a6ffc32f505",
-              "Name": "Alcohol",
-              "Attributes": {
-                "Value": 3,
-                "NutritionalValue": 1,
-                "IsRotten": true
-              }
-            }
-          ]
+          "Id": "f22fb134-f2ee-4bd9-890f-dd2cdc96c3a7",
+          "Name": "Brushwood"
         }
       ],
       "Connections": [
         {
-          "Destination": "140686910713664"
+          "Destination": "7d763578-7597-4024-8567-c5d15b3b7569"
         },
         {
-          "Destination": "140686910277632"
+          "Destination": "M13"
+        },
+        {
+          "Destination": "M22"
+        },
+        {
+          "Destination": "M24"
+        },
+        {
+          "Destination": "M33"
         }
       ]
     },
     {
-      "Id": "f1514c03-390d-40a8-bb3e-90b1eb4d0897",
-      "Name": "Prison",
+      "Id": "M24",
+      "Name": "Forest",
       "Connections": [
         {
-          "Destination": "140686910713664"
+          "Destination": "M14"
+        },
+        {
+          "Destination": "M23"
+        },
+        {
+          "Destination": "M34"
+        }
+      ]
+    },
+    {
+      "Id": "M31",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "b8433f5f-5357-4521-9884-120b51ad41e7"
+        },
+        {
+          "Destination": "M21"
+        },
+        {
+          "Destination": "M32"
+        },
+        {
+          "Destination": "M41"
+        }
+      ]
+    },
+    {
+      "Id": "M32",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M22"
+        },
+        {
+          "Destination": "M31"
+        },
+        {
+          "Destination": "M33"
+        },
+        {
+          "Destination": "M42"
+        }
+      ]
+    },
+    {
+      "Id": "M33",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M23"
+        },
+        {
+          "Destination": "M32"
+        },
+        {
+          "Destination": "M34"
+        },
+        {
+          "Destination": "M43"
+        }
+      ]
+    },
+    {
+      "Id": "M34",
+      "Name": "Forest",
+      "Items": [
+        {
+          "Id": "793b2b3c-0672-4156-b574-19e5a2b872d2",
+          "Name": "Brushwood"
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "M24"
+        },
+        {
+          "Destination": "M33"
+        },
+        {
+          "Destination": "M44"
+        }
+      ]
+    },
+    {
+      "Id": "M41",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M31"
+        },
+        {
+          "Destination": "M42"
+        }
+      ]
+    },
+    {
+      "Id": "M42",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M32"
+        },
+        {
+          "Destination": "M41"
+        },
+        {
+          "Destination": "M43"
+        }
+      ]
+    },
+    {
+      "Id": "M43",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "M33"
+        },
+        {
+          "Destination": "M42"
+        },
+        {
+          "Destination": "M44"
+        }
+      ]
+    },
+    {
+      "Id": "M44",
+      "Name": "Forest",
+      "Items": [
+        {
+          "Id": "e6fd85df-645e-4b5c-9e9c-2999c664ba67",
+          "Name": "Brushwood"
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "M34"
+        },
+        {
+          "Destination": "M43"
         }
       ]
     }
   ],
-  "changed_nodes": {
-    "c4e5e465-1261-4755-9fae-313369966b2d": ""
-  },
+  "changed_nodes": null,
   "message": null,
   "game_status": "in_progress",
   "location_info": {
-    "desc": "Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.",
+    "desc": "Lokacja Forest nie ma żadnych własności.",
     "items": [
       {
-        "name": "Elixir",
-        "attributes": {
-          "Value": 10,
-          "NutritionalValue": 1000
-        }
+        "name": "Brushwood",
+        "attributes": null
       }
     ],
     "characters": [
       {
-        "name": "Wizard",
-        "attributes": {
-          "HP": 200,
-          "Money": 100,
-          "IsAuthority": true
-        },
+        "name": "Rumcajs",
+        "attributes": null,
         "items": [],
-        "characters": [],
-        "knowledge": null,
-        "sound": null
-      },
-      {
-        "name": "Main_hero",
-        "attributes": {
-          "HP": 100,
-          "Money": 10
-        },
-        "items": [
-          {
-            "name": "Sword",
-            "attributes": {
-              "Value": 1000
-            }
-          }
-        ],
         "characters": [],
         "knowledge": null,
         "sound": null
       }
     ],
-    "main_location_id": "140686910710080"
+    "main_location_id": "M23"
   },
-  "main_character": "c4e5e465-1261-4755-9fae-313369966b2d"
+  "main_character": "15914242-249d-488e-b849-b1f171fadb9b"
 }

@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using LocationDir;
 using UI;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -43,7 +44,7 @@ namespace Player
                     return;
                 }
             
-                if (Physics.Raycast(_startPoint.position, rayDirection, out _hit, Distance))
+                if (Physics.Raycast(_startPoint.position, rayDirection * Distance, out _hit, Distance))
                 {
                     if(_hit.transform.gameObject.CompareTag("Pickable"))
                         StartCoroutine(PickUp());
