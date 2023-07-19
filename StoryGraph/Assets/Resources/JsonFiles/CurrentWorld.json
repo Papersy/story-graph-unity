@@ -41,19 +41,19 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "cbc28357-9fc4-4c57-aa71-5593ab6d8eb8",
+            "WorldNodeId": "3d8247ee-3ee4-416d-93c7-313fcdcdd8e8",
             "WorldNodeName": "Cave",
             "WorldNodeAttr": null
           }
@@ -61,19 +61,19 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "2f96edea-8d49-4614-aa6e-e79be9cd2f6d",
+            "WorldNodeId": "95f69583-81c0-41a0-b28f-7193f24de8a3",
             "WorldNodeName": "Jiczyn",
             "WorldNodeAttr": null
           }
@@ -81,13 +81,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -101,33 +101,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
             "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -141,13 +121,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -161,13 +141,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -181,13 +161,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -201,13 +181,33 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
+            "WorldNodeName": "Rumcajs",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "M23",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "M12",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -221,13 +221,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -241,13 +241,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -261,13 +261,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -281,13 +281,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -301,13 +301,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -321,13 +321,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -341,13 +341,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -361,13 +361,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -427,33 +427,33 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "cbc28357-9fc4-4c57-aa71-5593ab6d8eb8",
-            "WorldNodeName": "Cave",
+            "WorldNodeId": "M11",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -467,13 +467,13 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -483,54 +483,14 @@
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M24",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M33",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
         ]
       ]
     },
     {
       "prod": {
-        "Title": "Picking item up / Podniesienie przedmiotu",
+        "Title": "Dropping item / Odłożenie przedmiotu",
         "TitleGeneric": "",
-        "Description": "«Bohater» podnosi przedmiot («Something») leżący w lokacji.",
+        "Description": "«Bohater» odkłada przedmiot («Something») do lokacji.",
         "Override": 0,
         "LSide": {
           "Locations": [
@@ -543,17 +503,17 @@
                   "IsObject": true,
                   "Attributes": {},
                   "Characters": [],
-                  "Items": []
+                  "Items": [
+                    {
+                      "Id": "Something",
+                      "Attributes": {},
+                      "Characters": [],
+                      "Items": []
+                    }
+                  ]
                 }
               ],
-              "Items": [
-                {
-                  "Id": "Something",
-                  "Attributes": {},
-                  "Characters": [],
-                  "Items": []
-                }
-              ]
+              "Items": []
             }
           ]
         },
@@ -562,7 +522,7 @@
           {
             "Op": "move",
             "Nodes": "Something",
-            "To": "Bohater/Items"
+            "To": "LokacjaA/Items"
           }
         ]
       },
@@ -570,19 +530,19 @@
         [
           {
             "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Something",
-            "WorldNodeId": "31e332e8-07b1-4c94-9663-273115d035ba",
+            "WorldNodeId": "3c494268-2852-4ddd-abb5-a99a763a538e",
             "WorldNodeName": "Brushwood",
             "WorldNodeAttr": null
           }
@@ -621,13 +581,13 @@
         [
           {
             "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Group",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           }
@@ -678,70 +638,14 @@
         [
           {
             "LSNodeRef": "Somewhere",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Hero",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          }
-        ]
-      ]
-    },
-    {
-      "prod": {
-        "Title": "Picking up brushwood / Podnoszenie chrustu",
-        "TitleGeneric": "Picking item up / Podniesienie przedmiotu",
-        "Description": "Rumcajs zbiera chrust.",
-        "Override": 0,
-        "LSide": {
-          "Locations": [
-            {
-              "Name": "Forest",
-              "Characters": [
-                {
-                  "Name": "Rumcajs",
-                  "IsObject": true
-                }
-              ],
-              "Items": [
-                {
-                  "Name": "Brushwood"
-                }
-              ]
-            }
-          ]
-        },
-        "RSide": {},
-        "Instructions": [
-          {
-            "Op": "move",
-            "Nodes": "Brushwood",
-            "To": "Rumcajs/Items"
-          }
-        ]
-      },
-      "variants": [
-        [
-          {
-            "LSNodeRef": "Forest",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Brushwood",
-            "WorldNodeId": "31e332e8-07b1-4c94-9663-273115d035ba",
-            "WorldNodeName": "Brushwood",
             "WorldNodeAttr": null
           }
         ]
@@ -789,33 +693,33 @@
         [
           {
             "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Loc2",
-            "WorldNodeId": "cbc28357-9fc4-4c57-aa71-5593ab6d8eb8",
-            "WorldNodeName": "Cave",
+            "WorldNodeId": "M11",
+            "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -829,13 +733,13 @@
         [
           {
             "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
+            "WorldNodeId": "M12",
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
+            "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
             "WorldNodeName": "Rumcajs",
             "WorldNodeAttr": null
           },
@@ -845,57 +749,17 @@
             "WorldNodeName": "Forest",
             "WorldNodeAttr": null
           }
-        ],
-        [
-          {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Loc2",
-            "WorldNodeId": "M24",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Loc2",
-            "WorldNodeId": "M33",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
         ]
       ]
     }
   ],
   "world": [
     {
-      "Id": "cbc28357-9fc4-4c57-aa71-5593ab6d8eb8",
+      "Id": "3d8247ee-3ee4-416d-93c7-313fcdcdd8e8",
       "Name": "Cave",
       "Characters": [
         {
-          "Id": "d1ef4fa0-78e7-401a-9999-c1c1430f4fa3",
+          "Id": "51163c29-788c-4b81-895d-94ddf26efb4b",
           "Name": "Manka"
         }
       ],
@@ -906,15 +770,15 @@
       ]
     },
     {
-      "Id": "2f96edea-8d49-4614-aa6e-e79be9cd2f6d",
+      "Id": "95f69583-81c0-41a0-b28f-7193f24de8a3",
       "Name": "Jiczyn",
       "Characters": [
         {
-          "Id": "bf0c0de6-264a-42ce-b373-3be62810a06e",
+          "Id": "e7db264a-8bf4-4637-aa78-a1ce845af93d",
           "Name": "Merchant"
         },
         {
-          "Id": "c08a68e0-1d50-4e9c-9878-0459ba765364",
+          "Id": "00335b75-fdcc-4ea2-8fa0-2997884f81bd",
           "Name": "Jeweler"
         }
       ],
@@ -939,10 +803,16 @@
     {
       "Id": "M12",
       "Name": "Forest",
-      "Items": [
+      "Characters": [
         {
-          "Id": "c3e267c9-3723-49f4-8e8b-477ba86f6103",
-          "Name": "Brushwood"
+          "Id": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
+          "Name": "Rumcajs",
+          "Items": [
+            {
+              "Id": "3c494268-2852-4ddd-abb5-a99a763a538e",
+              "Name": "Brushwood"
+            }
+          ]
         }
       ],
       "Connections": [
@@ -977,7 +847,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "85921bc6-28ed-4602-aa57-ae511d317ca1",
+          "Id": "d85f2797-b011-42be-abc3-109f3d1f3a98",
           "Name": "Brushwood"
         }
       ],
@@ -1026,21 +896,15 @@
     {
       "Id": "M23",
       "Name": "Forest",
-      "Characters": [
-        {
-          "Id": "ddc015d9-62aa-4528-9f50-e12e74fc4177",
-          "Name": "Rumcajs"
-        }
-      ],
       "Items": [
         {
-          "Id": "31e332e8-07b1-4c94-9663-273115d035ba",
+          "Id": "4d0ab3ed-37be-43f1-be7b-75d988c357da",
           "Name": "Brushwood"
         }
       ],
       "Connections": [
         {
-          "Destination": "cbc28357-9fc4-4c57-aa71-5593ab6d8eb8"
+          "Destination": "3d8247ee-3ee4-416d-93c7-313fcdcdd8e8"
         },
         {
           "Destination": "M13"
@@ -1076,7 +940,7 @@
       "Name": "Forest",
       "Connections": [
         {
-          "Destination": "2f96edea-8d49-4614-aa6e-e79be9cd2f6d"
+          "Destination": "95f69583-81c0-41a0-b28f-7193f24de8a3"
         },
         {
           "Destination": "M21"
@@ -1130,7 +994,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "f80fc698-3a63-4f6f-a4a7-9aa302886123",
+          "Id": "74251e2e-6e86-4e3b-aadd-214914836b00",
           "Name": "Brushwood"
         }
       ],
@@ -1193,7 +1057,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "488510d8-c799-4c99-a6bf-d2ff6cebe402",
+          "Id": "9d504067-225f-4f79-9ffb-17ccdc4c6429",
           "Name": "Brushwood"
         }
       ],
@@ -1207,28 +1071,30 @@
       ]
     }
   ],
-  "changed_nodes": null,
+  "changed_nodes": {
+    "3c494268-2852-4ddd-abb5-a99a763a538e": ""
+  },
   "message": null,
   "game_status": "in_progress",
   "location_info": {
     "desc": "Lokacja Forest nie ma żadnych własności.",
-    "items": [
-      {
-        "name": "Brushwood",
-        "attributes": null
-      }
-    ],
+    "items": [],
     "characters": [
       {
         "name": "Rumcajs",
         "attributes": null,
-        "items": [],
+        "items": [
+          {
+            "name": "Brushwood",
+            "attributes": null
+          }
+        ],
         "characters": [],
         "knowledge": null,
         "sound": null
       }
     ],
-    "main_location_id": "M23"
+    "main_location_id": "M12"
   },
-  "main_character": "ddc015d9-62aa-4528-9f50-e12e74fc4177"
+  "main_character": "419eb361-c02b-444c-9030-2f1f5c4ce5fc"
 }

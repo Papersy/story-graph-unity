@@ -1,11 +1,11 @@
 {
   "world": [
     {
-      "Id": "9aeb119a-9178-4a3e-bde9-094a583207b0",
+      "Id": "3d8247ee-3ee4-416d-93c7-313fcdcdd8e8",
       "Name": "Cave",
       "Characters": [
         {
-          "Id": "857b414a-fbe9-4559-b9c3-a606c5a5d144",
+          "Id": "51163c29-788c-4b81-895d-94ddf26efb4b",
           "Name": "Manka"
         }
       ],
@@ -16,15 +16,15 @@
       ]
     },
     {
-      "Id": "cc0919c8-b31e-49e4-a75a-c7946a881acf",
+      "Id": "95f69583-81c0-41a0-b28f-7193f24de8a3",
       "Name": "Jiczyn",
       "Characters": [
         {
-          "Id": "a0c60c09-c85d-4aea-900b-a83a1dcc7962",
+          "Id": "e7db264a-8bf4-4637-aa78-a1ce845af93d",
           "Name": "Merchant"
         },
         {
-          "Id": "39bcc0f7-2a63-4cb8-85d7-99ae9faa0e86",
+          "Id": "00335b75-fdcc-4ea2-8fa0-2997884f81bd",
           "Name": "Jeweler"
         }
       ],
@@ -49,9 +49,15 @@
     {
       "Id": "M12",
       "Name": "Forest",
+      "Characters": [
+        {
+          "Id": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
+          "Name": "Rumcajs"
+        }
+      ],
       "Items": [
         {
-          "Id": "c078a27e-6861-4d1d-81b8-acdf2fba59a0",
+          "Id": "3c494268-2852-4ddd-abb5-a99a763a538e",
           "Name": "Brushwood"
         }
       ],
@@ -87,7 +93,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "a2528e4f-ef9b-4b6b-966a-6604baab50ce",
+          "Id": "d85f2797-b011-42be-abc3-109f3d1f3a98",
           "Name": "Brushwood"
         }
       ],
@@ -136,21 +142,15 @@
     {
       "Id": "M23",
       "Name": "Forest",
-      "Characters": [
-        {
-          "Id": "0568f343-2add-4013-bf36-2892af3ddab5",
-          "Name": "Rumcajs"
-        }
-      ],
       "Items": [
         {
-          "Id": "1994e00e-54f3-4cd2-add0-e7dbc6be26e2",
+          "Id": "4d0ab3ed-37be-43f1-be7b-75d988c357da",
           "Name": "Brushwood"
         }
       ],
       "Connections": [
         {
-          "Destination": "9aeb119a-9178-4a3e-bde9-094a583207b0"
+          "Destination": "3d8247ee-3ee4-416d-93c7-313fcdcdd8e8"
         },
         {
           "Destination": "M13"
@@ -186,7 +186,7 @@
       "Name": "Forest",
       "Connections": [
         {
-          "Destination": "cc0919c8-b31e-49e4-a75a-c7946a881acf"
+          "Destination": "95f69583-81c0-41a0-b28f-7193f24de8a3"
         },
         {
           "Destination": "M21"
@@ -240,7 +240,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "0b880a1a-f01d-4a21-9a42-ef0a393f8726",
+          "Id": "74251e2e-6e86-4e3b-aadd-214914836b00",
           "Name": "Brushwood"
         }
       ],
@@ -303,7 +303,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "6c351eb2-fa44-4020-b7d1-12ad98558b67",
+          "Id": "9d504067-225f-4f79-9ffb-17ccdc4c6429",
           "Name": "Brushwood"
         }
       ],
@@ -359,19 +359,19 @@
   "variant": [
     {
       "LSNodeRef": "LokacjaA",
-      "WorldNodeId": "M23",
+      "WorldNodeId": "M12",
       "WorldNodeName": "Forest",
       "WorldNodeAttr": null
     },
     {
       "LSNodeRef": "Bohater",
-      "WorldNodeId": "0568f343-2add-4013-bf36-2892af3ddab5",
+      "WorldNodeId": "419eb361-c02b-444c-9030-2f1f5c4ce5fc",
       "WorldNodeName": "Rumcajs",
       "WorldNodeAttr": null
     },
     {
       "LSNodeRef": "Something",
-      "WorldNodeId": "1994e00e-54f3-4cd2-add0-e7dbc6be26e2",
+      "WorldNodeId": "3c494268-2852-4ddd-abb5-a99a763a538e",
       "WorldNodeName": "Brushwood",
       "WorldNodeAttr": null
     }
