@@ -107,9 +107,14 @@ namespace LocationDir
 
         private void GeneratePortals(JToken variants)
         {
+            var path = "Prefabs/Location/Teleport";
+
             foreach (var variant in variants)
             {
                 var position = GetPointForEntitySpawn();
+                
+                if(_portalPrefab == null)
+                    _portalPrefab = Resources.Load<Teleport>(path);
 
                 var obj = Instantiate(_portalPrefab, position, Quaternion.identity);
                 obj.Variant = variant;

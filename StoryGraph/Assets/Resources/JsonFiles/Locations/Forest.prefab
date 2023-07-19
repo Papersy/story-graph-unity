@@ -545,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderForItems: {fileID: 3838259045672506351}
   spawnPoint: {fileID: 7401099321728670901}
+  _portalPrefab: {fileID: 1390229123453708658, guid: 4bacad39b5d8bfc43affdf97599c7105, type: 3}
 --- !u!33 &8102775325764431626
 MeshFilter:
   m_ObjectHideFlags: 0

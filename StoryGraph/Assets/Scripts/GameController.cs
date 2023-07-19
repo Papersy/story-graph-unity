@@ -126,6 +126,8 @@ public class GameController
             if (world["Id"].ToString() == _currentLocationId)
             {
                 var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
+                if(prefab == null)
+                    prefab = Resources.Load<LocationController>("JsonFiles/Locations/default_location");
                 var locationController = Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
 
                 if (_currentLocationController != null)
