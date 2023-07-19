@@ -11,6 +11,7 @@ namespace LocationDir
     {
         [SerializeField] private BoxCollider colliderForItems;
         [SerializeField] private Transform spawnPoint;
+        [SerializeField] private Teleport _portalPrefab;
 
         private List<GameObject> _characters = new List<GameObject>();
         private List<GameObject> _items = new List<GameObject>();
@@ -106,14 +107,11 @@ namespace LocationDir
 
         private void GeneratePortals(JToken variants)
         {
-            var path = "Prefabs/Location/Teleport";
-
             foreach (var variant in variants)
             {
                 var position = GetPointForEntitySpawn();
-                var itemMesh = Resources.Load<Teleport>(path);
 
-                var obj = Instantiate(itemMesh, position, Quaternion.identity);
+                var obj = Instantiate(_portalPrefab, position, Quaternion.identity);
                 obj.Variant = variant;
 
                 _teleports.Add(obj.gameObject);
