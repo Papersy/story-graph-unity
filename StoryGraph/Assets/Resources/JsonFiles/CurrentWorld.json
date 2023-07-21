@@ -41,19 +41,651 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "9c38f301-2a30-40d7-9fe5-7363646caecb",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052306624",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052307200",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052305344",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052295616",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052306944",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052307072",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052045184",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052270592",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052139264",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370015411776",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052342848",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052060032",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370050667072",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370050667008",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370050666560",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052079168",
+            "WorldNodeName": "Forest",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370050637376",
+            "WorldNodeName": "Peasants_hut",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370050637184",
+            "WorldNodeName": "Field",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052115456",
+            "WorldNodeName": "Inn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052257664",
+            "WorldNodeName": "Town_hall",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052247040",
+            "WorldNodeName": "Prison",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052174464",
+            "WorldNodeName": "Market",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "ce35520e-b02e-4a52-9c29-0ea258837fc1",
+            "WorldNodeName": "Lumberjacks_hut",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052146432",
+            "WorldNodeName": "Wizards_hut",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Lokacja_A",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Lokacja_B",
+            "WorldNodeId": "2370052078016",
             "WorldNodeName": "Cave",
             "WorldNodeAttr": null
           }
@@ -61,320 +693,138 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "ade0b061-37c8-4713-82e1-49ea1b2c9828",
-            "WorldNodeName": "Jiczyn",
+            "WorldNodeId": "2370052137856",
+            "WorldNodeName": "Port",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M11",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052124608",
+            "WorldNodeName": "Island",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M12",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052087104",
+            "WorldNodeName": "Tavern",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M13",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052051584",
+            "WorldNodeName": "Ship",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M14",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052271552",
+            "WorldNodeName": "Dragons_lair",
             "WorldNodeAttr": null
           }
         ],
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M21",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M22",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M24",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M31",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M32",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M33",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M34",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M41",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M42",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M43",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M44",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
             "WorldNodeAttr": null
           }
         ]
@@ -427,100 +877,261 @@
         [
           {
             "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "9c38f301-2a30-40d7-9fe5-7363646caecb",
-            "WorldNodeName": "Cave",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Fight ending with character’s escape / Walka zakończona ucieczką uczestnika",
+        "TitleGeneric": "Location change / Zmiana lokacji",
+        "Description": "Jeden bohater («BohaterA») atakuje drugiego («BohaterB»), który ucieka do sąsiedniej lokacji («LokacjaB»), gubiąc wszystkie swoje przedmioty w panicznej ucieczce.",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "LokacjaA",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "BohaterA",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                },
+                {
+                  "Id": "BohaterB",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                }
+              ],
+              "Items": [],
+              "Connections": [
+                {
+                  "Destination": {
+                    "Id": "LokacjaB",
+                    "Connections": []
+                  }
+                }
+              ]
+            },
+            {
+              "Id": "LokacjaB",
+              "Connections": []
+            }
+          ]
+        },
+        "RSide": {},
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "BohaterB/Items/*",
+            "To": "LokacjaA/Items"
+          },
+          {
+            "Op": "move",
+            "Nodes": "BohaterB",
+            "To": "LokacjaB/Characters"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "a8cb72f2-77fa-4f1f-870a-5dc1254cc906",
+            "WorldNodeName": "Common_man",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 3
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
             "WorldNodeAttr": null
           }
         ],
         [
           {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "a8cb72f2-77fa-4f1f-870a-5dc1254cc906",
+            "WorldNodeName": "Common_man",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 3
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Picking item up / Podniesienie przedmiotu",
+        "TitleGeneric": "",
+        "Description": "«Bohater» podnosi przedmiot («Something») leżący w lokacji.",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "LokacjaA",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "Bohater",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                }
+              ],
+              "Items": [
+                {
+                  "Id": "Something",
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                }
+              ]
+            }
+          ]
+        },
+        "RSide": {},
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "Something",
+            "To": "Bohater/Items"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M13",
-            "WorldNodeName": "Forest",
+            "LSNodeRef": "Something",
+            "WorldNodeId": "467a0cce-55ce-42e9-82a5-03d749b0caa4",
+            "WorldNodeName": "Well",
             "WorldNodeAttr": null
           }
         ],
         [
           {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M22",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
+            "LSNodeRef": "Something",
+            "WorldNodeId": "653cc090-325b-43f4-a0f0-b07f7c77937d",
+            "WorldNodeName": "Stone",
+            "WorldNodeAttr": {
+              "Value": 2
+            }
           }
         ],
         [
           {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M24",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Lokacja_A",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Lokacja_B",
-            "WorldNodeId": "M33",
-            "WorldNodeName": "Forest",
+            "LSNodeRef": "Something",
+            "WorldNodeId": "0520447a-51bd-4610-86f5-d33799f948c2",
+            "WorldNodeName": "Advertising_column",
             "WorldNodeAttr": null
           }
         ]
@@ -570,21 +1181,235 @@
         [
           {
             "LSNodeRef": "LokacjaA",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Bohater",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
             "LSNodeRef": "Something",
-            "WorldNodeId": "8fa7cc4a-730e-473f-970a-ffe8a11dc159",
-            "WorldNodeName": "Brushwood",
+            "WorldNodeId": "68fe9e4a-062a-4d42-8ae0-4bf5b0f0a334",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Putting item in / Włożenie przedmiotu",
+        "TitleGeneric": "",
+        "Description": "«Bohater» wkłada przedmiot («Something») do innego przedmiotu («Opakowanie»).",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "LokacjaA",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "Bohater",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": [
+                    {
+                      "Id": "Something",
+                      "Attributes": {},
+                      "Characters": [],
+                      "Items": []
+                    }
+                  ]
+                }
+              ],
+              "Items": [
+                {
+                  "Id": "Opakowanie",
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                }
+              ]
+            }
+          ]
+        },
+        "RSide": {},
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "Something",
+            "To": "Opakowanie/Items"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Something",
+            "WorldNodeId": "68fe9e4a-062a-4d42-8ae0-4bf5b0f0a334",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          },
+          {
+            "LSNodeRef": "Opakowanie",
+            "WorldNodeId": "467a0cce-55ce-42e9-82a5-03d749b0caa4",
+            "WorldNodeName": "Well",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Something",
+            "WorldNodeId": "68fe9e4a-062a-4d42-8ae0-4bf5b0f0a334",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          },
+          {
+            "LSNodeRef": "Opakowanie",
+            "WorldNodeId": "653cc090-325b-43f4-a0f0-b07f7c77937d",
+            "WorldNodeName": "Stone",
+            "WorldNodeAttr": {
+              "Value": 2
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Bohater",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Something",
+            "WorldNodeId": "68fe9e4a-062a-4d42-8ae0-4bf5b0f0a334",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          },
+          {
+            "LSNodeRef": "Opakowanie",
+            "WorldNodeId": "0520447a-51bd-4610-86f5-d33799f948c2",
+            "WorldNodeName": "Advertising_column",
+            "WorldNodeAttr": null
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Overwhelming character / Przejęcie kontroli nad postacią",
+        "TitleGeneric": "",
+        "Description": "Stworzenie grupy z dwóch bohaterów: «Any1» przejmuje kontrolę nad inną postacią («Any2»).",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "Anywhere",
+              "Characters": [
+                {
+                  "Id": "Any1",
+                  "IsObject": true
+                },
+                {
+                  "Id": "Any2"
+                }
+              ]
+            }
+          ]
+        },
+        "RSide": {},
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "Any2",
+            "To": "Any1/Characters"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "Anywhere",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "Any1",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Any2",
+            "WorldNodeId": "a8cb72f2-77fa-4f1f-870a-5dc1254cc906",
+            "WorldNodeName": "Common_man",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 3
+            }
           }
         ]
       ]
@@ -621,15 +1446,101 @@
         [
           {
             "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Group",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Item acquisition from another character / Przejęcie przedmiotu od innej postaci",
+        "TitleGeneric": "",
+        "Description": "«BohaterB» oddaje drugiemu bohaterowi («BohaterA») przedmiot («Something»).",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "Somehere",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "BohaterA",
+                  "IsObject": true,
+                  "Attributes": {}
+                },
+                {
+                  "Id": "BohaterB",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": [
+                    {
+                      "Id": "Something",
+                      "Attributes": {}
+                    }
+                  ]
+                }
+              ],
+              "Items": [],
+              "Connections": []
+            }
+          ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "Something",
+            "To": "BohaterA/Items"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "Somehere",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "a8cb72f2-77fa-4f1f-870a-5dc1254cc906",
+            "WorldNodeName": "Common_man",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 3
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Something",
+            "WorldNodeId": "68fe9e4a-062a-4d42-8ae0-4bf5b0f0a334",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
           }
         ]
       ]
@@ -678,156 +1589,132 @@
         [
           {
             "LSNodeRef": "Somewhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
             "LSNodeRef": "Hero",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           }
         ]
       ]
     },
     {
       "prod": {
-        "Title": "Rumcajs location change / Zmiana lokacji przez Rumcajsa",
-        "TitleGeneric": "Location change / Zmiana lokacji",
-        "Description": "Rumcajs przechodzi z lokacji «Anywhere» do lokacji «Loc2».",
+        "Title": "Fight ending with character’s death / Walka zakończona śmiercią uczestnika",
+        "TitleGeneric": "Character’s death / Śmierć bohatera",
+        "Description": "«CharacterA» i «CharacterB» podejmują walkę, w której «CharacterB» ginie.",
         "Override": 0,
         "LSide": {
           "Locations": [
             {
-              "Id": "Anywhere",
-              "Connections": [
-                {
-                  "Destination": {
-                    "Id": "Loc2"
-                  }
-                }
-              ],
+              "Id": "Somewhere",
+              "Attributes": {},
               "Characters": [
                 {
-                  "Name": "Rumcajs",
-                  "IsObject": true
+                  "Id": "CharacterA",
+                  "IsObject": true,
+                  "Attributes": {
+                    "HP": null
+                  },
+                  "Items": []
+                },
+                {
+                  "Id": "CharacterB",
+                  "IsObject": true,
+                  "Attributes": {
+                    "HP": null
+                  },
+                  "Characters": [],
+                  "Items": []
                 }
-              ]
-            },
-            {
-              "Id": "Loc2"
+              ],
+              "Items": [],
+              "Connections": []
             }
           ]
         },
         "RSide": {},
+        "Preconditions": [
+          {
+            "Cond": "CharacterA.HP >= CharacterB.HP"
+          }
+        ],
         "Instructions": [
           {
+            "Op": "set",
+            "Attribute": "CharacterB.IsDead",
+            "Value": true
+          },
+          {
+            "Op": "set",
+            "Attribute": "CharacterA.HP",
+            "Expr": "CharacterA.HP - CharacterB.HP / 2"
+          },
+          {
             "Op": "move",
-            "Nodes": "Rumcajs",
-            "To": "Loc2/Characters"
+            "Nodes": "CharacterB/Items/*",
+            "To": "Somewhere/Items"
           }
         ]
       },
       "variants": [
         [
           {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "a8cb72f2-77fa-4f1f-870a-5dc1254cc906",
+            "WorldNodeName": "Common_man",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 3
+            }
           },
           {
-            "LSNodeRef": "Loc2",
-            "WorldNodeId": "9c38f301-2a30-40d7-9fe5-7363646caecb",
-            "WorldNodeName": "Cave",
-            "WorldNodeAttr": null
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           }
         ],
         [
           {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370052212224",
+            "WorldNodeName": "Village",
             "WorldNodeAttr": null
           },
           {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
           },
           {
-            "LSNodeRef": "Loc2",
-            "WorldNodeId": "M13",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Loc2",
-            "WorldNodeId": "M22",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Loc2",
-            "WorldNodeId": "M24",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          }
-        ],
-        [
-          {
-            "LSNodeRef": "Anywhere",
-            "WorldNodeId": "M23",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Rumcajs",
-            "WorldNodeId": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-            "WorldNodeName": "Rumcajs",
-            "WorldNodeAttr": null
-          },
-          {
-            "LSNodeRef": "Loc2",
-            "WorldNodeId": "M33",
-            "WorldNodeName": "Forest",
-            "WorldNodeAttr": null
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "a8cb72f2-77fa-4f1f-870a-5dc1254cc906",
+            "WorldNodeName": "Common_man",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 3
+            }
           }
         ]
       ]
@@ -835,338 +1722,1436 @@
   ],
   "world": [
     {
-      "Id": "9c38f301-2a30-40d7-9fe5-7363646caecb",
-      "Name": "Cave",
+      "Id": "2370050636416",
+      "Name": "Road",
       "Characters": [
         {
-          "Id": "e7d36ce3-3e93-4c5e-9a1a-80634c38dd99",
-          "Name": "Manka"
-        }
-      ],
-      "Connections": [
-        {
-          "Destination": "M23"
-        }
-      ]
-    },
-    {
-      "Id": "ade0b061-37c8-4713-82e1-49ea1b2c9828",
-      "Name": "Jiczyn",
-      "Characters": [
-        {
-          "Id": "eef7a2f3-ff6b-42b9-b86a-a90c8305967f",
-          "Name": "Merchant"
-        },
-        {
-          "Id": "e6123ecb-662f-4505-b66d-a794833212d9",
-          "Name": "Jeweler"
-        }
-      ],
-      "Connections": [
-        {
-          "Destination": "M31"
-        }
-      ]
-    },
-    {
-      "Id": "M11",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "M12"
-        },
-        {
-          "Destination": "M21"
-        }
-      ]
-    },
-    {
-      "Id": "M12",
-      "Name": "Forest",
-      "Items": [
-        {
-          "Id": "e893d248-d189-4b84-9388-571c7b274f30",
-          "Name": "Brushwood"
-        }
-      ],
-      "Connections": [
-        {
-          "Destination": "M11"
-        },
-        {
-          "Destination": "M13"
-        },
-        {
-          "Destination": "M22"
-        }
-      ]
-    },
-    {
-      "Id": "M13",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "M12"
-        },
-        {
-          "Destination": "M14"
-        },
-        {
-          "Destination": "M23"
-        }
-      ]
-    },
-    {
-      "Id": "M14",
-      "Name": "Forest",
-      "Items": [
-        {
-          "Id": "a150077d-1d0e-4b91-800b-805d4260a6e0",
-          "Name": "Brushwood"
-        }
-      ],
-      "Connections": [
-        {
-          "Destination": "M13"
-        },
-        {
-          "Destination": "M24"
-        }
-      ]
-    },
-    {
-      "Id": "M21",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "M11"
-        },
-        {
-          "Destination": "M22"
-        },
-        {
-          "Destination": "M31"
-        }
-      ]
-    },
-    {
-      "Id": "M22",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "M12"
-        },
-        {
-          "Destination": "M21"
-        },
-        {
-          "Destination": "M23"
-        },
-        {
-          "Destination": "M32"
-        }
-      ]
-    },
-    {
-      "Id": "M23",
-      "Name": "Forest",
-      "Characters": [
-        {
-          "Id": "f025cfc1-9c39-44b0-b4c2-75b44308f524",
-          "Name": "Rumcajs",
+          "Id": "84a89259-8064-4a1a-af08-e120be5d842f",
+          "Name": "Lawyer",
+          "Attributes": {
+            "HP": 100,
+            "Money": 100
+          },
           "Items": [
             {
-              "Id": "8fa7cc4a-730e-473f-970a-ffe8a11dc159",
-              "Name": "Brushwood"
+              "Id": "85be4302-8cb0-4f22-8155-a079aa040066",
+              "Name": "Documents",
+              "Attributes": {
+                "IsTopSecret": true
+              }
+            }
+          ],
+          "Narration": [
+            {
+              "Id": "fb2398a0-a1f7-4dcc-ae02-317030f4df2d",
+              "Name": "Game_goal",
+              "Attributes": {
+                "Knowledge": "The top-secret documents have to be delivered to Overseas Territory. Take them and board the ship. / Tajne dokumenty, któe trzeba dostarczyć do zamorskiego królestwa. Przejmij je i dotrzyj na statek."
+              }
+            },
+            {
+              "Id": "bb89b5cb-9518-49bb-802f-4983af46869c",
+              "Name": "Pay_tax",
+              "Attributes": {
+                "Knowledge": "Bohater powinien zapłacić podatek w wysokości 20 coinów"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "a72d1c83-1112-41dc-ad94-627c01e80a07",
+          "Name": "Traveler",
+          "Attributes": {
+            "HP": 100,
+            "Money": 70
+          },
+          "Items": [
+            {
+              "Id": "a828992d-a7f2-4a6d-b1e2-1d7ae04b2cff",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 1000,
+                "IsWeapon": true
+              }
+            }
+          ],
+          "Narration": [
+            {
+              "Id": "fab0bfff-0386-47e7-b540-58c30623bce5",
+              "Name": "Captain_lost_compass",
+              "Attributes": {
+                "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+              }
+            },
+            {
+              "Id": "1fc10b73-c9ad-4bdd-97ea-2bc6f80687f3",
+              "Name": "Can_play_cards",
+              "Attributes": {
+                "Knowledge": "Potrafi grać w karty"
+              }
+            }
+          ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "56e1d464-124d-426f-a957-a30b15913d48",
+          "Name": "Advertising_column",
+          "Narration": [
+            {
+              "Id": "30654447-caf9-4953-ab02-aa30dfb2ebc2",
+              "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
+              "Attributes": {
+                "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
+              }
             }
           ]
         }
       ],
       "Connections": [
         {
-          "Destination": "9c38f301-2a30-40d7-9fe5-7363646caecb"
+          "Destination": "2370052270592"
         },
         {
-          "Destination": "M13"
+          "Destination": "2370050637376"
         },
         {
-          "Destination": "M22"
+          "Destination": "2370052115456"
         },
         {
-          "Destination": "M24"
+          "Destination": "2370050694720"
         },
         {
-          "Destination": "M33"
+          "Destination": "2370052257664"
+        },
+        {
+          "Destination": "2370052247040"
+        },
+        {
+          "Destination": "2370052174464"
+        },
+        {
+          "Destination": "2370052212224"
+        },
+        {
+          "Destination": "2370052295744"
         }
       ]
     },
     {
-      "Id": "M24",
+      "Id": "2370052306624",
       "Name": "Forest",
       "Connections": [
         {
-          "Destination": "M14"
+          "Destination": "2370052307200"
         },
         {
-          "Destination": "M23"
-        },
-        {
-          "Destination": "M34"
+          "Destination": "2370052306944"
         }
       ]
     },
     {
-      "Id": "M31",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "ade0b061-37c8-4713-82e1-49ea1b2c9828"
-        },
-        {
-          "Destination": "M21"
-        },
-        {
-          "Destination": "M32"
-        },
-        {
-          "Destination": "M41"
-        }
-      ]
-    },
-    {
-      "Id": "M32",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "M22"
-        },
-        {
-          "Destination": "M31"
-        },
-        {
-          "Destination": "M33"
-        },
-        {
-          "Destination": "M42"
-        }
-      ]
-    },
-    {
-      "Id": "M33",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "M23"
-        },
-        {
-          "Destination": "M32"
-        },
-        {
-          "Destination": "M34"
-        },
-        {
-          "Destination": "M43"
-        }
-      ]
-    },
-    {
-      "Id": "M34",
+      "Id": "2370052307200",
       "Name": "Forest",
       "Items": [
         {
-          "Id": "ce972ae0-1447-4776-af58-97444e300dbe",
-          "Name": "Brushwood"
+          "Id": "4bfc9387-358f-414a-92e1-2df6a096bae3",
+          "Name": "Herbs",
+          "Attributes": {
+            "IsPoison": true,
+            "NutritionalValue": 10,
+            "Value": 10
+          }
+        },
+        {
+          "Id": "36dbbe56-bc07-437f-aa56-240d26484094",
+          "Name": "Wood",
+          "Attributes": {
+            "Value": 300
+          }
         }
       ],
       "Connections": [
         {
-          "Destination": "M24"
+          "Destination": "2370052306624"
         },
         {
-          "Destination": "M33"
+          "Destination": "2370052305344"
         },
         {
-          "Destination": "M44"
+          "Destination": "2370052307072"
         }
       ]
     },
     {
-      "Id": "M41",
+      "Id": "2370052305344",
       "Name": "Forest",
       "Connections": [
         {
-          "Destination": "M31"
+          "Destination": "2370052307200"
         },
         {
-          "Destination": "M42"
+          "Destination": "2370052295616"
+        },
+        {
+          "Destination": "2370052045184"
         }
       ]
     },
     {
-      "Id": "M42",
+      "Id": "2370052295616",
       "Name": "Forest",
-      "Connections": [
+      "Characters": [
         {
-          "Destination": "M32"
-        },
-        {
-          "Destination": "M41"
-        },
-        {
-          "Destination": "M43"
+          "Id": "580b9377-2f80-463a-b7aa-6e8be8592670",
+          "Name": "Wolf",
+          "Attributes": {
+            "HP": 20
+          }
         }
-      ]
-    },
-    {
-      "Id": "M43",
-      "Name": "Forest",
-      "Connections": [
-        {
-          "Destination": "M33"
-        },
-        {
-          "Destination": "M42"
-        },
-        {
-          "Destination": "M44"
-        }
-      ]
-    },
-    {
-      "Id": "M44",
-      "Name": "Forest",
+      ],
       "Items": [
         {
-          "Id": "0442240d-1603-4ad7-8479-073e00d837ef",
-          "Name": "Brushwood"
+          "Id": "6b485fdb-6939-4231-8066-c9322453343f",
+          "Name": "Herbs",
+          "Attributes": {
+            "NutritionalValue": 10,
+            "Value": 10
+          }
+        },
+        {
+          "Id": "95ac5fe0-d9a7-4b5a-b180-fd461e495806",
+          "Name": "Wood",
+          "Attributes": {
+            "Value": 300
+          }
         }
       ],
       "Connections": [
         {
-          "Destination": "M34"
+          "Destination": "2370052305344"
         },
         {
-          "Destination": "M43"
+          "Destination": "2370052270592"
+        }
+      ]
+    },
+    {
+      "Id": "2370052306944",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "2370052271552"
+        },
+        {
+          "Destination": "2370052306624"
+        },
+        {
+          "Destination": "2370052307072"
+        },
+        {
+          "Destination": "2370052139264"
+        }
+      ]
+    },
+    {
+      "Id": "2370052307072",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "2370052307200"
+        },
+        {
+          "Destination": "2370052306944"
+        },
+        {
+          "Destination": "2370052045184"
+        },
+        {
+          "Destination": "2370015411776"
+        }
+      ]
+    },
+    {
+      "Id": "2370052045184",
+      "Name": "Forest",
+      "Items": [
+        {
+          "Id": "e22332d7-398b-4bca-aa88-b434dba2dea0",
+          "Name": "Herbs",
+          "Attributes": {
+            "IsPoison": true,
+            "Value": 10
+          }
+        },
+        {
+          "Id": "25cd95af-ee9f-47be-ba65-f6ef82045c83",
+          "Name": "Wood",
+          "Attributes": {
+            "Value": 300
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052305344"
+        },
+        {
+          "Destination": "2370052307072"
+        },
+        {
+          "Destination": "2370052270592"
+        },
+        {
+          "Destination": "2370052342848"
+        }
+      ]
+    },
+    {
+      "Id": "2370052270592",
+      "Name": "Forest",
+      "Characters": [
+        {
+          "Id": "2d4bb500-91ee-4a96-887c-6fb0ce753b35",
+          "Name": "Wolf",
+          "Attributes": {
+            "HP": 20
+          }
+        }
+      ],
+      "Items": [
+        {
+          "Id": "0b953df7-c132-4f5d-b278-63fbb53a1975",
+          "Name": "Herbs",
+          "Attributes": {
+            "Value": 10,
+            "IsPoison": true
+          }
+        },
+        {
+          "Id": "a733b6c6-295d-4c90-94e5-9239e60b7ef7",
+          "Name": "Wood",
+          "Attributes": {
+            "Value": 300
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        },
+        {
+          "Destination": "2370052295616"
+        },
+        {
+          "Destination": "2370052045184"
+        },
+        {
+          "Destination": "2370052060032"
+        }
+      ]
+    },
+    {
+      "Id": "2370052139264",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "2370052137856"
+        },
+        {
+          "Destination": "2370052306944"
+        },
+        {
+          "Destination": "2370015411776"
+        },
+        {
+          "Destination": "2370050667072"
+        }
+      ]
+    },
+    {
+      "Id": "2370015411776",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "2370052146432"
+        },
+        {
+          "Destination": "2370052307072"
+        },
+        {
+          "Destination": "2370052139264"
+        },
+        {
+          "Destination": "2370052342848"
+        },
+        {
+          "Destination": "2370050667008"
+        }
+      ]
+    },
+    {
+      "Id": "2370052342848",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "2370052045184"
+        },
+        {
+          "Destination": "2370015411776"
+        },
+        {
+          "Destination": "2370052060032"
+        },
+        {
+          "Destination": "2370050666560"
+        }
+      ]
+    },
+    {
+      "Id": "2370052060032",
+      "Name": "Forest",
+      "Characters": [
+        {
+          "Id": "9df2ad06-9ffb-40c6-a7e7-2900903b7863",
+          "Name": "Bandit",
+          "Attributes": {
+            "HP": 100,
+            "Money": 5
+          }
+        },
+        {
+          "Id": "83e1a9ef-3976-4162-b86c-c6b03cd6465d",
+          "Name": "Bandit",
+          "Attributes": {
+            "HP": 100,
+            "Money": 5
+          },
+          "Items": [
+            {
+              "Id": "c8c0d0c6-4069-4bbc-8b94-81b01c3c4ece",
+              "Name": "Knife",
+              "Attributes": {
+                "IsWeapon": true,
+                "Value": 500
+              }
+            }
+          ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "064676ac-f0c7-44fa-9792-ac4e5eafb9f7",
+          "Name": "Herbs",
+          "Attributes": {
+            "NutritionalValue": 15,
+            "Value": 10
+          }
+        },
+        {
+          "Id": "dae04c52-54eb-4c77-9972-a7380390691d",
+          "Name": "Wood",
+          "Attributes": {
+            "Value": 300
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052270592"
+        },
+        {
+          "Destination": "2370052342848"
+        },
+        {
+          "Destination": "2370052079168"
+        }
+      ]
+    },
+    {
+      "Id": "2370050667072",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "2370052139264"
+        },
+        {
+          "Destination": "2370050667008"
+        }
+      ]
+    },
+    {
+      "Id": "2370050667008",
+      "Name": "Forest",
+      "Connections": [
+        {
+          "Destination": "2370015411776"
+        },
+        {
+          "Destination": "2370050667072"
+        },
+        {
+          "Destination": "2370050666560"
+        }
+      ]
+    },
+    {
+      "Id": "2370050666560",
+      "Name": "Forest",
+      "Characters": [
+        {
+          "Id": "ec18fc8b-1951-4eb1-87c5-6d4d795bdaae",
+          "Name": "Prisoner",
+          "Attributes": {
+            "HP": 100,
+            "IsWanted": true
+          },
+          "Items": [
+            {
+              "Id": "cce85025-8206-4d0f-a0ef-38b302b5b099",
+              "Name": "Elixir",
+              "Attributes": {
+                "IsMysterious": true
+              }
+            }
+          ],
+          "Narration": [
+            {
+              "Id": "53eea7e3-04ae-45bb-b0d2-f97345fd2f6c",
+              "Name": "Prisoner_needs_help",
+              "Attributes": {
+                "Knowledge": "Za pomoc w ukryciu się przed pościgiem więzień oferuje miksturę."
+              }
+            },
+            {
+              "Id": "111771bb-d3aa-40d4-9d00-d28f5f9c44be",
+              "Name": "Prisoner_needs_hero_to_kill_wolves",
+              "Attributes": {
+                "Knowledge": "Więzień potrzebuje cię do zabicia wilków w jaskini, aby mógł się ukryć."
+              }
+            },
+            {
+              "Id": "85c57708-e76a-47bc-9c8b-b31985a13334",
+              "Name": "Prisoner_was_send_by_the_mage",
+              "Attributes": {
+                "Knowledge": "Więzień został tu wysłany przez potężnego maga z daleka, aby porozmawiać ze smokiem. Dostał tę tajemniczą miksturę na drogę, ale nie wie, do czego służy."
+              }
+            }
+          ]
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052078016"
+        },
+        {
+          "Destination": "2370052342848"
+        },
+        {
+          "Destination": "2370050667008"
+        },
+        {
+          "Destination": "2370052079168"
+        }
+      ]
+    },
+    {
+      "Id": "2370052079168",
+      "Name": "Forest",
+      "Items": [
+        {
+          "Id": "2958dd25-394e-48a3-b835-52fc95894b1f",
+          "Name": "Herbs",
+          "Attributes": {
+            "NutritionalValue": 10,
+            "Value": 10
+          }
+        },
+        {
+          "Id": "7206c85e-76be-429f-b36d-20c3ee84efb8",
+          "Name": "Wood",
+          "Attributes": {
+            "Value": 300
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052060032"
+        },
+        {
+          "Destination": "2370050666560"
+        }
+      ]
+    },
+    {
+      "Id": "2370050637376",
+      "Name": "Peasants_hut",
+      "Attributes": {
+        "IsPrivate": true
+      },
+      "Characters": [
+        {
+          "Id": "884d7e5c-11c1-4819-9ac2-a399f9697d61",
+          "Name": "Peasant",
+          "Attributes": {
+            "HP": 100,
+            "Money": 2
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        },
+        {
+          "Destination": "2370050637184"
+        }
+      ]
+    },
+    {
+      "Id": "2370050637184",
+      "Name": "Field",
+      "Items": [
+        {
+          "Id": "fa8bbd1a-806c-43b4-be04-d67d69118215",
+          "Name": "Crops",
+          "Attributes": {
+            "Value": 5
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050637376"
+        }
+      ]
+    },
+    {
+      "Id": "2370052115456",
+      "Name": "Inn",
+      "Characters": [
+        {
+          "Id": "4c88fb0c-bf94-42e8-ba6c-01f398b7b0ae",
+          "Name": "Drunkard",
+          "Attributes": {
+            "HP": 100,
+            "Money": 0
+          },
+          "Items": [
+            {
+              "Id": "49b00300-78ad-40f8-9651-6bcfdb339fd0",
+              "Name": "Alcohol",
+              "Attributes": {
+                "Value": 5
+              }
+            }
+          ]
+        },
+        {
+          "Id": "de3a0902-4607-41ae-9ab8-8243ecc60ad4",
+          "Name": "Innkeeper",
+          "Attributes": {
+            "HP": 100,
+            "Money": 800
+          },
+          "Items": [
+            {
+              "Id": "d10c0908-2b8a-4dd3-b98d-47be5fd56779",
+              "Name": "Alcohol",
+              "Attributes": {
+                "Value": 5
+              }
+            }
+          ],
+          "Narration": [
+            {
+              "Id": "176b3a68-0dbf-40a2-a3d5-ba4f4d39f34e",
+              "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
+              "Attributes": {
+                "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
+              }
+            }
+          ]
+        },
+        {
+          "Id": "0e7cbcc2-5157-4fc5-8550-09dbc2be37c3",
+          "Name": "Innkeeper_assistant",
+          "Attributes": {
+            "HP": 100,
+            "Money": 50
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        },
+        {
+          "Destination": "2370050694720"
+        }
+      ]
+    },
+    {
+      "Id": "2370052257664",
+      "Name": "Town_hall",
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        }
+      ]
+    },
+    {
+      "Id": "2370052247040",
+      "Name": "Prison",
+      "Characters": [
+        {
+          "Id": "196e04cf-ebab-43eb-aae6-e283c66898d3",
+          "Name": "Prison_guard",
+          "Attributes": {
+            "HP": 100,
+            "Money": 50,
+            "IsDrunk": false
+          },
+          "Items": [
+            {
+              "Id": "b9818570-6ad8-4dab-94ab-64201355d27e",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 800,
+                "IsWeapon": true
+              }
+            }
+          ]
+        },
+        {
+          "Id": "f1479653-bf2b-41c3-aa67-3bb3bd558d18",
+          "Name": "Prison_governor",
+          "Attributes": {
+            "HP": 100,
+            "Money": 500
+          },
+          "Items": [
+            {
+              "Id": "c900ca22-5465-4a55-bf2a-219f8d5cf6f7",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 1200,
+                "IsWeapon": true
+              }
+            },
+            {
+              "Id": "61b3ec7b-eada-44bf-ad1a-343aace6f2fb",
+              "Name": "Keys"
+            }
+          ]
+        },
+        {
+          "Id": "da9596b2-8cc0-4257-b2ad-f1fdd0c11ac0",
+          "Name": "Prisoner",
+          "Attributes": {
+            "HP": 100,
+            "Money": 0
+          }
+        },
+        {
+          "Id": "df65f273-5e74-4727-8df0-43f47b8698a4",
+          "Name": "Bandit",
+          "Attributes": {
+            "HP": 100,
+            "IsBrotherOfMainHero": true
+          },
+          "Narration": [
+            {
+              "Id": "01ea8931-cb75-42a5-9bf8-cf99315d9d50",
+              "Name": "Is_Brother_Of_Main_Hero",
+              "Attributes": {
+                "Knowledge": "Bandyta uratowany z więzienia jest bratem gównego bohatera"
+              }
+            }
+          ]
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        }
+      ]
+    },
+    {
+      "Id": "2370052174464",
+      "Name": "Market",
+      "Characters": [
+        {
+          "Id": "6815d56a-9e8a-4ab5-8bfe-a9b17acbf6fa",
+          "Name": "Merchant",
+          "Attributes": {
+            "HP": 100,
+            "Money": 1000
+          },
+          "Items": [
+            {
+              "Id": "35c51714-dd51-4203-8e3c-8884c263273f",
+              "Name": "Fiddle_stick",
+              "Attributes": {
+                "Value": 50,
+                "DiscountGroup": "Fiddle_stick"
+              }
+            }
+          ],
+          "Narration": [
+            {
+              "Id": "f87c8cf1-6442-4bbb-aae6-fc33a3bc56ec",
+              "Name": "Merchant_will_give_discounts_in_exchange_for_mini_quests",
+              "Attributes": {
+                "Knowledge": "Merchant will give the Fiddle_stick for half of the original price if the Hero will provide him with some Horse_Bristles. If the Hero helps him to get rid of the Rats in the Market, he will also half the price. If the Hero does both things, he offers the Fiddle_stick for free. / Handlarz sprzeda Bohaterowi Smyczek za połowę oryginalnej ceny, jeśli Bohater da mu trochę Włosia Końskiego. Tak samo, jeśli Bohater pozbędzie się Szczurów z Targowiska i przedstawi Ogon_Szczura jako dowód. Jeśli Bohater wykona oba zadania, Handlarz oferuje Smyczek za darmo."
+              }
+            }
+          ]
+        },
+        {
+          "Id": "f6fcafd4-0227-45ae-bbfd-654a5bdbb833",
+          "Name": "Merchant_respected",
+          "Attributes": {
+            "HP": 100,
+            "Money": 2000
+          }
+        },
+        {
+          "Id": "5f2c635f-39de-46d8-aecd-0ec96ca7e97a",
+          "Name": "Rat",
+          "Attributes": {
+            "HP": 3
+          }
+        },
+        {
+          "Id": "a4366f7f-4fe9-4de5-a88a-56a9c8c9db9c",
+          "Name": "Rat",
+          "Attributes": {
+            "HP": 3
+          }
+        },
+        {
+          "Id": "9373c9f6-5971-4376-a739-c12268838369",
+          "Name": "Rat",
+          "Attributes": {
+            "HP": 3
+          }
+        }
+      ],
+      "Items": [
+        {
+          "Id": "191b228b-4fb1-4e9d-9792-41386ffaaac4",
+          "Name": "Advertising_column"
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        }
+      ]
+    },
+    {
+      "Id": "ce35520e-b02e-4a52-9c29-0ea258837fc1",
+      "Name": "Lumberjacks_hut",
+      "Attributes": {
+        "IsPrivate": true
+      },
+      "Characters": [
+        {
+          "Id": "ab0baf5b-cb9a-45b1-8bb9-563d2beaa1f3",
+          "Name": "Lumberjack",
+          "Attributes": {
+            "HP": 100,
+            "Money": 320
+          },
+          "Items": [
+            {
+              "Id": "91c9f732-f755-4b57-be8f-d7dc7b72ac20",
+              "Name": "Axe",
+              "Attributes": {
+                "Value": 800,
+                "IsWeapon": true
+              }
+            }
+          ],
+          "Narration": [
+            {
+              "Id": "182d3e02-d33a-452a-85b3-e239789545e2",
+              "Name": "Help_with_wood",
+              "Attributes": {
+                "Knowledge": "Drwal potrzebuje pomocy przy przyniesieniu drewna za 300 coinów"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "a69e7bb4-e200-40ad-bea9-80534e44f56c",
+          "Name": "Daughter",
+          "Attributes": {
+            "HP": 100
+          },
+          "Items": [
+            {
+              "Id": "55031fdf-68f5-4519-a62d-cfbabe76b740",
+              "Name": "Axe",
+              "Attributes": {
+                "Value": 800,
+                "IsWeapon": true
+              }
+            }
+          ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "6a30f192-bc83-472d-869c-eca6762c6aef",
+          "Name": "Saw",
+          "Attributes": {
+            "Value": 700
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052305344"
+        }
+      ]
+    },
+    {
+      "Id": "2370050694720",
+      "Name": "Pasture",
+      "Characters": [
+        {
+          "Id": "3dfba469-c9b8-43ab-9195-479ab6e34761",
+          "Name": "Sheep",
+          "Attributes": {
+            "HP": 10
+          }
+        },
+        {
+          "Id": "77145ea1-1c6b-437b-ba26-f74a11098ee2",
+          "Name": "Sheep",
+          "Attributes": {
+            "HP": 10
+          }
+        },
+        {
+          "Id": "1aeba833-346c-402e-ab47-17ec4231ce82",
+          "Name": "Sheep",
+          "Attributes": {
+            "HP": 10
+          }
+        },
+        {
+          "Id": "c82a5687-4195-490c-973f-4f4c0df520e4",
+          "Name": "Shepherd",
+          "Attributes": {
+            "HP": 100,
+            "Money": 210
+          },
+          "Narration": [
+            {
+              "Id": "00c27590-24e8-4d4a-9082-51434356762e",
+              "Name": "Help_with_sheep",
+              "Attributes": {
+                "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
+              }
+            },
+            {
+              "Id": "e053e18d-2bd8-4f6b-9085-b95930ea98bb",
+              "Name": "Captain_lost_compass",
+              "Attributes": {
+                "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+              }
+            },
+            {
+              "Id": "569dabbc-346b-4250-bff5-e103c4efd20f",
+              "Name": "Can_play_cards",
+              "Attributes": {
+                "Knowledge": "Potrafi grać w karty"
+              }
+            },
+            {
+              "Id": "8d5099e7-2c4e-40a1-b068-71d060f20126",
+              "Name": "Shepherd_is_suspicious_towards_the_fiddler",
+              "Attributes": {
+                "Knowledge": "Shepherd thinks that the Fiddler is a bad man, he suspects the Fiddler is up to nothing good here on the Pasture. Advices not to help him. / Pasterz myśli, że Skrzypek knuje coś niedobrego na Pastwisku. Radzi, by lepiej mu nie pomogać."
+              }
+            },
+            {
+              "Id": "2e96561c-9342-4fff-b9e2-efb70d558388",
+              "Name": "Shepherd_lost_his_sheep_and_asks_for_help_with_the_fiddler",
+              "Attributes": {
+                "Knowledge": "One of the Shepherd's sheep has been abducted! Turns out Shepherd was right, the Fiddler turned out to be a bad man, utilising his music for evil by mesmerising unsuspecting creatures. He hid somewhere in the forest, waiting for somebody to buy the stolen animal. Shepherd asks the Hero for rescuing the poor wooly soul, offering 30 coins for the help. / Jedna z owiec Pasterza została uprowadzona! Okazuje się, że Pasterz miał rację, Skrzypek jest złym człowiekiem, który korzysta ze swojej muzyki w niecnych celach, omamiając wrażliwe istoty. Ponoć ukrył się gdzieś w lesie i czeka na chętnego kupca na skradzone zwierzę. Pasterz prosi Bohatera o ratunek dla zwierzęcie, oferuje 30 monet za pomoc."
+              }
+            }
+          ]
+        },
+        {
+          "Id": "f98c3802-4bcc-454b-a2ed-b8260b6bd11a",
+          "Name": "Fiddler",
+          "Attributes": {
+            "HP": 15,
+            "Money": 5
+          },
+          "Items": [
+            {
+              "Id": "39d53296-9f3e-4e89-927d-8ddf9116d4b6",
+              "Name": "Keys"
+            },
+            {
+              "Id": "82bdf99f-09a9-4ce7-8aa3-7676aca3e8ec",
+              "Name": "Fiddle",
+              "Attributes": {
+                "Value": 50
+              }
+            }
+          ],
+          "Narration": [
+            {
+              "Id": "fa63899e-86a0-41aa-8c77-65f973e02c02",
+              "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
+              "Attributes": {
+                "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
+              }
+            }
+          ]
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        },
+        {
+          "Destination": "2370052296448"
+        },
+        {
+          "Destination": "2370052295744"
+        }
+      ]
+    },
+    {
+      "Id": "2370052212224",
+      "Name": "Village",
+      "Characters": [
+        {
+          "Id": "a8cb72f2-77fa-4f1f-870a-5dc1254cc906",
+          "Name": "Common_man",
+          "Attributes": {
+            "HP": 100,
+            "Money": 3
+          }
+        },
+        {
+          "Id": "6b3337ef-afad-4424-bb48-dbd1daf45f44",
+          "Name": "Main_hero",
+          "Attributes": {
+            "HP": 100,
+            "Money": 30
+          },
+          "Items": [
+            {
+              "Id": "68fe9e4a-062a-4d42-8ae0-4bf5b0f0a334",
+              "Name": "Sword",
+              "Attributes": {
+                "IsWeapon": true,
+                "Value": 1000
+              }
+            }
+          ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "467a0cce-55ce-42e9-82a5-03d749b0caa4",
+          "Name": "Well"
+        },
+        {
+          "Id": "653cc090-325b-43f4-a0f0-b07f7c77937d",
+          "Name": "Stone",
+          "Attributes": {
+            "Value": 2
+          }
+        },
+        {
+          "Id": "0520447a-51bd-4610-86f5-d33799f948c2",
+          "Name": "Advertising_column"
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050636416"
+        }
+      ]
+    },
+    {
+      "Id": "2370052296448",
+      "Name": "Shepherds_hideout",
+      "Attributes": {
+        "IsPrivate": true
+      },
+      "Connections": [
+        {
+          "Destination": "2370050694720"
+        }
+      ]
+    },
+    {
+      "Id": "2370052146432",
+      "Name": "Wizards_hut",
+      "Attributes": {
+        "IsPrivate": true
+      },
+      "Characters": [
+        {
+          "Id": "87adeef1-9cd5-4908-92fb-2fe0ccc6a66e",
+          "Name": "Wizard",
+          "Attributes": {
+            "HP": 200,
+            "Money": 2000
+          }
+        }
+      ],
+      "Items": [
+        {
+          "Id": "1f130c1f-706b-4c22-94f6-7aa8c9cdf5c1",
+          "Name": "Elixir",
+          "Attributes": {
+            "Value": 30,
+            "NutritionalValue": 1000
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370015411776"
+        }
+      ]
+    },
+    {
+      "Id": "2370052078016",
+      "Name": "Cave",
+      "Characters": [
+        {
+          "Id": "9add5e60-b41d-4525-8732-bb6c8b5b7a53",
+          "Name": "Troll",
+          "Attributes": {
+            "HP": 50
+          }
+        },
+        {
+          "Id": "016d7737-1f9c-458b-900a-2c7437b53360",
+          "Name": "Wolf",
+          "Attributes": {
+            "HP": 20
+          }
+        }
+      ],
+      "Items": [
+        {
+          "Id": "89603a01-9852-46b1-8918-172e7969afa5",
+          "Name": "Stone",
+          "Attributes": {
+            "Value": 2
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050666560"
+        }
+      ]
+    },
+    {
+      "Id": "2370052137856",
+      "Name": "Port",
+      "Items": [
+        {
+          "Id": "0c0a2e42-36a9-4e8d-a269-caa65e60e2e3",
+          "Name": "Boat",
+          "Attributes": {
+            "Value": 10000
+          }
+        },
+        {
+          "Id": "5b8c5800-9a74-4531-bc53-22284dad79cc",
+          "Name": "Advertising_column",
+          "Narration": [
+            {
+              "Id": "b6d3b493-d400-4389-90c1-63bd3438c03a",
+              "Name": "Brother_quest_tavern_hint",
+              "Attributes": {
+                "Knowledge": "Istnieje możliwość dostarczenia posiłków dla więźniów. Oczywiscie, za dodatkową oplatą. Pakunki będą przyjmowane na drodze przed więzieniem. Pobliska Taverna może okazać się pomocna."
+              }
+            },
+            {
+              "Id": "38abdffb-dc31-4ecf-9e09-cb3b0b5afefc",
+              "Name": "Brother_quest_start_active",
+              "Attributes": {
+                "Knowledge": "Brat siedzi w więzieniu. Trzeba go wydostać."
+              }
+            }
+          ]
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052139264"
+        },
+        {
+          "Destination": "2370052124608"
+        },
+        {
+          "Destination": "2370052087104"
+        },
+        {
+          "Destination": "2370052051584"
+        }
+      ]
+    },
+    {
+      "Id": "2370052124608",
+      "Name": "Island",
+      "Connections": [
+        {
+          "Destination": "2370052137856"
+        }
+      ]
+    },
+    {
+      "Id": "2370052087104",
+      "Name": "Tavern",
+      "Characters": [
+        {
+          "Id": "76f05fd0-7b2d-4031-ac01-17a277c85a8f",
+          "Name": "Innkeeper",
+          "Attributes": {
+            "HP": 100,
+            "Money": 1000
+          }
+        },
+        {
+          "Id": "6c03b5d7-1b7e-4230-82e5-b8af124c883f",
+          "Name": "Miss",
+          "Attributes": {
+            "HP": 100,
+            "Money": 10
+          },
+          "Items": [
+            {
+              "Id": "c889afe3-7984-4db1-888b-034ba4ead49c",
+              "Name": "Alcohol",
+              "Attributes": {
+                "Value": 3
+              }
+            },
+            {
+              "Id": "8e9af71f-c603-48c3-a962-cbb9d81cbd70",
+              "Name": "File"
+            },
+            {
+              "Id": "c66ae6a4-a7e8-4a21-a76e-46aa5d939a0b",
+              "Name": "Mutton_chop"
+            }
+          ]
+        },
+        {
+          "Id": "31d0b811-2f9b-4aee-aa58-30cf6af19d6a",
+          "Name": "Traveler",
+          "Attributes": {
+            "HP": 100,
+            "Money": 70
+          },
+          "Items": [
+            {
+              "Id": "26e9b21f-e3ff-49b2-abf9-8ca6cc08248f",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 1000,
+                "IsWeapon": true
+              }
+            }
+          ]
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052137856"
+        }
+      ]
+    },
+    {
+      "Id": "2370052051584",
+      "Name": "Ship",
+      "Characters": [
+        {
+          "Id": "b3cbf093-ffc0-4e40-a6ba-8f72cf000ca4",
+          "Name": "Ship_captain",
+          "Attributes": {
+            "HP": 100,
+            "Money": 2000
+          },
+          "Items": [
+            {
+              "Id": "471dff92-d9a4-43d0-990d-38e9a51c38f5",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 1200,
+                "IsWeapon": true
+              }
+            }
+          ]
+        },
+        {
+          "Id": "5e171ed3-2d4c-4be0-b4e9-3591b7fd543d",
+          "Name": "Ship_guard",
+          "Attributes": {
+            "HP": 100,
+            "Money": 50
+          },
+          "Items": [
+            {
+              "Id": "7897dc91-5567-4d59-8f63-0e17fcc7762d",
+              "Name": "Sword",
+              "Attributes": {
+                "Value": 800,
+                "IsWeapon": true
+              }
+            }
+          ]
+        },
+        {
+          "Id": "fda0dd1c-b804-4856-8119-cc8da1be6d1a",
+          "Name": "Ship_guard",
+          "Attributes": {
+            "HP": 100,
+            "Money": 50
+          },
+          "Items": [
+            {
+              "Id": "79897cc6-2a16-4c2e-9d91-6621369e44cd",
+              "Name": "Knife",
+              "Attributes": {
+                "IsWeapon": true,
+                "Value": 500
+              }
+            }
+          ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "c670152c-837f-45b5-84b4-a9ceb4878c5d",
+          "Name": "Boat",
+          "Attributes": {
+            "Value": 10000
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052137856"
+        }
+      ]
+    },
+    {
+      "Id": "2370052271552",
+      "Name": "Dragons_lair",
+      "Characters": [
+        {
+          "Id": "289b0414-1d57-44ad-a6a5-5426cd3fd6ac",
+          "Name": "Dragon",
+          "Attributes": {
+            "HP": 1000
+          }
+        }
+      ],
+      "Items": [
+        {
+          "Id": "095b7de8-5341-40a3-8d8f-ec6b253855b0",
+          "Name": "Dragon_egg",
+          "Attributes": {
+            "Value": 10000
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370052306624"
+        }
+      ]
+    },
+    {
+      "Id": "2370052295744",
+      "Name": "Barn",
+      "Characters": [
+        {
+          "Id": "42ab79f5-53b5-4933-ad06-06939ca068a5",
+          "Name": "Horse",
+          "Attributes": {
+            "HP": 30
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Destination": "2370050694720"
+        },
+        {
+          "Destination": "2370050636416"
         }
       ]
     }
   ],
   "changed_nodes": {
-    "8fa7cc4a-730e-473f-970a-ffe8a11dc159": ""
+    "6b3337ef-afad-4424-bb48-dbd1daf45f44": ""
   },
   "message": null,
   "game_status": "in_progress",
   "location_info": {
-    "desc": "Lokacja Forest nie ma żadnych własności.",
-    "items": [],
+    "desc": "Lokacja Village nie ma żadnych własności.",
+    "items": [
+      {
+        "name": "Well",
+        "attributes": null
+      },
+      {
+        "name": "Stone",
+        "attributes": {
+          "Value": 2
+        }
+      },
+      {
+        "name": "Advertising_column",
+        "attributes": null
+      }
+    ],
     "characters": [
       {
-        "name": "Rumcajs",
-        "attributes": null,
+        "name": "Common_man",
+        "attributes": {
+          "HP": 100,
+          "Money": 3
+        },
+        "items": [],
+        "characters": [],
+        "knowledge": null,
+        "sound": null
+      },
+      {
+        "name": "Main_hero",
+        "attributes": {
+          "HP": 100,
+          "Money": 30
+        },
         "items": [
           {
-            "name": "Brushwood",
-            "attributes": null
+            "name": "Sword",
+            "attributes": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
           }
         ],
         "characters": [],
@@ -1174,7 +3159,7 @@
         "sound": null
       }
     ],
-    "main_location_id": "M23"
+    "main_location_id": "2370052212224"
   },
-  "main_character": "f025cfc1-9c39-44b0-b4c2-75b44308f524"
+  "main_character": "6b3337ef-afad-4424-bb48-dbd1daf45f44"
 }

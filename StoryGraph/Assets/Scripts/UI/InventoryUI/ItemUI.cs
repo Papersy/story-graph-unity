@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using InteractableItems;
 using LocationDir;
 using UnityEngine;
 

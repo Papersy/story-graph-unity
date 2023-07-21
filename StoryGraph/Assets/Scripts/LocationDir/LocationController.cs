@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
+using InteractableItems;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;

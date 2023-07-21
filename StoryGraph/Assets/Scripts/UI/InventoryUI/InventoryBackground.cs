@@ -1,5 +1,6 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
+using InteractableItems;
 using LocationDir;
 using UnityEngine;
 using UnityEngine.EventSystems;

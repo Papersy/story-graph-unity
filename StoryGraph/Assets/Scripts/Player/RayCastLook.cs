@@ -2,6 +2,7 @@
 using System.Collections;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
+using InteractableItems;
 using LocationDir;
 using UI;
 using Unity.VisualScripting;

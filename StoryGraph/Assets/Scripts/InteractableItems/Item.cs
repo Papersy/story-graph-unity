@@ -1,8 +1,11 @@
+using LocationDir;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace LocationDir
+namespace InteractableItems
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BoxCollider))]
     public class Item : MonoBehaviour
     {
         public JToken ItemInfo { get; set; }
