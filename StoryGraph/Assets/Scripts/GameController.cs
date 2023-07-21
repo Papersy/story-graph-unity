@@ -438,6 +438,29 @@ public class GameController
         return null;
     }
 
+    private JToken FindVariantOfFightWithNpc(string npcName)
+    {
+        char[] delimiter = {'/'};
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Item acquisition from another character")
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[1]["WorldNodeName"].ToString() == npcName)
+                        return variant;
+                }
+            }
+        }
+        
+        return null;
+    }
+
     private void WriteLogAboutNewWorld(string json)
     {
         var filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";

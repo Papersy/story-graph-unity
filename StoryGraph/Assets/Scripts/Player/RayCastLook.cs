@@ -70,6 +70,17 @@ namespace Player
                     }
                 }
             }
+
+            if (Keyboard.current.rKey.wasPressedThisFrame)
+            {
+                if (Physics.Raycast(_startPoint.position, rayDirection, out _hit, Distance))
+                {
+                    if (_hit.transform.gameObject.CompareTag("Npc"))
+                    {
+                        Debug.Log("All good, you can talk!");
+                    }
+                }
+            }
         }
 
         private IEnumerator PickUp()

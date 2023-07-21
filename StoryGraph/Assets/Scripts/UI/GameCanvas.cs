@@ -10,9 +10,11 @@ namespace UI
         [SerializeField] private GameObject _canvas;
         [SerializeField] private InventoryUI _inventoryUI;
         [SerializeField] private ItemUI _itemUI;
+        [SerializeField] private DialogWindow _dialogWindow;
         
         public LocationInfoUI LocationInfoUI;
 
+        public DialogWindow DialogWindow => _dialogWindow;
         public InventoryUI InventoryUI => _inventoryUI;
         public ItemUI ItemUI => _itemUI;
 
