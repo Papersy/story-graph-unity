@@ -71,6 +71,7 @@ namespace Player
                 }
             }
 
+            //Open dialog window
             if (Keyboard.current.rKey.wasPressedThisFrame)
             {
                 if (Physics.Raycast(_startPoint.position, rayDirection, out _hit, Distance))
@@ -78,6 +79,7 @@ namespace Player
                     if (_hit.transform.gameObject.CompareTag("Npc"))
                     {
                         Debug.Log("All good, you can talk!");
+                        _hit.transform.gameObject.GetComponent<Npc.Npc>().StartDialog();
                     }
                 }
             }

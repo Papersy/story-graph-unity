@@ -210,6 +210,8 @@ public class GameController
             FindVariantOfGettingFromNpc(npcName, pickingItemName), _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
+        
+        DeserializeFileAfterInventoryChange(json);
     }
 
     public async void PuttingItem(string puttingItemName)

@@ -56,6 +56,18 @@ namespace UI
             ShowCursor();
         }
 
+        public void ShowDialog()
+        {
+            DialogWindow.Show();
+            ShowCursor();
+        }
+
+        public void HideDialog()
+        {
+            DialogWindow.Hide();
+            HideCursor();
+        }
+
         public void HideMainInventory()
         {
             _inventoryUI.HideInventory();
