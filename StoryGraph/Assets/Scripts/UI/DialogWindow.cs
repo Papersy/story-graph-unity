@@ -1,5 +1,6 @@
 ﻿using System;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
@@ -11,7 +12,8 @@ namespace UI
         public TextMeshProUGUI Text;
         public Button NextFrame;
 
-        public Button GetItem;
+        public Button TakeItem;
+        public Button GiveItem;
         public Button StartBattle;
 
         public int DialogIndex = 0;
@@ -46,13 +48,18 @@ namespace UI
 
         private void SetInfo()
         {
-            if(DialogIndex >= Dialog.dialog.Count)
+            if (DialogIndex >= Dialog.dialog.Count)
+            {
+                NextFrame.gameObject.SetActive(false);
                 return;
+            }
 
             if (Dialog.dialog[DialogIndex].side == 1)
             {
                 PlayerAvatar.gameObject.SetActive(true);
                 NpcAvatar.gameObject.SetActive(false);
+                
+                NpcAvatar.sprite = Resources.Load<Sprite>("JsonFiles/AvatarIcon/default");
             }
             else if (Dialog.dialog[DialogIndex].side == 2)
             {

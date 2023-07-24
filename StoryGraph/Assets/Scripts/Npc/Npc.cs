@@ -23,26 +23,28 @@ namespace Npc
             GetDialog();
             
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.ShowDialog();
-            var item = GetItemName();
-            if (item != null)
+            if (HasItems())
             {
                 Debug.Log("Give item");
                 
-                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.GetItem.onClick.RemoveAllListeners();
-                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.GetItem.onClick.AddListener(GiveItem);
-                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.GetItem.gameObject.SetActive(true);
+                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.GiveItem.onClick.RemoveAllListeners();
+                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.TakeItem.onClick.RemoveAllListeners();
+                
+                
+                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.GiveItem.onClick.AddListener(GiveItem);
+                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.TakeItem.onClick.AddListener(TakeItem);
             }
             else
             {
                 Debug.Log("No items to give");
                 
-                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.GetItem.gameObject.SetActive(false);
+                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.GiveItem.gameObject.SetActive(false);
             }
 
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.StartBattle.gameObject.SetActive(true);
         }
 
-        public void GetDialog()
+        private void GetDialog()
         {
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.DialogIndex = 0;
             
@@ -55,33 +57,24 @@ namespace Npc
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.Dialog =
                 JsonUtility.FromJson<Dialog>(json);
         }
-        
-        public void GiveItem()
-        {
-            var itemName = GetItemName();
 
-            if (itemName != null)
-            {
-                AllServices.Container.Single<IGameService>().GetGameController().GetItemFromNpc(NpcInfo["Name"].ToString(), itemName);
-                foreach (var item in NpcInfo["Items"])
-                {
-                    if(item["Name"].ToString() == itemName)
-                        item.Remove();
-                }
-            }
+        private void GiveItem()
+        {
+            AllServices.Container.Single<IGameService>().GetGameController().GiveItemToNpc(NpcInfo["Name"].ToString());
         }
 
-        private string GetItemName()
+        private void TakeItem()
+        {
+            if (HasItems())
+                AllServices.Container.Single<IGameService>().GetGameController().TakeItemFromNpc(NpcInfo["Name"].ToString());
+        }
+
+        private bool HasItems()
         {
             if (NpcInfo["Items"] == null)
-                return null;
+                return false;
 
-            foreach (var item in NpcInfo["Items"])
-            {
-                return item["Name"].ToString();
-            }
-
-            return null;
+            return true;
         }
 
         private string GetNpcName()

@@ -39,6 +39,15 @@ namespace UI
                     _itemUI.Hide();
                 }
             }
+
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                _inventoryUI.HideInventory();
+                _dialogWindow.Hide();
+                _itemUI.Hide();
+                
+                HideCursor();
+            }
         }
 
         private void OnEnable() =>

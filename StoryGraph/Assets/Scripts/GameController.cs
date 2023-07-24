@@ -203,17 +203,26 @@ public class GameController
         DeserializeFileAfterInventoryChange(json);
     }
 
-    public async void GetItemFromNpc(string npcName, string pickingItemName)
+    public async void GiveItemToNpc(string npcName)
     {
         var json = await HttpClientController.PostNewWorld(_jWorlds,
             FindProd("Item acquisition from another character", _jAvailableProductions),
-            FindVariantOfGettingFromNpc(npcName, pickingItemName), _mainPlayerName);
+            FindVariantOfGiveItemToNpc(npcName), _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
-        
         DeserializeFileAfterInventoryChange(json);
     }
 
+    public async void TakeItemFromNpc(string npcName)
+    {
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Item acquisition from another character", _jAvailableProductions),
+            FindVariantOfGetItemFromNpc(npcName), _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+        DeserializeFileAfterInventoryChange(json);
+    }
+    
     public async void PuttingItem(string puttingItemName)
     {
         var json = await HttpClientController.PostNewWorld(_jWorlds,
@@ -249,29 +258,6 @@ public class GameController
             if (firstWord == name)
             {
                 return entity["prod"];
-            }
-        }
-
-        return null;
-    }
-
-    private JToken FindVariantTest(string productionName, string lsNodeTarget, string lsNodeItem)
-    {
-        char[] delimiter = {'/'};
-
-        foreach (var entity in _jAvailableProductions)
-        {
-            var title = entity["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
-
-            if (firstWord == productionName)
-            {
-                foreach (var variant in entity["variants"][0])
-                {
-                    if (variant["LSNodeRef"].ToString() == lsNodeTarget)
-                        return variant;
-                }
             }
         }
 
@@ -397,7 +383,7 @@ public class GameController
         return null;
     }
 
-    private JToken FindVariantOfGettingFromNpc(string npcName, string itemName)
+    private JToken FindVariantOfGiveItemToNpc(string npcName)
     {
         char[] delimiter = {'/'};
 
@@ -411,8 +397,30 @@ public class GameController
             {
                 foreach (var variant in entity["variants"])
                 {
-                    if (variant[3]["WorldNodeName"].ToString() == itemName &&
-                        variant[0]["WorldNodeName"].ToString() == npcName)
+                    if (variant[1]["WorldNodeName"].ToString() == npcName)
+                        return variant;
+                }
+            }
+        }
+
+        return null;
+    }
+    
+    private JToken FindVariantOfGetItemFromNpc(string npcName)
+    {
+        char[] delimiter = {'/'};
+
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Item acquisition from another character")
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[2]["WorldNodeName"].ToString() == npcName)
                         return variant;
                 }
             }
