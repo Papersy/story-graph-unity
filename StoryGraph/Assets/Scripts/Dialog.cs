@@ -4,6 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public class Dialog
 {
+    public string npc_name;
     public List<DialogContainer> dialog = new List<DialogContainer>();
 }
 

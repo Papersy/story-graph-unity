@@ -383,7 +383,7 @@ public class GameController
         return null;
     }
 
-    private JToken FindVariantOfGiveItemToNpc(string npcName)
+    public JToken FindVariantOfGiveItemToNpc(string npcName)
     {
         char[] delimiter = {'/'};
 
@@ -405,8 +405,8 @@ public class GameController
 
         return null;
     }
-    
-    private JToken FindVariantOfGetItemFromNpc(string npcName)
+
+    public JToken FindVariantOfGetItemFromNpc(string npcName)
     {
         char[] delimiter = {'/'};
 
