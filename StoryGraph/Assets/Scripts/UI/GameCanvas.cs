@@ -18,6 +18,7 @@ namespace UI
         public InventoryUI InventoryUI => _inventoryUI;
         public ItemUI ItemUI => _itemUI;
 
+        public static bool IsUiActive = false; 
         private IGameService _gameService;
 
         private void Awake()
@@ -61,24 +62,28 @@ namespace UI
 
         public void ShowMainInventory()
         {
+            IsUiActive = true;
             _inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
             ShowCursor();
         }
 
         public void ShowDialog()
         {
+            IsUiActive = true;
             DialogWindow.Show();
             ShowCursor();
         }
 
         public void HideDialog()
         {
+            IsUiActive = false;
             DialogWindow.Hide();
             HideCursor();
         }
 
         public void HideMainInventory()
         {
+            IsUiActive = false;
             _inventoryUI.HideInventory();
             HideCursor();
         }

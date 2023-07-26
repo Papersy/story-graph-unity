@@ -23,17 +23,6 @@ namespace LocationDir
             }
         }
 
-        // private void Start()
-        // {
-        //     _target = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerTransform();
-        // }
-        //
-        // public void Update()
-        // {
-        //     if(_target != null)
-        //         _teleportName.transform.LookAt(_target);
-        // }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using InteractableItems;
-using LocationDir;
 using UI;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
