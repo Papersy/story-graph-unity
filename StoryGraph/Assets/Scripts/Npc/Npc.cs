@@ -24,7 +24,7 @@ namespace Npc
             
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.ShowDialog();
         }
-
+        
         private void GetDialog()
         {
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.DialogIndex = 0;
