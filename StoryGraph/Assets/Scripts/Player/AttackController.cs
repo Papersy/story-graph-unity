@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UI;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace Player
@@ -9,6 +8,8 @@ namespace Player
     public class AttackController : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
+        [SerializeField] private GameObject _attackObj;
+        
         private InputAction leftMouseClick;
  
         private void Awake() {
@@ -30,10 +31,13 @@ namespace Player
             const string attack = "Attack";
             
             _animator.SetBool(attack, true);
+            _attackObj.SetActive(true);
 
             yield return new WaitForSeconds(0.75f);
         
+            _attackObj.SetActive(false);
             _animator.SetBool(attack, false);
+            _attackObj.SetActive(false);
         }
     }
 }

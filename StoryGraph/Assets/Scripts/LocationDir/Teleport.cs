@@ -1,6 +1,7 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
+using Player;
 using TMPro;
 using UnityEngine;
 
@@ -25,7 +26,16 @@ namespace LocationDir
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
-                AllServices.Container.Single<IGameService>().GetGameController().ChangeLocation(Variant);
+            {
+                if (PlayerStats.NpcBattleInfo == null)
+                    AllServices.Container.Single<IGameService>().GetGameController().ChangeLocation(Variant);
+                else
+                {
+                    var fighterName = PlayerStats.NpcBattleInfo["Name"].ToString();
+                    var playerId = AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId();
+                    AllServices.Container.Single<IGameService>().GetGameController().EscapeFromBattle(fighterName, playerId);
+                }
+            }
         }
     }
 }

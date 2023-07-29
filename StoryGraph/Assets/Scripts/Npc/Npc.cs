@@ -1,8 +1,11 @@
-﻿using CodeBase.Infrastructure.Services;
+﻿using System;
+using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
+using Player;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Npc
 {
@@ -13,9 +16,18 @@ namespace Npc
         public JToken NpcInfo { get; set; }
         public Dialog Dialog;
 
+        public int Health;
+        
         public void Init()
         {
             _npcName.text = GetNpcName();
+
+            var attributes = NpcInfo["Attributes"];
+            if(attributes["HP"] != null)
+            {
+                var hp = attributes["HP"].ToString();
+                Health = Convert.ToInt32(hp);
+            }
         }
 
         public void StartDialog()
@@ -50,6 +62,44 @@ namespace Npc
         private string GetNpcName()
         {
             return NpcInfo["Name"].ToString();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Attack"))
+            {
+                if (PlayerStats.NpcBattleInfo == null)
+                    PlayerStats.NpcBattleInfo = NpcInfo;
+                else if(PlayerStats.NpcBattleInfo != NpcInfo)
+                    return;
+                
+                Debug.Log("ENTER DAMAGE");
+                Health -= PlayerStats.Damage;
+
+                if (Health <= 0)
+                {
+                    Debug.Log("NPC DEAD");
+                    PlayerStats.NpcBattleInfo = null;
+                    gameObject.SetActive(false);
+                }
+                else 
+                    ChanceToEscape();
+            }
+        }
+
+        private void ChanceToEscape()
+        {
+            var number = Random.Range(0, 10);
+            if (number <= 2)
+            {
+                PlayerStats.NpcBattleInfo = null;
+                
+                var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();
+                var npcId = NpcInfo["Id"].ToString();
+                AllServices.Container.Single<IGameService>().GetGameController().EscapeFromBattle(playerName, npcId);
+                
+                gameObject.SetActive(false);
+            }
         }
     }
 }

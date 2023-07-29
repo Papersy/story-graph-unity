@@ -31,6 +31,7 @@ public class GameController
 
     public Vector3 GetPlayerPosition() => _player.Transform.position;
     public string GetMainPlayerId() => _mainPlayerId;
+    public string GetPlayerName() => _mainPlayerName;
     public Transform GetPlayerTransform() => _player.Transform;
     public JToken GetPlayerItems() => _playerItems;
 
@@ -109,14 +110,13 @@ public class GameController
             {
                 _mainPlayerName = character["Name"].ToString();
                 _playerItems = character["Items"];
+                
+                var hp = character["Attributes"]["HP"].ToString();
+                PlayerStats.Health = Convert.ToInt32(hp);
             }
             // else
             //     _currentLocationController.GenerateNpc(character);
         }
-    }
-
-    private void GenerateItemsForNpc(JToken items)
-    {
     }
 
     private void GenerateLocation(JToken worlds)
@@ -245,6 +245,19 @@ public class GameController
         DeserializeFileAfterInventoryChange(json);
     }
 
+    public async void EscapeFromBattle(string fighterName, string escaperId)
+    {
+        string locationName = _currentLocationId;
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Fight ending with character’s escape", _jAvailableProductions),
+            FindVariantOfEscapeFight(locationName, fighterName, escaperId),
+            _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+
+        DeserializeFileAfterLocationChange(json);
+    }
+    
     private JToken FindProd(string name, JToken tokenForSearch)
     {
         char[] delimiter = {'/'};
@@ -448,7 +461,7 @@ public class GameController
         return null;
     }
 
-    private JToken FindVariantOfFightWithNpc(string npcName)
+    private JToken FindVariantOfEscapeFight(string locationId, string fighterName, string escaperId)
     {
         char[] delimiter = {'/'};
         
@@ -458,11 +471,13 @@ public class GameController
             string[] words = title.Split(delimiter);
             string firstWord = words[0].Trim();
 
-            if (firstWord == "Item acquisition from another character")
+            if (firstWord == "Fight ending with character’s escape")
             {
                 foreach (var variant in entity["variants"])
                 {
-                    if (variant[1]["WorldNodeName"].ToString() == npcName)
+                    if (variant[0]["WorldNodeId"].ToString() == locationId &&
+                        variant[1]["WorldNodeName"].ToString() == fighterName &&
+                        variant[2]["WorldNodeId"].ToString() == escaperId)
                         return variant;
                 }
             }

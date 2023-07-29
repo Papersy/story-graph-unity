@@ -993,6 +993,1470 @@
           }
         ]
       ]
+    },
+    {
+      "prod": {
+        "Title": "Exchanging item for item / Wymiana przedmiotu na przedmiot",
+        "TitleGeneric": "Item acquisition from another character / Przejęcie przedmiotu od innej postaci",
+        "Description": "«BohaterA», który posiada pewien przedmiot («SomethingA»), i «BohaterB», który posiada inny przedmiot («Something_elseB»), wymieniają się tymi przedmiotami.",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "Somewhere",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "BohaterA",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Items": [
+                    {
+                      "Id": "SomethingA",
+                      "Attributes": {}
+                    }
+                  ]
+                },
+                {
+                  "Id": "BohaterB",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": [
+                    {
+                      "Id": "Something_elseB",
+                      "Attributes": {}
+                    }
+                  ]
+                }
+              ],
+              "Items": [],
+              "Connections": []
+            }
+          ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "SomethingA",
+            "To": "BohaterB/Items"
+          },
+          {
+            "Op": "move",
+            "Nodes": "Something_elseB",
+            "To": "BohaterA/Items"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "SomethingA",
+            "WorldNodeId": "81a7c0e0-125d-49d7-b934-bcff12b628c9",
+            "WorldNodeName": "Keys",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Something_elseB",
+            "WorldNodeId": "40374084-84af-4288-9679-4fea49a5a831",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "SomethingA",
+            "WorldNodeId": "6cc1a06d-a28d-454b-b505-f448123e3318",
+            "WorldNodeName": "Fiddle",
+            "WorldNodeAttr": {
+              "Value": 50
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "Something_elseB",
+            "WorldNodeId": "40374084-84af-4288-9679-4fea49a5a831",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "SomethingA",
+            "WorldNodeId": "40374084-84af-4288-9679-4fea49a5a831",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "Something_elseB",
+            "WorldNodeId": "81a7c0e0-125d-49d7-b934-bcff12b628c9",
+            "WorldNodeName": "Keys",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "SomethingA",
+            "WorldNodeId": "40374084-84af-4288-9679-4fea49a5a831",
+            "WorldNodeName": "Sword",
+            "WorldNodeAttr": {
+              "IsWeapon": true,
+              "Value": 1000
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "Something_elseB",
+            "WorldNodeId": "6cc1a06d-a28d-454b-b505-f448123e3318",
+            "WorldNodeName": "Fiddle",
+            "WorldNodeAttr": {
+              "Value": 50
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Fight ending with character’s death / Walka zakończona śmiercią uczestnika",
+        "TitleGeneric": "Character’s death / Śmierć bohatera",
+        "Description": "«CharacterA» i «CharacterB» podejmują walkę, w której «CharacterB» ginie.",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "Somewhere",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "CharacterA",
+                  "IsObject": true,
+                  "Attributes": {
+                    "HP": null
+                  },
+                  "Items": []
+                },
+                {
+                  "Id": "CharacterB",
+                  "IsObject": true,
+                  "Attributes": {
+                    "HP": null
+                  },
+                  "Characters": [],
+                  "Items": []
+                }
+              ],
+              "Items": [],
+              "Connections": []
+            }
+          ]
+        },
+        "RSide": {},
+        "Preconditions": [
+          {
+            "Cond": "CharacterA.HP >= CharacterB.HP"
+          }
+        ],
+        "Instructions": [
+          {
+            "Op": "set",
+            "Attribute": "CharacterB.IsDead",
+            "Value": true
+          },
+          {
+            "Op": "set",
+            "Attribute": "CharacterA.HP",
+            "Expr": "CharacterA.HP - CharacterB.HP / 2"
+          },
+          {
+            "Op": "move",
+            "Nodes": "CharacterB/Items/*",
+            "To": "Somewhere/Items"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          },
+          {
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "9d677a1f-7573-4e21-bbdf-3cca2ce8be2b",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "8bc13211-3d21-43d9-bfec-b5a8bef10b9d",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "b060b9c5-bf70-4cdd-beed-3ddfe88521ac",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "Somewhere",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "CharacterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "CharacterB",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "prod": {
+        "Title": "Fight ending with character’s escape / Walka zakończona ucieczką uczestnika",
+        "TitleGeneric": "Location change / Zmiana lokacji",
+        "Description": "Jeden bohater («BohaterA») atakuje drugiego («BohaterB»), który ucieka do sąsiedniej lokacji («LokacjaB»), gubiąc wszystkie swoje przedmioty w panicznej ucieczce.",
+        "Override": 0,
+        "LSide": {
+          "Locations": [
+            {
+              "Id": "LokacjaA",
+              "Attributes": {},
+              "Characters": [
+                {
+                  "Id": "BohaterA",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                },
+                {
+                  "Id": "BohaterB",
+                  "IsObject": true,
+                  "Attributes": {},
+                  "Characters": [],
+                  "Items": []
+                }
+              ],
+              "Items": [],
+              "Connections": [
+                {
+                  "Destination": {
+                    "Id": "LokacjaB",
+                    "Connections": []
+                  }
+                }
+              ]
+            },
+            {
+              "Id": "LokacjaB",
+              "Connections": []
+            }
+          ]
+        },
+        "RSide": {},
+        "Instructions": [
+          {
+            "Op": "move",
+            "Nodes": "BohaterB/Items/*",
+            "To": "LokacjaA/Items"
+          },
+          {
+            "Op": "move",
+            "Nodes": "BohaterB",
+            "To": "LokacjaB/Characters"
+          }
+        ]
+      },
+      "variants": [
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "9d677a1f-7573-4e21-bbdf-3cca2ce8be2b",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "9d677a1f-7573-4e21-bbdf-3cca2ce8be2b",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "9d677a1f-7573-4e21-bbdf-3cca2ce8be2b",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "8bc13211-3d21-43d9-bfec-b5a8bef10b9d",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "8bc13211-3d21-43d9-bfec-b5a8bef10b9d",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "8bc13211-3d21-43d9-bfec-b5a8bef10b9d",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "b060b9c5-bf70-4cdd-beed-3ddfe88521ac",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "b060b9c5-bf70-4cdd-beed-3ddfe88521ac",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "b060b9c5-bf70-4cdd-beed-3ddfe88521ac",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "9d677a1f-7573-4e21-bbdf-3cca2ce8be2b",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "9d677a1f-7573-4e21-bbdf-3cca2ce8be2b",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "9d677a1f-7573-4e21-bbdf-3cca2ce8be2b",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "8bc13211-3d21-43d9-bfec-b5a8bef10b9d",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "8bc13211-3d21-43d9-bfec-b5a8bef10b9d",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "8bc13211-3d21-43d9-bfec-b5a8bef10b9d",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "b060b9c5-bf70-4cdd-beed-3ddfe88521ac",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "b060b9c5-bf70-4cdd-beed-3ddfe88521ac",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "b060b9c5-bf70-4cdd-beed-3ddfe88521ac",
+            "WorldNodeName": "Sheep",
+            "WorldNodeAttr": {
+              "HP": 10
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "b2acdeb9-ea97-40d3-a1ac-2853857236e9",
+            "WorldNodeName": "Shepherd",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 210
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370050636416",
+            "WorldNodeName": "Road",
+            "WorldNodeAttr": null
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052296448",
+            "WorldNodeName": "Shepherds_hideout",
+            "WorldNodeAttr": {
+              "IsPrivate": true
+            }
+          }
+        ],
+        [
+          {
+            "LSNodeRef": "LokacjaA",
+            "WorldNodeId": "2370050694720",
+            "WorldNodeName": "Pasture",
+            "WorldNodeAttr": null
+          },
+          {
+            "LSNodeRef": "BohaterA",
+            "WorldNodeId": "23fec0d2-d195-48a7-bd88-88828938a493",
+            "WorldNodeName": "Main_hero",
+            "WorldNodeAttr": {
+              "HP": 100,
+              "Money": 30
+            }
+          },
+          {
+            "LSNodeRef": "BohaterB",
+            "WorldNodeId": "49d14fd6-d6e6-44bf-8541-01590a016f9f",
+            "WorldNodeName": "Fiddler",
+            "WorldNodeAttr": {
+              "HP": 15,
+              "Money": 5
+            }
+          },
+          {
+            "LSNodeRef": "LokacjaB",
+            "WorldNodeId": "2370052295744",
+            "WorldNodeName": "Barn",
+            "WorldNodeAttr": null
+          }
+        ]
+      ]
     }
   ],
   "world": [
