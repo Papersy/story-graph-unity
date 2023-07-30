@@ -286,6 +286,7 @@ MonoBehaviour:
   Dialog:
     npc_name: 
     dialog: []
+  Health: 0
 --- !u!136 &3778127236662076529
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -345,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fb2db56cf03d374cb6607915563d18a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fb2db56cf03d374cb6607915563d18a, type: 3}
       propertyPath: m_LocalPosition.z

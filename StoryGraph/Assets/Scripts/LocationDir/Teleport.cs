@@ -9,7 +9,7 @@ namespace LocationDir
 {
     public class Teleport : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _teleportName;
+        [SerializeField] private TextMeshProUGUI[] _teleportNames;
 
         private Transform _target;
         private JToken variant;
@@ -19,7 +19,10 @@ namespace LocationDir
             set
             {
                 variant = value;
-                _teleportName.text = variant[2]["WorldNodeName"].ToString();
+                foreach (var teleportName in _teleportNames)
+                {
+                    teleportName.text = variant[2]["WorldNodeName"].ToString();
+                }
             }
         }
 

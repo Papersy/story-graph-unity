@@ -13,7 +13,8 @@ namespace LocationDir
         [SerializeField] private BoxCollider colliderForItems;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private Teleport _portalPrefab;
-
+        [SerializeField] private List<Teleport> _initedTeleports;
+        
         private List<GameObject> _characters = new List<GameObject>();
         private List<GameObject> _items = new List<GameObject>();
         private List<GameObject> _teleports = new List<GameObject>();
@@ -21,6 +22,7 @@ namespace LocationDir
         public string Id { get; set; }
         public string Name { get; set; }
 
+        private int teleportIndex = 0;
         private JToken _locationInfo;
         private JToken _locationVariants;
 
@@ -28,6 +30,7 @@ namespace LocationDir
 
         public void InitLocation(JToken locationInfo, JToken locationTeleportsVariants)
         {
+            teleportIndex = 0;
             _locationInfo = locationInfo;
             _locationVariants = locationTeleportsVariants;
 
@@ -43,6 +46,8 @@ namespace LocationDir
             foreach (var item in _items)
                 Destroy(item);
             foreach (var teleport in _teleports)
+                Destroy(teleport);
+            foreach (var teleport in _initedTeleports)
                 Destroy(teleport);
         }
 
@@ -112,15 +117,23 @@ namespace LocationDir
 
             foreach (var variant in variants)
             {
-                var position = GetPointForEntitySpawn();
+                if (teleportIndex < _initedTeleports.Count)
+                {
+                    _initedTeleports[teleportIndex].gameObject.SetActive(true);
+                    _initedTeleports[teleportIndex].GetComponent<Teleport>().Variant = variant;
+                }
+                else
+                {
+                    var position = GetPointForEntitySpawn();
                 
-                if(_portalPrefab == null)
-                    _portalPrefab = Resources.Load<Teleport>(path);
+                    if(_portalPrefab == null)
+                        _portalPrefab = Resources.Load<Teleport>(path);
 
-                var obj = Instantiate(_portalPrefab, position, Quaternion.identity);
-                obj.Variant = variant;
+                    var obj = Instantiate(_portalPrefab, position, Quaternion.identity);
+                    obj.Variant = variant;
 
-                _teleports.Add(obj.gameObject);
+                    _teleports.Add(obj.gameObject);
+                }
             }
         }
     }
