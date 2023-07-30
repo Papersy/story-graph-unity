@@ -52,6 +52,8 @@ public class GameController
 
     private void DeserializeFileAfterLocationChange(string json)
     {
+        Debug.Log("Location variant" + json);
+        
         var dict = JToken.Parse(json);
         _jWorlds = dict["world"];
         _jAvailableProductions = dict["available_productions"];
@@ -251,6 +253,32 @@ public class GameController
         var json = await HttpClientController.PostNewWorld(_jWorlds,
             FindProd("Fight ending with character’s escape", _jAvailableProductions),
             FindVariantOfEscapeFight(locationName, fighterName, escaperId),
+            _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+
+        DeserializeFileAfterInventoryChange(json);
+        // DeserializeFileAfterLocationChange(json);
+    }
+
+    public async void FightEndWithSomeoneDeath(string fighterName, string escaperId)
+    {
+        string locationName = _currentLocationId;
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Fight ending with character’s death", _jAvailableProductions),
+            FindVariantOfFightEndWithDeath(locationName, fighterName, escaperId),
+            _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+
+        // DeserializeFileAfterLocationChange(json);
+    }
+
+    public async void HeroDeath()
+    {
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd("Fight ending with character’s escape", _jAvailableProductions),
+            FindVariantOfPlayerDeath(),
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
@@ -478,6 +506,54 @@ public class GameController
                     if (variant[0]["WorldNodeId"].ToString() == locationId &&
                         variant[1]["WorldNodeName"].ToString() == fighterName &&
                         variant[2]["WorldNodeId"].ToString() == escaperId)
+                        return variant;
+                }
+            }
+        }
+        
+        return null;
+    }
+
+    private JToken FindVariantOfFightEndWithDeath(string locationId, string fighterName, string personDeathId)
+    {
+        char[] delimiter = {'/'};
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Fight ending with character’s death")
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[0]["WorldNodeId"].ToString() == locationId &&
+                        variant[1]["WorldNodeName"].ToString() == fighterName &&
+                        variant[2]["WorldNodeId"].ToString() == personDeathId)
+                        return variant;
+                }
+            }
+        }
+        
+        return null;
+    }
+
+    private JToken FindVariantOfPlayerDeath()
+    {
+        char[] delimiter = {'/'};
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var title = entity["prod"]["Title"].ToString();
+            string[] words = title.Split(delimiter);
+            string firstWord = words[0].Trim();
+
+            if (firstWord == "Character’s death")
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (variant[1]["WorldNodeName"].ToString() == _mainPlayerName)
                         return variant;
                 }
             }

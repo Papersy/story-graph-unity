@@ -80,17 +80,20 @@ namespace Npc
                 {
                     Debug.Log("NPC DEAD");
                     PlayerStats.NpcBattleInfo = null;
+                    
+                    var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();
+                    AllServices.Container.Single<IGameService>().GetGameController().FightEndWithSomeoneDeath(playerName, NpcInfo["Id"].ToString());
                     gameObject.SetActive(false);
                 }
                 else 
-                    ChanceToEscape();
+                    CalculateChance();
             }
         }
 
-        private void ChanceToEscape()
+        private void CalculateChance()
         {
             var number = Random.Range(0, 10);
-            if (number <= 2)
+            if (number <= 2) // Escape chance
             {
                 PlayerStats.NpcBattleInfo = null;
                 
@@ -99,6 +102,11 @@ namespace Npc
                 AllServices.Container.Single<IGameService>().GetGameController().EscapeFromBattle(playerName, npcId);
                 
                 gameObject.SetActive(false);
+            }
+            else if (number <= 4)
+            {
+                var damage = NpcInfo["Attributes"]["HP"].ToString();
+                PlayerStats.UpdateHealth((int)(Convert.ToInt32(damage) * -0.2));
             }
         }
     }
