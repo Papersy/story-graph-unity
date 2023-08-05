@@ -76,7 +76,7 @@ namespace LocationDir
                 var characterId = character["Id"].ToString();
                 
                 if(characterId == AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId())
-                    return;
+                    continue;
 
                 var npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/" + character["Name"]);
                 if (npc == null)

@@ -20,6 +20,7 @@ namespace Npc
         
         public void Init()
         {
+            Debug.Log("Init NPC");
             _npcName.text = GetNpcName();
 
             var attributes = NpcInfo["Attributes"];
@@ -73,12 +74,10 @@ namespace Npc
                 else if(PlayerStats.NpcBattleInfo != NpcInfo)
                     return;
                 
-                Debug.Log("ENTER DAMAGE");
                 Health -= PlayerStats.Damage;
 
                 if (Health <= 0)
                 {
-                    Debug.Log("NPC DEAD");
                     PlayerStats.NpcBattleInfo = null;
                     
                     var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();
@@ -103,7 +102,7 @@ namespace Npc
                 
                 gameObject.SetActive(false);
             }
-            else if (number <= 4)
+            else if (number <= 4) //Attack chance
             {
                 var damage = NpcInfo["Attributes"]["HP"].ToString();
                 PlayerStats.UpdateHealth((int)(Convert.ToInt32(damage) * -0.2));

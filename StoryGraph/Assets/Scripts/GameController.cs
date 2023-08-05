@@ -35,6 +35,8 @@ public class GameController
     public Transform GetPlayerTransform() => _player.Transform;
     public JToken GetPlayerItems() => _playerItems;
 
+    private delegate bool StatementsCheck(JToken variant, string[] parameters);
+    
     public async void DeserializeFile()
     {
         var json = await HttpClientController.GetNewWorld();
@@ -53,7 +55,7 @@ public class GameController
     private void DeserializeFileAfterLocationChange(string json)
     {
         Debug.Log("Location variant" + json);
-        
+
         var dict = JToken.Parse(json);
         _jWorlds = dict["world"];
         _jAvailableProductions = dict["available_productions"];
@@ -112,7 +114,7 @@ public class GameController
             {
                 _mainPlayerName = character["Name"].ToString();
                 _playerItems = character["Items"];
-                
+
                 var hp = character["Attributes"]["HP"].ToString();
                 PlayerStats.Health = Convert.ToInt32(hp);
             }
@@ -128,7 +130,7 @@ public class GameController
             if (world["Id"].ToString() == _currentLocationId)
             {
                 var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
-                if(prefab == null)
+                if (prefab == null)
                     prefab = Resources.Load<LocationController>("JsonFiles/Locations/default_location");
                 var locationController = Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
 
@@ -139,7 +141,8 @@ public class GameController
                 }
 
                 _currentLocationController = locationController;
-                _currentLocationController.InitLocation(_jCurrentLocation, FindVariantsOfLocationChange("Location change", _jAvailableProductions));
+                _currentLocationController.InitLocation(_jCurrentLocation,
+                    FindVariantsOfLocationChange("Location change", _jAvailableProductions));
 
                 InitPlayer(locationController);
             }
@@ -186,8 +189,12 @@ public class GameController
 
     public async void DropItem(string droppingItemName)
     {
-        var json = await HttpClientController.PostNewWorld(_jWorlds, FindProd("Dropping item", _jAvailableProductions),
-            FindVariantOfDropping(droppingItemName), _mainPlayerName);
+        var productionName = "Dropping item";
+        string[] parameters = {droppingItemName};
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, parameters, StatementDrop),         
+            _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
 
@@ -196,8 +203,11 @@ public class GameController
 
     public async void PickItem(string pickingItemName)
     {
+        var productionName = "Picking item up";
+        string[] parameters = {pickingItemName};
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Picking item up", _jAvailableProductions), FindVariantOfPicking(pickingItemName),
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, parameters, StatementPickUp),
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
@@ -207,28 +217,37 @@ public class GameController
 
     public async void GiveItemToNpc(string npcName)
     {
+        var productionName = "Item acquisition from another character";
+        string[] parameters = {npcName};
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Item acquisition from another character", _jAvailableProductions),
-            FindVariantOfGiveItemToNpc(npcName), _mainPlayerName);
-
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, parameters, StatementGiveItemToNpc),
+            _mainPlayerName);
+    
         WriteLogAboutNewWorld(json);
         DeserializeFileAfterInventoryChange(json);
     }
 
     public async void TakeItemFromNpc(string npcName)
     {
+        var productionName = "Item acquisition from another character";
+        string[] parameters = { npcName };
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Item acquisition from another character", _jAvailableProductions),
-            FindVariantOfGetItemFromNpc(npcName), _mainPlayerName);
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, parameters, StatementTakeItemFromNpc),
+            _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
         DeserializeFileAfterInventoryChange(json);
     }
-    
+
     public async void PuttingItem(string puttingItemName)
     {
+        var productionName = "Putting item in";
+        string[] parameters = {puttingItemName};
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Putting item in", _jAvailableProductions), FindPullIn(puttingItemName, "Putting item in"),
+            FindProd(productionName, _jAvailableProductions),
+                    FindTestVariant(productionName, parameters, StatementPullIn),      
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
@@ -238,8 +257,11 @@ public class GameController
 
     public async void PullingItem(string pullingItemName)
     {
+        var productionName = "Pulling item out";
+        string[] parameters = {pullingItemName};
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Pulling item out", _jAvailableProductions), FindPullOut(pullingItemName, "Pulling item out"),
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, parameters, StatementPullOut),
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
@@ -249,10 +271,13 @@ public class GameController
 
     public async void EscapeFromBattle(string fighterName, string escaperId)
     {
+        var productionName = "Fight ending with character’s escape";
         string locationName = _currentLocationId;
+        string[] parameters = { locationName, fighterName, escaperId };
+        
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Fight ending with character’s escape", _jAvailableProductions),
-            FindVariantOfEscapeFight(locationName, fighterName, escaperId),
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, parameters ,StatementEscapeFight),
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
@@ -263,10 +288,12 @@ public class GameController
 
     public async void FightEndWithSomeoneDeath(string fighterName, string escaperId)
     {
+        var productionName = "Fight ending with character’s death";
         string locationName = _currentLocationId;
+        string[] parameters = { locationName, fighterName, escaperId };
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Fight ending with character’s death", _jAvailableProductions),
-            FindVariantOfFightEndWithDeath(locationName, fighterName, escaperId),
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, parameters, StatementFightEndWithDeath),
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
@@ -276,9 +303,10 @@ public class GameController
 
     public async void HeroDeath()
     {
+        var productionName = "Fight ending with character’s escape";
         var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd("Fight ending with character’s escape", _jAvailableProductions),
-            FindVariantOfPlayerDeath(),
+            FindProd(productionName, _jAvailableProductions),
+            FindTestVariant(productionName, null, StatementPlayerDeath),
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
@@ -297,55 +325,7 @@ public class GameController
             string firstWord = words[0].Trim();
 
             if (firstWord == name)
-            {
                 return entity["prod"];
-            }
-        }
-
-        return null;
-    }
-
-    private JToken FindPullIn(string searchingItem, string productionName)
-    {
-        char[] delimiter = {'/'};
-
-        foreach (var entity in _jAvailableProductions)
-        {
-            var title = entity["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
-
-            if (firstWord == productionName)
-            {
-                foreach (var variant in entity["variants"])
-                {
-                    if (variant[2]["WorldNodeName"].ToString() == searchingItem)
-                        return variant;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    private JToken FindPullOut(string searchingItem, string productionName)
-    {
-        char[] delimiter = {'/'};
-
-        foreach (var entity in _jAvailableProductions)
-        {
-            var title = entity["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
-
-            if (firstWord == productionName)
-            {
-                foreach (var variant in entity["variants"])
-                {
-                    if (variant[3]["WorldNodeName"].ToString() == searchingItem)
-                        return variant;
-                }
-            }
         }
 
         return null;
@@ -376,52 +356,6 @@ public class GameController
         }
 
         return false;
-    }
-
-    private JToken FindVariantOfDropping(string itemName)
-    {
-        char[] delimiter = {'/'};
-
-        foreach (var entity in _jAvailableProductions)
-        {
-            var title = entity["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
-
-            if (firstWord == "Dropping item")
-            {
-                foreach (var variant in entity["variants"])
-                {
-                    if (variant[2]["WorldNodeName"].ToString() == itemName)
-                        return variant;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    private JToken FindVariantOfPicking(string itemName)
-    {
-        char[] delimiter = {'/'};
-
-        foreach (var entity in _jAvailableProductions)
-        {
-            var title = entity["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
-
-            if (firstWord == "Picking item up")
-            {
-                foreach (var variant in entity["variants"])
-                {
-                    if (variant[2]["WorldNodeName"].ToString() == itemName)
-                        return variant;
-                }
-            }
-        }
-
-        return null;
     }
 
     public JToken FindVariantOfGiveItemToNpc(string npcName)
@@ -481,87 +415,117 @@ public class GameController
             string firstWord = words[0].Trim();
 
             if (firstWord == name)
-            {
                 return entity["variants"];
-            }
+            
         }
 
         return null;
     }
 
-    private JToken FindVariantOfEscapeFight(string locationId, string fighterName, string escaperId)
+
+
+    private JToken FindTestVariant(string productionName, string[] parameters, StatementsCheck statementsCheck)
     {
         char[] delimiter = {'/'};
-        
+
         foreach (var entity in _jAvailableProductions)
         {
             var title = entity["prod"]["Title"].ToString();
             string[] words = title.Split(delimiter);
             string firstWord = words[0].Trim();
 
-            if (firstWord == "Fight ending with character’s escape")
+            if (firstWord == productionName)
             {
                 foreach (var variant in entity["variants"])
                 {
-                    if (variant[0]["WorldNodeId"].ToString() == locationId &&
-                        variant[1]["WorldNodeName"].ToString() == fighterName &&
-                        variant[2]["WorldNodeId"].ToString() == escaperId)
+                    if (statementsCheck(variant, parameters))
                         return variant;
                 }
             }
         }
-        
+
         return null;
     }
-
-    private JToken FindVariantOfFightEndWithDeath(string locationId, string fighterName, string personDeathId)
+    
+    
+    private bool StatementGiveItemToNpc(JToken variant, string[] parameters)
     {
-        char[] delimiter = {'/'};
-        
-        foreach (var entity in _jAvailableProductions)
-        {
-            var title = entity["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
+        if (variant[1]["WorldNodeName"].ToString() == parameters[0])
+            return true;
 
-            if (firstWord == "Fight ending with character’s death")
-            {
-                foreach (var variant in entity["variants"])
-                {
-                    if (variant[0]["WorldNodeId"].ToString() == locationId &&
-                        variant[1]["WorldNodeName"].ToString() == fighterName &&
-                        variant[2]["WorldNodeId"].ToString() == personDeathId)
-                        return variant;
-                }
-            }
-        }
-        
-        return null;
+        return false;
     }
-
-    private JToken FindVariantOfPlayerDeath()
+    
+    private bool StatementTakeItemFromNpc(JToken variant, string[] parameters)
     {
-        char[] delimiter = {'/'};
-        
-        foreach (var entity in _jAvailableProductions)
-        {
-            var title = entity["prod"]["Title"].ToString();
-            string[] words = title.Split(delimiter);
-            string firstWord = words[0].Trim();
+        if (variant[2]["WorldNodeName"].ToString() == parameters[0])
+            return true;
 
-            if (firstWord == "Character’s death")
-            {
-                foreach (var variant in entity["variants"])
-                {
-                    if (variant[1]["WorldNodeName"].ToString() == _mainPlayerName)
-                        return variant;
-                }
-            }
-        }
-        
-        return null;
+        return false;
+    }
+    
+    private bool StatementDrop(JToken variant, string[] parameters)
+    {
+        if (variant[2]["WorldNodeName"].ToString() == parameters[0])
+            return true;
+
+        return false;
+    }
+    
+    private bool StatementPickUp(JToken variant, string[] parameters)
+    {
+        if (variant[2]["WorldNodeName"].ToString() == parameters[0])
+            return true;
+
+        return false;
+    }
+    
+    private bool StatementPullIn(JToken variant, string[] parameters)
+    {
+        if (variant[2]["WorldNodeName"].ToString() == parameters[0])
+            return true;
+
+        return false;
+    }
+    
+    private bool StatementPullOut(JToken variant, string[] parameters)
+    {
+        if (variant[3]["WorldNodeName"].ToString() == parameters[0])
+            return true;
+
+        return false;
     }
 
+    private bool StatementEscapeFight(JToken variant, string[] parameters)
+    {
+        if (variant[0]["WorldNodeId"].ToString() == parameters[0] &&
+            variant[1]["WorldNodeName"].ToString() == parameters[1] &&
+            variant[2]["WorldNodeId"].ToString() == parameters[2])
+            return true;
+
+        return false;
+    }
+
+    private bool StatementPlayerDeath(JToken variant, string[] parameters)
+    {
+        if (variant[1]["WorldNodeName"].ToString() == _mainPlayerName)
+            return true;
+
+        return false;
+    }
+
+    private bool StatementFightEndWithDeath(JToken variant, string[] parameters)
+    {
+        if (variant[0]["WorldNodeId"].ToString() == parameters[0] &&
+            variant[1]["WorldNodeName"].ToString() == parameters[1] &&
+            variant[2]["WorldNodeId"].ToString() == parameters[2])
+            return true;
+
+        return false;
+    }
+
+    
+    
     private void WriteLogAboutNewWorld(string json)
     {
         var filePath = "Assets/Resources/JsonFiles/CurrentWorld.json";
