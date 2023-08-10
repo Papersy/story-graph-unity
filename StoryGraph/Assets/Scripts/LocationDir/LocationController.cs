@@ -115,6 +115,8 @@ namespace LocationDir
         {
             var path = "Prefabs/Location/Teleport";
 
+            Debug.Log(variants);
+            
             foreach (var variant in variants)
             {
                 if (teleportIndex < _initedTeleports.Count)

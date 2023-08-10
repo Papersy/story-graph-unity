@@ -14,13 +14,10 @@ namespace Npc
         [SerializeField] private TextMeshProUGUI _npcName;
     
         public JToken NpcInfo { get; set; }
-        public Dialog Dialog;
-
         public int Health;
         
         public void Init()
         {
-            Debug.Log("Init NPC");
             _npcName.text = GetNpcName();
 
             var attributes = NpcInfo["Attributes"];
@@ -41,6 +38,8 @@ namespace Npc
         private void GetDialog()
         {
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.DialogIndex = 0;
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.NpcInfo = NpcInfo;
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.Npc = gameObject;
             
             var path = "JsonFiles/Dialogs/" + GetNpcName();
             var json = Resources.Load<TextAsset>(path).text;
@@ -48,16 +47,7 @@ namespace Npc
             if(json == null)
                 json = Resources.Load<TextAsset>("JsonFiles/Dialogs/default").text;
             
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.Dialog =
-                JsonUtility.FromJson<Dialog>(json);
-        }
-
-        private bool HasItems()
-        {
-            if (NpcInfo["Items"] == null)
-                return false;
-
-            return true;
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.Dialog = JsonUtility.FromJson<Dialog>(json);
         }
 
         private string GetNpcName()
@@ -78,10 +68,12 @@ namespace Npc
 
                 if (Health <= 0)
                 {
+                    Debug.Log("NPC DEAD");
                     PlayerStats.NpcBattleInfo = null;
                     
                     var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();
-                    AllServices.Container.Single<IGameService>().GetGameController().FightEndWithSomeoneDeath(playerName, NpcInfo["Id"].ToString());
+                    AllServices.Container.Single<IGameService>().GetGameController().
+                        FightEndWithSomeoneDeath(playerName, NpcInfo["Id"].ToString());
                     gameObject.SetActive(false);
                 }
                 else 
@@ -94,6 +86,7 @@ namespace Npc
             var number = Random.Range(0, 10);
             if (number <= 2) // Escape chance
             {
+                Debug.Log("NPC ESCAPE");
                 PlayerStats.NpcBattleInfo = null;
                 
                 var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();

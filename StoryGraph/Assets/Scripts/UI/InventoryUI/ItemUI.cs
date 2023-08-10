@@ -23,7 +23,7 @@ namespace UI
             GenerateTiles();
         }
 
-        public void ShowInventoryItems(Item item)
+        public void ShowOpakowanieItems(Item item)
         {
             ClearInventory();
             

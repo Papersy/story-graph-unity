@@ -21,7 +21,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         Root = root;
         Item = item;
-        
+
         ItemImage.sprite = Resources.Load<Sprite>(ConstantsData.IconsAddress + item["Name"]);
     }
 

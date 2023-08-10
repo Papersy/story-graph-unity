@@ -217,7 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b68ce209601436b8df21155db42c402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportNames: []
+  _teleportNames:
+  - {fileID: 8186069558772188870}
 --- !u!1001 &1182279949315564949
 PrefabInstance:
   m_ObjectHideFlags: 0

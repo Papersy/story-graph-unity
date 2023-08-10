@@ -11,6 +11,8 @@ namespace ApiController
 {
     public class HttpClientController : MonoBehaviour
     {
+        private static HttpClient httpClient = null;
+        
         public static async Task<string> GetNewWorld()
         {
             var client = new HttpClient();
@@ -49,9 +51,7 @@ namespace ApiController
 
             return null;
         }
-
-
-        private static HttpClient httpClient = null;
+        
         public static async Task<string> PostNewWorld(JToken world, JToken production, JToken variant, string obj)
         {
             var json = $"{"{"}\n\"world\":{world},\n\"production\":{production},\n\"variant\":{variant},\n\"object\":\"{obj}\"{"}"}";

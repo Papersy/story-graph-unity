@@ -46,6 +46,11 @@ namespace Player
                 {
                     if(_hit.transform.gameObject.CompareTag("Pickable"))
                         StartCoroutine(PickUp());
+                    else if (_hit.transform.gameObject.CompareTag("Npc"))
+                    {
+                        Debug.Log("All good, you can talk!");
+                        _hit.transform.gameObject.GetComponent<Npc.Npc>().StartDialog();
+                    }
                 }
             }
             //Check if player want to open item
@@ -60,23 +65,8 @@ namespace Player
                 {
                     if (_hit.transform.gameObject.CompareTag("Pickable"))
                     {
-                        var boxName = _hit.transform.GetComponent<Item>().ItemInfo["Name"];
-                        
                         if(_gameController.IsItStore(_hit.transform.GetComponent<Item>().ItemInfo["Name"]?.ToString(), "Putting item in"))
                             StartCoroutine(Open());
-                    }
-                }
-            }
-
-            //Open dialog window
-            if (Keyboard.current.rKey.wasPressedThisFrame)
-            {
-                if (Physics.Raycast(_startPoint.position, rayDirection, out _hit, Distance))
-                {
-                    if (_hit.transform.gameObject.CompareTag("Npc"))
-                    {
-                        Debug.Log("All good, you can talk!");
-                        _hit.transform.gameObject.GetComponent<Npc.Npc>().StartDialog();
                     }
                 }
             }
@@ -107,7 +97,7 @@ namespace Player
             var item = _hit.transform.GetComponent<Item>();
             _gameCanvas.ShowMainInventory();
             _gameCanvas.ItemUI.Show();
-            _gameCanvas.ItemUI.ShowInventoryItems(item);
+            _gameCanvas.ItemUI.ShowOpakowanieItems(item);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
+using Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +9,7 @@ namespace UI
     public class InventoryTile : MonoBehaviour, IDropHandler
     {
         public InventoryType CurrentType;
+        public EquipmentType EquipmentType = EquipmentType.None;
         private Draggable _itemDraggable;
 
         private GameController _gameController;
@@ -26,16 +28,43 @@ namespace UI
         {
             if(transform.childCount > 0)
                 return;
-            
+
             GameObject obj = eventData.pointerDrag;
             _itemDraggable = obj.GetComponent<Draggable>();
+
+            if (CurrentType == InventoryType.Equipment)
+            {
+                if (EquipmentType == EquipmentType.Attack)
+                {
+                    var isWeapon = _itemDraggable.Item["Attributes"]["IsWeapon"].ToString();
+                    if (isWeapon != null)
+                    {
+                        Debug.Log(isWeapon);
+                        if (isWeapon.Equals("True")){}
+                        {
+                            var weaponId = _itemDraggable.Item["Id"].ToString();
+                            _itemDraggable.Type = InventoryType.Equipment;
+                            InventoryUI.EquipmentId.Add(weaponId);
+                            EquipmentManager.Instance.PickUpWeapon(_itemDraggable.Item);
+                        }
+                    }
+                }
+                else
+                    return;
+            }
+
             _itemDraggable.ParentAfterDrag = transform;
 
             if (_itemDraggable.Type != CurrentType)
             {
                 Debug.Log(CurrentType);
-                
-                if(CurrentType == InventoryType.Item)
+
+                if (CurrentType == InventoryType.Main && _itemDraggable.Type == InventoryType.Equipment)
+                {
+                    EquipmentManager.Instance.ClearEquipment(_itemDraggable.Item);
+                    InventoryUI.RemoveFromEquipment(_itemDraggable.Item["Id"].ToString());
+                }
+                else if(CurrentType == InventoryType.Item)
                     _gameController.PuttingItem(_itemDraggable.Item["Name"].ToString());
                 else if(CurrentType == InventoryType.Main)
                     _gameController.PullingItem(_itemDraggable.Item["Name"].ToString());
@@ -49,5 +78,16 @@ namespace UI
         Main,
         Item,
         Equipment
+    }
+
+    public enum EquipmentType
+    {
+        None,
+        Head,
+        Body,
+        Attack,
+        Defence,
+        Lags,
+        Shoes
     }
 }

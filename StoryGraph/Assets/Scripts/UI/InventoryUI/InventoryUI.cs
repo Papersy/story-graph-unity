@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ namespace UI
         [SerializeField] private GameObject _tilesContainer;
         [SerializeField] private Transform _inventoryRoot;
         [SerializeField] private List<InventoryTile> _tiles = new List<InventoryTile>();
+        
+        public static List<string> EquipmentId = new List<string>();
+
 
         public override void Awake()
         {
@@ -45,6 +49,9 @@ namespace UI
             var index = 0;
             foreach (var item in items)
             {
+                if(IsEquipped(item))
+                    continue;
+                
                 var itemObj = Instantiate(_itemPrefab, _tiles[index].transform);
                 itemObj.Init(_inventoryRoot, item);
                 itemObj.Type = InventoryType.Main;
@@ -73,6 +80,18 @@ namespace UI
                 var tile = Instantiate(_inventoryTilePrefab, _tilesContainer.transform);
                 tile.CurrentType = InventoryType.Main;
                 _tiles.Add(tile);
+            }
+        }
+
+        private bool IsEquipped(JToken item) => 
+            EquipmentId.Any(equip => equip.Equals(item["Id"].ToString()));
+
+        public static void RemoveFromEquipment(string id)
+        {
+            foreach (var equip in EquipmentId.Where(equip => equip.Equals(id)))
+            {
+                EquipmentId.Remove(equip);
+                break;
             }
         }
     }
