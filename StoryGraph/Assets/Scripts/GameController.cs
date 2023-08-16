@@ -115,8 +115,16 @@ public class GameController
                 _mainPlayerName = character["Name"].ToString();
                 _playerItems = character["Items"];
 
-                var hp = character["Attributes"]["HP"].ToString();
-                PlayerStats.Health = Convert.ToInt32(hp);
+                var attributes = character["Attributes"];
+                if (attributes != null)
+                {
+                    var hp = attributes["HP"];
+                    if (hp != null)
+                    {
+                        PlayerStats.Health = Convert.ToInt32(hp.ToString());
+                    }
+                }
+                
             }
             // else
             //     _currentLocationController.GenerateNpc(character);
@@ -422,6 +430,17 @@ public class GameController
         string locationId = _currentLocationId;
         string[] parameters = {locationId, npcName};
         var result = FindVariant(productionName, parameters, StatementTradeWithCharacters);
+
+        if (result != null)
+            return true;
+
+        return false;
+    }
+    public bool CanPickUpItem(string itemName)
+    {
+        var productionName = "Picking item up";
+        string[] parameters = {itemName};
+        var result = FindVariant(productionName, parameters, StatementPickUp);
 
         if (result != null)
             return true;

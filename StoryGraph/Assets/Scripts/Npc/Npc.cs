@@ -21,7 +21,7 @@ namespace Npc
             _npcName.text = GetNpcName();
 
             var attributes = NpcInfo["Attributes"];
-            if(attributes["HP"] != null)
+            if(attributes != null && attributes["HP"] != null)
             {
                 var hp = attributes["HP"].ToString();
                 Health = Convert.ToInt32(hp);

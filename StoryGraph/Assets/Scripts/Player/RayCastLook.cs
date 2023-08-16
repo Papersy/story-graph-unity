@@ -44,8 +44,18 @@ namespace Player
             
                 if (Physics.Raycast(_startPoint.position, rayDirection * Distance, out _hit, Distance))
                 {
-                    if(_hit.transform.gameObject.CompareTag("Pickable"))
-                        StartCoroutine(PickUp());
+                    if (_hit.transform.gameObject.CompareTag("Pickable"))
+                    {
+                        var itemName = _hit.transform.GetComponent<Item>().ItemInfo["Name"]?.ToString();
+                        Debug.Log(itemName);
+                        if (AllServices.Container.Single<IGameService>().GetGameController().CanPickUpItem(itemName))
+                        {
+                            Debug.Log("CanPickUp");
+                            StartCoroutine(PickUp());
+                        }
+                        else 
+                            Debug.Log("Cant pickup");
+                    }
                     else if (_hit.transform.gameObject.CompareTag("Npc"))
                     {
                         Debug.Log("All good, you can talk!");
