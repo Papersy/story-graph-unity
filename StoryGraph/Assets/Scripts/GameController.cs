@@ -307,6 +307,19 @@ public class GameController
         DeserializeFileAfterInventoryChange(json);
     }
     
+    public async void CreateOpakowanieInInventory(string firstItemId, string secondItemId)
+    {
+        var productionName = "Putting item in inside of inventory";
+        string[] parameters = {firstItemId, secondItemId};
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd(productionName, _jAvailableProductions),
+            FindVariant(productionName, parameters, StatementCreateOpakowanie),
+            _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+
+        DeserializeFileAfterInventoryChange(json);
+    }
     
 
     public async void EscapeFromBattle(string fighterName, string escaperId)
@@ -441,6 +454,17 @@ public class GameController
         var productionName = "Picking item up";
         string[] parameters = {itemName};
         var result = FindVariant(productionName, parameters, StatementPickUp);
+
+        if (result != null)
+            return true;
+
+        return false;
+    }
+    public bool CanCreateOpakowanie(string firstItemId, string secondItemId)
+    {
+        var productionName = "Putting item in inside of inventory";
+        string[] parameters = {firstItemId, secondItemId};
+        var result = FindVariant(productionName, parameters, StatementCreateOpakowanie);
 
         if (result != null)
             return true;
@@ -612,6 +636,14 @@ public class GameController
         return false;
     }
     
+    private bool StatementCreateOpakowanie(JToken variant, string[] parameters)
+    {
+        if (variant[2]["WorldNodeId"].ToString() == parameters[0] &&
+            variant[3]["WorldNodeId"].ToString() == parameters[1])
+            return true;
+
+        return false;
+    }
     
     
     private void WriteLogAboutNewWorld(string json)

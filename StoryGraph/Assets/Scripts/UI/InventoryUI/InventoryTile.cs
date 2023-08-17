@@ -26,8 +26,22 @@ namespace UI
 
         public void OnDrop(PointerEventData eventData)
         {
-            if(transform.childCount > 0)
+            if (transform.childCount > 0)
+            {
+                var itemDraggable = eventData.pointerDrag.GetComponent<Draggable>();
+                var firstItemId = itemDraggable.Item["Id"].ToString();
+                var secondItemId = transform.GetComponentInChildren<Draggable>().Item["Id"].ToString();
+                
+                Debug.Log(firstItemId + "   " + secondItemId);
+
+                if (_gameController.CanCreateOpakowanie(firstItemId, secondItemId))
+                {
+                    _gameController.CreateOpakowanieInInventory(firstItemId, secondItemId);
+                    Destroy(itemDraggable.transform.gameObject);
+                }
+                    
                 return;
+            }
 
             GameObject obj = eventData.pointerDrag;
             _itemDraggable = obj.GetComponent<Draggable>();
