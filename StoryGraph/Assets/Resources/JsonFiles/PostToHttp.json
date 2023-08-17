@@ -1,11 +1,11 @@
 {
   "world": [
     {
-      "Id": "9fa974d4-5930-455b-95b0-8be4a937c108",
+      "Id": "1c3d81a2-777e-400a-95f8-2297df6079ae",
       "Name": "Cave",
       "Characters": [
         {
-          "Id": "c096808f-eecb-41c0-9d6f-463ee47a6dec",
+          "Id": "96149ee2-2da1-4a71-9681-b7024894f227",
           "Name": "Manka"
         }
       ],
@@ -16,15 +16,15 @@
       ]
     },
     {
-      "Id": "a3c49cb6-45bd-4136-bb9a-51ebed8d938c",
+      "Id": "abc00442-59ca-41bd-9be0-f18bf4b45ec2",
       "Name": "Jiczyn",
       "Characters": [
         {
-          "Id": "86a1b842-9feb-43d3-b368-5f6deb90889f",
+          "Id": "8f10eea4-da61-494a-b4d2-7e4eae8c5947",
           "Name": "Merchant"
         },
         {
-          "Id": "44f07c53-8a05-404f-bb9c-46b30134b04b",
+          "Id": "9b8dab44-199f-45a4-a7ba-6c71128e1d3a",
           "Name": "Jeweler"
         }
       ],
@@ -49,12 +49,6 @@
     {
       "Id": "M12",
       "Name": "Forest",
-      "Items": [
-        {
-          "Id": "2681f370-3fa1-4dc8-839a-f0ee25954261",
-          "Name": "Brushwood"
-        }
-      ],
       "Connections": [
         {
           "Destination": "M11"
@@ -87,7 +81,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "09834052-1106-467e-98ba-45431f080b04",
+          "Id": "74c49a76-b14d-499c-8858-f4cd091b6600",
           "Name": "Brushwood"
         }
       ],
@@ -138,19 +132,27 @@
       "Name": "Forest",
       "Characters": [
         {
-          "Id": "0a057f42-32e6-45b6-8da6-8a61031e795b",
-          "Name": "Rumcajs"
-        }
-      ],
-      "Items": [
-        {
-          "Id": "7a2b04f0-3d74-41ae-8d21-47358d12f112",
-          "Name": "Brushwood"
+          "Id": "629f0137-a772-4e2a-90dc-3d39db1d262e",
+          "Name": "Rumcajs",
+          "Items": [
+            {
+              "Id": "5f173934-f0e3-4e19-9746-1e286a1e9271",
+              "Name": "Brushwood"
+            },
+            {
+              "Id": "b0a0d350-a1f9-4665-85a4-4dc30f6af861",
+              "Name": "Brushwood"
+            },
+            {
+              "Id": "d46bff33-a200-4ea7-8cf1-43902056a55f",
+              "Name": "Brushwood"
+            }
+          ]
         }
       ],
       "Connections": [
         {
-          "Destination": "9fa974d4-5930-455b-95b0-8be4a937c108"
+          "Destination": "1c3d81a2-777e-400a-95f8-2297df6079ae"
         },
         {
           "Destination": "M13"
@@ -186,7 +188,7 @@
       "Name": "Forest",
       "Connections": [
         {
-          "Destination": "a3c49cb6-45bd-4136-bb9a-51ebed8d938c"
+          "Destination": "abc00442-59ca-41bd-9be0-f18bf4b45ec2"
         },
         {
           "Destination": "M21"
@@ -238,12 +240,6 @@
     {
       "Id": "M34",
       "Name": "Forest",
-      "Items": [
-        {
-          "Id": "1fd1390b-db75-4ff0-865c-d2538db0a0f4",
-          "Name": "Brushwood"
-        }
-      ],
       "Connections": [
         {
           "Destination": "M24"
@@ -303,7 +299,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "4de9e4db-5d1d-456b-a917-f004bc7723cc",
+          "Id": "5433985f-81ad-49dc-a6d7-eeb9c4f75fc4",
           "Name": "Brushwood"
         }
       ],
@@ -318,14 +314,14 @@
     }
   ],
   "production": {
-    "Title": "Picking item up / Podniesienie przedmiotu",
-    "TitleGeneric": "",
-    "Description": "«Bohater» podnosi przedmiot («Something») leżący w lokacji.",
-    "Override": 0,
+    "Title": "Location change / Zmiana lokacji",
+    "TitleGeneric": "Teleportation / Teleportacja",
+    "Description": "«Bohater» przechodzi do sąsiedniej lokacji («Lokacja_B»).",
+    "Override": 1,
     "LSide": {
       "Locations": [
         {
-          "Id": "LokacjaA",
+          "Id": "Lokacja_A",
           "Attributes": {},
           "Characters": [
             {
@@ -336,14 +332,17 @@
               "Items": []
             }
           ],
-          "Items": [
+          "Items": [],
+          "Connections": [
             {
-              "Id": "Something",
-              "Attributes": {},
-              "Characters": [],
-              "Items": []
+              "Destination": {
+                "Id": "Lokacja_B"
+              }
             }
           ]
+        },
+        {
+          "Id": "Lokacja_B"
         }
       ]
     },
@@ -351,28 +350,28 @@
     "Instructions": [
       {
         "Op": "move",
-        "Nodes": "Something",
-        "To": "Bohater/Items"
+        "Nodes": "Bohater",
+        "To": "Lokacja_B/Characters"
       }
     ]
   },
   "variant": [
     {
-      "LSNodeRef": "LokacjaA",
+      "LSNodeRef": "Lokacja_A",
       "WorldNodeId": "M23",
       "WorldNodeName": "Forest",
       "WorldNodeAttr": null
     },
     {
       "LSNodeRef": "Bohater",
-      "WorldNodeId": "0a057f42-32e6-45b6-8da6-8a61031e795b",
+      "WorldNodeId": "629f0137-a772-4e2a-90dc-3d39db1d262e",
       "WorldNodeName": "Rumcajs",
       "WorldNodeAttr": null
     },
     {
-      "LSNodeRef": "Something",
-      "WorldNodeId": "7a2b04f0-3d74-41ae-8d21-47358d12f112",
-      "WorldNodeName": "Brushwood",
+      "LSNodeRef": "Lokacja_B",
+      "WorldNodeId": "1c3d81a2-777e-400a-95f8-2297df6079ae",
+      "WorldNodeName": "Cave",
       "WorldNodeAttr": null
     }
   ],
