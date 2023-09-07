@@ -90,6 +90,25 @@ namespace LocationDir
             }
         }
 
+        public void SpawnItems(JToken npcInfo, Vector3 position)
+        {
+            var items = npcInfo["Items"];
+            
+            if(items == null)
+                return;
+
+            foreach (var item in items)
+            {
+                var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
+                if (itemMesh == null)
+                    itemMesh = Resources.Load<Item>("JsonFiles/Items3D/default");
+
+                var obj = Instantiate(itemMesh, position, Quaternion.identity);
+                obj.ItemInfo = item;
+                _items.Add(obj.gameObject);
+            }
+        }
+        
         private void GenerateItems(JToken locationInfo)
         {
             var items = locationInfo["Items"];
@@ -115,14 +134,13 @@ namespace LocationDir
         {
             var path = "Prefabs/Location/Teleport";
 
-            Debug.Log(variants);
-            
             foreach (var variant in variants)
             {
                 if (teleportIndex < _initedTeleports.Count)
                 {
                     _initedTeleports[teleportIndex].gameObject.SetActive(true);
                     _initedTeleports[teleportIndex].GetComponent<Teleport>().Variant = variant;
+                    teleportIndex++;
                 }
                 else
                 {

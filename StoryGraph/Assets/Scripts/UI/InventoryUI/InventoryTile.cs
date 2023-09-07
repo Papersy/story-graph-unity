@@ -31,8 +31,6 @@ namespace UI
                 var itemDraggable = eventData.pointerDrag.GetComponent<Draggable>();
                 var firstItemId = itemDraggable.Item["Id"].ToString();
                 var secondItemId = transform.GetComponentInChildren<Draggable>().Item["Id"].ToString();
-                
-                Debug.Log(firstItemId + "   " + secondItemId);
 
                 if (_gameController.CanCreateOpakowanie(firstItemId, secondItemId))
                 {

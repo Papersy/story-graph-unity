@@ -36,6 +36,8 @@ namespace Player
             //Check if player want to get item from flour
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
+                Debug.Log("E pressed");
+                
                 if (Mathf.Abs(startPosDirection.x - rayDirection.x) > 0.4f)
                 {
                     Debug.Log("Too far of my head!!!");
@@ -47,7 +49,7 @@ namespace Player
                     if (_hit.transform.gameObject.CompareTag("Pickable"))
                     {
                         var itemName = _hit.transform.GetComponent<Item>().ItemInfo["Name"]?.ToString();
-                        Debug.Log(itemName);
+                       
                         if (AllServices.Container.Single<IGameService>().GetGameController().CanPickUpItem(itemName))
                         {
                             Debug.Log("CanPickUp");

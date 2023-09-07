@@ -21,33 +21,22 @@ namespace Npc
             _npcName.text = GetNpcName();
 
             var attributes = NpcInfo["Attributes"];
-            if(attributes != null && attributes["HP"] != null)
+            if (attributes != null && attributes["HP"] != null)
             {
                 var hp = attributes["HP"].ToString();
                 Health = Convert.ToInt32(hp);
             }
+            else
+                Health = 10;
         }
 
         public void StartDialog()
         {
-            GetDialog();
-            
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.ShowDialog();
-        }
-        
-        private void GetDialog()
-        {
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.DialogIndex = 0;
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.NpcInfo = NpcInfo;
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.Npc = gameObject;
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.InitDialog();
             
-            var path = "JsonFiles/Dialogs/" + GetNpcName();
-            var json = Resources.Load<TextAsset>(path).text;
-            
-            if(json == null)
-                json = Resources.Load<TextAsset>("JsonFiles/Dialogs/default").text;
-            
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.Dialog = JsonUtility.FromJson<Dialog>(json);
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.ShowDialog();
         }
 
         private string GetNpcName()
@@ -91,6 +80,8 @@ namespace Npc
                 
                 var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();
                 var npcId = NpcInfo["Id"].ToString();
+                
+                AllServices.Container.Single<IGameService>().GetGameController().NpcLostItems(NpcInfo, transform.position);
                 AllServices.Container.Single<IGameService>().GetGameController().EscapeFromBattle(playerName, npcId);
                 
                 gameObject.SetActive(false);

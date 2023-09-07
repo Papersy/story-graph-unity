@@ -13,6 +13,8 @@ namespace UI
         [SerializeField] private ItemUI _itemUI;
         [SerializeField] private DialogWindow _dialogWindow;
         [SerializeField] private EquipmentUI _equipmentUI;
+        [SerializeField] private GameObject _actionWindow;
+        public GameObject DiePanel;
         
         public LocationInfoUI LocationInfoUI;
 
@@ -43,6 +45,7 @@ namespace UI
                     HideMainInventory();
                     HideEquipment();
                     _itemUI.Hide();
+                    _actionWindow.SetActive(false);
                 }
             }
 
@@ -52,6 +55,7 @@ namespace UI
                 _dialogWindow.Hide();
                 _itemUI.Hide();
                 _equipmentUI.Hide();
+                _actionWindow.SetActive(false);
                 
                 HideCursor();
             }

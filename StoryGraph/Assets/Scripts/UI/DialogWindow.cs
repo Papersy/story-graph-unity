@@ -1,15 +1,28 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using ActionButtons;
 using CodeBase.Infrastructure.Services;
+using Infrastructure;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 namespace UI
 {
     public class DialogWindow : BaseWindow
     {
+        [SerializeField] private ButtonTakeAndGive _takeItemPrefab;
+        [SerializeField] private ButtonTakeAndGive _giveItemPrefab;
+        [SerializeField] private ButtonTrade _tradePrefab;
+        [SerializeField] private Button _npcActionPrefab;
+        
+        [SerializeField] private GameObject _dialogBtnPrefab;
+        [SerializeField] private Transform _scrollViewContent;
+        [SerializeField] private GameObject _actionWindow;
+        [SerializeField] private GameObject _actionContent;
+        
         public Image PlayerAvatar;
         public Image NpcAvatar;
         public TextMeshProUGUI Text;
@@ -19,91 +32,49 @@ namespace UI
         public Button GiveItem;
         public Button GroupCharacterBtn;
         public Button TradeBtn;
+        public Button AskNpc;
+        public Button Action;
         
-        public int DialogIndex = 0;
-
-        private Dialog _dialog;
         public JToken NpcInfo;
         public GameObject Npc;
-        public Dialog Dialog
-        {
-            get => _dialog;
-            set
-            {
-                _dialog = value;
-                DialogIndex = 0;
-                
-                CheckIfWeCanGiveItem();
-                CheckIfWeCanGroupCharacter();
-                CheckIfWeCanTakeItem();
-                CheckIfWeCanTrade();
-                
-                SetInfo();
-            }
-        }
+
+        private int _index;
+        private List<JToken> _knowledgeFromNpcList;
 
         private void OnEnable()
         {
-            NextFrame.onClick.AddListener(SkipFrame);
             TakeItem.onClick.AddListener(TakeItemFunc);
             GiveItem.onClick.AddListener(GiveItemFunc);
             TradeBtn.onClick.AddListener(Trade);
+            AskNpc.onClick.AddListener(Ask);
+            Action.onClick.AddListener(Actions);
             GroupCharacterBtn.onClick.AddListener(GroupCharacter);
         }
 
         private void OnDisable()
         {
-            NextFrame.onClick.RemoveListener(SkipFrame);
             TakeItem.onClick.RemoveListener(TakeItemFunc);
             GiveItem.onClick.RemoveListener(GiveItemFunc);
             TradeBtn.onClick.RemoveListener(Trade);
+            AskNpc.onClick.RemoveListener(Ask);
+            Action.onClick.RemoveListener(Actions);
             GroupCharacterBtn.onClick.RemoveListener(GroupCharacter);
         }
 
-
-        private void SkipFrame()
+        public void InitDialog()
         {
-            DialogIndex++;
+            _index = 0;
+            Text.gameObject.SetActive(false);
+            _scrollViewContent.gameObject.SetActive(true);
+            _knowledgeFromNpcList = new List<JToken>();
             
-            SetInfo();
-        }
-
-        private void SetInfo()
-        {
-            if (DialogIndex >= Dialog.dialog.Count)
-            {
-                NextFrame.gameObject.SetActive(false);
-                if(GameService.GetGameController().FindVariantOfGetItemFromNpc(Dialog.npc_name) != null)
-                    TakeItem.gameObject.SetActive(true);
-                if(GameService.GetGameController().FindVariantOfGiveItemToNpc(Dialog.npc_name) != null)
-                    GiveItem.gameObject.SetActive(true);
-                return;
-            }
-
-            if (Dialog.dialog[DialogIndex].side == 1)
-            {
-                PlayerAvatar.gameObject.SetActive(true);
-                NpcAvatar.gameObject.SetActive(false);
-
-                var icon = Resources.Load<Sprite>("JsonFiles/AvatarIcon/" + Dialog.dialog[DialogIndex].name);
-                if(icon == null)
-                    PlayerAvatar.sprite = Resources.Load<Sprite>("JsonFiles/AvatarIcon/default");
-                else 
-                    PlayerAvatar.sprite = icon;
-            }
-            else if (Dialog.dialog[DialogIndex].side == 2)
-            {
-                PlayerAvatar.gameObject.SetActive(false);
-                NpcAvatar.gameObject.SetActive(true);
-                
-                var icon = Resources.Load<Sprite>("JsonFiles/AvatarIcon/" + Dialog.dialog[DialogIndex].name);
-                if(icon == null)
-                    NpcAvatar.sprite = Resources.Load<Sprite>("JsonFiles/AvatarIcon/default");
-                else 
-                    NpcAvatar.sprite = icon;
-            }
+            CheckIfWeCanGiveItem();
+            CheckIfWeCanGroupCharacter();
+            CheckIfWeCanTakeItem();
+            CheckIfWeCanTrade();
             
-            Text.text = Dialog.dialog[DialogIndex].message;
+            CheckIfNpcCanGetKnowledgeFromConversation();
+            CheckIfNpcCanGiveKnowledgeFromConversation();
         }
 
         private void CheckIfWeCanTakeItem()
@@ -146,16 +117,87 @@ namespace UI
                 TradeBtn.gameObject.SetActive(false);
         }
 
+        private void CheckIfNpcCanGetKnowledgeFromConversation()
+        {
+            var variant = AllServices.Container.Single<IGameService>().GetGameController()
+                .FindVariantsOfGetKnowledgeInConversation(NpcInfo["Id"].ToString());
+
+            for (var i = _scrollViewContent.transform.childCount - 1; i >= 0; i--)
+            {
+                Destroy(_scrollViewContent.transform.GetChild(i).gameObject);
+            }
+            
+            if (variant != null)
+            {
+                for (int i = 0; i < variant.Count; i++)
+                {
+                    var container = variant[i];
+                    var variant2 = container[2]["WorldNodeAttr"];
+                    if (variant2 != null)
+                    {
+                        if (variant2["Knowledge"] != null)
+                        {
+                            var knowledge = variant2["Knowledge"].ToString();
+                            var btn = Instantiate(_dialogBtnPrefab, _scrollViewContent);
+                            btn.GetComponentInChildren<TextMeshProUGUI>().text = GetPolishPart(knowledge);
+                            btn.GetComponent<Button>().onClick.AddListener(() => PickButton(container));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void CheckIfNpcCanGiveKnowledgeFromConversation()
+        {
+            _knowledgeFromNpcList = AllServices.Container.Single<IGameService>().GetGameController()
+                .FindVariantsOfGetKnowledgeInConversationFromNpc(NpcInfo["Id"].ToString());
+        }
+
+        private void PickButton(JToken variant)
+        {
+            AllServices.Container.Single<IGameService>().GetGameController().GetKnowledgeFromConversation(variant);
+            
+            _scrollViewContent.gameObject.SetActive(false);
+            Text.gameObject.SetActive(true);
+            Text.text = "Ow, dzieki za informacje!";
+        }
+
         private void TakeItemFunc()
         {
-            AllServices.Container.Single<IGameService>().GetGameController().TakeItemFromNpc(NpcInfo["Name"].ToString());
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
+            _actionWindow.gameObject.SetActive(true);
+            
+            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
+                Destroy(_actionContent.transform.GetChild(i).gameObject);
+            
+            
+            var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfTakeItemFunc(NpcInfo["Name"].ToString());
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                var btn = Instantiate(_takeItemPrefab, _actionContent.transform);
+                var itemName = list[i][3]["WorldNodeName"].ToString();
+                
+                btn.SetImage(itemName);
+            }
         }
 
         private void GiveItemFunc()
         {
-            AllServices.Container.Single<IGameService>().GetGameController().GiveItemToNpc(NpcInfo["Name"].ToString());
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
+            _actionWindow.gameObject.SetActive(true);
+            
+            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
+                Destroy(_actionContent.transform.GetChild(i).gameObject);
+            
+            
+            var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfGiveItemFunc(NpcInfo["Name"].ToString());
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                var btn = Instantiate(_giveItemPrefab, _actionContent.transform);
+                var itemName = list[i][3]["WorldNodeName"].ToString();
+                
+                btn.SetImage(itemName);
+            }
         }
 
         private void GroupCharacter()
@@ -166,8 +208,88 @@ namespace UI
 
         private void Trade()
         {
-            AllServices.Container.Single<IGameService>().GetGameController().TradeWithCharacter(NpcInfo["Name"].ToString());
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
+            _actionWindow.gameObject.SetActive(true);
+            
+            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
+                Destroy(_actionContent.transform.GetChild(i).gameObject);
+            
+            
+            var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfTradeItem(NpcInfo["Name"].ToString());
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                var btn = Instantiate(_tradePrefab, _actionContent.transform);
+                var itemName1 = list[i][2]["WorldNodeName"].ToString();
+                var itemName2 = list[i][4]["WorldNodeName"].ToString();
+                
+                btn.SetImage(itemName1, itemName2);
+            }
+        }
+
+        private void Actions()
+        {
+            _actionWindow.gameObject.SetActive(true);
+            
+            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
+                Destroy(_actionContent.transform.GetChild(i).gameObject);
+            
+            
+            var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfActionWithNpc(NpcInfo["Id"].ToString());
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                var btn = Instantiate(_npcActionPrefab, _actionContent.transform);
+                // var itemName = list[i][3]["WorldNodeName"].ToString();
+            }
+        }
+
+        private void Ask()
+        {
+            Text.gameObject.SetActive(true);
+            _scrollViewContent.gameObject.SetActive(false);
+
+            if (_knowledgeFromNpcList == null)
+            {
+                Text.text = "Nie mam wiecej informacji dla ciebie";
+                return;
+            }
+            
+            if (_index < _knowledgeFromNpcList.Count)
+            {
+                var container = _knowledgeFromNpcList[_index];
+                Debug.Log(container);
+                if (container != null)
+                {
+                    var variant = container[2];
+                    if (variant != null)
+                    {
+                        var worldNode = variant["WorldNodeAttr"];
+                        if (worldNode != null)
+                        {
+                            var knowledge = worldNode["Knowledge"];
+                            if (knowledge != null)
+                            {
+                                Text.text = knowledge.ToString();
+                                AllServices.Container.Single<IGameService>().GetGameController().GetKnowledgeFromPerson(_knowledgeFromNpcList[_index]);
+                            }
+                        }
+                    }
+                }
+
+                _index++;
+            }
+            else
+                Text.text = "Nie mam wiecej informacji dla ciebie";
+        }
+        
+        private string GetPolishPart(string title)
+        {
+            char[] delimiter = {'/'};
+        
+            string[] words = title.Split(delimiter);
+            string firstWord = words[1].Trim();
+
+            return firstWord;
         }
     }
 }

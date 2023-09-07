@@ -22,7 +22,6 @@ namespace Player
             if(!GameCanvas.IsUiActive)
             {
                 StartCoroutine(Attack());
-                print("LeftMouseClicked");
             }
         }
         

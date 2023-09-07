@@ -194,7 +194,6 @@ public class GameController
 
         DeserializeFileAfterLocationChange(json);
     }
-
     public async void DropItem(string droppingItemName)
     {
         var productionName = "Dropping item";
@@ -208,7 +207,6 @@ public class GameController
 
         DeserializeFileAfterInventoryChange(json);
     }
-
     public async void PickItem(string pickingItemName)
     {
         var productionName = "Picking item up";
@@ -222,7 +220,6 @@ public class GameController
 
         DeserializeFileAfterInventoryChange(json);
     }
-
     public async void GiveItemToNpc(string npcName)
     {
         var productionName = "Item acquisition from another character";
@@ -235,7 +232,6 @@ public class GameController
         WriteLogAboutNewWorld(json);
         DeserializeFileAfterInventoryChange(json);
     }
-
     public async void TakeItemFromNpc(string npcName)
     {
         var productionName = "Item acquisition from another character";
@@ -248,7 +244,6 @@ public class GameController
         WriteLogAboutNewWorld(json);
         DeserializeFileAfterInventoryChange(json);
     }
-
     public async void PuttingItem(string puttingItemName)
     {
         var productionName = "Putting item in";
@@ -262,7 +257,6 @@ public class GameController
 
         DeserializeFileAfterInventoryChange(json);
     }
-
     public async void PullingItem(string pullingItemName)
     {
         var productionName = "Pulling item out";
@@ -276,7 +270,6 @@ public class GameController
 
         DeserializeFileAfterInventoryChange(json);
     }
-
     public async void GroupCharacter(string npcName)
     {
         var productionName = "Overwhelming character";
@@ -291,7 +284,6 @@ public class GameController
 
         DeserializeFileAfterInventoryChange(json);
     }
-
     public async void TradeWithCharacter(string npcName)
     {
         var productionName = "Exchanging item for item";
@@ -306,7 +298,6 @@ public class GameController
 
         DeserializeFileAfterInventoryChange(json);
     }
-    
     public async void CreateOpakowanieInInventory(string firstItemId, string secondItemId)
     {
         var productionName = "Putting item in inside of inventory";
@@ -320,8 +311,6 @@ public class GameController
 
         DeserializeFileAfterInventoryChange(json);
     }
-    
-
     public async void EscapeFromBattle(string fighterName, string escaperId)
     {
         var productionName = "Fight ending with character’s escape";
@@ -338,7 +327,6 @@ public class GameController
         DeserializeFileAfterInventoryChange(json);
         // DeserializeFileAfterLocationChange(json);
     }
-
     public async void FightEndWithSomeoneDeath(string fighterName, string escaperId)
     {
         var productionName = "Fight ending with character’s death";
@@ -354,7 +342,43 @@ public class GameController
 
         // DeserializeFileAfterLocationChange(json);
     }
+    public async void GetKnowledgeFromItem(string itemId)
+    {
+        var productionName = "Getting knowledge from item";
+        string locationId = _currentLocationId;
+        string[] parameters = { locationId, _mainPlayerName, itemId };
 
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd(productionName, _jAvailableProductions),
+            FindVariant(productionName, parameters, StatementGetKnowledgeFromItem),
+            _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+        
+        DeserializeFileAfterInventoryChange(json);
+    }
+    public async void GetKnowledgeFromConversation(JToken variant)
+    {
+        var productionName = "Getting knowledge from conversation";
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd(productionName, _jAvailableProductions),
+            variant, _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+        
+        DeserializeFileAfterInventoryChange(json);
+    }
+    public async void GetKnowledgeFromPerson(JToken variant)
+    {
+        var productionName = "Knowledge creation";
+        var json = await HttpClientController.PostNewWorld(_jWorlds,
+            FindProd(productionName, _jAvailableProductions, "TitleGeneric"),
+            variant, _mainPlayerName);
+
+        WriteLogAboutNewWorld(json);
+        DeserializeFileAfterInventoryChange(json);
+    }
+    
     public async void HeroDeath()
     {
         var productionName = "Fight ending with character’s escape";
@@ -368,11 +392,11 @@ public class GameController
         DeserializeFileAfterLocationChange(json);
     }
     
-    private JToken FindProd(string name, JToken tokenForSearch)
+    private JToken FindProd(string name, JToken tokenForSearch, string parameter = "Title")
     {
         foreach (var entity in tokenForSearch)
         {
-            var firstWord = GetFirstWord(entity);
+            var firstWord = GetFirstWord(entity, parameter);
 
             if (firstWord == name)
                 return entity["prod"];
@@ -380,6 +404,31 @@ public class GameController
 
         return null;
     }
+    
+    private JToken FindProdTest(string name, JToken tokenForSearch, string npcName)
+    {
+        foreach (var entity in tokenForSearch)
+        {
+            var firstWord = GetFirstWord(entity, "Title");
+
+            if (firstWord == name)
+            {
+                var lSide = entity["LSide"];
+                var locations = lSide["Locations"];
+                var firstLocation = locations[0];
+                var characters = firstLocation["Characters"];
+
+                foreach (var character in characters)
+                {
+                    if(character["Name"].ToString() == npcName)
+                        return entity["prod"];
+                }
+            }
+        }
+
+        return null;
+    }
+    
 
     public bool IsItStore(string boxName, string productionName)
     {
@@ -471,6 +520,37 @@ public class GameController
 
         return false;
     }
+    public bool CanGetKnowledgeFromItem(string itemId)
+    {
+        var productionName = "Getting knowledge from item";
+        string locationId = _currentLocationId;
+        string[] parameters = { locationId, _mainPlayerName, itemId };
+
+        var result = FindVariant(productionName, parameters, StatementGetKnowledgeFromItem);
+
+        if (result != null)
+            return true;
+
+        return false;
+    }
+    public bool CanGetKnowledgeFromPerson(string npcId)
+    {
+        var productionName = "Knowledge creation";
+        string locationId = _currentLocationId;
+        string[] parameters = { locationId, npcId, _mainPlayerName };
+
+        var result = FindVariant(productionName, parameters, StatementGetKnowledgeFromItem);
+
+        if (result != null)
+            return true;
+
+        return false;
+    }
+
+    public void NpcLostItems(JToken npc, Vector3 position)
+    {
+        _currentLocationController.SpawnItems(npc, position);
+    }
 
     public JToken FindVariantOfGiveItemToNpc(string npcName)
     {
@@ -490,7 +570,6 @@ public class GameController
 
         return null;
     }
-
     public JToken FindVariantOfGetItemFromNpc(string npcName)
     {
         foreach (var entity in _jAvailableProductions)
@@ -509,6 +588,86 @@ public class GameController
 
         return null;
     }
+    
+    public List<JToken> FindVariantsOfTakeItemFunc(string npcName)
+    {
+        var productionName = "Item acquisition from another character";
+        string[] parameters = { npcName };
+
+        var list = FindVariants(productionName, parameters, StatementTakeItemFromNpc);
+
+        if (list.Count > 0)
+            return list;
+        
+        return null;
+    }
+    
+    public List<JToken> FindVariantsOfTradeItem(string npcName)
+    {
+        var productionName = "Exchanging item for item";
+        string locationId = _currentLocationId;
+        string[] parameters = {locationId, npcName};
+
+        var list = FindVariants(productionName, parameters, StatementTradeWithCharacters);
+
+        if (list.Count > 0)
+            return list;
+        
+        return null;
+    }
+    
+    public List<JToken> FindVariantsOfGiveItemFunc(string npcName)
+    {
+        var productionName = "Item acquisition from another character";
+        string[] parameters = { npcName };
+
+        var list = FindVariants(productionName, parameters, StatementGiveItemToNpc);
+
+        if (list.Count > 0)
+            return list;
+        
+        return null;
+    }
+    
+    public List<JToken> FindVariantsOfGetKnowledgeInConversation(string npcId)
+    {
+        var productionName = "Getting knowledge from conversation";
+        string locationId = _currentLocationId;
+        string[] parameters = { locationId, _mainPlayerName, npcId };
+
+        var list = FindVariants(productionName, parameters, StatementGetKnowledgeFromConversation);
+
+        if (list.Count > 0)
+            return list;
+        
+        return null;
+    }
+    public List<JToken> FindVariantsOfGetKnowledgeInConversationFromNpc(string npcId)
+    {
+        var productionName = "Knowledge creation";
+        string locationId = _currentLocationId;
+        string[] parameters = { locationId, npcId, _mainPlayerName };
+
+        var list = FindVariants(productionName, parameters, StatementGetKnowledgeCreation, "TitleGeneric");
+
+        if (list.Count > 0)
+            return list;
+        
+        return null;
+    }
+
+    public List<JToken> FindVariantsOfActionWithNpc(string npcId)
+    {
+        var productionName = "Character’s feature change";
+        string[] parameters = {npcId};
+
+        var list = FindVariants(productionName, parameters, StatementActionWithNpc, "TitleGeneric");
+
+        if (list.Count > 0)
+            return list;
+        
+        return null;
+    }
 
     private JToken FindVariantsOfLocationChange(string name, JToken tokenForSearch)
     {
@@ -521,7 +680,6 @@ public class GameController
         }
         return null;
     }
-
     private JToken FindVariant(string productionName, string[] parameters, StatementsCheck statementsCheck)
     {
         foreach (var entity in _jAvailableProductions)
@@ -540,8 +698,27 @@ public class GameController
 
         return null;
     }
-    
-    
+    private List<JToken> FindVariants(string productionName, string[] parameters, StatementsCheck statementsCheck, string parameter = "Title")
+    {
+        var list = new List<JToken>();
+        
+        foreach (var entity in _jAvailableProductions)
+        {
+            var firstWord = GetFirstWord(entity, parameter);
+
+            if (firstWord == productionName)
+            {
+                foreach (var variant in entity["variants"])
+                {
+                    if (statementsCheck(variant, parameters))
+                        list.Add(variant);
+                }
+            }
+        }
+
+        return list;
+    }
+
     private bool StatementGiveItemToNpc(JToken variant, string[] parameters)
     {
         if (variant[1]["WorldNodeName"].ToString() == parameters[0])
@@ -645,6 +822,51 @@ public class GameController
         return false;
     }
     
+    private bool StatementGetKnowledgeFromItem(JToken variant, string[] parameters)
+    {
+        if (variant[0]["WorldNodeId"].ToString() == parameters[0] &&
+            variant[1]["WorldNodeName"].ToString() == parameters[1] &&
+            variant[2]["WorldNodeId"].ToString() == parameters[2])
+            return true;
+
+        return false;
+    }
+    
+    private bool StatementGetKnowledgeFromConversation(JToken variant, string[] parameters)
+    {
+        if (variant[0]["WorldNodeId"].ToString() == parameters[0] &&
+            variant[1]["WorldNodeName"].ToString() == parameters[1] &&
+            variant[3]["WorldNodeId"].ToString() == parameters[2])
+            return true;
+
+        return false;
+    }
+
+    private bool StatementGetKnowledgeCreation(JToken variant, string[] parameters)
+    {
+        if (variant[0]["WorldNodeId"].ToString() == parameters[0] &&
+            variant[1]["WorldNodeId"].ToString() == parameters[1] &&
+            variant[3]["WorldNodeName"].ToString() == parameters[2])
+            return true;
+
+        return false;
+    }
+
+    private bool StatementActionWithNpc(JToken variant, string[] parameters)
+    {
+        foreach (var token in variant)
+        {
+            Debug.Log(token);
+            if (token["WorldNodeId"].ToString() == parameters[0])
+            {
+                Debug.Log("Statement is good return true");
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
     
     private void WriteLogAboutNewWorld(string json)
     {
@@ -657,11 +879,11 @@ public class GameController
         }
     }
 
-    private string GetFirstWord(JToken entity)
+    private string GetFirstWord(JToken entity, string parameter = "Title")
     {
         char[] delimiter = {'/'};
         
-        var title = entity["prod"]["Title"].ToString();
+        var title = entity["prod"][parameter].ToString();
         string[] words = title.Split(delimiter);
         string firstWord = words[0].Trim();
 
