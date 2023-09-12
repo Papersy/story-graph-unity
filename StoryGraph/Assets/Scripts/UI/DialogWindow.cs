@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using ActionButtons;
 using CodeBase.Infrastructure.Services;
-using Infrastructure;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
 using TMPro;
 using UnityEngine;
 using Button = UnityEngine.UI.Button;
-using Image = UnityEngine.UI.Image;
 
 namespace UI
 {
@@ -23,10 +21,7 @@ namespace UI
         [SerializeField] private GameObject _actionWindow;
         [SerializeField] private GameObject _actionContent;
         
-        public Image PlayerAvatar;
-        public Image NpcAvatar;
         public TextMeshProUGUI Text;
-        public Button NextFrame;
 
         public Button TakeItem;
         public Button GiveItem;
@@ -90,31 +85,22 @@ namespace UI
         private void CheckIfWeCanGiveItem()
         {
             var result = AllServices.Container.Single<IGameService>().GetGameController().CanWeGiveToNpc(NpcInfo["Name"].ToString());
-            
-            if(result)
-                GiveItem.gameObject.SetActive(true);
-            else
-                GiveItem.gameObject.SetActive(false);
+
+            GiveItem.gameObject.SetActive(result);
         }
 
         private void CheckIfWeCanGroupCharacter()
         {
             var result = AllServices.Container.Single<IGameService>().GetGameController().CanBeGrouped(NpcInfo["Name"].ToString());
-            
-            if(result)
-                GroupCharacterBtn.gameObject.SetActive(true);
-            else
-                GroupCharacterBtn.gameObject.SetActive(false);
+
+            GroupCharacterBtn.gameObject.SetActive(result);
         }
 
         private void CheckIfWeCanTrade()
         {
             var result = AllServices.Container.Single<IGameService>().GetGameController().CanTradeItem(NpcInfo["Name"].ToString());
-            
-            if(result)
-                TradeBtn.gameObject.SetActive(true);
-            else
-                TradeBtn.gameObject.SetActive(false);
+
+            TradeBtn.gameObject.SetActive(result);
         }
 
         private void CheckIfNpcCanGetKnowledgeFromConversation()
@@ -122,11 +108,8 @@ namespace UI
             var variant = AllServices.Container.Single<IGameService>().GetGameController()
                 .FindVariantsOfGetKnowledgeInConversation(NpcInfo["Id"].ToString());
 
-            for (var i = _scrollViewContent.transform.childCount - 1; i >= 0; i--)
-            {
-                Destroy(_scrollViewContent.transform.GetChild(i).gameObject);
-            }
-            
+            ClearContentView(_scrollViewContent.transform);
+
             if (variant != null)
             {
                 for (int i = 0; i < variant.Count; i++)
@@ -140,7 +123,7 @@ namespace UI
                             var knowledge = variant2["Knowledge"].ToString();
                             var btn = Instantiate(_dialogBtnPrefab, _scrollViewContent);
                             btn.GetComponentInChildren<TextMeshProUGUI>().text = GetPolishPart(knowledge);
-                            btn.GetComponent<Button>().onClick.AddListener(() => PickButton(container));
+                            btn.GetComponent<Button>().onClick.AddListener(() => GetKnowledge(container));
                         }
                     }
                 }
@@ -153,7 +136,7 @@ namespace UI
                 .FindVariantsOfGetKnowledgeInConversationFromNpc(NpcInfo["Id"].ToString());
         }
 
-        private void PickButton(JToken variant)
+        private void GetKnowledge(JToken variant)
         {
             AllServices.Container.Single<IGameService>().GetGameController().GetKnowledgeFromConversation(variant);
             
@@ -166,38 +149,50 @@ namespace UI
         {
             _actionWindow.gameObject.SetActive(true);
             
-            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
-                Destroy(_actionContent.transform.GetChild(i).gameObject);
-            
-            
+            ClearContentView(_actionContent.transform);
+
             var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfTakeItemFunc(NpcInfo["Name"].ToString());
 
-            for (int i = 0; i < list.Count; i++)
+            foreach (var variant in list)
             {
                 var btn = Instantiate(_takeItemPrefab, _actionContent.transform);
-                var itemName = list[i][3]["WorldNodeName"].ToString();
+                var itemName = variant[3]["WorldNodeName"].ToString();
                 
                 btn.SetImage(itemName);
+                btn.GetComponent<Button>().onClick.AddListener(() => TakeItemHelper(variant));
             }
+        }
+
+        private void TakeItemHelper(JToken variant)
+        {
+            AllServices.Container.Single<IGameService>().GetGameController().TakeItemFromNpc(NpcInfo["Name"].ToString(), variant);
+            _actionWindow.gameObject.SetActive(false);
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
         }
 
         private void GiveItemFunc()
         {
             _actionWindow.gameObject.SetActive(true);
             
-            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
-                Destroy(_actionContent.transform.GetChild(i).gameObject);
-            
-            
+            ClearContentView(_actionContent.transform);
+
             var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfGiveItemFunc(NpcInfo["Name"].ToString());
 
-            for (int i = 0; i < list.Count; i++)
+            foreach (var variant in list)
             {
                 var btn = Instantiate(_giveItemPrefab, _actionContent.transform);
-                var itemName = list[i][3]["WorldNodeName"].ToString();
+                var itemName = variant[3]["WorldNodeName"].ToString();
                 
                 btn.SetImage(itemName);
+                btn.GetComponent<Button>().onClick.AddListener(() => GiveItemHelper(variant));
             }
+        }
+
+        private void GiveItemHelper(JToken variant)
+        {
+            AllServices.Container.Single<IGameService>().GetGameController().GiveItemToNpc(NpcInfo["Name"].ToString(), variant);
+            _actionWindow.gameObject.SetActive(false);
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
         }
 
         private void GroupCharacter()
@@ -210,20 +205,26 @@ namespace UI
         {
             _actionWindow.gameObject.SetActive(true);
             
-            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
-                Destroy(_actionContent.transform.GetChild(i).gameObject);
-            
-            
+            ClearContentView(_actionContent.transform);
+
             var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfTradeItem(NpcInfo["Name"].ToString());
 
-            for (int i = 0; i < list.Count; i++)
+            foreach (var variant in list)
             {
                 var btn = Instantiate(_tradePrefab, _actionContent.transform);
-                var itemName1 = list[i][2]["WorldNodeName"].ToString();
-                var itemName2 = list[i][4]["WorldNodeName"].ToString();
+                var itemName1 = variant[2]["WorldNodeName"].ToString();
+                var itemName2 = variant[4]["WorldNodeName"].ToString();
                 
                 btn.SetImage(itemName1, itemName2);
+                btn.GetComponent<Button>().onClick.AddListener(() => TradeHelper(variant));
             }
+        }
+
+        private void TradeHelper(JToken variant)
+        {
+            AllServices.Container.Single<IGameService>().GetGameController().TradeWithCharacter(NpcInfo["Name"].ToString(), variant);
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
+            _actionWindow.gameObject.SetActive(false);
         }
 
         private void Actions()
@@ -234,13 +235,24 @@ namespace UI
                 Destroy(_actionContent.transform.GetChild(i).gameObject);
             
             
-            var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfActionWithNpc(NpcInfo["Id"].ToString());
+            var list = AllServices.Container.Single<IGameService>().GetGameController().FindProductionsOfActionWithNpc(NpcInfo["Id"].ToString());
 
-            for (int i = 0; i < list.Count; i++)
+            if(list == null)
+                return;
+            
+            foreach (var variable in list)
             {
                 var btn = Instantiate(_npcActionPrefab, _actionContent.transform);
-                // var itemName = list[i][3]["WorldNodeName"].ToString();
+                btn.GetComponent<ButtonAction>().SetText(variable.Key["prod"]["Title"].ToString());
+                btn.GetComponent<Button>().onClick.AddListener(() => ActionHelper(variable));
             }
+        }
+
+        private void ActionHelper(KeyValuePair<JToken, List<JToken>> variable)
+        {
+            AllServices.Container.Single<IGameService>().GetGameController().SendAction(variable.Key["prod"], variable.Value[0]);
+            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
+            _actionWindow.gameObject.SetActive(false);
         }
 
         private void Ask()
@@ -250,14 +262,14 @@ namespace UI
 
             if (_knowledgeFromNpcList == null)
             {
-                Text.text = "Nie mam wiecej informacji dla ciebie";
+                Text.text = "Nie mam informacji dla ciebie";
                 return;
             }
             
             if (_index < _knowledgeFromNpcList.Count)
             {
                 var container = _knowledgeFromNpcList[_index];
-                Debug.Log(container);
+
                 if (container != null)
                 {
                     var variant = container[2];
@@ -279,7 +291,7 @@ namespace UI
                 _index++;
             }
             else
-                Text.text = "Nie mam wiecej informacji dla ciebie";
+                Text.text = "Nie mam informacji dla ciebie";
         }
         
         private string GetPolishPart(string title)
@@ -287,9 +299,20 @@ namespace UI
             char[] delimiter = {'/'};
         
             string[] words = title.Split(delimiter);
-            string firstWord = words[1].Trim();
 
-            return firstWord;
+            if (words.Length > 1)
+                return words[1].Trim();
+            
+            return words[0].Trim();
+        }
+
+        private void ClearContentView(Transform content)
+        {
+            if(content.childCount == 0)
+                return;
+            
+            for (var i = content.childCount - 1; i >= 0; i--)
+                Destroy(content.GetChild(i).gameObject);
         }
     }
 }

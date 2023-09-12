@@ -63,7 +63,7 @@ namespace LocationDir
             return point;
         }
 
-        private void GenerateNpc(JToken locationInfo)
+        public void GenerateNpc(JToken locationInfo)
         {
             var characters = locationInfo["Characters"];
 
