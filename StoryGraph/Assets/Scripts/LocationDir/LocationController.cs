@@ -62,10 +62,11 @@ namespace LocationDir
 
             return point;
         }
-
+        
         public void GenerateNpc(JToken locationInfo)
         {
             var characters = locationInfo["Characters"];
+            Debug.Log(characters);
 
             if (characters == null)
                 return;
@@ -89,7 +90,7 @@ namespace LocationDir
                 _characters.Add(obj.gameObject);
             }
         }
-
+        
         public void SpawnItems(JToken npcInfo, Vector3 position)
         {
             var items = npcInfo["Items"];

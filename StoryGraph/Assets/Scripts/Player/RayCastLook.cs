@@ -48,6 +48,7 @@ namespace Player
                 {
                     if (_hit.transform.gameObject.CompareTag("Pickable"))
                     {
+                        Debug.Log(_hit.transform.GetComponent<Item>().ItemInfo);
                         var itemName = _hit.transform.GetComponent<Item>().ItemInfo["Name"]?.ToString();
                        
                         if (AllServices.Container.Single<IGameService>().GetGameController().CanPickUpItem(itemName))

@@ -22,11 +22,8 @@ namespace UI
         [SerializeField] private GameObject _actionContent;
         
         public TextMeshProUGUI Text;
-
-        public Button TakeItem;
-        public Button GiveItem;
+        
         public Button GroupCharacterBtn;
-        public Button TradeBtn;
         public Button AskNpc;
         public Button Action;
         
@@ -38,21 +35,15 @@ namespace UI
 
         private void OnEnable()
         {
-            TakeItem.onClick.AddListener(TakeItemFunc);
-            GiveItem.onClick.AddListener(GiveItemFunc);
-            TradeBtn.onClick.AddListener(Trade);
             AskNpc.onClick.AddListener(Ask);
-            Action.onClick.AddListener(Actions);
+            Action.onClick.AddListener(InitActions);
             GroupCharacterBtn.onClick.AddListener(GroupCharacter);
         }
 
         private void OnDisable()
         {
-            TakeItem.onClick.RemoveListener(TakeItemFunc);
-            GiveItem.onClick.RemoveListener(GiveItemFunc);
-            TradeBtn.onClick.RemoveListener(Trade);
             AskNpc.onClick.RemoveListener(Ask);
-            Action.onClick.RemoveListener(Actions);
+            Action.onClick.RemoveListener(InitActions);
             GroupCharacterBtn.onClick.RemoveListener(GroupCharacter);
         }
 
@@ -63,30 +54,10 @@ namespace UI
             _scrollViewContent.gameObject.SetActive(true);
             _knowledgeFromNpcList = new List<JToken>();
             
-            CheckIfWeCanGiveItem();
             CheckIfWeCanGroupCharacter();
-            CheckIfWeCanTakeItem();
-            CheckIfWeCanTrade();
-            
+
             CheckIfNpcCanGetKnowledgeFromConversation();
             CheckIfNpcCanGiveKnowledgeFromConversation();
-        }
-
-        private void CheckIfWeCanTakeItem()
-        {
-            var result = AllServices.Container.Single<IGameService>().GetGameController().CanWeTakeFromNpc(NpcInfo["Name"].ToString());
-            
-            if(result)
-                TakeItem.gameObject.SetActive(true);
-            else
-                TakeItem.gameObject.SetActive(false);
-        }
-
-        private void CheckIfWeCanGiveItem()
-        {
-            var result = AllServices.Container.Single<IGameService>().GetGameController().CanWeGiveToNpc(NpcInfo["Name"].ToString());
-
-            GiveItem.gameObject.SetActive(result);
         }
 
         private void CheckIfWeCanGroupCharacter()
@@ -96,13 +67,18 @@ namespace UI
             GroupCharacterBtn.gameObject.SetActive(result);
         }
 
-        private void CheckIfWeCanTrade()
+        private void InitActions()
         {
-            var result = AllServices.Container.Single<IGameService>().GetGameController().CanTradeItem(NpcInfo["Name"].ToString());
-
-            TradeBtn.gameObject.SetActive(result);
+            _actionWindow.gameObject.SetActive(true);
+            ClearContentView(_actionContent.transform);
+            
+            Trade();
+            Actions();
+            TakeItemFunc();
+            GiveItemFunc();
+            MakeDeal();
         }
-
+        
         private void CheckIfNpcCanGetKnowledgeFromConversation()
         {
             var variant = AllServices.Container.Single<IGameService>().GetGameController()
@@ -147,18 +123,18 @@ namespace UI
 
         private void TakeItemFunc()
         {
-            _actionWindow.gameObject.SetActive(true);
-            
-            ClearContentView(_actionContent.transform);
-
             var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfTakeItemFunc(NpcInfo["Name"].ToString());
 
+            if(list == null)
+                return;
+            
             foreach (var variant in list)
             {
                 var btn = Instantiate(_takeItemPrefab, _actionContent.transform);
                 var itemName = variant[3]["WorldNodeName"].ToString();
                 
                 btn.SetImage(itemName);
+                btn.SetText("Take");
                 btn.GetComponent<Button>().onClick.AddListener(() => TakeItemHelper(variant));
             }
         }
@@ -172,18 +148,18 @@ namespace UI
 
         private void GiveItemFunc()
         {
-            _actionWindow.gameObject.SetActive(true);
-            
-            ClearContentView(_actionContent.transform);
-
             var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfGiveItemFunc(NpcInfo["Name"].ToString());
 
+            if(list == null)
+                return;
+            
             foreach (var variant in list)
             {
                 var btn = Instantiate(_giveItemPrefab, _actionContent.transform);
                 var itemName = variant[3]["WorldNodeName"].ToString();
                 
                 btn.SetImage(itemName);
+                btn.SetText("Give");
                 btn.GetComponent<Button>().onClick.AddListener(() => GiveItemHelper(variant));
             }
         }
@@ -199,16 +175,17 @@ namespace UI
         {
             AllServices.Container.Single<IGameService>().GetGameController().GroupCharacter(NpcInfo["Name"].ToString());
             AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.HideDialog();
+            
+            Destroy(Npc);
         }
 
         private void Trade()
         {
-            _actionWindow.gameObject.SetActive(true);
-            
-            ClearContentView(_actionContent.transform);
-
             var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfTradeItem(NpcInfo["Name"].ToString());
 
+            if(list == null)
+                return;
+            
             foreach (var variant in list)
             {
                 var btn = Instantiate(_tradePrefab, _actionContent.transform);
@@ -229,12 +206,6 @@ namespace UI
 
         private void Actions()
         {
-            _actionWindow.gameObject.SetActive(true);
-            
-            for (var i = _actionContent.transform.childCount - 1; i >= 0; i--)
-                Destroy(_actionContent.transform.GetChild(i).gameObject);
-            
-            
             var list = AllServices.Container.Single<IGameService>().GetGameController().FindProductionsOfActionWithNpc(NpcInfo["Id"].ToString());
 
             if(list == null)
@@ -292,6 +263,45 @@ namespace UI
             }
             else
                 Text.text = "Nie mam informacji dla ciebie";
+        }
+
+        private void MakeDeal()
+        {
+            var list = AllServices.Container.Single<IGameService>().GetGameController().FindVariantsOfMakeADeal(NpcInfo["Id"].ToString());
+
+            if(list == null)
+                return;
+            
+            foreach (var variable in list)
+            {
+                var btn = Instantiate(_takeItemPrefab, _actionContent.transform);
+                var text = "";
+                var cost = "";
+                var name = "";
+                
+                foreach (var element in variable)
+                {
+                    var playerId = AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId();
+                    var playerStatus = element["LSNodeRef"].ToString();
+                    
+                    if (playerStatus == "Buyer" && element["WorldNodeId"].ToString() == playerId)
+                        text = "Buy";
+                    
+                    else if (playerStatus == "Seller" && element["WorldNodeId"].ToString() == playerId)
+                        text = "Sell";
+
+                    if (element["LSNodeRef"].ToString() == "Something")
+                    {
+                        var nodeAttr = element["WorldNodeAttr"];
+                        name = element["WorldNodeName"].ToString();
+                        cost = nodeAttr["Value"].ToString();
+                    }
+                }
+
+                text += " " + cost;
+                btn.GetComponent<ButtonTakeAndGive>().SetImage(name);
+                btn.GetComponent<ButtonTakeAndGive>().SetText(text);
+            }
         }
         
         private string GetPolishPart(string title)

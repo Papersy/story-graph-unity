@@ -331,9 +331,7 @@ public class GameController
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
-
         DeserializeFileAfterInventoryChange(json);
-        // DeserializeFileAfterLocationChange(json);
     }
     public async void FightEndWithSomeoneDeath(string fighterName, string escaperId)
     {
@@ -347,8 +345,7 @@ public class GameController
             _mainPlayerName);
 
         WriteLogAboutNewWorld(json);
-
-        // DeserializeFileAfterLocationChange(json);
+        DeserializeFileAfterInventoryChange(json);
     }
     public async void GetKnowledgeFromItem(string itemId)
     {
@@ -440,46 +437,12 @@ public class GameController
 
         return false;
     }
-    public bool CanWeGiveToNpc(string npcName)
-    {
-        var productionName = "Item acquisition from another character";
-        string[] parameters = {npcName};
-        var result = FindVariant(productionName, parameters, StatementGiveItemToNpc);
-
-        if (result != null)
-            return true;
-
-        return false;
-    }
-    public bool CanWeTakeFromNpc(string npcName)
-    {
-        var productionName = "Item acquisition from another character";
-        string[] parameters = {npcName};
-        var result = FindVariant(productionName, parameters, StatementTakeItemFromNpc);
-
-        if (result != null)
-            return true;
-
-        return false;
-    }
     public bool CanBeGrouped(string npcName)
     {
         var productionName = "Overwhelming character";
         string locationId = _currentLocationId;
         string[] parameters = {locationId, npcName};
         var result = FindVariant(productionName, parameters, StatementCreateGroup);
-
-        if (result != null)
-            return true;
-
-        return false;
-    }
-    public bool CanTradeItem(string npcName)
-    {
-        var productionName = "Exchanging item for item";
-        string locationId = _currentLocationId;
-        string[] parameters = {locationId, npcName};
-        var result = FindVariant(productionName, parameters, StatementTradeWithCharacters);
 
         if (result != null)
             return true;
@@ -524,7 +487,6 @@ public class GameController
     public bool CanUngroup()
     {
         var productionName = "Deleting the group";
-        string locationId = _currentLocationId;
         string[] parameters = {};
         var result = FindVariant(productionName, parameters, StatementUngroup);
 
@@ -534,11 +496,21 @@ public class GameController
         return false;
     }
 
-    public void NpcLostItems(JToken npc, Vector3 position)
-    {
-        _currentLocationController.SpawnItems(npc, position);
-    }
+    public void NpcLostItems(JToken npc, Vector3 position) => _currentLocationController.SpawnItems(npc, position);
 
+    public List<JToken> FindVariantsOfMakeADeal(string npcId)
+    {
+        var productionName = "Making a deal";
+        string[] parameters = { _mainPlayerId, npcId };
+
+        var list = FindVariants(productionName, parameters, StatementMakeADeal);
+
+        if (list.Count > 0)
+            return list;
+        
+        return null;
+    }
+        
     public List<JToken> FindVariantsOfTakeItemFunc(string npcName)
     {
         var productionName = "Item acquisition from another character";
@@ -551,7 +523,6 @@ public class GameController
         
         return null;
     }
-    
     public List<JToken> FindVariantsOfTradeItem(string npcName)
     {
         var productionName = "Exchanging item for item";
@@ -565,7 +536,6 @@ public class GameController
         
         return null;
     }
-    
     public List<JToken> FindVariantsOfGiveItemFunc(string npcName)
     {
         var productionName = "Item acquisition from another character";
@@ -578,7 +548,6 @@ public class GameController
         
         return null;
     }
-    
     public List<JToken> FindVariantsOfGetKnowledgeInConversation(string npcId)
     {
         var productionName = "Getting knowledge from conversation";
@@ -698,6 +667,15 @@ public class GameController
     private bool StatementGiveItemToNpc(JToken variant, string[] parameters)
     {
         if (variant[1]["WorldNodeName"].ToString() == parameters[0])
+            return true;
+
+        return false;
+    }
+    
+    private bool StatementMakeADeal(JToken variant, string[] parameters)
+    {
+        if (variant[1]["WorldNodeId"].ToString() == parameters[0] &&
+            variant[2]["WorldNodeId"].ToString() == parameters[1])
             return true;
 
         return false;

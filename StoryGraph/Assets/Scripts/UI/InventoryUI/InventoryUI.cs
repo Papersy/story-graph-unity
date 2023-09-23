@@ -40,8 +40,8 @@ namespace UI
 
         private void OnDisable()
         {
-            _unGroup.onClick.AddListener(UnGroup);
-            _narrationBtn.onClick.AddListener(ShowNarrations);
+            _unGroup.onClick.RemoveListener(UnGroup);
+            _narrationBtn.onClick.RemoveListener(ShowNarrations);
         }
 
         public override void Awake()
