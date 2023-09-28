@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿ using UI;
+ using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -192,6 +193,9 @@ namespace StarterAssets
 
         private void CameraRotation()
         {
+            if(GameCanvas.IsUiActive)
+                return;
+            
             // if there is an input and camera position is not fixed
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {

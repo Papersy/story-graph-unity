@@ -39,6 +39,94 @@ namespace LocationDir
             GeneratePortals(_locationVariants);
         }
 
+        public void UpdateCharacters(JToken characters)
+        {
+            if (characters == null)
+            {
+                foreach (var item in _characters)
+                    Destroy(item); 
+                
+                return;
+            }
+            
+            //TODO: Check ids not names
+            
+            //delete characters
+            foreach (var character in _characters)
+            {
+                var npc = character.GetComponent<Npc.Npc>();
+                if(!HasNpcInList(characters, npc.NpcInfo["Name"].ToString(), "Name"))
+                    Destroy(character);
+            }
+            
+            //add characters
+            foreach (var newCharacter in characters)
+            {
+                var newNpcName = newCharacter["Name"].ToString();
+                var spawnCharacter = true;
+                foreach (var oldCharacter in _characters)
+                {
+                    var oldCharacterName = oldCharacter.GetComponent<Npc.Npc>().NpcInfo["Name"].ToString();
+                    if (newNpcName == oldCharacterName)
+                        spawnCharacter = false;
+                }
+                
+                if(spawnCharacter)
+                    SpawnOneNpc(newCharacter);
+            }
+        }
+
+        private bool HasNpcInList(JToken list, string npcName, string newNpcKey)
+        {
+            foreach (var entity in list)
+            {
+                var newEntityName = entity[newNpcKey].ToString();
+                if (npcName == newEntityName)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public void UpdateItems(JToken items)
+        {
+            if (items == null)
+            {
+                foreach (var item in _items)
+                    Destroy(item);        
+                
+                return;
+            }
+            
+            //TODO: Check ids not names
+            
+            //delete items
+            foreach (var item in _items)
+            {
+                var objItem = item.GetComponent<Item>().ItemInfo;
+                Debug.Log(objItem);
+                
+                if(!HasNpcInList(items, objItem["Name"].ToString(), "Name"))
+                    Destroy(item);
+            }
+            
+            //add items
+            foreach (var newItem in items)
+            {
+                var newItemName = newItem["Name"].ToString();
+                var spawnItem = true;
+                foreach (var oldCharacter in _items)
+                {
+                    var oldCharacterName = oldCharacter.GetComponent<Item>().ItemInfo["Name"].ToString();
+                    if (newItemName == oldCharacterName)
+                        spawnItem = false;
+                }
+                
+                if(spawnItem)
+                    SpawnOneItem(newItem);
+            }
+        }
+        
         public void ClearLocation()
         {
             foreach (var character in _characters)
@@ -66,7 +154,6 @@ namespace LocationDir
         public void GenerateNpc(JToken locationInfo)
         {
             var characters = locationInfo["Characters"];
-            Debug.Log(characters);
 
             if (characters == null)
                 return;
@@ -157,5 +244,38 @@ namespace LocationDir
                 }
             }
         }
+
+        private void SpawnOneNpc(JToken character)
+        {
+            var position = GetPointForEntitySpawn();
+            var characterId = character["Id"].ToString();
+                
+            if(characterId == AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId())
+                return;
+
+            var npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/" + character["Name"]);
+            if (npc == null)
+                npc = Resources.Load<Npc.Npc>("JsonFiles/Npc/default_npc");
+
+            var obj = Instantiate(npc, position, Quaternion.identity);
+            obj.NpcInfo = character;
+            obj.Init();
+
+            _characters.Add(obj.gameObject);
+        }
+
+        private void SpawnOneItem(JToken item)
+        {
+            var position = GetPointForEntitySpawn();
+
+            var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
+            if (itemMesh == null)
+                itemMesh = Resources.Load<Item>("JsonFiles/Items3D/default");
+
+            var obj = Instantiate(itemMesh, position, Quaternion.identity);
+            obj.ItemInfo = item;
+            _items.Add(obj.gameObject);
+        }
+        
     }
 }

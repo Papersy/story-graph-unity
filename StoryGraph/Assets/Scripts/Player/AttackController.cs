@@ -13,6 +13,7 @@ namespace Player
         private InputAction leftMouseClick;
  
         private void Awake() {
+            
             leftMouseClick = new InputAction(binding: "<Mouse>/leftButton");
             leftMouseClick.performed += ctx => LeftMouseClicked();
             leftMouseClick.Enable();

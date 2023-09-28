@@ -14,6 +14,8 @@ namespace UI
         [SerializeField] private DialogWindow _dialogWindow;
         [SerializeField] private EquipmentUI _equipmentUI;
         [SerializeField] private GameObject _actionWindow;
+        [SerializeField] private AllActions _allActions;
+        
         public GameObject DiePanel;
         
         public LocationInfoUI LocationInfoUI;
@@ -49,13 +51,32 @@ namespace UI
                 }
             }
 
+            if (Keyboard.current.capsLockKey.wasPressedThisFrame)
+            {
+                if (!_allActions.isActiveAndEnabled)
+                {
+                    IsUiActive = true;
+                    ShowCursor();
+                    _allActions.Show();
+                    _allActions.Init();
+                }
+                else
+                {
+                    IsUiActive = false;
+                    HideCursor();
+                    _allActions.Hide();
+                }
+            }
+
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
+                
                 _inventoryUI.HideInventory();
                 _dialogWindow.Hide();
                 _itemUI.Hide();
                 _equipmentUI.Hide();
                 _actionWindow.SetActive(false);
+                IsUiActive = false;
                 
                 HideCursor();
             }
