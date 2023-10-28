@@ -18,11 +18,14 @@ public class GameController
     private string _mainPlayerId = "";
     private string _mainPlayerName = "";
     private string _currentLocationId = "";
+    private const float LocationOffset = 65f;
+    private float _locationCoord = 0f;
 
     private JToken _jWorlds;
     private JToken _jCurrentLocation;
     private JToken _jAvailableProductions;
     private LocationController _currentLocationController;
+    private List<LocationController> _locationControllers = new();
 
     public event Action<string> OnLocationChanged;
 
@@ -46,7 +49,7 @@ public class GameController
         GetMainPlayerId(dict);
 
         _jCurrentLocation = GetCurrentLocation(_jWorlds);
-        GenerateLocation(_jWorlds);
+        GenerateLocations(_jWorlds);
     }
 
     private void DeserializeFileAfterLocationChange(string json)
@@ -59,7 +62,7 @@ public class GameController
         GetMainPlayerId(dict);
         
         _jCurrentLocation = GetCurrentLocation(_jWorlds);
-        GenerateLocation(_jWorlds);
+        UpdateAfterLocationChange();
     }
 
     private void DeserializeFileAfterInventoryChange(string json)
@@ -125,7 +128,24 @@ public class GameController
         }
     }
 
-    private void GenerateLocation(JToken worlds)
+    private void UpdateAfterLocationChange()
+    {
+        foreach (var controller in _locationControllers)
+        {
+            if (controller._locationInfo["Id"].ToString() == _currentLocationId)
+            {
+                if (!controller.IsInited)
+                {
+                    _currentLocationController = controller;
+                    _currentLocationController.InitLocation(_jCurrentLocation, FindVariantsOfLocationChange("Location change", _jAvailableProductions)); 
+                }
+                
+                InitPlayer(controller);
+            }
+        }
+    }
+    
+    private void GenerateLocations(JToken worlds)
     {
         foreach (var world in worlds)
         {
@@ -134,19 +154,26 @@ public class GameController
                 var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
                 if (prefab == null)
                     prefab = Resources.Load<LocationController>("JsonFiles/Locations/default_location");
-                var locationController = Object.Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
-
-                if (_currentLocationController != null)
-                {
-                    _currentLocationController.ClearLocation();
-                    Object.Destroy(_currentLocationController.gameObject);
-                }
+                var locationController = Object.Instantiate(prefab, new Vector3(0, 0, _locationCoord), Quaternion.identity);
 
                 _currentLocationController = locationController;
                 _currentLocationController.InitLocation(_jCurrentLocation, FindVariantsOfLocationChange("Location change", _jAvailableProductions));
+                _locationControllers.Add(locationController);
 
                 InitPlayer(locationController);
             }
+            else
+            {
+                var prefab = Resources.Load<LocationController>("JsonFiles/Locations/" + world["Name"]);
+                if (prefab == null)
+                    prefab = Resources.Load<LocationController>("JsonFiles/Locations/default_location");
+                var locationController = Object.Instantiate(prefab, new Vector3(0, 0, _locationCoord), Quaternion.identity);
+                
+                locationController.SetLocationInfo(world);
+                _locationControllers.Add(locationController);
+            }
+            
+            _locationCoord += LocationOffset;
         }
     }
 
@@ -195,7 +222,7 @@ public class GameController
         if (_currentLocationId != mainLocationId)
         {
             _currentLocationId = mainLocationId;
-            GenerateLocation(newJTokenWorld);
+            UpdateAfterLocationChange();
         }
         
         var characters = newLocationToken["Characters"];

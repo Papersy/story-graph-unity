@@ -1,7 +1,6 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
-using Player;
 using TMPro;
 using UnityEngine;
 
@@ -29,23 +28,7 @@ namespace LocationDir
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
-            {
-                Debug.Log("Collide");
                 AllServices.Container.Single<IGameService>().GetGameController().ChangeLocation(Variant);
-
-                // if (PlayerStats.NpcBattleInfo == null)
-                // {
-                //     // Debug.Log("No battle");
-                // }
-                // else
-                // {
-                //     Debug.Log("Has battle");
-                //     var fighterName = PlayerStats.NpcBattleInfo["Name"].ToString();
-                //     var playerId = AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId();
-                //     AllServices.Container.Single<IGameService>().GetGameController().EscapeFromBattle(fighterName, playerId);
-                //     PlayerStats.NpcBattleInfo = null;
-                // }
-            }
         }
     }
 }

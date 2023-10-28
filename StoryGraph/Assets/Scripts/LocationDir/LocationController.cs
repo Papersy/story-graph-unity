@@ -22,14 +22,21 @@ namespace LocationDir
         private List<GameObject> _items = new List<GameObject>();
         private List<GameObject> _teleports = new List<GameObject>();
 
+        public bool IsInited = false;
         private int teleportIndex = 0;
-        private JToken _locationInfo;
+        public JToken _locationInfo;
         private JToken _locationVariants;
 
         public Transform GetSpawnPoint() => spawnPoint;
 
+        public void SetLocationInfo(JToken locationInfo)
+        {
+            _locationInfo = locationInfo;
+        }
+        
         public void InitLocation(JToken locationInfo, JToken locationTeleportsVariants)
         {
+            IsInited = true;
             teleportIndex = 0;
             _locationInfo = locationInfo;
             _locationVariants = locationTeleportsVariants;
@@ -49,9 +56,6 @@ namespace LocationDir
                 _items.Clear();
                 return;
             }
-            
-            //TODO: Check ids not names
-
 
             List<GameObject> deleteItems = new List<GameObject>();
             //delete items
@@ -209,21 +213,6 @@ namespace LocationDir
             }
 
             return false;
-        }
-        
-        
-        
-        
-        public void ClearLocation()
-        {
-            foreach (var character in _characters)
-                Destroy(character);
-            foreach (var item in _items)
-                Destroy(item);
-            foreach (var teleport in _teleports)
-                Destroy(teleport);
-            foreach (var teleport in _initedTeleports)
-                Destroy(teleport);
         }
 
         private Vector3 GetPointForEntitySpawn()
