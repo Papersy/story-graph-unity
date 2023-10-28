@@ -1,6 +1,8 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using ActionButtons;
 using Newtonsoft.Json.Linq;
+using Player;
 using UnityEngine;
 
 namespace UI
@@ -13,56 +15,262 @@ namespace UI
         private JToken _currentProductions;
         private JToken _currentProduction;
 
+        private Dictionary<JToken, JToken> _prodVariants;
+        private List<string> _skippedProdNames = new List<string>() {"Teleportation / Teleportacja", "Location change / Zmiana lokacji"};
+
         public override void OnShow()
         {
             _currentProductions = GameService.GetGameController().GetCurrentProductions();
-            InitProductions();
+            InitObjects();
             
             base.OnShow();
         }
 
         public void Init()
         {
-            InitProductions();
+            InitObjects();
+        }
+
+        private void InitObjects()
+        {
+            ClearContentView(_contentParent);
+            var collisionIds = CheckInteraction.CollisionIds;
+            foreach (var entity in collisionIds)
+            {
+                var btn = Instantiate(_btnPrefab, _contentParent);
+                btn.SetText(entity.Value);
+                btn.Button.onClick.AddListener(() => InitProductions(entity.Key)); 
+            }
+            
+            var other = Instantiate(_btnPrefab, _contentParent);
+            other.SetText("Other");
+            other.Button.onClick.AddListener(() => InitProductions2(""));
         }
         
-
-        private void InitProductions()
+        private void InitProductions(string objectId)
         {
+            _prodVariants = new Dictionary<JToken, JToken>();
             ClearContentView(_contentParent);
             
             foreach (var production in _currentProductions)
             {
-                var btn = Instantiate(_btnPrefab, _contentParent);
-                var prod = production["prod"];
-                var title = prod["Title"].ToString();
+                List<string> entitiesOnLocationNames = new List<string>();
                 
-                btn.SetText(GetPolishPart(title));
-                btn.Button.onClick.AddListener(() => OnProductionClick(production));
+                var prod = production["prod"];
+                var variants = production["variants"];
+                var title = prod["Title"].ToString();
+                var lSide = prod["LSide"];
+                var locations = lSide["Locations"];
+                var location = locations[0];
+
+                var locationId = location["Id"].ToString();
+                var characters = location["Characters"];
+                var items = location["Items"];
+                
+                if(_skippedProdNames.Contains(title))
+                    continue;
+                
+                entitiesOnLocationNames.Add(locationId);
+                
+                if (characters != null)
+                {
+                    foreach (var character in characters)
+                    {
+                        var characterId = character["Id"];
+                        if (characterId == null)
+                            characterId = character["Name"];
+                        
+                        if(characterId != null)
+                            entitiesOnLocationNames.Add(characterId.ToString());
+                    }
+                }
+
+                if (items != null)
+                {
+                    foreach (var item in items)
+                    {
+                        var itemId = item["Id"];
+                        if (itemId == null)
+                            itemId = item["Name"];
+                        
+                        if(itemId != null)
+                            entitiesOnLocationNames.Add(itemId.ToString());
+                    }
+                }
+                
+                if (CanInteractWithVariant(production, variants, entitiesOnLocationNames, objectId))
+                {
+                    var btn = Instantiate(_btnPrefab, _contentParent);
+                    btn.SetText(GetPolishPart(title));
+                    btn.Button.onClick.AddListener(() => OnProductionClick(production)); 
+                }
             }
         }
 
-        private void InitVariants()
+        private void InitProductions2(string objectId)
         {
-            var prod = _currentProduction["prod"];
-            var variants = _currentProduction["variants"];
-            var description = prod["Description"].ToString();
+            _prodVariants = new Dictionary<JToken, JToken>();
+            ClearContentView(_contentParent);
+            
+            foreach (var production in _currentProductions)
+            {
+                List<string> entitiesOnLocationNames = new List<string>();
+                
+                var prod = production["prod"];
+                var variants = production["variants"];
+                var title = prod["Title"].ToString();
+                var lSide = prod["LSide"];
+                var locations = lSide["Locations"];
+                var location = locations[0];
+
+                var locationId = location["Id"].ToString();
+                var characters = location["Characters"];
+                var items = location["Items"];
+                
+                if(_skippedProdNames.Contains(title))
+                    continue;
+                
+                entitiesOnLocationNames.Add(locationId);
+                
+                if (characters != null)
+                {
+                    foreach (var character in characters)
+                    {
+                        var characterId = character["Id"];
+                        if (characterId == null)
+                            characterId = character["Name"];
+                        
+                        if(characterId != null)
+                            entitiesOnLocationNames.Add(characterId.ToString());
+                    }
+                }
+
+                if (items != null)
+                {
+                    foreach (var item in items)
+                    {
+                        var itemId = item["Id"];
+                        if (itemId == null)
+                            itemId = item["Name"];
+                        
+                        if(itemId != null)
+                            entitiesOnLocationNames.Add(itemId.ToString());
+                    }
+                }
+                
+                if (CanInteractWithVariant2(production, variants, entitiesOnLocationNames, objectId))
+                {
+                    var btn = Instantiate(_btnPrefab, _contentParent);
+                    btn.SetText(GetPolishPart(title));
+                    btn.Button.onClick.AddListener(() => OnProductionClick(production)); 
+                }
+            }
+        }
+        
+        private bool CanInteractWithVariant(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId)
+        {
+            var playerId = GameService.GetGameController().GetMainPlayerId();
+            var currentLocationId = GameService.GetGameController().GetCurrentLocationId();
+            var collisionIds = CheckInteraction.CollisionIds;
+
+            bool functionResult = false;
+            
+            foreach (var variant in variants)
+            {
+                var result = true;
+                var resultId = false;
+                foreach (var podVariant in variant)
+                {
+                    var LSNodeRef = podVariant["LSNodeRef"].ToString();
+                    if (entitiesOnLocationNames.Contains(LSNodeRef))
+                    {
+                        var WorldNodeId = podVariant["WorldNodeId"].ToString();
+                        if (WorldNodeId == objectId)
+                            resultId = true;
+                        if (WorldNodeId != playerId && WorldNodeId != currentLocationId && !collisionIds.ContainsKey(WorldNodeId))
+                        {
+                            result = false;
+                            break;
+                        }
+                    }
+                }
+
+                if (result && resultId)
+                {
+                    _prodVariants.Add(variant, production);
+                    
+                    functionResult = true;
+                }
+            }
+            
+            return functionResult;
+        }
+
+        private bool CanInteractWithVariant2(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId)
+        {
+            var playerId = GameService.GetGameController().GetMainPlayerId();
+            var currentLocationId = GameService.GetGameController().GetCurrentLocationId();
+            var collisionIds = CheckInteraction.CollisionIds;
+
+            bool functionResult = false;
 
             foreach (var variant in variants)
             {
-                var btn = Instantiate(_btnPrefab, _contentParent);
-                string newDescription = description;
-                
+                var result = true;
                 foreach (var podVariant in variant)
                 {
-                    var searchWord = podVariant["LSNodeRef"].ToString();
-                    var changeTo = podVariant["WorldNodeName"].ToString();
-                    
-                    newDescription = RenameDescription(newDescription, searchWord, changeTo);
+                    var LSNodeRef = podVariant["LSNodeRef"].ToString();
+                    if (entitiesOnLocationNames.Contains(LSNodeRef))
+                    {
+                        var WorldNodeId = podVariant["WorldNodeId"].ToString();
+                        if (WorldNodeId == playerId || WorldNodeId == currentLocationId)
+                        {
+                            //ok
+                        }
+                        else if (collisionIds.Count <= 0 || collisionIds.ContainsKey(WorldNodeId))
+                        {
+                            result = false;
+                            break;
+                        }
+                    }
                 }
+
+                if (result)
+                {
+                    _prodVariants.Add(variant, production);
+                    
+                    functionResult = true;
+                }
+            }
+            
+            return functionResult;
+        }
+        
+        private void InitVariants()
+        {
+            foreach (var i in _prodVariants)
+            {
+                var prod = i.Value["prod"];
+                var description = prod["Description"].ToString();
                 
-                btn.SetText(newDescription);
-                btn.Button.onClick.AddListener(() => OnVariantClick(prod, variant));
+                if (i.Value == _currentProduction)
+                {
+                    var btn = Instantiate(_btnPrefab, _contentParent);
+                    string newDescription = description;
+
+                    var variant = i.Key;
+                    
+                    foreach (var podVariant in variant)
+                    {
+                        var searchWord = podVariant["LSNodeRef"].ToString();
+                        var changeTo = podVariant["WorldNodeName"].ToString();
+                    
+                        newDescription = RenameDescription(newDescription, searchWord, changeTo);
+                    }
+                
+                    btn.SetText(newDescription);
+                    btn.Button.onClick.AddListener(() => OnVariantClick(prod, variant));
+                }       
             }
         }
         
@@ -76,6 +284,11 @@ namespace UI
         private void OnVariantClick(JToken prod, JToken variant)
         {
             GameService.GetGameController().PostNewWorld(prod, variant);
+            
+            GameCanvas.IsUiActive = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            
             Hide();
         }
         

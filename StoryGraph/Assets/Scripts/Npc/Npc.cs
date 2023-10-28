@@ -20,24 +20,7 @@ namespace Npc
         public void Init()
         {
             _npcName.text = GetNpcName();
-
-            var attributes = NpcInfo["Attributes"];
-            if (attributes != null && attributes["HP"] != null)
-            {
-                var hp = attributes["HP"].ToString();
-                Health = Convert.ToInt32(hp);
-            }
-            else
-                Health = 10;
-        }
-
-        public void StartDialog()
-        {
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.NpcInfo = NpcInfo;
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.Npc = gameObject;
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DialogWindow.InitDialog();
             
-            AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.ShowDialog();
         }
 
         private string GetNpcName()
@@ -47,35 +30,35 @@ namespace Npc
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Attack"))
-            {
-                if (PlayerStats.NpcBattleInfo == null)
-                    PlayerStats.NpcBattleInfo = NpcInfo;
-                else if(PlayerStats.NpcBattleInfo != NpcInfo)
-                    return;
-                
-                Health -= PlayerStats.Damage;
-
-                if (Health <= 0)
-                {
-                    Debug.Log("NPC DEAD");
-                    PlayerStats.NpcBattleInfo = null;
-                    
-                    var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();
-                    JToken json = JObject.Parse(@"{""Name"": ""Corpse""}");
-                    
-                    var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/corpse");
-                    var obj = Instantiate(itemMesh, transform.position, Quaternion.identity);
-                    obj.ItemInfo = json;
-                    obj.transform.position = transform.position;
-                    
-                    AllServices.Container.Single<IGameService>().GetGameController().NpcLostItems(NpcInfo, transform.position);
-                    AllServices.Container.Single<IGameService>().GetGameController().FightEndWithSomeoneDeath(playerName, NpcInfo["Id"].ToString());
-                    gameObject.SetActive(false);
-                }
-                else 
-                    CalculateChance();
-            }
+            // if (other.CompareTag("Attack"))
+            // {
+            //     if (PlayerStats.NpcBattleInfo == null)
+            //         PlayerStats.NpcBattleInfo = NpcInfo;
+            //     else if(PlayerStats.NpcBattleInfo != NpcInfo)
+            //         return;
+            //     
+            //     Health -= PlayerStats.Damage;
+            //
+            //     if (Health <= 0)
+            //     {
+            //         Debug.Log("NPC DEAD");
+            //         PlayerStats.NpcBattleInfo = null;
+            //         
+            //         var playerName = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerName();
+            //         JToken json = JObject.Parse(@"{""Name"": ""Corpse""}");
+            //         
+            //         var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/corpse");
+            //         var obj = Instantiate(itemMesh, transform.position, Quaternion.identity);
+            //         obj.ItemInfo = json;
+            //         obj.transform.position = transform.position;
+            //         
+            //         AllServices.Container.Single<IGameService>().GetGameController().NpcLostItems(NpcInfo, transform.position);
+            //         AllServices.Container.Single<IGameService>().GetGameController().FightEndWithSomeoneDeath(playerName, NpcInfo["Id"].ToString());
+            //         gameObject.SetActive(false);
+            //     }
+            //     else 
+            //         CalculateChance();
+            // }
         }
 
         private void CalculateChance()

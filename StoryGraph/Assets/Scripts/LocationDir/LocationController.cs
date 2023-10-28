@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using InteractableItems;
 using Newtonsoft.Json.Linq;
+using Player;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -18,9 +21,6 @@ namespace LocationDir
         private List<GameObject> _characters = new List<GameObject>();
         private List<GameObject> _items = new List<GameObject>();
         private List<GameObject> _teleports = new List<GameObject>();
-
-        public string Id { get; set; }
-        public string Name { get; set; }
 
         private int teleportIndex = 0;
         private JToken _locationInfo;
@@ -39,75 +39,38 @@ namespace LocationDir
             GeneratePortals(_locationVariants);
         }
 
-        public void UpdateCharacters(JToken characters)
-        {
-            if (characters == null)
-            {
-                foreach (var item in _characters)
-                    Destroy(item); 
-                
-                return;
-            }
-            
-            //TODO: Check ids not names
-            
-            //delete characters
-            foreach (var character in _characters)
-            {
-                var npc = character.GetComponent<Npc.Npc>();
-                if(!HasNpcInList(characters, npc.NpcInfo["Name"].ToString(), "Name"))
-                    Destroy(character);
-            }
-            
-            //add characters
-            foreach (var newCharacter in characters)
-            {
-                var newNpcName = newCharacter["Name"].ToString();
-                var spawnCharacter = true;
-                foreach (var oldCharacter in _characters)
-                {
-                    var oldCharacterName = oldCharacter.GetComponent<Npc.Npc>().NpcInfo["Name"].ToString();
-                    if (newNpcName == oldCharacterName)
-                        spawnCharacter = false;
-                }
-                
-                if(spawnCharacter)
-                    SpawnOneNpc(newCharacter);
-            }
-        }
-
-        private bool HasNpcInList(JToken list, string npcName, string newNpcKey)
-        {
-            foreach (var entity in list)
-            {
-                var newEntityName = entity[newNpcKey].ToString();
-                if (npcName == newEntityName)
-                    return true;
-            }
-
-            return false;
-        }
-
-        public void UpdateItems(JToken items)
+        public async Task UpdateItems(JToken items)
         {
             if (items == null)
             {
                 foreach (var item in _items)
                     Destroy(item);        
                 
+                _items.Clear();
                 return;
             }
             
             //TODO: Check ids not names
-            
+
+
+            List<GameObject> deleteItems = new List<GameObject>();
             //delete items
-            foreach (var item in _items)
+
+            if (_items.Count > 0)
             {
-                var objItem = item.GetComponent<Item>().ItemInfo;
-                Debug.Log(objItem);
-                
-                if(!HasNpcInList(items, objItem["Name"].ToString(), "Name"))
-                    Destroy(item);
+                foreach (var item in _items)
+                {
+                    var objItem = item.GetComponent<Item>().ItemInfo;
+
+                    if (!HasInList(items, objItem["Name"].ToString(), "Name"))
+                        deleteItems.Add(item);
+                }
+
+                for (int i = 0; i < deleteItems.Count; i++)
+                {
+                    _items.Remove(deleteItems[i]);
+                    Destroy(deleteItems[i]);
+                }
             }
             
             //add items
@@ -126,6 +89,130 @@ namespace LocationDir
                     SpawnOneItem(newItem);
             }
         }
+
+        public async Task UpdateCharacters(JToken characters)
+        {
+            if (characters == null)
+            {
+                foreach (var item in _characters)
+                    Destroy(item); 
+                
+                return;
+            }
+            
+            List<GameObject> deleteItems = new List<GameObject>();
+            //delete characters
+            if (_characters.Count > 0)
+            {
+                foreach (var character in _characters)
+                {
+                    var npc = character.GetComponent<Npc.Npc>();
+                    if (!HasInList(characters, npc.NpcInfo["Id"].ToString(), "Id"))
+                        deleteItems.Add(character);
+                }
+                
+                for (int i = 0; i < deleteItems.Count; i++)
+                {
+                    _items.Remove(deleteItems[i]);
+                    Destroy(deleteItems[i]);
+                }
+            }
+            
+            
+            //add characters
+            foreach (var newCharacter in characters)
+            {
+                var newNpcName = newCharacter["Id"].ToString();
+                var spawnCharacter = true;
+                foreach (var oldCharacter in _characters)
+                {
+                    var oldCharacterName = oldCharacter.GetComponent<Npc.Npc>().NpcInfo["Id"].ToString();
+                    if (newNpcName == oldCharacterName)
+                        spawnCharacter = false;
+                }
+                
+                if(spawnCharacter)
+                    SpawnOneNpc(newCharacter);
+            }
+        }
+
+        public async Task SetPositions(JToken productions)
+        {
+            foreach (var production in productions)
+            {
+                var variants = production["variants"];
+                
+                foreach (var variant in variants)
+                {
+                    Vector3 position = Vector3.zero;
+                    foreach (var podVariant in variant)
+                    {
+                        var id = podVariant["WorldNodeId"].ToString();
+                        var result = FindIdInNpc(id);
+                        if (result == null)
+                            result = FindIdInItems(id);
+                    
+                        if (result != null)
+                        {
+                            if (position == Vector3.zero)
+                                position = result.transform.localPosition;
+                            else
+                            {
+                                var prod = production["prod"];
+                                
+                                result.transform.localPosition = position + new Vector3(Random.Range(0, 3), 0, Random.Range(0, 3));
+                                // position = result.transform.localPosition;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private GameObject FindIdInNpc(string id)
+        {
+            foreach (var character in _characters)
+            {
+                if(character == null)
+                    continue;
+                
+                var npcInfo = character.GetComponent<Npc.Npc>().NpcInfo;
+                if(npcInfo["Id"].ToString() == id)
+                    return character;
+            }
+
+            return null;
+        }
+        
+        private GameObject FindIdInItems(string id)
+        {
+            foreach (var item in _items)
+            {
+                if(item == null)
+                    continue;
+                
+                var itemInfo = item.GetComponent<Item>().ItemInfo;
+                if(itemInfo["Id"].ToString() == id)
+                    return item;
+            }
+
+            return null;
+        }
+        
+        private bool HasInList(JToken list, string npcName, string newNpcKey)
+        {
+            foreach (var entity in list)
+            {
+                var newEntityName = entity[newNpcKey].ToString();
+                if (npcName == newEntityName)
+                    return true;
+            }
+
+            return false;
+        }
+        
+        
+        
         
         public void ClearLocation()
         {
@@ -175,25 +262,6 @@ namespace LocationDir
                 obj.Init();
 
                 _characters.Add(obj.gameObject);
-            }
-        }
-        
-        public void SpawnItems(JToken npcInfo, Vector3 position)
-        {
-            var items = npcInfo["Items"];
-            
-            if(items == null)
-                return;
-
-            foreach (var item in items)
-            {
-                var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
-                if (itemMesh == null)
-                    itemMesh = Resources.Load<Item>("JsonFiles/Items3D/default");
-
-                var obj = Instantiate(itemMesh, position, Quaternion.identity);
-                obj.ItemInfo = item;
-                _items.Add(obj.gameObject);
             }
         }
         
@@ -247,7 +315,7 @@ namespace LocationDir
 
         private void SpawnOneNpc(JToken character)
         {
-            var position = GetPointForEntitySpawn();
+            var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
             var characterId = character["Id"].ToString();
                 
             if(characterId == AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId())
@@ -266,7 +334,7 @@ namespace LocationDir
 
         private void SpawnOneItem(JToken item)
         {
-            var position = GetPointForEntitySpawn();
+            var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
 
             var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
             if (itemMesh == null)

@@ -20,10 +20,10 @@ namespace Player
         }
  
         private void LeftMouseClicked() {
-            if(!GameCanvas.IsUiActive)
-            {
-                StartCoroutine(Attack());
-            }
+            // if(!GameCanvas.IsUiActive)
+            // {
+            //     StartCoroutine(Attack());
+            // }
         }
         
         private IEnumerator Attack()

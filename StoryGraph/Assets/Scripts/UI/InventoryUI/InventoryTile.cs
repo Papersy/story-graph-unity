@@ -28,16 +28,6 @@ namespace UI
         {
             if (transform.childCount > 0)
             {
-                var itemDraggable = eventData.pointerDrag.GetComponent<Draggable>();
-                var firstItemId = itemDraggable.Item["Id"].ToString();
-                var secondItemId = transform.GetComponentInChildren<Draggable>().Item["Id"].ToString();
-
-                if (_gameController.CanCreateOpakowanie(firstItemId, secondItemId))
-                {
-                    _gameController.CreateOpakowanieInInventory(firstItemId, secondItemId);
-                    Destroy(itemDraggable.transform.gameObject);
-                }
-                    
                 return;
             }
 
@@ -76,10 +66,10 @@ namespace UI
                     EquipmentManager.Instance.ClearEquipment(_itemDraggable.Item);
                     InventoryUI.RemoveFromEquipment(_itemDraggable.Item["Id"].ToString());
                 }
-                else if(CurrentType == InventoryType.Item)
-                    _gameController.PuttingItem(_itemDraggable.Item["Name"].ToString());
-                else if(CurrentType == InventoryType.Main)
-                    _gameController.PullingItem(_itemDraggable.Item["Name"].ToString());
+                // else if(CurrentType == InventoryType.Item)
+                //     _gameController.PuttingItem(_itemDraggable.Item["Name"].ToString());
+                // else if(CurrentType == InventoryType.Main)
+                //     _gameController.PullingItem(_itemDraggable.Item["Name"].ToString());
             }
         }
     }

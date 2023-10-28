@@ -73,6 +73,7 @@ namespace ApiController
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
+                Debug.Log("Get response");
 
                 return responseContent;
             }

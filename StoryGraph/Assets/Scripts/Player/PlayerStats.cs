@@ -18,16 +18,8 @@ namespace Player
             {
                 var playerId = AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId();
 
-                if (NpcBattleInfo != null)
-                {
-                    AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DiePanel.SetActive(true);
-                    AllServices.Container.Single<IGameService>().GetGameController().FightEndWithSomeoneDeath(NpcBattleInfo["Name"].ToString(), playerId);
-                }
-                else
-                {
-                    AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DiePanel.SetActive(true);
-                    AllServices.Container.Single<IGameService>().GetGameController().HeroDeath();
-                }
+                AllServices.Container.Single<IUIService>().HudContainer.GameCanvas.DiePanel.SetActive(true);
+                AllServices.Container.Single<IGameService>().GetGameController().HeroDeath();
             }
         }
     }

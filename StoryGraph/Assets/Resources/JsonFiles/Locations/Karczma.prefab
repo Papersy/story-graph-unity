@@ -16686,7 +16686,7 @@ GameObject:
   - component: {fileID: 1584394265592816359}
   - component: {fileID: 7454472979548833262}
   m_Layer: 0
-  m_Name: Karczma(Clone)
+  m_Name: Karczma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

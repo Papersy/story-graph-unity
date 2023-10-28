@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ActionButtons;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Factory;
 using Infrastructure.Services;
@@ -17,7 +18,7 @@ namespace UI
         
         [SerializeField] private InventoryTile _inventoryTilePrefab;
         [SerializeField] private Draggable _itemPrefab;
-        [SerializeField] private GameObject _narrationTextPrefab;
+        [SerializeField] private ButtonAction _narrationTextPrefab;
         
         [SerializeField] private GameObject _itemsInventoryContainer;
         [SerializeField] private GameObject _tilesContainer;
@@ -57,9 +58,6 @@ namespace UI
             _narrationRoot.gameObject.SetActive(false);
             UpdatePlayerCharacteristics();
             ShowInventoryItems(items);
-
-            var canUngroup = AllServices.Container.Single<IGameService>().GetGameController().CanUngroup();
-            _unGroup.gameObject.SetActive(canUngroup);
         }
 
         public void HideInventory()
@@ -141,11 +139,11 @@ namespace UI
 
         private void UnGroup()
         {
-            AllServices.Container.Single<IGameService>().GetGameController().UnGroupCharacter();
-            var locationController = AllServices.Container.Single<IGameService>().GetGameController().GetCurrentLocationController();
-            var playerInfo = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerInfo();
-            
-            locationController.GenerateNpc(playerInfo);
+            // AllServices.Container.Single<IGameService>().GetGameController().UnGroupCharacter();
+            // var locationController = AllServices.Container.Single<IGameService>().GetGameController().GetCurrentLocationController();
+            // var playerInfo = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerInfo();
+            //
+            // locationController.GenerateNpc(playerInfo);
         }
 
         private void ShowNarrations()
@@ -165,7 +163,7 @@ namespace UI
                 var know = att["Knowledge"];
                 
                 var obj = Instantiate(_narrationTextPrefab, _narrationContent);
-                obj.GetComponent<TextMeshProUGUI>().text = GetPolishPart(know.ToString());
+                obj.SetText(GetPolishPart(know.ToString()));
             }
         }
         
