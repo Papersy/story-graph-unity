@@ -11,5 +11,5 @@ If you don' have Unity, follow instruction to download & install it
 4. Open Unity 2021.X section
 5. Scroll down and find 2021.3.6 version
 6. Press Unity Hub
-7. In opened window choose Uniwersal Windows Platform Build Support & WindowsBuildSupport (IL2CPP)
+7. In opened window choose Universal Windows Platform Build Support & WindowsBuildSupport (IL2CPP)
 8. Press install and wait
