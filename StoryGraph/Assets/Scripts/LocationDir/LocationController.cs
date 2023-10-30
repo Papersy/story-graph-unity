@@ -4,8 +4,6 @@ using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using InteractableItems;
 using Newtonsoft.Json.Linq;
-using Player;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -41,9 +39,9 @@ namespace LocationDir
             _locationInfo = locationInfo;
             _locationVariants = locationTeleportsVariants;
 
-            GenerateNpc(_locationInfo);
-            GenerateItems(_locationInfo);
-            GeneratePortals(_locationVariants);
+            GenerateNpcRandomPos(_locationInfo);
+            GenerateItemsRandomPos(_locationInfo);
+            GeneratePortalsRandomPos(_locationVariants);
         }
 
         public async Task UpdateItems(JToken items)
@@ -64,6 +62,9 @@ namespace LocationDir
             {
                 foreach (var item in _items)
                 {
+                    if(item == null)
+                        continue;
+                    
                     var objItem = item.GetComponent<Item>().ItemInfo;
 
                     if (!HasInList(items, objItem["Name"].ToString(), "Name"))
@@ -82,10 +83,13 @@ namespace LocationDir
             {
                 var newItemName = newItem["Name"].ToString();
                 var spawnItem = true;
-                foreach (var oldCharacter in _items)
+                foreach (var oldItem in _items)
                 {
-                    var oldCharacterName = oldCharacter.GetComponent<Item>().ItemInfo["Name"].ToString();
-                    if (newItemName == oldCharacterName)
+                    if(oldItem == null)
+                        continue;
+                    
+                    var oldItemName = oldItem.GetComponent<Item>().ItemInfo["Name"].ToString();
+                    if (newItemName == oldItemName)
                         spawnItem = false;
                 }
                 
@@ -96,6 +100,7 @@ namespace LocationDir
 
         public async Task UpdateCharacters(JToken characters)
         {
+            Debug.Log(characters);
             if (characters == null)
             {
                 foreach (var item in _characters)
@@ -110,6 +115,9 @@ namespace LocationDir
             {
                 foreach (var character in _characters)
                 {
+                    if(character == null)
+                        continue;
+                    
                     var npc = character.GetComponent<Npc.Npc>();
                     if (!HasInList(characters, npc.NpcInfo["Id"].ToString(), "Id"))
                         deleteItems.Add(character);
@@ -122,14 +130,17 @@ namespace LocationDir
                 }
             }
             
-            
             //add characters
             foreach (var newCharacter in characters)
             {
                 var newNpcName = newCharacter["Id"].ToString();
+                Debug.Log(newCharacter["Name"].ToString());
                 var spawnCharacter = true;
                 foreach (var oldCharacter in _characters)
                 {
+                    if(oldCharacter == null)
+                        continue;
+                    
                     var oldCharacterName = oldCharacter.GetComponent<Npc.Npc>().NpcInfo["Id"].ToString();
                     if (newNpcName == oldCharacterName)
                         spawnCharacter = false;
@@ -227,7 +238,7 @@ namespace LocationDir
             return point;
         }
         
-        public void GenerateNpc(JToken locationInfo)
+        public void GenerateNpcRandomPos(JToken locationInfo)
         {
             var characters = locationInfo["Characters"];
 
@@ -254,7 +265,7 @@ namespace LocationDir
             }
         }
         
-        private void GenerateItems(JToken locationInfo)
+        private void GenerateItemsRandomPos(JToken locationInfo)
         {
             var items = locationInfo["Items"];
 
@@ -275,7 +286,7 @@ namespace LocationDir
             }
         }
 
-        private void GeneratePortals(JToken variants)
+        private void GeneratePortalsRandomPos(JToken variants)
         {
             var path = "Prefabs/Location/Teleport";
 
@@ -304,7 +315,8 @@ namespace LocationDir
 
         private void SpawnOneNpc(JToken character)
         {
-            var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
+            var position = GetPointForEntitySpawn();
+            // var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
             var characterId = character["Id"].ToString();
                 
             if(characterId == AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId())
@@ -323,7 +335,8 @@ namespace LocationDir
 
         private void SpawnOneItem(JToken item)
         {
-            var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
+            var position = GetPointForEntitySpawn();
+            // var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
 
             var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
             if (itemMesh == null)

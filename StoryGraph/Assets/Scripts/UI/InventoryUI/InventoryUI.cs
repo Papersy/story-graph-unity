@@ -25,7 +25,8 @@ namespace UI
         [SerializeField] private Transform _inventoryRoot;
         [SerializeField] private Transform _narrationRoot;
         [SerializeField] private Transform _narrationContent;
-        [SerializeField] private Button _unGroup;
+        [SerializeField] private Transform _groupedParent;
+        [SerializeField] private GroupView _groupView;
         [SerializeField] private Button _narrationBtn;
         [SerializeField] private TextMeshProUGUI _moneyTxt;
         [SerializeField] private TextMeshProUGUI _hpTxt;
@@ -33,17 +34,8 @@ namespace UI
         
         public static List<string> EquipmentId = new List<string>();
 
-        private void OnEnable()
-        {
-            _unGroup.onClick.AddListener(UnGroup);
-            _narrationBtn.onClick.AddListener(ShowNarrations);
-        }
-
-        private void OnDisable()
-        {
-            _unGroup.onClick.RemoveListener(UnGroup);
-            _narrationBtn.onClick.RemoveListener(ShowNarrations);
-        }
+        private void OnEnable() => _narrationBtn.onClick.AddListener(ShowNarrations);
+        private void OnDisable() => _narrationBtn.onClick.RemoveListener(ShowNarrations);
 
         public override void Awake()
         {
@@ -58,6 +50,7 @@ namespace UI
             _narrationRoot.gameObject.SetActive(false);
             UpdatePlayerCharacteristics();
             ShowInventoryItems(items);
+            UpdateGrouped(AllServices.Container.Single<IGameService>().GetGameController().GetPlayerCharacters());
         }
 
         public void HideInventory()
@@ -78,6 +71,24 @@ namespace UI
                     _hpTxt.text = "Health: " + hp;
                 if (money != null)
                     _moneyTxt.text = "Money: " + money;
+            }
+        }
+
+        private void UpdateGrouped(JToken characters)
+        {
+            if (characters == null)
+                return;
+
+            if (_groupedParent.childCount > 0)
+            {
+                for (var i = _groupedParent.childCount - 1; i >= 0; i--)
+                    Destroy(_groupedParent.GetChild(i).gameObject);
+            }
+            
+            foreach (var character in characters)
+            {
+                var item = Instantiate(_groupView, _groupedParent);
+                item.SetText(character["Name"].ToString());
             }
         }
         
@@ -135,15 +146,6 @@ namespace UI
                 EquipmentId.Remove(equip);
                 break;
             }
-        }
-
-        private void UnGroup()
-        {
-            // AllServices.Container.Single<IGameService>().GetGameController().UnGroupCharacter();
-            // var locationController = AllServices.Container.Single<IGameService>().GetGameController().GetCurrentLocationController();
-            // var playerInfo = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerInfo();
-            //
-            // locationController.GenerateNpc(playerInfo);
         }
 
         private void ShowNarrations()

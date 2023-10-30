@@ -1,4 +1,3 @@
-using LocationDir;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -8,6 +7,5 @@ namespace InteractableItems
     public class Item : MonoBehaviour
     {
         public JToken ItemInfo { get; set; }
-        public Storage Storage = new Storage();
     }
 }

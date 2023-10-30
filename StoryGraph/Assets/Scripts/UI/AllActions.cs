@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using ActionButtons;
+using InteractableItems;
 using Newtonsoft.Json.Linq;
+using Npc;
 using Player;
 using UnityEngine;
 
@@ -37,9 +39,19 @@ namespace UI
             var collisionIds = CheckInteraction.CollisionIds;
             foreach (var entity in collisionIds)
             {
-                var btn = Instantiate(_btnPrefab, _contentParent);
-                btn.SetText(entity.Value);
-                btn.Button.onClick.AddListener(() => InitProductions(entity.Key)); 
+                // btn.SetText(entity.Value);
+                var objTransform = entity.Value;
+                if (objTransform != null)
+                {
+                    var btn = Instantiate(_btnPrefab, _contentParent);
+                    
+                    if (objTransform.TryGetComponent(out NpcWrapper npcWrapper))
+                        btn.SetText(npcWrapper.Npc.NpcInfo["Name"].ToString());
+                    else if(objTransform.TryGetComponent(out ItemWrapper item))
+                        btn.SetText(item.Item.ItemInfo["Name"].ToString());
+                    
+                    btn.Button.onClick.AddListener(() => InitProductions(entity.Key)); 
+                }
             }
             
             var other = Instantiate(_btnPrefab, _contentParent);
@@ -205,7 +217,6 @@ namespace UI
             
             return functionResult;
         }
-
         private bool CanInteractWithVariant2(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId)
         {
             var playerId = GameService.GetGameController().GetMainPlayerId();
@@ -227,7 +238,7 @@ namespace UI
                         {
                             //ok
                         }
-                        else if (collisionIds.Count <= 0 || collisionIds.ContainsKey(WorldNodeId))
+                        else
                         {
                             result = false;
                             break;
