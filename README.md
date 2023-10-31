@@ -15,3 +15,9 @@ If you don't have Unity, follow instruction to download & install it
 8. In opened window choose Universal Windows Platform Build Support & WindowsBuildSupport (IL2CPP)
 9. Press install and wait
 10. If you don't have Visual Studio, Unity Hub will istall packages for. When Visual Studio Installer will be opened, press "Install" & "Add work packages"
+11. After istallation you can close Visual Studio Installer.
+12. If you don't have Unity License, click to "Manage License" and click "Free license for personal account" and close preference window.
+13. Now you can add project, find cloned project open folder and click on folder StoryGraph, after this click "Open folder".
+14. Wait until all packages gonna be installed.
+15. If your started scene is "untitled" or just not "Boot". In folder Assets -> Scenes find file "Boot", and open it.
+16. Now you can Run project StoryGraph w PyCharn, after this run game in Unity.
