@@ -14,3 +14,4 @@ If you don't have Unity, follow instruction to download & install it
 7. Press Unity Hub
 8. In opened window choose Universal Windows Platform Build Support & WindowsBuildSupport (IL2CPP)
 9. Press install and wait
+10. If you don't have Visual Studio, Unity Hub will istall packages for. When Visual Studio Installer will be opened, press "Install" & "Add work packages"
