@@ -1,7 +1,7 @@
 # story-graph-unity
 Unity version 2021.3.6f1
 
-If you don' have Unity, follow instruction to download & install it
+If you don't have Unity, follow instruction to download & install it
 
 ## **Instruction:**
 
