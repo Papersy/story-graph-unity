@@ -1,44 +1,45 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace Player
 {
     public class EquipmentManager : MonoBehaviour
     {
+        [SerializeField] private GameObject[] _weapons;
         [SerializeField] private GameObject _sword;
         
-        public static EquipmentManager Instance;
-
+        [SerializeField] private GameObject _defaultWeapon;
+        private GameObject _currentWeapon;
         private JToken _weapon;
         
-        private void Awake()
-        {
-            Instance = this;
-        }
+        public static EquipmentManager Instance;
+        
+        private void Awake() => Instance = this;
 
         public void PickUpWeapon(JToken weapon)
         {
             _weapon = weapon;
-
-            switch (weapon["Name"].ToString())
+            var weaponName = weapon["Name"].ToString().ToLower();
+            
+            foreach (var w in _weapons)
             {
-                case "Sword":
-                    _sword.SetActive(true);
-                    break;
+                var wName = w.gameObject.name;
+                if (wName == weaponName)
+                {
+                    w.SetActive(true);
+                    _currentWeapon = w;
+                    return;
+                }
             }
+
+            _defaultWeapon.SetActive(true);
+            _currentWeapon = _defaultWeapon;
         }
 
         public void ClearEquipment(JToken equipment)
         {
             if(equipment == _weapon)
-                ClearWeapon();
+                _currentWeapon.SetActive(false);
         }
-
-        private void ClearWeapon()
-        {
-            _sword.SetActive(false);
-        }
-        
     }
 }
