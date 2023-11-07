@@ -239,7 +239,6 @@ public class GameController
         
         await _currentLocationController.UpdateCharacters(characters, true);
         await _currentLocationController.UpdateItems(items, true);
-        // _currentLocationController.SetPositions(_jAvailableProductions);
     }
 
     private JToken GetNewLocationToken(JToken newWorld, string newLocationId)
