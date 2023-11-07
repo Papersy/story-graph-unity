@@ -222,17 +222,23 @@ public class GameController
 
         var newLocationToken = GetNewLocationToken(newJTokenWorld, mainLocationId);
         
+        var characters = newLocationToken["Characters"];
+        var items = newLocationToken["Items"];
+        
         if (_currentLocationId != mainLocationId)
         {
             _currentLocationId = mainLocationId;
             UpdateAfterLocationChange();
+            await _currentLocationController.UpdateCharacters(characters, false);
+            await _currentLocationController.UpdateItems(items, false);
+            return;
         }
         
-        var characters = newLocationToken["Characters"];
-        var items = newLocationToken["Items"];
+        // var characters = newLocationToken["Characters"];
+        // var items = newLocationToken["Items"];
         
-        await _currentLocationController.UpdateCharacters(characters);
-        await _currentLocationController.UpdateItems(items);
+        await _currentLocationController.UpdateCharacters(characters, true);
+        await _currentLocationController.UpdateItems(items, true);
         // _currentLocationController.SetPositions(_jAvailableProductions);
     }
 

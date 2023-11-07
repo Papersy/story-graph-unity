@@ -44,7 +44,7 @@ namespace LocationDir
             GeneratePortalsRandomPos(_locationVariants);
         }
 
-        public async Task UpdateItems(JToken items)
+        public async Task UpdateItems(JToken items, bool isNearPlayer)
         {
             if (items == null)
             {
@@ -94,11 +94,11 @@ namespace LocationDir
                 }
                 
                 if(spawnItem)
-                    SpawnOneItem(newItem);
+                    SpawnOneItem(newItem, isNearPlayer);
             }
         }
 
-        public async Task UpdateCharacters(JToken characters)
+        public async Task UpdateCharacters(JToken characters, bool isNearPlayer)
         {
             Debug.Log(characters);
             if (characters == null)
@@ -147,7 +147,7 @@ namespace LocationDir
                 }
                 
                 if(spawnCharacter)
-                    SpawnOneNpc(newCharacter);
+                    SpawnOneNpc(newCharacter, isNearPlayer);
             }
         }
 
@@ -313,10 +313,16 @@ namespace LocationDir
             }
         }
 
-        private void SpawnOneNpc(JToken character)
+        private void SpawnOneNpc(JToken character, bool isNearPlayer)
         {
-            var position = GetPointForEntitySpawn();
-            // var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
+            Vector3 position;
+            
+            if(!isNearPlayer)
+                position = GetPointForEntitySpawn();
+            else
+                position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + new Vector3(Random.Range(2, 5), 0, Random.Range(2, 5));
+            
+            
             var characterId = character["Id"].ToString();
                 
             if(characterId == AllServices.Container.Single<IGameService>().GetGameController().GetMainPlayerId())
@@ -333,10 +339,14 @@ namespace LocationDir
             _characters.Add(obj.gameObject);
         }
 
-        private void SpawnOneItem(JToken item)
+        private void SpawnOneItem(JToken item, bool isNearPlayer)
         {
-            var position = GetPointForEntitySpawn();
-            // var position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + Vector3.forward;
+            Vector3 position;
+            
+            if(!isNearPlayer)
+                position = GetPointForEntitySpawn();
+            else
+                position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + new Vector3(Random.Range(2, 5), 0, Random.Range(2, 5));
 
             var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
             if (itemMesh == null)
