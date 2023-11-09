@@ -1,6 +1,7 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using Player;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -38,17 +39,18 @@ namespace UI
             {
                 if (EquipmentType == EquipmentType.Attack)
                 {
+                    if(_itemDraggable.Item["Attributes"] == null)
+                        return;
+                    if (_itemDraggable.Item["Attributes"]["IsWeapon"] == null)
+                        return;
+                    
                     var isWeapon = _itemDraggable.Item["Attributes"]["IsWeapon"].ToString();
-                    if (isWeapon != null)
+                    if (isWeapon.Equals("True")){}
                     {
-                        Debug.Log(isWeapon);
-                        if (isWeapon.Equals("True")){}
-                        {
-                            var weaponId = _itemDraggable.Item["Id"].ToString();
-                            _itemDraggable.Type = InventoryType.Equipment;
-                            InventoryUI.EquipmentId.Add(weaponId);
-                            EquipmentManager.Instance.PickUpWeapon(_itemDraggable.Item);
-                        }
+                        var weaponId = _itemDraggable.Item["Id"].ToString();
+                        _itemDraggable.Type = InventoryType.Equipment;
+                        InventoryUI.EquipmentId.Add(weaponId);
+                        EquipmentManager.Instance.PickUpWeapon(_itemDraggable.Item);
                     }
                 }
                 else

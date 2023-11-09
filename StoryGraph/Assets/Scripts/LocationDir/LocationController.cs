@@ -320,7 +320,7 @@ namespace LocationDir
             if(!isNearPlayer)
                 position = GetPointForEntitySpawn();
             else
-                position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + new Vector3(Random.Range(2, 5), 0, Random.Range(2, 5));
+                position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + new Vector3(Random.Range(2f, 3f), 0, Random.Range(2f, 3f));
             
             
             var characterId = character["Id"].ToString();
@@ -346,7 +346,7 @@ namespace LocationDir
             if(!isNearPlayer)
                 position = GetPointForEntitySpawn();
             else
-                position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + new Vector3(Random.Range(2, 5), 0, Random.Range(2, 5));
+                position = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition() + new Vector3(Random.Range(2f, 3f), 0, Random.Range(2f, 3f));
 
             var itemMesh = Resources.Load<Item>("JsonFiles/Items3D/" + item["Name"]);
             if (itemMesh == null)

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using ActionButtons;
+using CodeBase.Infrastructure.Services;
+using Infrastructure.Services;
 using InteractableItems;
 using Newtonsoft.Json.Linq;
 using Npc;
@@ -18,7 +20,7 @@ namespace UI
         private JToken _currentProduction;
 
         private Dictionary<JToken, JToken> _prodVariants;
-        private List<string> _skippedProdNames = new List<string>() {"Teleportation / Teleportacja", "Location change / Zmiana lokacji"};
+        private List<string> _skippedProdNames = new List<string>() { "Teleportation / Teleportacja", "Location change / Zmiana lokacji" };
 
         public override void OnShow()
         {
@@ -37,22 +39,42 @@ namespace UI
         {
             ClearContentView(_contentParent);
             var collisionIds = CheckInteraction.CollisionIds;
-            foreach (var entity in collisionIds)
+            var colliders = GetInteractions();
+
+            foreach (var collider in colliders) 
             {
-                // btn.SetText(entity.Value);
-                var objTransform = entity.Value;
-                if (objTransform != null)
+                if (collider.TryGetComponent(out Npc.Npc npc))
                 {
                     var btn = Instantiate(_btnPrefab, _contentParent);
+                    btn.SetText(npc.NpcInfo["Name"].ToString());
                     
-                    if (objTransform.TryGetComponent(out NpcWrapper npcWrapper))
-                        btn.SetText(npcWrapper.Npc.NpcInfo["Name"].ToString());
-                    else if(objTransform.TryGetComponent(out ItemWrapper item))
-                        btn.SetText(item.Item.ItemInfo["Name"].ToString());
+                    btn.Button.onClick.AddListener(() => InitProductions(npc.NpcInfo["Id"].ToString())); 
+                }
+                else if (collider.TryGetComponent(out Item item))
+                {
+                    var btn = Instantiate(_btnPrefab, _contentParent);
+                    btn.SetText(item.ItemInfo["Name"].ToString()); 
                     
-                    btn.Button.onClick.AddListener(() => InitProductions(entity.Key)); 
+                    btn.Button.onClick.AddListener(() => InitProductions(item.ItemInfo["Id"].ToString())); 
                 }
             }
+            
+            // foreach (var entity in collisionIds)
+            // {
+            //     // btn.SetText(entity.Value);
+            //     var objTransform = entity.Value;
+            //     if (objTransform != null)
+            //     {
+            //         var btn = Instantiate(_btnPrefab, _contentParent);
+            //         
+            //         if (objTransform.TryGetComponent(out NpcWrapper npcWrapper))
+            //             btn.SetText(npcWrapper.Npc.NpcInfo["Name"].ToString());
+            //         else if(objTransform.TryGetComponent(out ItemWrapper item))
+            //             btn.SetText(item.Item.ItemInfo["Name"].ToString());
+            //         
+            //         btn.Button.onClick.AddListener(() => InitProductions(entity.Key)); 
+            //     }
+            // }
             
             var other = Instantiate(_btnPrefab, _contentParent);
             other.SetText("Other");
@@ -183,7 +205,8 @@ namespace UI
         {
             var playerId = GameService.GetGameController().GetMainPlayerId();
             var currentLocationId = GameService.GetGameController().GetCurrentLocationId();
-            var collisionIds = CheckInteraction.CollisionIds;
+            // var collisionIds = CheckInteraction.CollisionIds;
+            var colliders = GetInteractions();
 
             bool functionResult = false;
             
@@ -199,7 +222,12 @@ namespace UI
                         var WorldNodeId = podVariant["WorldNodeId"].ToString();
                         if (WorldNodeId == objectId)
                             resultId = true;
-                        if (WorldNodeId != playerId && WorldNodeId != currentLocationId && !collisionIds.ContainsKey(WorldNodeId))
+                        // if (WorldNodeId != playerId && WorldNodeId != currentLocationId && !collisionIds.ContainsKey(WorldNodeId))
+                        // {
+                        //     result = false;
+                        //     break;
+                        // }
+                        if (WorldNodeId != playerId && WorldNodeId != currentLocationId && !ContainIdOnColliders(WorldNodeId, colliders))
                         {
                             result = false;
                             break;
@@ -221,7 +249,7 @@ namespace UI
         {
             var playerId = GameService.GetGameController().GetMainPlayerId();
             var currentLocationId = GameService.GetGameController().GetCurrentLocationId();
-            var collisionIds = CheckInteraction.CollisionIds;
+            // var collisionIds = CheckInteraction.CollisionIds;
 
             bool functionResult = false;
 
@@ -301,6 +329,27 @@ namespace UI
             Cursor.visible = false;
             
             Hide();
+        }
+
+        private Collider[] GetInteractions()
+        {
+            var playerPos = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerPosition();
+            Collider[] colliders = Physics.OverlapSphere(playerPos, 5f);
+            
+            return colliders;
+        }
+
+        private bool ContainIdOnColliders(string id, Collider[] colliders)
+        {
+            foreach (var collider in colliders)
+            {
+                if(collider.TryGetComponent(out Npc.Npc npc)) 
+                    if (npc.NpcInfo["Id"].ToString() == id) return true;
+                if(collider.TryGetComponent(out Item item)) 
+                        if (item.ItemInfo["Id"].ToString() == id) return true;
+            }
+
+            return false;
         }
         
         private string RenameDescription(string desc, string target, string replaceWord)

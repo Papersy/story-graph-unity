@@ -8,6 +8,7 @@ namespace Player
     public class CheckInteraction : MonoBehaviour
     {
         public static Dictionary<string, Transform> CollisionIds = new Dictionary<string, Transform>();
+        private static Collider[] hitColliders;
         
         private void OnTriggerEnter(Collider other)
         {
