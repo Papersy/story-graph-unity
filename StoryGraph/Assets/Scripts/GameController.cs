@@ -7,6 +7,7 @@ using LocationDir;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Player;
+using UI;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -73,6 +74,12 @@ public class GameController
         _jWorlds = dict["world"];
         _jAvailableProductions = dict["available_productions"];
 
+        if (_jWorlds == null)
+        {
+            GameCanvas.Instance.DiePanel.SetActive(true);
+            return;
+        }
+        
         foreach (var location in _jWorlds)
         {
             if (location["Id"]?.ToString() == _currentLocationId)

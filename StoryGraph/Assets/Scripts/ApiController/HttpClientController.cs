@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using UI;
 using UnityEngine;
 
 namespace ApiController
@@ -25,7 +26,7 @@ namespace ApiController
 
                 return jsonFormatted;
             }
-            
+
             Console.WriteLine($"Error: {response.StatusCode}");
             return null;
         }
@@ -79,6 +80,7 @@ namespace ApiController
             }
             
             Debug.Log($"SMTH WRONG {response.StatusCode}");
+            GameCanvas.Instance.DiePanel.SetActive(true);
             return null;
         }
     }

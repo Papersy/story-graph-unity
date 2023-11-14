@@ -15,9 +15,10 @@ namespace UI
         [SerializeField] private EquipmentUI _equipmentUI;
         [SerializeField] private GameObject _actionWindow;
         [SerializeField] private AllActions _allActions;
+
+        public static GameCanvas Instance;
         
         public GameObject DiePanel;
-        
         public LocationInfoUI LocationInfoUI;
 
         public DialogWindow DialogWindow => _dialogWindow;
@@ -30,6 +31,7 @@ namespace UI
 
         private void Awake()
         {
+            Instance = this;
             _gameService = AllServices.Container.Single<IGameService>();
         }
 
