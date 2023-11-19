@@ -1039,7 +1039,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.85, y: 0.1, z: 0.85}
+  m_Size: {x: 0.825, y: 0.1, z: 0.825}
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &2660102634757861992
 GameObject:
@@ -2658,6 +2658,7 @@ MonoBehaviour:
   - {fileID: 4600166583736772444}
   - {fileID: 474057995188779698}
   - {fileID: 7800932120834836242}
+  IsInited: 0
 --- !u!33 &3989607204710623166
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4160,7 +4161,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.83
-  m_Center: {x: -1.96, y: 0.74, z: 0}
+  m_Center: {x: -1.96, y: 1.32, z: 0}
 --- !u!1001 &1868589797640092362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4247,7 +4248,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.83
-  m_Center: {x: -1.96, y: 0.74, z: 0}
+  m_Center: {x: -1.96, y: 1.17, z: 0}
 --- !u!4 &2189921464776187169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b25f39ef9a9b8ff45b6e535c5d75f385, type: 3}
@@ -9935,8 +9936,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.83
-  m_Center: {x: -1.96, y: 0.74, z: 0}
+  m_Radius: 0.98
+  m_Center: {x: -1.96, y: 1.28, z: 0}
 --- !u!1001 &3742946268603494588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12264,7 +12265,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.83
-  m_Center: {x: -1.96, y: 0.74, z: 0}
+  m_Center: {x: -1.96, y: 1.31, z: 0}
 --- !u!1001 &7467672558067405260
 PrefabInstance:
   m_ObjectHideFlags: 0
