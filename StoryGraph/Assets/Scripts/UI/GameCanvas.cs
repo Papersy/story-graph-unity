@@ -1,6 +1,5 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
-using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,21 +9,13 @@ namespace UI
     {
         [SerializeField] private GameObject _canvas;
         [SerializeField] private InventoryUI _inventoryUI;
-        [SerializeField] private ItemUI _itemUI;
-        [SerializeField] private DialogWindow _dialogWindow;
         [SerializeField] private EquipmentUI _equipmentUI;
-        [SerializeField] private GameObject _actionWindow;
         [SerializeField] private AllActions _allActions;
 
         public static GameCanvas Instance;
         
         public GameObject DiePanel;
         public LocationInfoUI LocationInfoUI;
-
-        public DialogWindow DialogWindow => _dialogWindow;
-        public InventoryUI InventoryUI => _inventoryUI;
-        public ItemUI ItemUI => _itemUI;
-        public EquipmentUI EquipmentUI => _equipmentUI;
 
         public static bool IsUiActive = false; 
         private IGameService _gameService;
@@ -39,47 +30,56 @@ namespace UI
         {
             if (Keyboard.current.tabKey.wasPressedThisFrame)
             {
+                if(Draggable.IsDrag)
+                    return;
+                
                 if (!_inventoryUI.isActiveAndEnabled)
                 {
+                    if(IsUiActive)
+                        HideAllWindows();
+                    
                     ShowMainInventory();
-                    ShowEquipment();
+                    _equipmentUI.Show();
+                    ShowCursor();
+
+                    IsUiActive = true;
                 }
                 else
                 {
-                    HideMainInventory();
-                    HideEquipment();
-                    _itemUI.Hide();
-                    _actionWindow.SetActive(false);
+                    HideAllWindows();
+                    HideCursor();
                 }
-            }
 
+            }
             if (Keyboard.current.capsLockKey.wasPressedThisFrame)
             {
+                if(Draggable.IsDrag)
+                    return;
+                
                 if (!_allActions.isActiveAndEnabled)
                 {
-                    IsUiActive = true;
+                    if(IsUiActive)
+                        HideAllWindows();
+                    
                     ShowCursor();
                     _allActions.Show();
                     _allActions.Init();
+
+                    IsUiActive = true;
                 }
                 else
                 {
-                    IsUiActive = false;
+                    HideAllWindows();
                     HideCursor();
-                    _allActions.Hide();
                 }
             }
 
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
+                if(Draggable.IsDrag)
+                    return;
                 
-                _inventoryUI.HideInventory();
-                _dialogWindow.Hide();
-                _itemUI.Hide();
-                _equipmentUI.Hide();
-                _actionWindow.SetActive(false);
-                IsUiActive = false;
-                
+                HideAllWindows();
                 HideCursor();
             }
         }
@@ -90,44 +90,16 @@ namespace UI
         private void OnDisable() =>
             _gameService.GetGameController().OnLocationChanged -= StartNewLocationAnimation;
 
-
-        public void ShowMainInventory()
+        private void HideAllWindows()
         {
-            IsUiActive = true;
-            _inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
-            ShowCursor();
+            _inventoryUI.HideInventory();
+            _equipmentUI.Hide();
+            _allActions.Hide();
+
+            IsUiActive = false;
         }
         
-        public void HideMainInventory()
-        {
-            IsUiActive = false;
-            _inventoryUI.HideInventory();
-            HideCursor();
-        }
-
-        private void ShowEquipment()
-        {
-            _equipmentUI.Show();
-        }
-
-        private void HideEquipment()
-        {
-            _equipmentUI.Hide();
-        }
-
-        public void ShowDialog()
-        {
-            IsUiActive = true;
-            DialogWindow.Show();
-            ShowCursor();
-        }
-
-        public void HideDialog()
-        {
-            IsUiActive = false;
-            DialogWindow.Hide();
-            HideCursor();
-        }
+        private void ShowMainInventory() => _inventoryUI.Show(_gameService.GetGameController().GetPlayerItems());
 
         public void Show() =>
             _canvas.SetActive(true);

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ActionButtons;
 using CodeBase.Infrastructure.Services;
-using Infrastructure.Factory;
 using Infrastructure.Services;
 using Newtonsoft.Json.Linq;
 using TMPro;
@@ -48,6 +46,8 @@ namespace UI
         {
             _itemsInventoryContainer.SetActive(true);
             _narrationRoot.gameObject.SetActive(false);
+            _groupedParent.gameObject.SetActive(false);
+            
             UpdatePlayerCharacteristics();
             ShowInventoryItems(items);
             UpdateGrouped(AllServices.Container.Single<IGameService>().GetGameController().GetPlayerCharacters());
@@ -151,6 +151,7 @@ namespace UI
         private void ShowNarrations()
         {
             _narrationRoot.gameObject.SetActive(true);
+            
             var playerInfo = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerInfo();
             var narration = playerInfo["Narration"];
 

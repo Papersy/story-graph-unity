@@ -8,6 +8,9 @@ using UnityEngine.UI;
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [HideInInspector] public Transform ParentAfterDrag;
+
+    public static bool IsDrag = false;
+    
     public InventoryType Type;
     public Image ItemImage;
     public Transform Root;
@@ -27,6 +30,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("BEGIN DRAG");
+        IsDrag = true;
+        
         ParentAfterDrag = transform.parent;
         transform.SetParent(Root);
         transform.SetAsLastSibling();
@@ -35,11 +41,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
+        Debug.Log("ON DRAG");
+        
         transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        IsDrag = false;
+        Debug.Log("ON END DRAG");
+        
         transform.SetParent(ParentAfterDrag);
         ItemImage.raycastTarget = true;
     }

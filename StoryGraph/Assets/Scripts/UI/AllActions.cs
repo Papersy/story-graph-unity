@@ -39,7 +39,6 @@ namespace UI
         private void InitObjects()
         {
             ClearContentView(_contentParent);
-            var collisionIds = CheckInteraction.CollisionIds;
             var colliders = GetInteractions();
 
             foreach (var collider in colliders) 
@@ -59,23 +58,6 @@ namespace UI
                     btn.Button.onClick.AddListener(() => InitProductions(item.ItemInfo["Id"].ToString())); 
                 }
             }
-            
-            // foreach (var entity in collisionIds)
-            // {
-            //     // btn.SetText(entity.Value);
-            //     var objTransform = entity.Value;
-            //     if (objTransform != null)
-            //     {
-            //         var btn = Instantiate(_btnPrefab, _contentParent);
-            //         
-            //         if (objTransform.TryGetComponent(out NpcWrapper npcWrapper))
-            //             btn.SetText(npcWrapper.Npc.NpcInfo["Name"].ToString());
-            //         else if(objTransform.TryGetComponent(out ItemWrapper item))
-            //             btn.SetText(item.Item.ItemInfo["Name"].ToString());
-            //         
-            //         btn.Button.onClick.AddListener(() => InitProductions(entity.Key)); 
-            //     }
-            // }
             
             var other = Instantiate(_btnPrefab, _contentParent);
             other.SetText("Other");
