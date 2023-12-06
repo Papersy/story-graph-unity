@@ -241,9 +241,6 @@ public class GameController
             return;
         }
         
-        // var characters = newLocationToken["Characters"];
-        // var items = newLocationToken["Items"];
-        
         await _currentLocationController.UpdateCharacters(characters, true);
         await _currentLocationController.UpdateItems(items, true);
     }

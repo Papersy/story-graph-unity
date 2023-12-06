@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using ActionButtons;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
 using InteractableItems;
 using Newtonsoft.Json.Linq;
-using Npc;
-using Player;
 using UnityEngine;
 
 namespace UI

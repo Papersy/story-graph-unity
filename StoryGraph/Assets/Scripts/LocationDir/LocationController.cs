@@ -39,9 +39,9 @@ namespace LocationDir
             _locationInfo = locationInfo;
             _locationVariants = locationTeleportsVariants;
 
-            GenerateNpcRandomPos(_locationInfo);
-            GenerateItemsRandomPos(_locationInfo);
-            GeneratePortalsRandomPos(_locationVariants);
+            GenerateNpcs(_locationInfo);
+            GenerateItems(_locationInfo);
+            GeneratePortals(_locationVariants);
         }
 
         public async Task UpdateItems(JToken items, bool isNearPlayer)
@@ -150,69 +150,6 @@ namespace LocationDir
                     SpawnOneNpc(newCharacter, isNearPlayer);
             }
         }
-
-        public async Task SetPositions(JToken productions)
-        {
-            foreach (var production in productions)
-            {
-                var variants = production["variants"];
-                
-                foreach (var variant in variants)
-                {
-                    Vector3 position = Vector3.zero;
-                    foreach (var podVariant in variant)
-                    {
-                        var id = podVariant["WorldNodeId"].ToString();
-                        var result = FindIdInNpc(id);
-                        if (result == null)
-                            result = FindIdInItems(id);
-                    
-                        if (result != null)
-                        {
-                            if (position == Vector3.zero)
-                                position = result.transform.localPosition;
-                            else
-                            {
-                                var prod = production["prod"];
-                                
-                                result.transform.localPosition = position + new Vector3(Random.Range(0, 3), 0, Random.Range(0, 3));
-                                // position = result.transform.localPosition;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        private GameObject FindIdInNpc(string id)
-        {
-            foreach (var character in _characters)
-            {
-                if(character == null)
-                    continue;
-                
-                var npcInfo = character.GetComponent<Npc.Npc>().NpcInfo;
-                if(npcInfo["Id"].ToString() == id)
-                    return character;
-            }
-
-            return null;
-        }
-        
-        private GameObject FindIdInItems(string id)
-        {
-            foreach (var item in _items)
-            {
-                if(item == null)
-                    continue;
-                
-                var itemInfo = item.GetComponent<Item>().ItemInfo;
-                if(itemInfo["Id"].ToString() == id)
-                    return item;
-            }
-
-            return null;
-        }
         
         private bool HasInList(JToken list, string npcName, string newNpcKey)
         {
@@ -238,7 +175,7 @@ namespace LocationDir
             return point;
         }
         
-        public void GenerateNpcRandomPos(JToken locationInfo)
+        public void GenerateNpcs(JToken locationInfo)
         {
             var characters = locationInfo["Characters"];
 
@@ -265,7 +202,7 @@ namespace LocationDir
             }
         }
         
-        private void GenerateItemsRandomPos(JToken locationInfo)
+        private void GenerateItems(JToken locationInfo)
         {
             var items = locationInfo["Items"];
 
@@ -286,7 +223,7 @@ namespace LocationDir
             }
         }
 
-        private void GeneratePortalsRandomPos(JToken variants)
+        private void GeneratePortals(JToken variants)
         {
             var path = "Prefabs/Location/Teleport";
 

@@ -31,28 +31,6 @@ namespace ApiController
             return null;
         }
         
-        public async Task<string> GenerateMap()
-        {
-            var client = new HttpClient();
-            var response = await client.GetAsync("http://127.0.0.1:8000/generateMap");
-
-            if (response.IsSuccessStatusCode)
-            {
-                string json = await response.Content.ReadAsStringAsync();
-                string jsonFormatted = JValue.Parse(json).ToString(Formatting.Indented);
-                // Parse the JSON response here
-                Debug.Log(json);
-
-                return jsonFormatted;
-            }
-            else
-            {
-                Console.WriteLine($"Error: {response.StatusCode}");
-            }
-
-            return null;
-        }
-        
         public static async Task<string> PostNewWorld(JToken world, JToken production, JToken variant, string obj)
         {
             var json = $"{"{"}\n\"world\":{world},\n\"production\":{production},\n\"variant\":{variant},\n\"object\":\"{obj}\"{"}"}";
