@@ -5,8 +5,6 @@ namespace UI
     [RequireComponent(typeof(CanvasGroup))]
     public class HUDContainer : MonoBehaviour
     {
-        public GameCanvas GameCanvas;
-        
         private CanvasGroup canvasGroup;
         
         private void Awake()

@@ -58,7 +58,14 @@ namespace ApiController
             }
             
             Debug.Log($"SMTH WRONG {response.StatusCode}");
-            GameCanvas.Instance.DiePanel.SetActive(true);
+            
+            // GameCanvas.Instance.DiePanel.SetActive(true);
+            
+            var dict = JToken.Parse(json);
+            var message = dict["message"];
+            if(message != null && message.ToString() != "Nie ma postaci Main_hero w świecie. Zniknął główny bohater. Pewno zginął.")
+                GameCanvas.Instance.DiePanel.SetActive(true);
+            
             return null;
         }
     }

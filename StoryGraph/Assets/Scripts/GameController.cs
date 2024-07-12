@@ -225,6 +225,8 @@ public class GameController
         _jAvailableProductions = dict["available_productions"];
         var newJTokenWorld = dict["world"];
         var locationInfo = dict["location_info"];
+        if(locationInfo == null)
+            return;
         var mainLocationId = locationInfo["main_location_id"].ToString();
 
         var newLocationToken = GetNewLocationToken(newJTokenWorld, mainLocationId);
@@ -272,18 +274,18 @@ public class GameController
     }
     
     
-    public async void HeroDeath()
-    {
-        var productionName = "Fight ending with character’s escape";
-        var json = await HttpClientController.PostNewWorld(_jWorlds,
-            FindProd(productionName, _jAvailableProductions),
-            FindVariant(productionName, null, StatementPlayerDeath),
-            _mainPlayerName);
-
-        WriteLogAboutNewWorld(json);
-
-        DeserializeFileAfterLocationChange(json);
-    }
+    // public async void HeroDeath()
+    // {
+    //     var productionName = "Fight ending with character’s escape";
+    //     var json = await HttpClientController.PostNewWorld(_jWorlds,
+    //         FindProd(productionName, _jAvailableProductions),
+    //         FindVariant(productionName, null, StatementPlayerDeath),
+    //         _mainPlayerName);
+    //
+    //     WriteLogAboutNewWorld(json);
+    //
+    //     DeserializeFileAfterLocationChange(json);
+    // }
     
     private JToken FindProd(string name, JToken tokenForSearch, string parameter = "Title")
     {

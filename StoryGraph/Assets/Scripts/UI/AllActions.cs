@@ -137,14 +137,15 @@ namespace UI
                 var locations = lSide["Locations"];
                 var location = locations[0];
 
-                var locationId = location["Id"].ToString();
+                var locationId = location["Id"];
                 var characters = location["Characters"];
                 var items = location["Items"];
                 
                 if(_skippedProdNames.Contains(title))
                     continue;
                 
-                entitiesOnLocationNames.Add(locationId);
+                if(locationId != null)
+                    entitiesOnLocationNames.Add(locationId.ToString());
                 
                 if (characters != null)
                 {
