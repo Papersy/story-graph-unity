@@ -24,3 +24,13 @@ If you don't have Unity, follow instruction to download & install it
 14. Wait until all packages gonna be installed.
 15. If your started scene is "untitled" or just not "Boot". In folder Assets -> Scenes find file "Boot", and open it.
 16. Now you can Run project StoryGraph w PyCharm, after this run game in Unity.
+
+
+Video, how to run project: https://github.com/user-attachments/assets/50bc93be-53a4-4360-8948-20145b61f259
+
+
+## **Control:**
+WASD - Move
+Space - Jump
+Tab - Inventory
+CapsLock - Activities
