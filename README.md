@@ -1,6 +1,9 @@
 # story-graph-unity
 Unity version 2021.3.6f1
 
+For this project, you must install and run another project:
+https://github.com/iwonagg/StoryGraph
+
 If you don't have Unity, follow instruction to download & install it
 
 ## **Instruction:**
