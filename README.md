@@ -30,7 +30,7 @@ Video, how to run project: https://github.com/user-attachments/assets/50bc93be-5
 
 
 ## **Control:**
-WASD - Move
-Space - Jump
-Tab - Inventory
+WASD - Move__
+Space - Jump__
+Tab - Inventory__
 CapsLock - Activities
