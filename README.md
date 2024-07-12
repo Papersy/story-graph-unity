@@ -23,4 +23,4 @@ If you don't have Unity, follow instruction to download & install it
 13. Now you can add project, find cloned project open folder and click on folder StoryGraph, after this click "Open folder".
 14. Wait until all packages gonna be installed.
 15. If your started scene is "untitled" or just not "Boot". In folder Assets -> Scenes find file "Boot", and open it.
-16. Now you can Run project StoryGraph w PyCharn, after this run game in Unity.
+16. Now you can Run project StoryGraph w PyCharm, after this run game in Unity.
