@@ -203,11 +203,6 @@ namespace UI
                         var WorldNodeId = podVariant["WorldNodeId"].ToString();
                         if (WorldNodeId == objectId)
                             resultId = true;
-                        // if (WorldNodeId != playerId && WorldNodeId != currentLocationId && !collisionIds.ContainsKey(WorldNodeId))
-                        // {
-                        //     result = false;
-                        //     break;
-                        // }
                         if (WorldNodeId != playerId && WorldNodeId != currentLocationId && !ContainIdOnColliders(WorldNodeId, colliders))
                         {
                             result = false;

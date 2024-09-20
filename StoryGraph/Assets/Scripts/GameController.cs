@@ -156,6 +156,17 @@ public class GameController
             }
         }
     }
+
+    private void UpdateLocationController()
+    {
+        foreach (var controller in _locationControllers)
+        {
+            if (controller._locationInfo["Id"].ToString() == _currentLocationId)
+            {
+                _currentLocationController = controller;
+            }
+        }
+    }
     
     private void GenerateLocations(JToken worlds)
     {
@@ -243,7 +254,8 @@ public class GameController
             return;
         }
         
-        await _currentLocationController.UpdateCharacters(characters, true);
+        UpdateLocationController();
+        await _currentLocationController.UpdateCharacters(characters, false);
         await _currentLocationController.UpdateItems(items, true);
     }
 
@@ -272,20 +284,6 @@ public class GameController
 
         DeserializeFileAfterLocationChange(json);
     }
-    
-    
-    // public async void HeroDeath()
-    // {
-    //     var productionName = "Fight ending with character’s escape";
-    //     var json = await HttpClientController.PostNewWorld(_jWorlds,
-    //         FindProd(productionName, _jAvailableProductions),
-    //         FindVariant(productionName, null, StatementPlayerDeath),
-    //         _mainPlayerName);
-    //
-    //     WriteLogAboutNewWorld(json);
-    //
-    //     DeserializeFileAfterLocationChange(json);
-    // }
     
     private JToken FindProd(string name, JToken tokenForSearch, string parameter = "Title")
     {

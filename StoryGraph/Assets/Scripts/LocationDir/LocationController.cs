@@ -100,7 +100,6 @@ namespace LocationDir
 
         public async Task UpdateCharacters(JToken characters, bool isNearPlayer)
         {
-            Debug.Log(characters);
             if (characters == null)
             {
                 foreach (var item in _characters)
@@ -119,7 +118,8 @@ namespace LocationDir
                         continue;
                     
                     var npc = character.GetComponent<Npc.Npc>();
-                    if (!HasInList(characters, npc.NpcInfo["Id"].ToString(), "Id"))
+                    var npcId = npc.NpcInfo["Id"].ToString();
+                    if (!HasInList(characters, npcId, "Id"))
                         deleteItems.Add(character);
                 }
                 
@@ -134,15 +134,14 @@ namespace LocationDir
             foreach (var newCharacter in characters)
             {
                 var newNpcName = newCharacter["Id"].ToString();
-                Debug.Log(newCharacter["Name"].ToString());
                 var spawnCharacter = true;
                 foreach (var oldCharacter in _characters)
                 {
                     if(oldCharacter == null)
                         continue;
                     
-                    var oldCharacterName = oldCharacter.GetComponent<Npc.Npc>().NpcInfo["Id"].ToString();
-                    if (newNpcName == oldCharacterName)
+                    var oldCharacterId = oldCharacter.GetComponent<Npc.Npc>().NpcInfo["Id"].ToString();
+                    if (newNpcName == oldCharacterId)
                         spawnCharacter = false;
                 }
                 
@@ -151,12 +150,12 @@ namespace LocationDir
             }
         }
         
-        private bool HasInList(JToken list, string npcName, string newNpcKey)
+        private bool HasInList(JToken list, string npcIdentifier, string newNpcKey)
         {
             foreach (var entity in list)
             {
-                var newEntityName = entity[newNpcKey].ToString();
-                if (npcName == newEntityName)
+                var newEntityIdentifier = entity[newNpcKey].ToString();
+                if (npcIdentifier == newEntityIdentifier)
                     return true;
             }
 

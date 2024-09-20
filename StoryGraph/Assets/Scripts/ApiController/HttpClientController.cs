@@ -52,14 +52,11 @@ namespace ApiController
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                Debug.Log("Get response");
 
                 return responseContent;
             }
             
             Debug.Log($"SMTH WRONG {response.StatusCode}");
-            
-            // GameCanvas.Instance.DiePanel.SetActive(true);
             
             var dict = JToken.Parse(json);
             var message = dict["message"];
