@@ -10,14 +10,7 @@ namespace Npc
     
         public JToken NpcInfo { get; set; }
         
-        public void Init()
-        {
-            _npcName.text = GetNpcName();
-        }
-
-        private string GetNpcName()
-        {
-            return NpcInfo["Name"].ToString();
-        }
+        public void Init() => _npcName.text = GetNpcName();
+        private string GetNpcName() => NpcInfo["Name"].ToString();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CodeBase.Infrastructure.Services;
 using Infrastructure.Services;
@@ -15,6 +16,7 @@ namespace LocationDir
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private Teleport _portalPrefab;
         [SerializeField] private List<Teleport> _initedTeleports;
+        [SerializeField] private String _locationId;
         
         private List<GameObject> _characters = new List<GameObject>();
         private List<GameObject> _items = new List<GameObject>();
@@ -39,6 +41,8 @@ namespace LocationDir
             _locationInfo = locationInfo;
             _locationVariants = locationTeleportsVariants;
 
+            _locationId = _locationInfo["Id"].ToString();
+            
             GenerateNpcs(_locationInfo);
             GenerateItems(_locationInfo);
             GeneratePortals(_locationVariants);

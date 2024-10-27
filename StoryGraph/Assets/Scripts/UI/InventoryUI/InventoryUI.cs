@@ -150,6 +150,7 @@ namespace UI
 
         private void ShowNarrations()
         {
+            List<string> knowledgeStrings = new List<string>();
             _narrationRoot.gameObject.SetActive(true);
             
             var playerInfo = AllServices.Container.Single<IGameService>().GetGameController().GetPlayerInfo();
@@ -164,9 +165,14 @@ namespace UI
             {
                 var att = narr["Attributes"];
                 var know = att["Knowledge"];
-                
-                var obj = Instantiate(_narrationTextPrefab, _narrationContent);
-                obj.SetText(GetPolishPart(know.ToString()));
+                var knowString = know.ToString();
+
+                if (!knowledgeStrings.Contains(knowString))
+                {
+                    knowledgeStrings.Add(knowString);
+                    var obj = Instantiate(_narrationTextPrefab, _narrationContent);
+                    obj.SetText(GetPolishPart(knowString));
+                }
             }
         }
         

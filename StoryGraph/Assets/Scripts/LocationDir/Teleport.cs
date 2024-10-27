@@ -21,6 +21,7 @@ namespace LocationDir
                 foreach (var teleportName in _teleportNames)
                 {
                     teleportName.text = variant[2]["WorldNodeName"].ToString();
+                    // teleportName.text = variant[2]["WorldNodeId"] + " " + variant[2]["WorldNodeName"].ToString();
                 }
             }
         }

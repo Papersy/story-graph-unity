@@ -7,6 +7,5 @@ namespace UI
     {
         private int _index;
         private List<JToken> _knowledgeFromNpcList;
-        
     }
 }

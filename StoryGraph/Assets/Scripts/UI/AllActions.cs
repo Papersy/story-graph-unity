@@ -18,8 +18,10 @@ namespace UI
         private JToken _currentProduction;
 
         private Dictionary<JToken, JToken> _prodVariants;
-        private List<string> _skippedProdNames = new List<string>() { "Teleportation / Teleportacja", "Location change / Zmiana lokacji" };
+        private List<string> _skippedProdNames = new List<string>() { "Teleportation / Teleportacja", "Location change / Zmiana lokacji", "Rumcajs location change / Zmiana lokacji przez Rumcajsa" };
 
+        private delegate bool CanInteractWithVariantDelegate(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId);
+        
         public override void OnShow()
         {
             _currentProductions = GameService.GetGameController().GetCurrentProductions();
@@ -38,90 +40,31 @@ namespace UI
             ClearContentView(_contentParent);
             var colliders = GetInteractions();
 
-            foreach (var collider in colliders) 
+            foreach (var coll in colliders) 
             {
-                if (collider.TryGetComponent(out Npc.Npc npc))
+                if (coll.TryGetComponent(out Npc.Npc npc))
                 {
                     var btn = Instantiate(_btnPrefab, _contentParent);
                     btn.SetText(npc.NpcInfo["Name"].ToString());
                     
-                    btn.Button.onClick.AddListener(() => InitProductions(npc.NpcInfo["Id"].ToString())); 
+                    btn.Button.onClick.AddListener(() => InitObjectsProductions(npc.NpcInfo["Id"].ToString(), CanInteractWithEntitiesVariant)); 
                 }
-                else if (collider.TryGetComponent(out Item item))
+                else if (coll.TryGetComponent(out Item item))
                 {
                     var btn = Instantiate(_btnPrefab, _contentParent);
                     btn.SetText(item.ItemInfo["Name"].ToString()); 
                     
-                    btn.Button.onClick.AddListener(() => InitProductions(item.ItemInfo["Id"].ToString())); 
+                    btn.Button.onClick.AddListener(() => InitObjectsProductions(item.ItemInfo["Id"].ToString(), CanInteractWithEntitiesVariant)); 
                 }
             }
-            
+
+
             var other = Instantiate(_btnPrefab, _contentParent);
             other.SetText("Other");
-            other.Button.onClick.AddListener(() => InitProductions2(""));
+            other.Button.onClick.AddListener(() => InitObjectsProductions("", CanInteractWithNoEntitiesVariant));
         }
-        
-        private void InitProductions(string objectId)
-        {
-            _prodVariants = new Dictionary<JToken, JToken>();
-            ClearContentView(_contentParent);
-            
-            foreach (var production in _currentProductions)
-            {
-                List<string> entitiesOnLocationNames = new List<string>();
-                
-                var prod = production["prod"];
-                var variants = production["variants"];
-                var title = prod["Title"].ToString();
-                var lSide = prod["LSide"];
-                var locations = lSide["Locations"];
-                var location = locations[0];
-
-                var locationId = location["Id"].ToString();
-                var characters = location["Characters"];
-                var items = location["Items"];
-                
-                if(_skippedProdNames.Contains(title))
-                    continue;
-                
-                entitiesOnLocationNames.Add(locationId);
-                
-                if (characters != null)
-                {
-                    foreach (var character in characters)
-                    {
-                        var characterId = character["Id"];
-                        if (characterId == null)
-                            characterId = character["Name"];
-                        
-                        if(characterId != null)
-                            entitiesOnLocationNames.Add(characterId.ToString());
-                    }
-                }
-
-                if (items != null)
-                {
-                    foreach (var item in items)
-                    {
-                        var itemId = item["Id"];
-                        if (itemId == null)
-                            itemId = item["Name"];
-                        
-                        if(itemId != null)
-                            entitiesOnLocationNames.Add(itemId.ToString());
-                    }
-                }
-                
-                if (CanInteractWithVariant(production, variants, entitiesOnLocationNames, objectId))
-                {
-                    var btn = Instantiate(_btnPrefab, _contentParent);
-                    btn.SetText(GetPolishPart(title));
-                    btn.Button.onClick.AddListener(() => OnProductionClick(production)); 
-                }
-            }
-        }
-
-        private void InitProductions2(string objectId)
+        // Init productions with entities
+        private void InitObjectsProductions(string objectId, CanInteractWithVariantDelegate canInteractWithVariantDelegate)
         {
             _prodVariants = new Dictionary<JToken, JToken>();
             ClearContentView(_contentParent);
@@ -173,7 +116,7 @@ namespace UI
                     }
                 }
                 
-                if (CanInteractWithVariant2(production, variants, entitiesOnLocationNames, objectId))
+                if (canInteractWithVariantDelegate(production, variants, entitiesOnLocationNames, objectId))
                 {
                     var btn = Instantiate(_btnPrefab, _contentParent);
                     btn.SetText(GetPolishPart(title));
@@ -182,11 +125,10 @@ namespace UI
             }
         }
         
-        private bool CanInteractWithVariant(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId)
+        private bool CanInteractWithEntitiesVariant(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId)
         {
             var playerId = GameService.GetGameController().GetMainPlayerId();
             var currentLocationId = GameService.GetGameController().GetCurrentLocationId();
-            // var collisionIds = CheckInteraction.CollisionIds;
             var colliders = GetInteractions();
 
             bool functionResult = false;
@@ -221,11 +163,10 @@ namespace UI
             
             return functionResult;
         }
-        private bool CanInteractWithVariant2(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId)
+        private bool CanInteractWithNoEntitiesVariant(JToken production, JToken variants, List<string> entitiesOnLocationNames, string objectId) 
         {
             var playerId = GameService.GetGameController().GetMainPlayerId();
             var currentLocationId = GameService.GetGameController().GetCurrentLocationId();
-            // var collisionIds = CheckInteraction.CollisionIds;
 
             bool functionResult = false;
 
@@ -234,26 +175,19 @@ namespace UI
                 var result = true;
                 foreach (var podVariant in variant)
                 {
-                    var LSNodeRef = podVariant["LSNodeRef"].ToString();
-                    if (entitiesOnLocationNames.Contains(LSNodeRef))
+                    var lsNodeRef = podVariant["LSNodeRef"].ToString();
+                    var worldNodeId = podVariant["WorldNodeId"].ToString();
+                    
+                    if (entitiesOnLocationNames.Contains(lsNodeRef) && worldNodeId != playerId && worldNodeId != currentLocationId)
                     {
-                        var WorldNodeId = podVariant["WorldNodeId"].ToString();
-                        if (WorldNodeId == playerId || WorldNodeId == currentLocationId)
-                        {
-                            //ok
-                        }
-                        else
-                        {
-                            result = false;
-                            break;
-                        }
+                        result = false;
+                        break;
                     }
                 }
 
                 if (result)
                 {
                     _prodVariants.Add(variant, production);
-                    
                     functionResult = true;
                 }
             }
@@ -296,6 +230,7 @@ namespace UI
             InitVariants();
         }
 
+        //Pick variant and send new information to api
         private void OnVariantClick(JToken prod, JToken variant)
         {
             GameService.GetGameController().PostNewWorld(prod, variant);

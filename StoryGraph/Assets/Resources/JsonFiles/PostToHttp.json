@@ -5,7 +5,25 @@
       "Name": "Road",
       "Characters": [
         {
-          "Id": "faa30bee-42a7-487b-a466-91821278b7fc",
+          "Id": "78a3814d-caa4-4b5c-8412-9fa732a0e7af",
+          "Name": "Main_hero",
+          "Attributes": {
+            "HP": 100,
+            "Money": 30
+          },
+          "Items": [
+            {
+              "Id": "33db31a4-368d-4633-8128-a59002b85ef2",
+              "Name": "Sword",
+              "Attributes": {
+                "IsWeapon": true,
+                "Value": 1000
+              }
+            }
+          ]
+        },
+        {
+          "Id": "fcea4641-409f-4fdf-be53-a420e34c7742",
           "Name": "Lawyer",
           "Attributes": {
             "HP": 100,
@@ -13,7 +31,7 @@
           },
           "Items": [
             {
-              "Id": "9ad3d48d-13eb-4c4b-bc24-8da87b986539",
+              "Id": "79224a21-cfa4-4072-8e84-0d828dce7da0",
               "Name": "Documents",
               "Attributes": {
                 "IsTopSecret": true
@@ -22,14 +40,14 @@
           ],
           "Narration": [
             {
-              "Id": "00030276-3aa8-4fc6-87bf-db8b1137f710",
+              "Id": "715b0967-4271-42f6-b9bb-485c8b3af479",
               "Name": "Game_goal",
               "Attributes": {
                 "Knowledge": "The top-secret documents have to be delivered to Overseas Territory. Take them and board the ship. / Tajne dokumenty, któe trzeba dostarczyć do zamorskiego królestwa. Przejmij je i dotrzyj na statek."
               }
             },
             {
-              "Id": "49b38110-acab-4de2-a9fb-481ceba6bf42",
+              "Id": "57fec2dc-3913-45a0-8f7c-c47bac09798a",
               "Name": "Pay_tax",
               "Attributes": {
                 "Knowledge": "Bohater powinien zapłacić podatek w wysokości 20 coinów"
@@ -38,7 +56,7 @@
           ]
         },
         {
-          "Id": "f332efd6-b5de-4fc4-a281-9b5ee90e5a7b",
+          "Id": "aa60d8d4-7e52-45b0-8c90-f35a66adde0a",
           "Name": "Traveler",
           "Attributes": {
             "HP": 100,
@@ -46,7 +64,7 @@
           },
           "Items": [
             {
-              "Id": "87f1cb94-302c-4180-b8c4-02e1d2fb7c97",
+              "Id": "f477f82d-784a-481c-aaf2-cf0abc375f08",
               "Name": "Sword",
               "Attributes": {
                 "Value": 1000,
@@ -56,17 +74,32 @@
           ],
           "Narration": [
             {
-              "Id": "6cc3a4e6-243d-4895-8f87-e634d5392e75",
+              "Id": "23a0d0fa-7bd0-4c3a-b077-a2e1e8eb5658",
               "Name": "Captain_lost_compass",
               "Attributes": {
                 "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
               }
             },
             {
-              "Id": "edf740ea-b753-449f-9569-3db95f3b7522",
+              "Id": "9d636644-b8a9-4109-b50a-80d245b023f4",
               "Name": "Can_play_cards",
               "Attributes": {
                 "Knowledge": "Potrafi grać w karty"
+              }
+            }
+          ]
+        }
+      ],
+      "Items": [
+        {
+          "Id": "71acacdf-22a3-4b3f-a399-1d3f4f3b5ad1",
+          "Name": "Advertising_column",
+          "Narration": [
+            {
+              "Id": "52c7a0e4-bd31-4b74-b91c-6ecedc4076dd",
+              "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
+              "Attributes": {
+                "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
               }
             }
           ]
@@ -119,7 +152,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "c5969cda-377a-456d-b94f-41412f89f3f9",
+          "Id": "56238d31-ae19-4c68-a118-527d3bb53ef6",
           "Name": "Herbs",
           "Attributes": {
             "IsPoison": true,
@@ -128,7 +161,7 @@
           }
         },
         {
-          "Id": "f6b2321e-b146-439c-9c55-c814410a3427",
+          "Id": "10c6aa4e-de9b-4a74-9924-06008f870895",
           "Name": "Wood",
           "Attributes": {
             "Value": 300
@@ -167,7 +200,7 @@
       "Name": "Forest",
       "Characters": [
         {
-          "Id": "aae716c7-ff88-469a-b915-9987944b6ee1",
+          "Id": "e5353082-a255-4280-baf7-8180617b3b13",
           "Name": "Wolf",
           "Attributes": {
             "HP": 20
@@ -176,7 +209,7 @@
       ],
       "Items": [
         {
-          "Id": "9975e961-5e40-4c08-bc78-202980faf1d1",
+          "Id": "934831b2-10c1-4e76-b498-d5930d07f705",
           "Name": "Herbs",
           "Attributes": {
             "NutritionalValue": 10,
@@ -184,7 +217,7 @@
           }
         },
         {
-          "Id": "82ff4193-ca42-4aaa-906e-a629650b48b4",
+          "Id": "23b05796-ca6e-47e2-884b-40ad46e20aff",
           "Name": "Wood",
           "Attributes": {
             "Value": 300
@@ -241,7 +274,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "91ef36c7-ec22-4789-ab07-80e29b51dbf5",
+          "Id": "f6580668-992f-47b4-9756-d75b57adc51e",
           "Name": "Herbs",
           "Attributes": {
             "IsPoison": true,
@@ -249,7 +282,7 @@
           }
         },
         {
-          "Id": "72bd1b63-4ad8-4bff-b6fd-f5c2cc5ed684",
+          "Id": "8761624f-ef86-44db-a1cb-5f5b8c4d9dd1",
           "Name": "Wood",
           "Attributes": {
             "Value": 300
@@ -276,7 +309,7 @@
       "Name": "Forest",
       "Characters": [
         {
-          "Id": "6cb5995e-4a8b-4f06-978d-9381f552ebc5",
+          "Id": "75de9772-3bbd-4f50-be42-37bf93ab1174",
           "Name": "Wolf",
           "Attributes": {
             "HP": 20
@@ -285,7 +318,7 @@
       ],
       "Items": [
         {
-          "Id": "b8d4cb93-0b03-44cc-a625-e72f532037c9",
+          "Id": "869f3f78-a9de-4570-bed9-83547e2896e9",
           "Name": "Herbs",
           "Attributes": {
             "Value": 10,
@@ -293,7 +326,7 @@
           }
         },
         {
-          "Id": "7898e639-807b-4e39-be7e-b5b338c51482",
+          "Id": "d824aa37-2ad5-4fa0-af11-a45960113f5c",
           "Name": "Wood",
           "Attributes": {
             "Value": 300
@@ -377,7 +410,7 @@
       "Name": "Forest",
       "Characters": [
         {
-          "Id": "538c10e1-7134-4a4a-b1ea-a9a13f1ef3a3",
+          "Id": "c4b6fff1-4450-4c00-a5f6-08a1d0027518",
           "Name": "Bandit",
           "Attributes": {
             "HP": 100,
@@ -385,7 +418,7 @@
           }
         },
         {
-          "Id": "15e57eac-994a-48c3-934e-a91c931a5400",
+          "Id": "682b435c-a759-4ef8-8df5-4708ed68b32c",
           "Name": "Bandit",
           "Attributes": {
             "HP": 100,
@@ -393,7 +426,7 @@
           },
           "Items": [
             {
-              "Id": "4acd5e5e-166a-414e-b5c3-68c3dabaf58c",
+              "Id": "673b44a4-0f22-45ba-8ce9-b5f545c91e5e",
               "Name": "Knife",
               "Attributes": {
                 "IsWeapon": true,
@@ -405,7 +438,7 @@
       ],
       "Items": [
         {
-          "Id": "0650ee30-5b2b-41d4-b558-5c3727d21352",
+          "Id": "d51cd23b-eabb-48f1-b172-05f52acba9bb",
           "Name": "Herbs",
           "Attributes": {
             "NutritionalValue": 15,
@@ -413,7 +446,7 @@
           }
         },
         {
-          "Id": "9207981f-a87f-4c22-8973-6a09652fefe9",
+          "Id": "31e3bf40-2843-4a26-bcd3-c556e7697f8a",
           "Name": "Wood",
           "Attributes": {
             "Value": 300
@@ -464,7 +497,7 @@
       "Name": "Forest",
       "Characters": [
         {
-          "Id": "7eb37ac0-8c0b-4930-84c8-f2f069e77a4e",
+          "Id": "82d917d7-0d0e-4ce5-86ab-f43a353814c1",
           "Name": "Prisoner",
           "Attributes": {
             "HP": 100,
@@ -472,7 +505,7 @@
           },
           "Items": [
             {
-              "Id": "b30079a9-cf51-4f3d-bf9e-310abe4e31a6",
+              "Id": "766cb560-ab09-40d4-8b4f-8b8391e2e5ff",
               "Name": "Elixir",
               "Attributes": {
                 "IsMysterious": true
@@ -481,21 +514,21 @@
           ],
           "Narration": [
             {
-              "Id": "3018bca4-07db-4f1d-b5f7-69d61c47abc8",
+              "Id": "09ffe18d-81da-4e0a-a336-9a7f74867364",
               "Name": "Prisoner_needs_help",
               "Attributes": {
                 "Knowledge": "Za pomoc w ukryciu się przed pościgiem więzień oferuje miksturę."
               }
             },
             {
-              "Id": "ee948845-8e64-4928-b53c-8af5990ce774",
+              "Id": "2abf5d43-8af0-457c-80bf-aa10160a28b6",
               "Name": "Prisoner_needs_hero_to_kill_wolves",
               "Attributes": {
                 "Knowledge": "Więzień potrzebuje cię do zabicia wilków w jaskini, aby mógł się ukryć."
               }
             },
             {
-              "Id": "981c9cc4-1604-4d71-9615-ddea59b1f625",
+              "Id": "78759303-3b45-4012-8f6e-a888721b59cf",
               "Name": "Prisoner_was_send_by_the_mage",
               "Attributes": {
                 "Knowledge": "Więzień został tu wysłany przez potężnego maga z daleka, aby porozmawiać ze smokiem. Dostał tę tajemniczą miksturę na drogę, ale nie wie, do czego służy."
@@ -524,7 +557,7 @@
       "Name": "Forest",
       "Items": [
         {
-          "Id": "21fb79eb-60a2-4043-9898-cd3be2303d79",
+          "Id": "efe2b047-8ec1-4e82-928a-dd1268de7ac3",
           "Name": "Herbs",
           "Attributes": {
             "NutritionalValue": 10,
@@ -532,7 +565,7 @@
           }
         },
         {
-          "Id": "83cf17a1-f495-4f03-a51f-d4e558cc3882",
+          "Id": "4da606bc-04b3-40b5-9797-4c8a9356c896",
           "Name": "Wood",
           "Attributes": {
             "Value": 300
@@ -556,7 +589,7 @@
       },
       "Characters": [
         {
-          "Id": "d395eefa-1075-43e3-91a6-58d206a963c2",
+          "Id": "a7d4f0a3-f0ad-4904-820c-fffb10a82911",
           "Name": "Peasant",
           "Attributes": {
             "HP": 100,
@@ -578,7 +611,7 @@
       "Name": "Field",
       "Items": [
         {
-          "Id": "b1e9d9da-87b6-4a9e-b2c0-b02c68c6484a",
+          "Id": "815f34d9-28ee-4f1b-a788-5ae4acb4874b",
           "Name": "Crops",
           "Attributes": {
             "Value": 5
@@ -596,7 +629,7 @@
       "Name": "Inn",
       "Characters": [
         {
-          "Id": "31e4d82f-97e9-4a39-b809-388cac9b6618",
+          "Id": "bc047335-fa2e-4f9c-821f-ba0ea4b02054",
           "Name": "Drunkard",
           "Attributes": {
             "HP": 100,
@@ -604,7 +637,7 @@
           },
           "Items": [
             {
-              "Id": "2db925db-9ece-4f0b-a3e5-d9251e938899",
+              "Id": "187075ef-d0e2-4743-a3f7-63e5645155fa",
               "Name": "Alcohol",
               "Attributes": {
                 "Value": 5
@@ -613,7 +646,7 @@
           ]
         },
         {
-          "Id": "cb33c8f3-04bb-402f-b28d-467ea6604975",
+          "Id": "c72c83d6-c7b9-456c-87bc-e7bdcc11a125",
           "Name": "Innkeeper",
           "Attributes": {
             "HP": 100,
@@ -621,7 +654,7 @@
           },
           "Items": [
             {
-              "Id": "e6b8fb76-5907-4c0e-a408-a88ebc0871ef",
+              "Id": "8ad927d9-6d0d-425a-aa83-44fb5f952e19",
               "Name": "Alcohol",
               "Attributes": {
                 "Value": 5
@@ -630,7 +663,7 @@
           ],
           "Narration": [
             {
-              "Id": "839e9017-cd28-4e4a-bccc-79c1b27f36c2",
+              "Id": "1da6ef2a-29b6-400a-9760-30429551c111",
               "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
               "Attributes": {
                 "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
@@ -639,7 +672,7 @@
           ]
         },
         {
-          "Id": "dedc01af-55ab-4aea-9b9c-c8136c17cc6d",
+          "Id": "fa4f407f-b946-4cee-87d2-286edd08daf7",
           "Name": "Innkeeper_assistant",
           "Attributes": {
             "HP": 100,
@@ -670,7 +703,7 @@
       "Name": "Prison",
       "Characters": [
         {
-          "Id": "22c0313e-e9c7-4592-bce8-1910dedaf41d",
+          "Id": "b2c1efc4-f50a-4b12-b170-d000f9c732e2",
           "Name": "Prison_guard",
           "Attributes": {
             "HP": 100,
@@ -679,7 +712,7 @@
           },
           "Items": [
             {
-              "Id": "73e80c7f-eab6-4c90-b496-9acb2d61d15d",
+              "Id": "6e2c5839-ee5e-4cc7-8e7f-4294e6e453b1",
               "Name": "Sword",
               "Attributes": {
                 "Value": 800,
@@ -689,7 +722,7 @@
           ]
         },
         {
-          "Id": "9882c648-6386-4c30-8db4-34c825bc92b1",
+          "Id": "a4203e5e-35c5-44d6-a0ea-45b504d2839d",
           "Name": "Prison_governor",
           "Attributes": {
             "HP": 100,
@@ -697,7 +730,7 @@
           },
           "Items": [
             {
-              "Id": "478ddf09-fcd6-4155-9459-cf1bd8971c1d",
+              "Id": "076a1717-da11-4749-be0f-4367fedd7c0a",
               "Name": "Sword",
               "Attributes": {
                 "Value": 1200,
@@ -705,13 +738,13 @@
               }
             },
             {
-              "Id": "9d4550ad-94ff-48fe-9508-3d5bbaec954b",
+              "Id": "192d30a0-f91e-41ad-9891-adccc89d5a36",
               "Name": "Keys"
             }
           ]
         },
         {
-          "Id": "5f50fa8b-46ba-4d24-916f-c2ffca23072f",
+          "Id": "bdd44bcf-97b0-4202-9bff-c01c1e5119c7",
           "Name": "Prisoner",
           "Attributes": {
             "HP": 100,
@@ -719,7 +752,7 @@
           }
         },
         {
-          "Id": "e7780a18-1f9f-4097-936e-ca252f154f6d",
+          "Id": "6b307b87-6c4e-4119-8e3d-38a35b210bea",
           "Name": "Bandit",
           "Attributes": {
             "HP": 100,
@@ -727,7 +760,7 @@
           },
           "Narration": [
             {
-              "Id": "bf824ef8-1afe-455f-ad21-8a586eea20a4",
+              "Id": "011f59ec-6351-431d-ba03-d288e3111726",
               "Name": "Is_Brother_Of_Main_Hero",
               "Attributes": {
                 "Knowledge": "Bandyta uratowany z więzienia jest bratem gównego bohatera"
@@ -747,7 +780,7 @@
       "Name": "Market",
       "Characters": [
         {
-          "Id": "0de52d75-b919-4875-ad1f-ac914be170d0",
+          "Id": "4f664b18-9c29-4118-8f9c-18cf031f2f52",
           "Name": "Merchant",
           "Attributes": {
             "HP": 100,
@@ -755,7 +788,7 @@
           },
           "Items": [
             {
-              "Id": "2fe4e7ba-1b25-40f7-ac16-0c91daccd433",
+              "Id": "4c303143-9f0d-487a-af88-6d7a384ebd72",
               "Name": "Fiddle_stick",
               "Attributes": {
                 "Value": 50,
@@ -765,7 +798,7 @@
           ],
           "Narration": [
             {
-              "Id": "a84dbffa-e10b-48af-a9d8-08d4171a4eea",
+              "Id": "c3b753e8-eb66-41d9-93c4-d3a77ad9000a",
               "Name": "Merchant_will_give_discounts_in_exchange_for_mini_quests",
               "Attributes": {
                 "Knowledge": "Merchant will give the Fiddle_stick for half of the original price if the Hero will provide him with some Horse_Bristles. If the Hero helps him to get rid of the Rats in the Market, he will also half the price. If the Hero does both things, he offers the Fiddle_stick for free. / Handlarz sprzeda Bohaterowi Smyczek za połowę oryginalnej ceny, jeśli Bohater da mu trochę Włosia Końskiego. Tak samo, jeśli Bohater pozbędzie się Szczurów z Targowiska i przedstawi Ogon_Szczura jako dowód. Jeśli Bohater wykona oba zadania, Handlarz oferuje Smyczek za darmo."
@@ -774,7 +807,7 @@
           ]
         },
         {
-          "Id": "67fea24c-5514-4b02-a9f9-9df3d507ce1e",
+          "Id": "0b36de6f-bcb5-4c4c-9bd4-3cb8852c634c",
           "Name": "Merchant_respected",
           "Attributes": {
             "HP": 100,
@@ -782,21 +815,21 @@
           }
         },
         {
-          "Id": "3af06742-f41d-4d22-af16-3001286b0c7b",
+          "Id": "27dbbcc8-980d-4d55-9f33-dc1e312dbed0",
           "Name": "Rat",
           "Attributes": {
             "HP": 3
           }
         },
         {
-          "Id": "ab439b6e-a4aa-4548-89ec-856fa5422901",
+          "Id": "042b4486-7d6f-48b5-ab64-fab1e6a10a36",
           "Name": "Rat",
           "Attributes": {
             "HP": 3
           }
         },
         {
-          "Id": "0cffd6f0-c6f0-4d82-88b5-8f3b062686b0",
+          "Id": "51590d45-23a4-45a4-a4af-c711434c7f16",
           "Name": "Rat",
           "Attributes": {
             "HP": 3
@@ -805,7 +838,7 @@
       ],
       "Items": [
         {
-          "Id": "dcb6a7f0-1644-42c7-a0ec-d25299a439ad",
+          "Id": "adc4359f-4925-4fd4-be7b-8606673c404d",
           "Name": "Advertising_column"
         }
       ],
@@ -816,14 +849,14 @@
       ]
     },
     {
-      "Id": "5d094a24-a63b-4d5c-a8e6-189c0e056199",
+      "Id": "c0c345d3-ad8f-4af8-96d1-21ae189a745f",
       "Name": "Lumberjacks_hut",
       "Attributes": {
         "IsPrivate": true
       },
       "Characters": [
         {
-          "Id": "8c176e13-b607-423b-b5a0-18e0435328cf",
+          "Id": "b7a7675c-897e-40f0-abf9-48ed10f3de0e",
           "Name": "Lumberjack",
           "Attributes": {
             "HP": 100,
@@ -831,7 +864,7 @@
           },
           "Items": [
             {
-              "Id": "3001c374-0806-459c-8e66-443f2b9a5b05",
+              "Id": "c45da0b3-20f2-4152-aa4f-06b634fbea4c",
               "Name": "Axe",
               "Attributes": {
                 "Value": 800,
@@ -841,7 +874,7 @@
           ],
           "Narration": [
             {
-              "Id": "6bd5bef5-c662-4a0b-8a3e-04d670774725",
+              "Id": "3f640ed4-4093-4e3b-8e47-bf69ead7b864",
               "Name": "Help_with_wood",
               "Attributes": {
                 "Knowledge": "Drwal potrzebuje pomocy przy przyniesieniu drewna za 300 coinów"
@@ -850,14 +883,14 @@
           ]
         },
         {
-          "Id": "3d08f792-38a9-440c-9e50-a1138b427c7a",
+          "Id": "091b8478-de67-4704-8c8a-bb8c7ac48ab3",
           "Name": "Daughter",
           "Attributes": {
             "HP": 100
           },
           "Items": [
             {
-              "Id": "a1ba40d9-fc09-4112-8dea-727b1d981279",
+              "Id": "752807e3-3461-440c-8def-43c1771bcb9e",
               "Name": "Axe",
               "Attributes": {
                 "Value": 800,
@@ -869,7 +902,7 @@
       ],
       "Items": [
         {
-          "Id": "3eb86458-5a7f-41dd-b07a-3277c74bbf7f",
+          "Id": "f537ea18-1af0-4e5c-9b3d-d744021cf333",
           "Name": "Saw",
           "Attributes": {
             "Value": 700
@@ -887,14 +920,28 @@
       "Name": "Pasture",
       "Characters": [
         {
-          "Id": "bc6a29e5-32e0-4fca-b050-721f4a67e46e",
+          "Id": "7b0897c0-dddf-4b15-a6ec-b249c21342f5",
           "Name": "Sheep",
           "Attributes": {
             "HP": 10
           }
         },
         {
-          "Id": "d5bde33b-8c97-431e-9f88-f24fe93d9871",
+          "Id": "9bd547b8-c25a-47f5-bbc6-10e01c56bff3",
+          "Name": "Sheep",
+          "Attributes": {
+            "HP": 10
+          }
+        },
+        {
+          "Id": "19e4ded0-4e47-4639-9998-66e1810d537d",
+          "Name": "Sheep",
+          "Attributes": {
+            "HP": 10
+          }
+        },
+        {
+          "Id": "ffd71f0f-373c-480c-bb0c-1ca2901ab3dd",
           "Name": "Shepherd",
           "Attributes": {
             "HP": 100,
@@ -902,35 +949,35 @@
           },
           "Narration": [
             {
-              "Id": "ff1e20a8-4704-4dce-b625-0a90be343c2f",
+              "Id": "96127b4d-1a5a-4d17-b993-01233642ab7d",
               "Name": "Help_with_sheep",
               "Attributes": {
                 "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
               }
             },
             {
-              "Id": "bdf58c99-8faf-46d7-a38f-1f3426bc07bd",
+              "Id": "855f6a5a-dcbb-4a13-b1cc-6e2a8aa9be21",
               "Name": "Captain_lost_compass",
               "Attributes": {
                 "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
               }
             },
             {
-              "Id": "10b932c8-520f-480b-a81c-008f83230a81",
+              "Id": "05977a60-ad6c-48e6-8f33-3363791dfe8e",
               "Name": "Can_play_cards",
               "Attributes": {
                 "Knowledge": "Potrafi grać w karty"
               }
             },
             {
-              "Id": "7ad63fc4-d416-4eae-9ea4-da711421c03d",
+              "Id": "5328cad8-06ee-48ed-a0d0-b92144b15ed1",
               "Name": "Shepherd_is_suspicious_towards_the_fiddler",
               "Attributes": {
                 "Knowledge": "Shepherd thinks that the Fiddler is a bad man, he suspects the Fiddler is up to nothing good here on the Pasture. Advices not to help him. / Pasterz myśli, że Skrzypek knuje coś niedobrego na Pastwisku. Radzi, by lepiej mu nie pomogać."
               }
             },
             {
-              "Id": "2cf2d5f4-c040-4b53-83dd-9275482abcb6",
+              "Id": "7e556810-0013-438d-b5ac-90c9a16c5594",
               "Name": "Shepherd_lost_his_sheep_and_asks_for_help_with_the_fiddler",
               "Attributes": {
                 "Knowledge": "One of the Shepherd's sheep has been abducted! Turns out Shepherd was right, the Fiddler turned out to be a bad man, utilising his music for evil by mesmerising unsuspecting creatures. He hid somewhere in the forest, waiting for somebody to buy the stolen animal. Shepherd asks the Hero for rescuing the poor wooly soul, offering 30 coins for the help. / Jedna z owiec Pasterza została uprowadzona! Okazuje się, że Pasterz miał rację, Skrzypek jest złym człowiekiem, który korzysta ze swojej muzyki w niecnych celach, omamiając wrażliwe istoty. Ponoć ukrył się gdzieś w lesie i czeka na chętnego kupca na skradzone zwierzę. Pasterz prosi Bohatera o ratunek dla zwierzęcie, oferuje 30 monet za pomoc."
@@ -939,7 +986,7 @@
           ]
         },
         {
-          "Id": "13b3ea89-044a-4a4d-bea4-ff6f9616cac9",
+          "Id": "8950528e-f9f2-40ef-a0c7-3e8051c8a94f",
           "Name": "Fiddler",
           "Attributes": {
             "HP": 15,
@@ -947,7 +994,11 @@
           },
           "Items": [
             {
-              "Id": "0806bf7d-9aef-4f3f-9f1d-0e9c62a9357b",
+              "Id": "5f517d5a-6978-49eb-b61a-43730f7e40d6",
+              "Name": "Keys"
+            },
+            {
+              "Id": "2d813cf4-902e-446e-a6c9-9d52313f282a",
               "Name": "Fiddle",
               "Attributes": {
                 "Value": 50
@@ -956,51 +1007,7 @@
           ],
           "Narration": [
             {
-              "Id": "36ea453d-1938-473a-a4a1-cfb1112fa78b",
-              "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
-              "Attributes": {
-                "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
-              }
-            }
-          ]
-        },
-        {
-          "Id": "6902bec5-0b7a-4bc9-9483-767c21c431c5",
-          "Name": "Main_hero",
-          "Attributes": {
-            "HP": 100,
-            "Money": 30
-          },
-          "Items": [
-            {
-              "Id": "aa0ab619-ece0-4e10-932c-2d9ec4d3df61",
-              "Name": "Advertising_column",
-              "Narration": [
-                {
-                  "Id": "f3d0f994-fc41-4fec-b505-63d21ebf57b1",
-                  "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
-                  "Attributes": {
-                    "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
-                  }
-                }
-              ]
-            },
-            {
-              "Id": "825371d8-e480-4f7e-be26-02fafd20ab98",
-              "Name": "Keys"
-            },
-            {
-              "Id": "7951a5cb-e3c2-44cf-8159-79ea2050b686",
-              "Name": "Sword",
-              "Attributes": {
-                "IsWeapon": true,
-                "Value": 1000
-              }
-            }
-          ],
-          "Narration": [
-            {
-              "Id": "f3d0f994-fc41-4fec-b505-63d21ebf57b1",
+              "Id": "6bd3c96d-9b2b-447e-a7f2-74d542fc1ea7",
               "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
               "Attributes": {
                 "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
@@ -1026,7 +1033,7 @@
       "Name": "Village",
       "Characters": [
         {
-          "Id": "f2af09cf-2e8d-40bc-8b91-7311fe754260",
+          "Id": "9f61fbc1-f45c-4c31-b846-bdb778905e90",
           "Name": "Common_man",
           "Attributes": {
             "HP": 100,
@@ -1036,18 +1043,18 @@
       ],
       "Items": [
         {
-          "Id": "50be09dc-f19e-4049-b56f-684c8a313208",
+          "Id": "0c9a6a3b-4e7b-4470-b542-593376dab357",
           "Name": "Well"
         },
         {
-          "Id": "97e00142-e89f-4d13-b041-52bdffa8e6ae",
+          "Id": "09e5fdae-ce27-4c21-a0c0-f735dd5e9b4c",
           "Name": "Stone",
           "Attributes": {
             "Value": 2
           }
         },
         {
-          "Id": "bd4c58bf-2bf8-4a37-a817-da1a1f87fec5",
+          "Id": "2c738fb9-41b2-423f-b8f0-016f35ba4bb4",
           "Name": "Advertising_column"
         }
       ],
@@ -1063,22 +1070,6 @@
       "Attributes": {
         "IsPrivate": true
       },
-      "Characters": [
-        {
-          "Id": "93330c25-c465-46ed-b232-416d22c91536",
-          "Name": "Sheep",
-          "Attributes": {
-            "HP": 10
-          }
-        },
-        {
-          "Id": "eb3f1084-a628-4032-8c92-a6d01f16e86b",
-          "Name": "Sheep",
-          "Attributes": {
-            "HP": 10
-          }
-        }
-      ],
       "Connections": [
         {
           "Destination": "2370050694720"
@@ -1093,7 +1084,7 @@
       },
       "Characters": [
         {
-          "Id": "fa1e6f75-b1fa-46bd-9d1c-d25135b347d4",
+          "Id": "79235c72-3f29-481f-9323-6e8cd62fb7cb",
           "Name": "Wizard",
           "Attributes": {
             "HP": 200,
@@ -1103,7 +1094,7 @@
       ],
       "Items": [
         {
-          "Id": "bd1a6da2-254e-453d-aed5-0e314dfbc069",
+          "Id": "9b677550-c2c9-42fc-8443-ca4be37b985b",
           "Name": "Elixir",
           "Attributes": {
             "Value": 30,
@@ -1122,14 +1113,14 @@
       "Name": "Cave",
       "Characters": [
         {
-          "Id": "04f31fe4-5c31-46c7-accb-a335f57beb74",
+          "Id": "a20780a5-94d7-4abb-95e0-108e00aa1363",
           "Name": "Troll",
           "Attributes": {
             "HP": 50
           }
         },
         {
-          "Id": "baf96d41-cbda-4651-9ee5-637f3a7abcda",
+          "Id": "c2282f9b-72d5-4859-8081-a70812c4cdeb",
           "Name": "Wolf",
           "Attributes": {
             "HP": 20
@@ -1138,7 +1129,7 @@
       ],
       "Items": [
         {
-          "Id": "aa0748d7-5273-4040-98d0-5788ff33da84",
+          "Id": "217b488b-124d-4b63-be7f-27d3552e8b2d",
           "Name": "Stone",
           "Attributes": {
             "Value": 2
@@ -1156,25 +1147,25 @@
       "Name": "Port",
       "Items": [
         {
-          "Id": "1e104ae3-bf02-4a6e-a245-41430dcc8467",
+          "Id": "f68cb124-0623-40f3-b7c9-7d5ed71a22d0",
           "Name": "Boat",
           "Attributes": {
             "Value": 10000
           }
         },
         {
-          "Id": "24dca448-5dcc-40a7-b695-0f8b84a715a4",
+          "Id": "cf1056e8-07c0-4327-a41f-9f75b6b4ea4d",
           "Name": "Advertising_column",
           "Narration": [
             {
-              "Id": "cbe84bdb-ad7b-4f17-b807-83d8f445ccb5",
+              "Id": "5eaa78d5-e649-4543-999d-d5a701f4162a",
               "Name": "Brother_quest_tavern_hint",
               "Attributes": {
                 "Knowledge": "Istnieje możliwość dostarczenia posiłków dla więźniów. Oczywiscie, za dodatkową oplatą. Pakunki będą przyjmowane na drodze przed więzieniem. Pobliska Taverna może okazać się pomocna."
               }
             },
             {
-              "Id": "3a9697cd-f3ef-4da4-b93a-edbfcb7151ad",
+              "Id": "8e715fa0-c3e9-4aa4-a8ba-853dbeda7163",
               "Name": "Brother_quest_start_active",
               "Attributes": {
                 "Knowledge": "Brat siedzi w więzieniu. Trzeba go wydostać."
@@ -1212,7 +1203,7 @@
       "Name": "Tavern",
       "Characters": [
         {
-          "Id": "02849171-2dd1-4668-92a7-1383a1159406",
+          "Id": "6b3e1137-31e2-4b8e-b0ed-abe8757137c5",
           "Name": "Innkeeper",
           "Attributes": {
             "HP": 100,
@@ -1220,7 +1211,7 @@
           }
         },
         {
-          "Id": "b4b9014e-3a80-467f-a183-ea3d5e52c961",
+          "Id": "77b0587e-acc4-4f3d-bead-bd1eedb753c0",
           "Name": "Miss",
           "Attributes": {
             "HP": 100,
@@ -1228,24 +1219,24 @@
           },
           "Items": [
             {
-              "Id": "55bbd62a-fb02-4360-ab1b-0038d51966d5",
+              "Id": "26b89380-76d5-49db-85ff-bfe6f2ffaed6",
               "Name": "Alcohol",
               "Attributes": {
                 "Value": 3
               }
             },
             {
-              "Id": "c05fd60b-4c71-447f-84e7-9750a582767e",
+              "Id": "73462f87-75e8-43a7-85d0-4d23c0a565e8",
               "Name": "File"
             },
             {
-              "Id": "e385a148-f99e-4d7c-bebf-4a78ac995792",
+              "Id": "e4a1768f-58f3-439f-931b-da4ca1839e0f",
               "Name": "Mutton_chop"
             }
           ]
         },
         {
-          "Id": "de765293-832b-4b53-a47a-030f10877876",
+          "Id": "3bab39cf-f26d-41f7-87b8-88a1fc7f28ff",
           "Name": "Traveler",
           "Attributes": {
             "HP": 100,
@@ -1253,7 +1244,7 @@
           },
           "Items": [
             {
-              "Id": "f42f0487-dae9-4d3e-adae-ad80dab563fd",
+              "Id": "88743745-87a7-43a0-9ae2-9853bbc84126",
               "Name": "Sword",
               "Attributes": {
                 "Value": 1000,
@@ -1274,7 +1265,7 @@
       "Name": "Ship",
       "Characters": [
         {
-          "Id": "34caac4e-82c4-4203-bbc7-2f388ae38213",
+          "Id": "c710ab18-c952-4416-bc0e-a0f062cfeb5e",
           "Name": "Ship_captain",
           "Attributes": {
             "HP": 100,
@@ -1282,7 +1273,7 @@
           },
           "Items": [
             {
-              "Id": "d72c2202-d764-4c9b-aaa7-fc02ab5a992c",
+              "Id": "5e4b0ee1-d86e-4103-94f8-a90b0f3064eb",
               "Name": "Sword",
               "Attributes": {
                 "Value": 1200,
@@ -1292,7 +1283,7 @@
           ]
         },
         {
-          "Id": "945290f0-52e9-496a-a6bb-43fbaf5cd14a",
+          "Id": "5464d00b-0709-43cf-9e5a-80f9268a9b04",
           "Name": "Ship_guard",
           "Attributes": {
             "HP": 100,
@@ -1300,7 +1291,7 @@
           },
           "Items": [
             {
-              "Id": "c6fae90b-eec1-4280-b60f-b6896e489533",
+              "Id": "aba89342-02d0-47c1-9512-4dff4d985b12",
               "Name": "Sword",
               "Attributes": {
                 "Value": 800,
@@ -1310,7 +1301,7 @@
           ]
         },
         {
-          "Id": "b6669036-066f-4689-af91-b3652dea0a56",
+          "Id": "39a6037d-57d0-49dd-af2e-b842cb1f57b3",
           "Name": "Ship_guard",
           "Attributes": {
             "HP": 100,
@@ -1318,7 +1309,7 @@
           },
           "Items": [
             {
-              "Id": "1b297fa9-dbce-444c-a8c2-a0545c22c17b",
+              "Id": "b226b72c-0bc7-402f-a891-d3f5fa6b5eca",
               "Name": "Knife",
               "Attributes": {
                 "IsWeapon": true,
@@ -1330,7 +1321,7 @@
       ],
       "Items": [
         {
-          "Id": "fe33339d-f356-4de8-9bcd-462d8c9de289",
+          "Id": "63c25b7a-48f5-434c-b001-8f2359fd5152",
           "Name": "Boat",
           "Attributes": {
             "Value": 10000
@@ -1348,7 +1339,7 @@
       "Name": "Dragons_lair",
       "Characters": [
         {
-          "Id": "2ec30685-87e6-4f70-ae07-e278a7d1419c",
+          "Id": "fcec1a5b-b551-451d-80fb-158a59ae9899",
           "Name": "Dragon",
           "Attributes": {
             "HP": 1000
@@ -1357,7 +1348,7 @@
       ],
       "Items": [
         {
-          "Id": "31ecd614-4853-454e-9591-bf3155c9dd52",
+          "Id": "e0632670-ace3-428e-8bbf-31b118aa66c8",
           "Name": "Dragon_egg",
           "Attributes": {
             "Value": 10000
@@ -1375,7 +1366,7 @@
       "Name": "Barn",
       "Characters": [
         {
-          "Id": "423defe8-f696-4457-ab26-d84ff93fd8b3",
+          "Id": "a593b703-6c9e-480d-89c0-581a4a3f2fb4",
           "Name": "Horse",
           "Attributes": {
             "HP": 30
@@ -1393,73 +1384,57 @@
     }
   ],
   "production": {
-    "Title": "Fight ending with character’s death / Walka zakończona śmiercią uczestnika",
-    "TitleGeneric": "Character’s death / Śmierć bohatera",
-    "Description": "«CharacterA» i «CharacterB» podejmują walkę, w której «CharacterB» ginie.",
-    "Override": 0,
+    "Title": "Location change / Zmiana lokacji",
+    "TitleGeneric": "Teleportation / Teleportacja",
+    "Description": "«Bohater» przechodzi do sąsiedniej lokacji («Lokacja_B»).",
+    "Override": 1,
     "LSide": {
       "Locations": [
         {
-          "Id": "Somewhere",
+          "Id": "Lokacja_A",
           "Attributes": {},
           "Characters": [
             {
-              "Id": "CharacterA",
+              "Id": "Bohater",
               "IsObject": true,
-              "Attributes": {
-                "HP": null
-              },
-              "Items": []
-            },
-            {
-              "Id": "CharacterB",
-              "IsObject": true,
-              "Attributes": {
-                "HP": null
-              },
+              "Attributes": {},
               "Characters": [],
               "Items": []
             }
           ],
           "Items": [],
-          "Connections": []
+          "Connections": [
+            {
+              "Destination": {
+                "Id": "Lokacja_B"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "Lokacja_B"
         }
       ]
     },
     "RSide": {},
-    "Preconditions": [
-      {
-        "Cond": "CharacterA.HP >= CharacterB.HP"
-      }
-    ],
     "Instructions": [
       {
-        "Op": "set",
-        "Attribute": "CharacterB.IsDead",
-        "Value": true
-      },
-      {
-        "Op": "set",
-        "Attribute": "CharacterA.HP",
-        "Expr": "CharacterA.HP - CharacterB.HP / 2"
-      },
-      {
         "Op": "move",
-        "Nodes": "CharacterB/Items/*",
-        "To": "Somewhere/Items"
+        "Nodes": "Bohater",
+        "To": "Lokacja_B/Characters"
       }
     ]
   },
   "variant": [
     {
-      "LSNodeRef": "Somewhere",
-      "WorldNodeId": "2370050694720",
-      "WorldNodeName": "Pasture",
+      "LSNodeRef": "Lokacja_A",
+      "WorldNodeId": "2370050636416",
+      "WorldNodeName": "Road",
       "WorldNodeAttr": null
     },
     {
-      "LSNodeRef": "CharacterA",
-      "WorldNodeId": "6902bec5-0b7a-4bc9-9483-767c21c431c5",
+      "LSNodeRef": "Bohater",
+      "WorldNodeId": "78a3814d-caa4-4b5c-8412-9fa732a0e7af",
       "WorldNodeName": "Main_hero",
       "WorldNodeAttr": {
         "HP": 100,
@@ -1467,13 +1442,10 @@
       }
     },
     {
-      "LSNodeRef": "CharacterB",
-      "WorldNodeId": "d5bde33b-8c97-431e-9f88-f24fe93d9871",
-      "WorldNodeName": "Shepherd",
-      "WorldNodeAttr": {
-        "HP": 100,
-        "Money": 210
-      }
+      "LSNodeRef": "Lokacja_B",
+      "WorldNodeId": "2370052115456",
+      "WorldNodeName": "Inn",
+      "WorldNodeAttr": null
     }
   ],
   "object": "Main_hero"

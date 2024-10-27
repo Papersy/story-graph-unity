@@ -131,11 +131,8 @@ public class GameController
                 {
                     var hp = attributes["HP"];
                     if (hp != null)
-                    {
-                        PlayerStats.Health = Convert.ToInt32(hp.ToString());
-                    }
+                        PlayerStats.Health = Convert.ToDouble(hp.ToString());
                 }
-                
             }
         }
     }
@@ -309,34 +306,6 @@ public class GameController
         }
         return null;
     }
-    
-    private JToken FindVariant(string productionName, string[] parameters, StatementsCheck statementsCheck)
-    {
-        foreach (var entity in _jAvailableProductions)
-        {
-            var firstWord = GetFirstWord(entity);
-
-            if (firstWord == productionName)
-            {
-                foreach (var variant in entity["variants"])
-                {
-                    if (statementsCheck(variant, parameters))
-                        return variant;
-                }
-            }
-        }
-
-        return null;
-    }
-    
-    private bool StatementPlayerDeath(JToken variant, string[] parameters)
-    {
-        if (variant[1]["WorldNodeName"].ToString() == _mainPlayerName)
-            return true;
-
-        return false;
-    }
-    
     
     private void WriteLogAboutNewWorld(string json)
     {
